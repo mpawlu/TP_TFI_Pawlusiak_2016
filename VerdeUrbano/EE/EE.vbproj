@@ -62,7 +62,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="clsBitacora.vb" />
+    <Compile Include="clsLocalidad.vb" />
+    <Compile Include="clsUsuario.vb" />
+    <Compile Include="Multi-Idioma\clsIdioma.vb" />
+    <Compile Include="Multi-Idioma\clsLeyenda.vb" />
+    <Compile Include="Multi-Idioma\clsTraduccion.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -78,6 +83,68 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Negocio\AdminisitrarCurso.vb" />
+    <Compile Include="Negocio\Aprobacion.vb" />
+    <Compile Include="Negocio\CalculadoraIE.vb" />
+    <Compile Include="Negocio\Categoria.vb" />
+    <Compile Include="Negocio\Compra.vb" />
+    <Compile Include="Negocio\CuponPago.vb" />
+    <Compile Include="Negocio\Curso.vb" />
+    <Compile Include="Negocio\CursoAsignado.vb" />
+    <Compile Include="Negocio\CursoRealizado.vb" />
+    <Compile Include="Negocio\Direccion.vb" />
+    <Compile Include="Negocio\Empleado.vb" />
+    <Compile Include="Negocio\Empresa.vb" />
+    <Compile Include="Negocio\Encuesta.vb" />
+    <Compile Include="Negocio\EncuestaAsignada.vb" />
+    <Compile Include="Negocio\EncuestaRealizada.vb" />
+    <Compile Include="Negocio\EstadoCupon.vb" />
+    <Compile Include="Negocio\EstadoCurso.vb" />
+    <Compile Include="Negocio\Evaluativa.vb" />
+    <Compile Include="Negocio\Informativa.vb" />
+    <Compile Include="Negocio\Localidad.vb" />
+    <Compile Include="Negocio\Opcion.vb" />
+    <Compile Include="Negocio\Pago.vb" />
+    <Compile Include="Negocio\Pregunta.vb" />
+    <Compile Include="Negocio\PreguntaEncuesta.vb" />
+    <Compile Include="Negocio\Respuesta.vb" />
+    <Compile Include="Negocio\Resultado.vb" />
+    <Compile Include="Negocio\ResultadoIE.vb" />
+    <Compile Include="Negocio\Seccion.vb" />
+    <Compile Include="Negocio\Slide.vb" />
+    <Compile Include="Negocio\SolicitudCurso.vb" />
+    <Compile Include="Negocio\State\Cupon\Cupon_State.vb" />
+    <Compile Include="Negocio\State\Cupon\Emitido.vb" />
+    <Compile Include="Negocio\State\Cupon\Pagado.vb" />
+    <Compile Include="Negocio\State\Cupon\Vencido.vb" />
+    <Compile Include="Negocio\State\CursoAsignado\CursoAsignado_State.vb" />
+    <Compile Include="Negocio\State\CursoAsignado\EnCurso.vb" />
+    <Compile Include="Negocio\State\CursoAsignado\EnCursoVencido.vb" />
+    <Compile Include="Negocio\State\CursoAsignado\Finalizado.vb" />
+    <Compile Include="Negocio\State\CursoAsignado\Pendiente.vb" />
+    <Compile Include="Negocio\State\CursoAsignado\PendienteVencido.vb" />
+    <Compile Include="Negocio\State\Curso\Aprobado.vb" />
+    <Compile Include="Negocio\State\Curso\Curso_State.vb" />
+    <Compile Include="Negocio\State\Curso\EnCreacion.vb" />
+    <Compile Include="Negocio\State\Curso\PendienteDeAprobacion.vb" />
+    <Compile Include="Negocio\State\Curso\Rechazado.vb" />
+    <Compile Include="Negocio\State\EncuestaAsignada\EncuestaAsignada_State.vb" />
+    <Compile Include="Negocio\State\EncuestaAsignada\Finalizada.vb" />
+    <Compile Include="Negocio\State\EncuestaAsignada\PendienteE.vb" />
+    <Compile Include="Negocio\State\SolicitudCurso\EnConstruccion.vb" />
+    <Compile Include="Negocio\State\SolicitudCurso\Solicitado.vb" />
+    <Compile Include="Negocio\State\SolicitudCurso\SolicitudCurso_State.vb" />
+    <Compile Include="Negocio\State\SolicitudCurso\SolicitudFinalizada.vb" />
+    <Compile Include="Negocio\State\State.vb" />
+    <Compile Include="Negocio\Telefono.vb" />
+    <Compile Include="Negocio\TipoA.vb" />
+    <Compile Include="Negocio\TipoB.vb" />
+    <Compile Include="Negocio\TipoC.vb" />
+    <Compile Include="Negocio\TipoDeRespuesta.vb" />
+    <Compile Include="Negocio\TipoP.vb" />
+    <Compile Include="Permisos\clsPermiso.vb" />
+    <Compile Include="Permisos\clsPermisoCompuesto.vb" />
+    <Compile Include="Permisos\clsPermisoSimple.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

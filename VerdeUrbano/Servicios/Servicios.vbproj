@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9BD8EBEC-4F56-4B21-8818-30788F5C975F}</ProjectGuid>
+    <ProjectGuid>{5ACAA52B-77F4-4D05-9F66-A7278B42FF1A}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>BLL</RootNamespace>
-    <AssemblyName>BLL</AssemblyName>
+    <RootNamespace>Servicios</RootNamespace>
+    <AssemblyName>Servicios</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -18,7 +18,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>BLL.xml</DocumentationFile>
+    <DocumentationFile>Servicios.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -27,7 +27,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>BLL.xml</DocumentationFile>
+    <DocumentationFile>Servicios.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -62,12 +62,14 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsBitacora.vb" />
-    <Compile Include="clsLocalidad.vb" />
-    <Compile Include="clsUsuario.vb" />
-    <Compile Include="Multi-Idioma\clsIdioma.vb" />
-    <Compile Include="Multi-Idioma\clsLeyenda.vb" />
-    <Compile Include="Multi-Idioma\ClsTraduccion.vb" />
+    <Compile Include="clsBackupRestore.vb" />
+    <Compile Include="clsEncriptadora.vb" />
+    <Compile Include="clsExcepcionUsuarioBloqueado.vb" />
+    <Compile Include="Excepciones\clsExcepcionPersonalizada.vb" />
+    <Compile Include="Excepciones\Multi-Idioma\clsExcepcionLeyendasIncompletas.vb" />
+    <Compile Include="Excepciones\Multi-Idioma\clsExcepcionNombreIdioma.vb" />
+    <Compile Include="Multi-Idioma\Observable.vb" />
+    <Compile Include="Multi-Idioma\Observer.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -83,57 +85,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Negocio\AdminisitrarCurso.vb" />
-    <Compile Include="Negocio\Aprobacion.vb" />
-    <Compile Include="Negocio\CalculadoraIE.vb" />
-    <Compile Include="Negocio\Categoria.vb" />
-    <Compile Include="Negocio\Compra.vb" />
-    <Compile Include="Negocio\CuponPago.vb" />
-    <Compile Include="Negocio\Curso.vb" />
-    <Compile Include="Negocio\CursoAsignado.vb" />
-    <Compile Include="Negocio\CursoRealizado.vb" />
-    <Compile Include="Negocio\Empleado.vb" />
-    <Compile Include="Negocio\Empresa.vb" />
-    <Compile Include="Negocio\Encuesta.vb" />
-    <Compile Include="Negocio\EncuestaAsignada.vb" />
-    <Compile Include="Negocio\EncuestaRealizada.vb" />
-    <Compile Include="Negocio\EstadoCupon.vb" />
-    <Compile Include="Negocio\EstadoCurso.vb" />
-    <Compile Include="Negocio\Evaluativa.vb" />
-    <Compile Include="Negocio\Informativa.vb" />
-    <Compile Include="Negocio\Opcion.vb" />
-    <Compile Include="Negocio\Pago.vb" />
-    <Compile Include="Negocio\Pregunta.vb" />
-    <Compile Include="Negocio\PreguntaEncuesta.vb" />
-    <Compile Include="Negocio\Respuesta.vb" />
-    <Compile Include="Negocio\Resultado.vb" />
-    <Compile Include="Negocio\Seccion.vb" />
-    <Compile Include="Negocio\Slide.vb" />
-    <Compile Include="Negocio\SolicitudCurso.vb" />
-    <Compile Include="Negocio\State.vb" />
-    <Compile Include="Negocio\State\Cupon\Cupon_State.vb" />
-    <Compile Include="Negocio\State\Cupon\Emitido.vb" />
-    <Compile Include="Negocio\State\Cupon\Pagado.vb" />
-    <Compile Include="Negocio\State\Cupon\Vencido.vb" />
-    <Compile Include="Negocio\State\CursoAsignado\CursoAsignado_State.vb" />
-    <Compile Include="Negocio\State\CursoAsignado\EnCurso.vb" />
-    <Compile Include="Negocio\State\CursoAsignado\EnCursoVencido.vb" />
-    <Compile Include="Negocio\State\CursoAsignado\Finalizado.vb" />
-    <Compile Include="Negocio\State\CursoAsignado\Pendiente.vb" />
-    <Compile Include="Negocio\State\CursoAsignado\PendienteVencido.vb" />
-    <Compile Include="Negocio\State\Curso\Aprobado.vb" />
-    <Compile Include="Negocio\State\Curso\Curso_State.vb" />
-    <Compile Include="Negocio\State\Curso\EnCreacion.vb" />
-    <Compile Include="Negocio\State\Curso\PendienteDeAprobacion.vb" />
-    <Compile Include="Negocio\State\EncuestaAsignada\EncuestaAsignada_State.vb" />
-    <Compile Include="Negocio\State\EncuestaAsignada\Finalizada.vb" />
-    <Compile Include="Negocio\State\EncuestaAsignada\PendienteE.vb" />
-    <Compile Include="Negocio\TipoA.vb" />
-    <Compile Include="Negocio\TipoB.vb" />
-    <Compile Include="Negocio\TipoC.vb" />
-    <Compile Include="Negocio\TipoDeRespuesta.vb" />
-    <Compile Include="Negocio\TipoP.vb" />
-    <Compile Include="Permisos\clsPermiso.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -153,16 +104,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EE\EE.vbproj">
-      <Project>{4c6cca38-0b95-49dc-9944-fb8e02f5d776}</Project>
-      <Name>EE</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MPP\MPP.vbproj">
-      <Project>{a0d3f542-fcd7-4510-9fea-70f947194a35}</Project>
-      <Name>MPP</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
