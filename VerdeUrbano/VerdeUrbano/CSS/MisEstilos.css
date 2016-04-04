@@ -182,3 +182,8 @@ img {
 .img-circle {
   border-radius: 50%;
 }
+
+/* Manejo de Texto */
+.text-center {
+    text-align: center;
+}

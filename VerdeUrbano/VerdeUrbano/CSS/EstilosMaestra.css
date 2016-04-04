@@ -1,0 +1,23 @@
+﻿
+.textocopyright {
+    font-size: 12px;
+    color: #C0C0C0;
+    height: 18px;
+    text-align: center;
+}
+
+.lineaCopyright {
+    background-color: #0C553F;
+    height: 3px;
+}
+
+.fondoColor {
+    background-color: #DED1AA;
+}
+
+.bordeColor {
+    border-width: 1px;
+    border: solid;
+        border-color: #0C553F;
+
+}
