@@ -17,40 +17,11 @@
                 <div class="col-md-10 col-md-offset-1">
                     <div class="row fondoColor borde">
                         <div class="col-md-3">
-                            <asp:Image ID="LogoMenu" CssClass="ImagenSize" runat="server" ImageUrl="~/Imagenes/logoVerdeUrbano.PNG" />
+                            <asp:Image ID="LogoMenu" CssClass="img img-responsive" runat="server" ImageUrl="~/Imagenes/logoVerdeUrbano.PNG" />
                         </div>
 
                         <div class="col-md-3 col-md-offset-6">
-                            <div id="opcionesUsuario" runat="server" visible="false">
-                                <div class="col-md-3">
-                                    <div class="centradoVerticalImagenUsuario">
-                                        <img id="img_Usuario" runat="server" class="IconoImagenUsuario right" />
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="centradoVerticalNombreUsuario margenHorizontalUsuario">
-                                            <asp:Label ID="lbl_NombredeUsuarioLogueado" runat="server" CssClass="textoNombreUsuario">Nombre de Usuario</asp:Label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="margenHorizontalUsuario">
-                                            <asp:Label ID="lbl_apellidoyNombre" runat="server" CssClass="textoNombreyApellidoUsuario">Apellido y Nombre</asp:Label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-2 col-md-offset-4">
-                                            <asp:ImageButton ID="img_mensajes" runat="server" CssClass="IconoSize cerrarSesion" ImageUrl="~/Imagenes/Message-32.png" OnClick="img_mensajes_Click" />
-                                        </div>
-                                        <div class="col-md-2">
-                                            <asp:ImageButton ID="img_opciones" runat="server" CssClass="IconoSize cerrarSesion" ImageUrl="~/Imagenes/Region-And-Language-32.png" OnClick="img_opciones_Click" />
-                                        </div>
-                                        <div class="col-md-2">
-                                            <asp:ImageButton ID="img_logout" runat="server" CssClass="IconoSize cerrarSesion" ImageUrl="~/Imagenes/exit-32.png" OnClick="img_logout_Click" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
 
                     </div>
