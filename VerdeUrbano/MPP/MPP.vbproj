@@ -62,7 +62,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="clsLocalidad.vb" />
+    <Compile Include="clsUsuario.vb" />
+    <Compile Include="Multi-Idioma\clsIdioma.vb" />
+    <Compile Include="Multi-Idioma\clsLeyenda.vb" />
+    <Compile Include="Multi-Idioma\ClsTraduccion.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -97,6 +101,16 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.vbproj">
+      <Project>{54fc7729-8156-408c-b299-487b4b0b33f3}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EE\EE.vbproj">
+      <Project>{4c6cca38-0b95-49dc-9944-fb8e02f5d776}</Project>
+      <Name>EE</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
