@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0E2A5516-15F9-4CA9-9A68-CC2DCB0F1CBD}</ProjectGuid>
+    <ProjectGuid>{9BD8EBEC-4F56-4B21-8818-30788F5C975F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>BLL</RootNamespace>
     <AssemblyName>BLL</AssemblyName>

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C6CAC7D9-53B0-4B64-917C-409C2DC29084}</ProjectGuid>
+    <ProjectGuid>{A0D3F542-FCD7-4510-9FEA-70F947194A35}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>MPP</RootNamespace>
     <AssemblyName>MPP</AssemblyName>
