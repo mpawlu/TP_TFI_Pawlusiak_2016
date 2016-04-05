@@ -4,9 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4C6CCA38-0B95-49DC-9944-FB8E02F5D776}</ProjectGuid>
+    <ProjectGuid>{85EB7D26-B2F0-4C0E-B4B6-24AFA132282B}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>EE</RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>EE</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
@@ -62,6 +63,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.vb" />
     <Compile Include="clsBitacora.vb" />
     <Compile Include="clsLocalidad.vb" />
     <Compile Include="clsUsuario.vb" />
@@ -108,8 +110,10 @@
     <Compile Include="Negocio\Pregunta.vb" />
     <Compile Include="Negocio\PreguntaEncuesta.vb" />
     <Compile Include="Negocio\Respuesta.vb" />
+    <Compile Include="Negocio\Respuesta_Curso.vb" />
     <Compile Include="Negocio\Resultado.vb" />
     <Compile Include="Negocio\ResultadoIE.vb" />
+    <Compile Include="Negocio\SatisfaccionCliente.vb" />
     <Compile Include="Negocio\Seccion.vb" />
     <Compile Include="Negocio\Slide.vb" />
     <Compile Include="Negocio\SolicitudCurso.vb" />
@@ -164,6 +168,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Servicios\Servicios.vbproj">
+      <Project>{a6a92d3a-d7a4-4595-a0c0-c8c939d7380c}</Project>
+      <Name>Servicios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

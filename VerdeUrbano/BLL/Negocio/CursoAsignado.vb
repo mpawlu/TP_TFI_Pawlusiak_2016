@@ -3,6 +3,9 @@
         Public Function Guardar(ByVal QueAsignacion As EE.CursoAsignado) As Boolean
 
         End Function
+        Public Function Modificar(ByVal QueAsignacion As EE.CursoAsignado) As Boolean
+
+        End Function
         Public Sub InicializarDatos(ByVal Asignacion As EE.CursoAsignado, ByVal curso As EE.Curso, ByVal empleado As EE.clsUsuario)
             Asignacion.Curso = curso
             Asignacion.Empleado = empleado
@@ -35,6 +38,17 @@
         End Function
         Public Function ObtenerResultado(ByVal QueCursoAsignado As EE.CursoAsignado) As Double
             Return QueCursoAsignado.ResultadoObtenido
+        End Function
+        Public Function VerificarCorrelatividades(ByVal QueCursoAsignado As EE.CursoAsignado) As Boolean
+
+        End Function
+        Public Function PasarAIniciado(ByVal QueCursoAsignado As EE.CursoAsignado) As EE.CursoAsignado
+
+
+        End Function
+        Public Function PasarAFinalizado(ByVal QueCursoAsignado As EE.CursoAsignado) As EE.CursoAsignado
+
+
         End Function
     End Class
 End Namespace

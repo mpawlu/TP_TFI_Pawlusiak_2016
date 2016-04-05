@@ -1,3 +1,10 @@
-﻿Public Class Encuesta
+﻿Namespace BLL
+    Public Class Encuesta
 
-End Class
+        Sub New()
+
+        End Sub
+
+    End Class
+End Namespace
+

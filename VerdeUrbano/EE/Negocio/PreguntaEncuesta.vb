@@ -30,6 +30,16 @@
                 _tipoResp = value
             End Set
         End Property
+
+        Private _Valor As Double
+        Public Property Valor() As Double
+            Get
+                Return _Valor
+            End Get
+            Set(ByVal value As Double)
+                _Valor = value
+            End Set
+        End Property
     End Class
 End Namespace
 

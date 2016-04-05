@@ -2,6 +2,7 @@
     Public Sub GuardarSeccion(ByVal QueSeccion As EE.Seccion)
 
     End Sub
+
     Public Sub AgregarSlide(ByVal QueSeccion As EE.Seccion, ByVal QueSlide As EE.Slide)
         QueSeccion.Slides.Add(QueSlide)
     End Sub

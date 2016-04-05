@@ -1,5 +1,6 @@
-﻿
-Public Interface Obvserver
-    Sub ActualizarIdioma()
+﻿Namespace Servicios
+    Public Interface Obvserver
+        Sub ActualizarIdioma()
 
-End Interface
+    End Interface
+End Namespace

@@ -1,3 +1,7 @@
-﻿Public Class Finalizado
+﻿Namespace EE
+    Public Class Finalizado
+        Inherits EE.CursoAsignado_State
 
-End Class
+    End Class
+End Namespace
+

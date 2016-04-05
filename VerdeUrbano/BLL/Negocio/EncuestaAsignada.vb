@@ -12,4 +12,8 @@
     Public Function Consultar(ByVal QueCursoAsignado As EE.CursoAsignado) As EE.EncuestaAsignada
 
     End Function
+    Public Function ConsultarFinalizadas(ByVal Empresa As EE.Empresa) As List(Of EE.EncuestaAsignada)
+
+    End Function
+
 End Class

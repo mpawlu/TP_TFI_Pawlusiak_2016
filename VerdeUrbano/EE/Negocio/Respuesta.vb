@@ -10,12 +10,12 @@
             End Set
         End Property
 
-        Private _OpcionElegida As String
-        Public Property NewProperty() As String
+        Private _OpcionElegida As EE.Opcion
+        Public Property OpcionElegida() As EE.Opcion
             Get
                 Return _OpcionElegida
             End Get
-            Set(ByVal value As String)
+            Set(ByVal value As EE.Opcion)
                 _OpcionElegida = value
             End Set
         End Property

@@ -9,6 +9,14 @@
         Sub New()
 
         End Sub
+        Public Function ListarClientes() As List(Of EE.Empresa)
+
+
+        End Function
+        Public Function CalcularSatisfaccion(ByVal QueEmpresa As EE.Empresa) As EE.SatisfaccionCliente
+
+
+        End Function
     End Class
 End Namespace
 

@@ -1,3 +1,6 @@
-﻿Public Class PendienteE
+﻿Namespace EE
+    Public Class PendienteE
+        Inherits EE.EncuestaAsignada_State
 
-End Class
+    End Class
+End Namespace

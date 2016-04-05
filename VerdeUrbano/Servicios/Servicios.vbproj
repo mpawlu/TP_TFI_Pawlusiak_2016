@@ -4,9 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5ACAA52B-77F4-4D05-9F66-A7278B42FF1A}</ProjectGuid>
+    <ProjectGuid>{A6A92D3A-D7A4-4595-A0C0-C8C939D7380C}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Servicios</RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>Servicios</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
@@ -62,6 +63,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.vb" />
     <Compile Include="clsBackupRestore.vb" />
     <Compile Include="clsEncriptadora.vb" />
     <Compile Include="clsExcepcionUsuarioBloqueado.vb" />
@@ -104,6 +106,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.vbproj">
+      <Project>{42873dd9-d22c-4d28-af54-f40962048596}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

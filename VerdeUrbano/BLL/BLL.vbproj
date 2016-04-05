@@ -4,9 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9BD8EBEC-4F56-4B21-8818-30788F5C975F}</ProjectGuid>
+    <ProjectGuid>{1CEA3F76-1691-4BE5-8187-11C5DC76EBD0}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>BLL</RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>BLL</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
@@ -62,6 +63,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.vb" />
     <Compile Include="clsBitacora.vb" />
     <Compile Include="clsLocalidad.vb" />
     <Compile Include="clsUsuario.vb" />
@@ -107,6 +109,7 @@
     <Compile Include="Negocio\PreguntaEncuesta.vb" />
     <Compile Include="Negocio\Respuesta.vb" />
     <Compile Include="Negocio\Resultado.vb" />
+    <Compile Include="Negocio\SatisfaccionCliente.vb" />
     <Compile Include="Negocio\Seccion.vb" />
     <Compile Include="Negocio\Slide.vb" />
     <Compile Include="Negocio\SolicitudCurso.vb" />
@@ -156,11 +159,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EE\EE.vbproj">
-      <Project>{4c6cca38-0b95-49dc-9944-fb8e02f5d776}</Project>
+      <Project>{85eb7d26-b2f0-4c0e-b4b6-24afa132282b}</Project>
       <Name>EE</Name>
     </ProjectReference>
     <ProjectReference Include="..\MPP\MPP.vbproj">
-      <Project>{a0d3f542-fcd7-4510-9fea-70f947194a35}</Project>
+      <Project>{e05e62b5-007f-46ab-be0f-d0597e3e8159}</Project>
       <Name>MPP</Name>
     </ProjectReference>
   </ItemGroup>

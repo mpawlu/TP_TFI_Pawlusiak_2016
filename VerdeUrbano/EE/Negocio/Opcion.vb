@@ -32,5 +32,9 @@
         Sub New(ByVal texto As String, ByVal EsCorrecta As Boolean)
 
         End Sub
+        Sub New()
+
+
+        End Sub
     End Class
 End Namespace

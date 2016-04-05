@@ -20,12 +20,12 @@
             End Set
         End Property
 
-        Private _Opciones As List(Of String)
-        Public Property Opciones() As List(Of String)
+        Private _Opciones As List(Of EE.Opcion)
+        Public Property Opciones() As List(Of EE.Opcion)
             Get
                 Return _Opciones
             End Get
-            Set(ByVal value As List(Of String))
+            Set(ByVal value As List(Of EE.Opcion))
                 _Opciones = value
             End Set
         End Property

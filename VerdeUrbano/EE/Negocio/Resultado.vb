@@ -1,54 +1,36 @@
 ﻿Namespace EE
     Public Class Resultado
-        Private _CursoRealizado As CursoAsignado
-        Public Property CursoRealizado() As CursoAsignado
-            Get
-                Return _CursoRealizado
-            End Get
-            Set(ByVal value As CursoAsignado)
-                _CursoRealizado = value
-            End Set
-        End Property
 
 
-        Private _RespuestasCorrectas As Integer
-        Public Property RespuestasCorrectas() As Integer
+        Private _SumaObtenida As Integer
+        Public Property SumaObtenida() As Integer
             Get
-                Return _RespuestasCorrectas
+                Return _SumaObtenida
             End Get
             Set(ByVal value As Integer)
-                _RespuestasCorrectas = value
+                _SumaObtenida = value
             End Set
         End Property
-        Private _RespuestasIncorrectas As Integer
-        Public Property RespuestasIncorrectas() As Integer
+
+        Private _SumaIdeal As Integer
+        Public Property SumaIdeal() As Integer
             Get
-                Return _RespuestasIncorrectas
+                Return _SumaIdeal
             End Get
             Set(ByVal value As Integer)
-                _RespuestasIncorrectas = value
+                _SumaIdeal = value
+            End Set
+        End Property
+        Private _ResultadoObtenido As Double
+        Public Property ResultadoObtenido() As Double
+            Get
+                Return _ResultadoObtenido
+            End Get
+            Set(ByVal value As Double)
+                _ResultadoObtenido = value
             End Set
         End Property
 
-        Private _Tiempl As Double
-        Public Property Tiempo() As Double
-            Get
-                Return _Tiempl
-            End Get
-            Set(ByVal value As Double)
-                _Tiempl = value
-            End Set
-        End Property
-
-        Private _Puntaje As Double
-        Public Property Puntaje() As Double
-            Get
-                Return _Puntaje
-            End Get
-            Set(ByVal value As Double)
-                _Puntaje = value
-            End Set
-        End Property
     End Class
 End Namespace
 

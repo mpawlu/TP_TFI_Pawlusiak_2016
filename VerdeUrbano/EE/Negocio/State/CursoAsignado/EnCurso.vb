@@ -1,3 +1,7 @@
-﻿Public Class EnCurso
+﻿Namespace EE
+    Public Class EnCurso
+        Inherits EE.CursoAsignado_State
 
-End Class
+    End Class
+End Namespace
+

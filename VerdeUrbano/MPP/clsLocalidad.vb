@@ -1,5 +1,4 @@
 ﻿Imports EE
-
 Namespace MPP
 
     Public Class clsLocalidad
