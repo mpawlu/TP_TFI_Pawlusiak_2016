@@ -25,6 +25,21 @@
                         </div>
 
                     </div>
+                    <div class="row fondoVerde bordeMenu">
+                        <div class="col-md-12">
+                            <asp:Menu ID="menuPrincipal" runat="server" Orientation="Horizontal" Font-Names="Estrangelo Edessa" Font-Size="18PX" ForeColor="#FFFFFF" Height="37px">
+                                <StaticSelectedStyle BackColor="#FFFFFF" />
+                                <StaticMenuItemStyle HorizontalPadding="10px" VerticalPadding="7px" />
+                                <StaticHoverStyle BackColor="#FFFFFF" ForeColor="#333333" />
+                                <DynamicHoverStyle BackColor="#FFFFFF" ForeColor="#333333" />
+                                <DynamicMenuStyle BackColor="#00919E" />
+                                <DynamicSelectedStyle BackColor="#00919E" />
+                                <DynamicMenuItemStyle HorizontalPadding="10px" VerticalPadding="7px" />
+                            </asp:Menu>
+                        </div>
+
+                    </div>
+
                     <br />
                     <div class="row">
                         <div class="col-md-12">

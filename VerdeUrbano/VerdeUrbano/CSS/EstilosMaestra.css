@@ -14,6 +14,17 @@
     background-color: #DED1AA;
 }
 
+.fondoVerde {
+    background-color: #0C553F;
+}
+
+.bordeMenu {
+    border-width: 1px;
+    border-right: solid;
+    border-left: solid;
+    border-color: #0C553F;
+}
+
 .bordeColor {
     border-width: 1px;
     border: solid;
