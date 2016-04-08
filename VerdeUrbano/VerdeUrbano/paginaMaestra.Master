@@ -12,6 +12,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+
     <form id="form1" runat="server">
         <div class="container">
             <div class="row">
@@ -39,19 +40,16 @@
                         </div>
 
                     </div>
-
-                    <br />
-                    <div class="row">
+                    <div class="row fondoGrisClaro">
                         <div class="col-md-12">
 
-                            <div id="miContenidoPagina" runat="server">
+                            <div class="" id="miContenidoPagina" runat="server">
 
                                 <asp:ContentPlaceHolder ID="contenidoPagina" runat="server">
                                 </asp:ContentPlaceHolder>
                             </div>
                         </div>
                     </div>
-                    <br />
                     <div class="row lineaCopyright"></div>
                     <br />
                     <div class="row">

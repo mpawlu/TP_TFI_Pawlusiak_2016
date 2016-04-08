@@ -57,8 +57,7 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
@@ -83,21 +82,70 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="calcularPresupuesto.aspx" />
+    <Content Include="CSS\EstiloSlider.css" />
     <Content Include="CSS\EstilosMaestra.css" />
+    <Content Include="CSS\Imagenes\Slider\a02.png" />
+    <Content Include="CSS\Imagenes\Slider\b05.png" />
+    <Content Include="CSS\jquery-ui.css" />
     <Content Include="CSS\MisEstilos.css" />
+    <Content Include="Imagenes\economico.png" />
     <Content Include="Imagenes\facebook.png" />
+    <Content Include="Imagenes\INTEGRAL.png" />
+    <Content Include="Imagenes\jardin.jpg" />
     <Content Include="Imagenes\logoVerdeUrbano.png" />
+    <Content Include="Imagenes\maceta.jpg" />
+    <Content Include="Imagenes\natural.png" />
+    <Content Include="Imagenes\saludable.png" />
+    <Content Include="Imagenes\Size-height-32.png" />
+    <Content Include="Imagenes\Size-width-32.png" />
+    <Content Include="Imagenes\Slider\01.jpg" />
+    <Content Include="Imagenes\Slider\02.jpg" />
+    <Content Include="Imagenes\Slider\03.jpg" />
+    <Content Include="Imagenes\Slider\04.jpg" />
+    <Content Include="Imagenes\Slider\05.jpg" />
+    <Content Include="Imagenes\Slider\06.jpg" />
+    <Content Include="Imagenes\Slider\07.jpg" />
+    <Content Include="Imagenes\Slider\08.jpg" />
+    <Content Include="Imagenes\Slider\09.jpg" />
+    <Content Include="Imagenes\Slider\10.jpg" />
+    <Content Include="Imagenes\sobre.jpg" />
+    <Content Include="Imagenes\sustentable.png" />
+    <Content Include="Imagenes\terraza.jpg" />
     <Content Include="Imagenes\twitter.png" />
+    <Content Include="Imagenes\urbano.png" />
     <Content Include="Imagenes\youtube.png" />
     <Content Include="index.aspx" />
+    <Content Include="institucional.aspx" />
+    <Content Include="JS\functionSlider.js" />
+    <Content Include="JS\jquery-1.10.2.js" />
+    <Content Include="JS\jquery-ui.js" />
+    <Content Include="JS\jssor.js" />
+    <Content Include="JS\jssor.slider.js" />
+    <Content Include="nuestrosProductos.aspx" />
+    <Content Include="quienesSomos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="calcularPresupuesto.aspx.designer.vb">
+      <DependentUpon>calcularPresupuesto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="calcularPresupuesto.aspx.vb">
+      <DependentUpon>calcularPresupuesto.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="index.aspx.designer.vb">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.vb">
       <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="institucional.aspx.designer.vb">
+      <DependentUpon>institucional.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="institucional.aspx.vb">
+      <DependentUpon>institucional.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -119,12 +167,26 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="nuestrosProductos.aspx.designer.vb">
+      <DependentUpon>nuestrosProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nuestrosProductos.aspx.vb">
+      <DependentUpon>nuestrosProductos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="paginaMaestra.Master.designer.vb">
       <DependentUpon>paginaMaestra.Master</DependentUpon>
     </Compile>
     <Compile Include="paginaMaestra.Master.vb">
       <DependentUpon>paginaMaestra.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="quienesSomos.aspx.designer.vb">
+      <DependentUpon>quienesSomos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="quienesSomos.aspx.vb">
+      <DependentUpon>quienesSomos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
