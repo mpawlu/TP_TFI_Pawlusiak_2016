@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="calcularPresupuesto.aspx" />
+    <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\EstiloSlider.css" />
     <Content Include="CSS\EstilosMaestra.css" />
     <Content Include="CSS\Imagenes\Slider\a02.png" />
@@ -91,11 +92,15 @@
     <Content Include="CSS\MisEstilos.css" />
     <Content Include="Imagenes\economico.png" />
     <Content Include="Imagenes\facebook.png" />
+    <Content Include="Imagenes\RedesSociales\FaceBook_64x64.png" />
     <Content Include="Imagenes\INTEGRAL.png" />
     <Content Include="Imagenes\jardin.jpg" />
+    <Content Include="Imagenes\RedesSociales\Instagram-64.png" />
+    <Content Include="Imagenes\RedesSociales\jobbank.png" />
     <Content Include="Imagenes\logoVerdeUrbano.png" />
     <Content Include="Imagenes\maceta.jpg" />
     <Content Include="Imagenes\natural.png" />
+    <Content Include="Imagenes\RedesSociales\Youtube_64x64.png" />
     <Content Include="Imagenes\saludable.png" />
     <Content Include="Imagenes\Size-height-32.png" />
     <Content Include="Imagenes\Size-width-32.png" />
@@ -113,6 +118,7 @@
     <Content Include="Imagenes\sustentable.png" />
     <Content Include="Imagenes\terraza.jpg" />
     <Content Include="Imagenes\twitter.png" />
+    <Content Include="Imagenes\RedesSociales\Twitter_64x64.png" />
     <Content Include="Imagenes\urbano.png" />
     <Content Include="Imagenes\youtube.png" />
     <Content Include="index.aspx" />

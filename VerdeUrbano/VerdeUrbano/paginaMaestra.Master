@@ -6,6 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <link href="CSS/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="CSS/MisEstilos.css" rel="stylesheet" type="text/css" />
     <link href="CSS/EstilosMaestra.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -14,18 +15,21 @@
 <body>
 
     <form id="form1" runat="server">
-        <div class="container">
+        <div class="container-fluid">
+
             <div class="row">
-                <div class="col-md-10 col-md-offset-1 ">
+                <div class="col-md-12">
+
                     <div class="row fondoColor bordeColor">
                         <div class="col-md-3">
-                            <asp:Image ID="LogoMenu" CssClass="img img-responsive" runat="server" ImageUrl="~/Imagenes/logoVerdeUrbano.PNG" />
+                            <asp:Image ID="img1" CssClass="img img-responsive" runat="server" ImageUrl="~/Imagenes/logoVerdeUrbano.PNG" />
                         </div>
 
                         <div class="col-md-3 col-md-offset-6">
                         </div>
 
                     </div>
+
                     <div class="row fondoVerde bordeMenu">
                         <div class="col-md-12">
                             <asp:Menu ID="menuPrincipal" runat="server" Orientation="Horizontal" Font-Names="Estrangelo Edessa" Font-Size="18PX" ForeColor="#FFFFFF" Height="37px">
@@ -40,31 +44,29 @@
                         </div>
 
                     </div>
-                    <div class="row fondoGrisClaro">
+
+                    <div class="row fondoBody">
+                        <div class="col-md-12">
+                            <asp:ContentPlaceHolder ID="contenidoPagina" runat="server"></asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+
+                    <div class="row fondoColor bordeColorFino">
                         <div class="col-md-12">
 
-                            <div class="" id="miContenidoPagina" runat="server">
-
-                                <asp:ContentPlaceHolder ID="contenidoPagina" runat="server">
-                                </asp:ContentPlaceHolder>
+                            <div class="container-fluid">
+                                <div class="row miLabelCopyright" style="height: 35px; margin-top: 1%">
+                                    <div class="col-md-12">
+                                        <div>Mariano Axel Pawlusiak - Copyright 2016</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row lineaCopyright"></div>
-                    <br />
-                    <div class="row">
-                        <div class="col-md-4 col-md-offset-4 text-center">
-                            <div class="textoCopyright">Copyright 2016 - Mariano Axel Pawlusiak</div>
-                        </div>
-                    </div>
-                    <br />
-
                 </div>
+
             </div>
-
-
         </div>
-
     </form>
 </body>
 </html>
