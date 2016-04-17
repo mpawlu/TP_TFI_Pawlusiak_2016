@@ -63,12 +63,12 @@
         End Property
 
 
-        Private _Empleados As List(Of clsUsuario)
-        Public Property Empleados() As List(Of clsUsuario)
+        Private _Empleados As List(Of Servicios.Usuario)
+        Public Property Empleados() As List(Of Servicios.Usuario)
             Get
                 Return _Empleados
             End Get
-            Set(ByVal value As List(Of clsUsuario))
+            Set(ByVal value As List(Of Servicios.Usuario))
                 _Empleados = value
             End Set
         End Property

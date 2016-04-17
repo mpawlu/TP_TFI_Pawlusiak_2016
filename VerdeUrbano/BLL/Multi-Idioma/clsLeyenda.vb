@@ -1,7 +1,7 @@
 ﻿Namespace BLL
     Public Class clsLeyenda
-        Public Function ListarLeyendas() As List(Of EE.clsLeyenda)
-            Dim resultado As New List(Of EE.clsLeyenda)
+        Public Function ListarLeyendas() As List(Of Servicios.clsLeyenda)
+            Dim resultado As New List(Of Servicios.clsLeyenda)
             Dim Mapper As New MPP.clsLeyenda
 
             resultado = Mapper.ListarLeyendas()

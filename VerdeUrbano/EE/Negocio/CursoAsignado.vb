@@ -1,11 +1,11 @@
 ﻿Namespace EE
     Public Class CursoAsignado
-        Private _Empleado As EE.clsUsuario
-        Public Property Empleado() As EE.clsUsuario
+        Private _Empleado As Servicios.Usuario
+        Public Property Empleado() As Servicios.Usuario
             Get
                 Return _Empleado
             End Get
-            Set(ByVal value As EE.clsUsuario)
+            Set(ByVal value As Servicios.Usuario)
                 _Empleado = value
             End Set
         End Property
@@ -112,7 +112,7 @@
                 _EncuestaAsignada = value
             End Set
         End Property
-        Sub New(ByVal QueEmpleado As EE.clsUsuario, ByVal QueCurso As EE.Curso)
+        Sub New(ByVal QueEmpleado As Servicios.Usuario, ByVal QueCurso As EE.Curso)
 
         End Sub
     End Class

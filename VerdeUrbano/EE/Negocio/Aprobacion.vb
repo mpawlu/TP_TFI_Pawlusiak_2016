@@ -1,4 +1,5 @@
-﻿Namespace EE
+﻿
+Namespace EE
     Public Class Aprobacion
         Private _curso As EE.Curso
         Public Property Curso() As EE.Curso
@@ -11,12 +12,12 @@
         End Property
 
 
-        Private _Aprobador As EE.clsUsuario
-        Public Property Aprobador() As EE.clsUsuario
+        Private _Aprobador As Servicios.Usuario
+        Public Property Aprobador() As Servicios.Usuario
             Get
                 Return _Aprobador
             End Get
-            Set(ByVal value As EE.clsUsuario)
+            Set(ByVal value As Servicios.Usuario)
                 _Aprobador = value
             End Set
         End Property
@@ -50,7 +51,7 @@
                 _Observ = value
             End Set
         End Property
-        Sub New(ByVal QueCueso As EE.Curso, ByVal Aprobador As EE.clsUsuario, ByVal Observaciones As String)
+        Sub New(ByVal QueCueso As EE.Curso, ByVal Aprobador As Servicios.Usuario, ByVal Observaciones As String)
 
         End Sub
     End Class

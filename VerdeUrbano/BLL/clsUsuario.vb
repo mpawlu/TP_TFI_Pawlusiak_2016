@@ -4,7 +4,7 @@ Imports MPP
 Namespace BLL
     Public Class clsUsuario
 
-        Public Function CrearUsuario(ByVal oUsuario As EE.clsUsuario) As Boolean
+        Public Function CrearUsuario(ByVal oUsuario As Servicios.Usuario) As Boolean
             Dim oMapper As New MPP.clsUsuario
             Dim resultado As Boolean
 
@@ -14,7 +14,7 @@ Namespace BLL
 
         End Function
 
-        Public Function EliminarUsuario(ByVal oUsuario As EE.clsUsuario) As Boolean
+        Public Function EliminarUsuario(ByVal oUsuario As Servicios.Usuario) As Boolean
 
             Dim oMapper As New MPP.clsUsuario
             Dim resultado As Boolean
@@ -25,7 +25,7 @@ Namespace BLL
 
         End Function
 
-        Public Function ModificarUsuario(ByVal oUsuario As EE.clsUsuario) As Boolean
+        Public Function ModificarUsuario(ByVal oUsuario As Servicios.Usuario) As Boolean
 
             Dim oMapper As New MPP.clsUsuario
             Dim resultado As Boolean
@@ -37,9 +37,9 @@ Namespace BLL
         End Function
 
 
-        Public Function ListarUsuarios() As List(Of EE.clsUsuario)
+        Public Function ListarUsuarios() As List(Of Servicios.Usuario)
 
-            Dim listaUsuario As New List(Of EE.clsUsuario)
+            Dim listaUsuario As New List(Of Servicios.Usuario)
             Dim oMapper As New MPP.clsUsuario
 
             listaUsuario = oMapper.ListarUsuarios()
@@ -48,9 +48,9 @@ Namespace BLL
 
         End Function
 
-        Public Function ListarUsuario(ByVal oUsuario As EE.clsUsuario) As EE.clsUsuario
+        Public Function ListarUsuario(ByVal oUsuario As Servicios.Usuario) As Servicios.Usuario
 
-            Dim resultado As New EE.clsUsuario
+            Dim resultado As New Servicios.Usuario
             Dim Mapper As New MPP.clsUsuario
 
             resultado = Mapper.ListarUsuario(oUsuario)
@@ -58,17 +58,17 @@ Namespace BLL
             Return resultado
 
         End Function
-        Public Function ListarDiseñadores() As List(Of EE.clsUsuario)
+        Public Function ListarDiseñadores() As List(Of Servicios.Usuario)
 
-            Dim resultado As New List(Of EE.clsUsuario)
+            Dim resultado As New List(Of Servicios.Usuario)
 
 
             Return resultado
 
         End Function
-        Public Function RecuperarUsuario(ByVal oUsuario As EE.clsUsuario) As EE.clsUsuario
+        Public Function RecuperarUsuario(ByVal oUsuario As Servicios.Usuario) As Servicios.Usuario
 
-            Dim resultado As New EE.clsUsuario
+            Dim resultado As New Servicios.Usuario
             Dim Mapper As New MPP.clsUsuario
 
             resultado = Mapper.ListarUsuario(oUsuario)

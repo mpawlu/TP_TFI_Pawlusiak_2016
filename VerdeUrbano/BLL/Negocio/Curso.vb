@@ -1,4 +1,5 @@
-﻿Public Class Curso
+﻿Imports Servicios
+Public Class Curso
     Public Sub AgregarCorrelatividad(ByVal QueCurso As EE.Curso, ByVal QueCorrelatividad As EE.Curso)
         QueCurso.Correlatividades.Add(QueCorrelatividad)
     End Sub
@@ -31,7 +32,7 @@
     Public Function ListarAprobados() As List(Of EE.Curso)
 
     End Function
-    Public Function Listar(ByVal QueCategoria As EE.Categoria, ByVal QueDiseñador As EE.clsUsuario) As List(Of EE.Curso)
+    Public Function Listar(ByVal QueCategoria As EE.Categoria, ByVal QueDiseñador As Servicios.Usuario) As List(Of EE.Curso)
 
     End Function
     Public Sub FinalizarCreacion(ByVal QueCurso As EE.Curso)

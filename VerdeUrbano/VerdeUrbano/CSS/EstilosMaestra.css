@@ -19,11 +19,6 @@ background-color: #F0EBD9;
 
 }
 
-.fondoBody {
-background-color: #CFC6B8;
-
-}
-
 .fondoVerde {
     background-color: #0C553F;
 }
@@ -39,9 +34,4 @@ background-color: #CFC6B8;
     border-width: 1px;
     border: solid;
     border-color: #0C553F;
-}
-
-.miLabelCopyright {
-    text-align:center;
-    font-weight:bold;
 }

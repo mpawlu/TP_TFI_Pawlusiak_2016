@@ -6,7 +6,7 @@
         Public Function Modificar(ByVal QueAsignacion As EE.CursoAsignado) As Boolean
 
         End Function
-        Public Sub InicializarDatos(ByVal Asignacion As EE.CursoAsignado, ByVal curso As EE.Curso, ByVal empleado As EE.clsUsuario)
+        Public Sub InicializarDatos(ByVal Asignacion As EE.CursoAsignado, ByVal curso As EE.Curso, ByVal empleado As Servicios.Usuario)
             Asignacion.Curso = curso
             Asignacion.Empleado = empleado
             Asignacion.FechaVencimiento = CalcularFechaVencimiento(Asignacion)
@@ -17,7 +17,7 @@
         Public Sub ActualizarUltimoIngreso()
 
         End Sub
-        Public Function ConsultarCursosPendientes(ByVal empleado As EE.clsUsuario) As List(Of EE.CursoAsignado)
+        Public Function ConsultarCursosPendientes(ByVal empleado As Servicios.Usuario) As List(Of EE.CursoAsignado)
 
         End Function
 
@@ -32,7 +32,7 @@
         Public Sub GuardarRespuesta(ByRef Respuesta As Opcion)
             'Me.Respuestas.Add(Respuesta)
         End Sub
-        Public Function ConsultarCursoRealizado(ByVal curso As EE.Curso, ByVal empleado As EE.clsUsuario) As EE.CursoAsignado
+        Public Function ConsultarCursoRealizado(ByVal curso As EE.Curso, ByVal empleado As Servicios.Usuario) As EE.CursoAsignado
 
 
         End Function

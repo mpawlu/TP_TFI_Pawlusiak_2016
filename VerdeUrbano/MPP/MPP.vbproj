@@ -63,7 +63,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
     <Compile Include="clsLocalidad.vb" />
     <Compile Include="clsUsuario.vb" />
     <Compile Include="Multi-Idioma\clsIdioma.vb" />
@@ -112,6 +111,10 @@
     <ProjectReference Include="..\EE\EE.vbproj">
       <Project>{85eb7d26-b2f0-4c0e-b4b6-24afa132282b}</Project>
       <Name>EE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Servicios\Servicios.vbproj">
+      <Project>{a6a92d3a-d7a4-4595-a0c0-c8c939d7380c}</Project>
+      <Name>Servicios</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

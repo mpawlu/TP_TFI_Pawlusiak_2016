@@ -18,21 +18,21 @@
                 _Categoria = value
             End Set
         End Property
-        Private _Solicitante As EE.clsUsuario
-        Public Property Solicitante() As EE.clsUsuario
+        Private _Solicitante As Servicios.Usuario
+        Public Property Solicitante() As Servicios.Usuario
             Get
                 Return _Solicitante
             End Get
-            Set(ByVal value As EE.clsUsuario)
+            Set(ByVal value As Servicios.Usuario)
                 _Solicitante = value
             End Set
         End Property
-        Private _Diseñador As EE.clsUsuario
-        Public Property Diseñador() As EE.clsUsuario
+        Private _Diseñador As Servicios.Usuario
+        Public Property Diseñador() As Servicios.Usuario
             Get
                 Return _Diseñador
             End Get
-            Set(ByVal value As EE.clsUsuario)
+            Set(ByVal value As Servicios.Usuario)
                 _Diseñador = value
             End Set
         End Property
@@ -86,7 +86,7 @@
         Sub New()
 
         End Sub
-        Sub New(ByVal Cat As Categoria, ByVal solicitante As EE.clsUsuario, ByVal diseñador As EE.clsUsuario, ByVal FechaLimite As Date, ByVal titulo As String, ByVal detalle As String)
+        Sub New(ByVal Cat As Categoria, ByVal solicitante As Servicios.Usuario, ByVal diseñador As Servicios.Usuario, ByVal FechaLimite As Date, ByVal titulo As String, ByVal detalle As String)
 
         End Sub
 

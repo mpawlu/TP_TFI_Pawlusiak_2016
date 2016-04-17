@@ -1,9 +1,9 @@
 ﻿Namespace BLL
     Public Class Empresa
-        Public Sub AgregarEmpleado(ByVal QueEmpresa As EE.Empresa, ByVal QueEmpleado As EE.clsUsuario)
+        Public Sub AgregarEmpleado(ByVal QueEmpresa As EE.Empresa, ByVal QueEmpleado As Servicios.Usuario)
             QueEmpresa.Empleados.Add(QueEmpleado)
         End Sub
-        Public Function ListarEmpleados(ByVal QueEmpresa As EE.Empresa) As List(Of EE.clsUsuario)
+        Public Function ListarEmpleados(ByVal QueEmpresa As EE.Empresa) As List(Of Servicios.Usuario)
 
         End Function
         Sub New()

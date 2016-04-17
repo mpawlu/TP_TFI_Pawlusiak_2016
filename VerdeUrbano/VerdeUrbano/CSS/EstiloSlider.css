@@ -35,8 +35,8 @@ cursor: pointer;
 .jssora12r.jssora12rdn { background-position: -315px -37px; }
 
 .img-slider {
-width: 600px; 
-height: 400px;     
+width: 550px; 
+height: 450px;    
 }
 
 .slides {
@@ -44,8 +44,8 @@ cursor: move;
 position: absolute; 
 left: 0px; 
 top: 0px; 
-width: 600px; 
-height: 400px;     
+width: 550px; 
+height: 450px;    
 overflow: hidden;
 }
 
@@ -53,8 +53,8 @@ overflow: hidden;
 position: relative; 
 top: 0px; 
 left: 0px; 
-width: 600px; 
-height: 400px;   
+width: 550px; 
+height: 450px;   
 overflow: hidden; 
 }
 
@@ -70,7 +70,7 @@ overflow: hidden;
     position: absolute; 
     top: 0px; 
     left: 0px; 
-    width: 600px; 
+    width: 550px; 
     height: 40px;
     background-color: Black; 
     opacity: 0.8; 
@@ -80,7 +80,7 @@ overflow: hidden;
     position: absolute; 
     top: 0px; 
     left: 0px; 
-    width: 600px; 
+    width: 550px; 
     height: 40px;
     color: White; 
     font-size: 21px; 

@@ -1,6 +1,6 @@
 ﻿Namespace BLL
     Public Class clsIdioma
-        Public Function CrearIdioma(ByVal oIdioma As EE.clsIdioma) As Boolean
+        Public Function CrearIdioma(ByVal oIdioma As Servicios.clsIdioma) As Boolean
             Dim oMapper As New MPP.clsIdioma
             Dim resultado As Boolean
 
@@ -9,9 +9,9 @@
             Return resultado
 
         End Function
-        Public Function ListarIdiomas() As List(Of EE.clsIdioma)
+        Public Function ListarIdiomas() As List(Of Servicios.clsIdioma)
             Dim oMapper As New MPP.clsIdioma
-            Dim listaIdiomas As New List(Of EE.clsIdioma)
+            Dim listaIdiomas As New List(Of Servicios.clsIdioma)
 
             listaIdiomas = oMapper.ListarIdiomas()
 

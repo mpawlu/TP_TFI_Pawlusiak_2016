@@ -63,7 +63,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
     <Compile Include="clsBitacora.vb" />
     <Compile Include="clsLocalidad.vb" />
     <Compile Include="clsUsuario.vb" />
@@ -165,6 +164,10 @@
     <ProjectReference Include="..\MPP\MPP.vbproj">
       <Project>{e05e62b5-007f-46ab-be0f-d0597e3e8159}</Project>
       <Name>MPP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Servicios\Servicios.vbproj">
+      <Project>{a6a92d3a-d7a4-4595-a0c0-c8c939d7380c}</Project>
+      <Name>Servicios</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

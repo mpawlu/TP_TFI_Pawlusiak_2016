@@ -107,12 +107,12 @@
                 _Seccion = value
             End Set
         End Property
-        Private _Diseñador As EE.clsUsuario
-        Public Property Diseñador() As EE.clsUsuario
+        Private _Diseñador As Servicios.Usuario
+        Public Property Diseñador() As Servicios.Usuario
             Get
                 Return _Diseñador
             End Get
-            Set(ByVal value As EE.clsUsuario)
+            Set(ByVal value As Servicios.Usuario)
                 _Diseñador = value
             End Set
         End Property

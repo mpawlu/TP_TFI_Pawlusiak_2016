@@ -1,11 +1,11 @@
 ﻿Namespace EE
     Public Class CalculadoraIE
-        Private _Diseñadores As List(Of EE.clsUsuario)
-        Public Property Dieseñadores() As List(Of EE.clsUsuario)
+        Private _Diseñadores As List(Of Servicios.Usuario)
+        Public Property Dieseñadores() As List(Of Servicios.Usuario)
             Get
                 Return _Diseñadores
             End Get
-            Set(ByVal value As List(Of EE.clsUsuario))
+            Set(ByVal value As List(Of Servicios.Usuario))
                 _Diseñadores = value
             End Set
         End Property

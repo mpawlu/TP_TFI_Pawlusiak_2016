@@ -2,7 +2,7 @@
 
 Namespace MPP
     Public Class ClsTraduccion
-        Public Function CrearTraduccion(ByVal traduccion As EE.clsTraduccion) As Boolean
+        Public Function CrearTraduccion(ByVal traduccion As Servicios.ClsTraduccion) As Boolean
 
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable
@@ -18,11 +18,11 @@ Namespace MPP
             Return resultado
 
         End Function
-        Public Function ConsultarTraduccion(ByVal oTraduccion As EE.clsTraduccion) As EE.clsTraduccion
+        Public Function ConsultarTraduccion(ByVal oTraduccion As Servicios.ClsTraduccion) As Servicios.ClsTraduccion
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable
             Dim DS As New DataSet
-            Dim oTrad As New EE.clsTraduccion
+            Dim oTrad As New Servicios.ClsTraduccion
 
 
             hdatos.Add("@ID_Idioma", oTraduccion.Idioma.ID)
@@ -35,7 +35,7 @@ Namespace MPP
             If DS.Tables(0).Rows.Count > 0 Then
 
                 For Each Item As DataRow In DS.Tables(0).Rows
-                    oTrad = New EE.clsTraduccion
+                    oTrad = New Servicios.ClsTraduccion
                     oTrad.Idioma.ID = Item("ID_Idioma")
                     oTrad.Idioma.Descripcion = Item("Descripcion")
                     oTrad.Leyenda.ID = Item("ID_Leyenda")
@@ -49,14 +49,14 @@ Namespace MPP
             End If
         End Function
 
-        Public Function ListarTraducciones(ByVal Idioma As EE.clsIdioma) As List(Of EE.clsTraduccion)
+        Public Function ListarTraducciones(ByVal Idioma As Servicios.clsIdioma) As List(Of Servicios.ClsTraduccion)
 
             Dim oDatos As New DAL.Datos
             Dim DS As New DataSet
             Dim hdatos As New Hashtable
-            Dim listaTraducciones As New List(Of EE.clsTraduccion)
+            Dim listaTraducciones As New List(Of Servicios.ClsTraduccion)
             Dim dt As New DataTable
-            Dim oTrad As EE.clsTraduccion
+            Dim oTrad As Servicios.ClsTraduccion
 
             hdatos.Add("@ID_Idioma", Idioma.ID)
             DS = oDatos.Leer("s_TraduccionesPorIdioma_Listar", hdatos)
@@ -64,7 +64,7 @@ Namespace MPP
             If DS.Tables(0).Rows.Count > 0 Then
 
                 For Each Item As DataRow In DS.Tables(0).Rows
-                    oTrad = New EE.clsTraduccion
+                    oTrad = New Servicios.ClsTraduccion
                     oTrad.Idioma.ID = Item("ID_Idioma")
                     oTrad.Idioma.Descripcion = Item("Descripcion")
                     oTrad.Leyenda.ID = Item("ID_Leyenda")

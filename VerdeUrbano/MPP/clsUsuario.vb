@@ -3,17 +3,20 @@
 Namespace MPP
     Public Class clsUsuario
 
-        Public Function CrearUsuario(ByVal usuario As EE.clsUsuario) As Boolean
+        Public Function CrearUsuario(ByVal usuario As Servicios.Usuario) As Boolean
 
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable
             Dim resultado As Boolean
 
-            hdatos.Add("@Nombre", usuario.Nombre)
-            hdatos.Add("@Apellido", usuario.Apellido)
+            hdatos.Add("@NombreUsuario", usuario.NombreUsuario)
+            hdatos.Add("@Password", usuario.Password)
             hdatos.Add("@DNI", usuario.DNI)
-            hdatos.Add("@IdLocalidad", usuario.Localidad.Id)
-            hdatos.Add("@Activo", "True")
+            hdatos.Add("@Activo", usuario.Activo)
+            hdatos.Add("@Perfil", usuario.Perfil)
+            hdatos.Add("@FechaAlta", usuario.FechaAlta)
+            hdatos.Add("@Editable", usuario.Editable)
+            hdatos.Add("@Intentos", usuario.Intentos)
             hdatos.Add("@IdIdioma", usuario.Idioma.ID)
 
             resultado = oDatos.Escribir("s_Usuario_Crear", hdatos)
@@ -22,7 +25,7 @@ Namespace MPP
 
         End Function
 
-        Public Function EliminarUsuario(ByVal usuario As EE.clsUsuario) As Boolean
+        Public Function EliminarUsuario(ByVal usuario As Servicios.Usuario) As Boolean
 
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable
@@ -36,46 +39,51 @@ Namespace MPP
 
         End Function
 
-        Public Function ModificarUsuario(ByVal usuario As EE.clsUsuario) As Boolean
+        Public Function ModificarUsuario(ByVal usuario As Servicios.Usuario) As Boolean
             Dim i As Integer = 0
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable
             Dim resultado As Boolean
             'para el usuario cambia
-            hdatos.Add("@IdUsuario", usuario.Id)
-            hdatos.Add("@Nombre", usuario.Nombre)
-            hdatos.Add("@Apellido", usuario.Apellido)
+            hdatos.Add("@IdUsuario", usuario.ID)
+            hdatos.Add("@NombreUsuario", usuario.NombreUsuario)
+            hdatos.Add("@Password", usuario.Password)
             hdatos.Add("@DNI", usuario.DNI)
-            hdatos.Add("@IdLocalidad", usuario.Localidad.Id)
+            hdatos.Add("@Activo", usuario.Activo)
+            hdatos.Add("@Perfil", usuario.Perfil)
+            hdatos.Add("@FechaAlta", usuario.FechaAlta)
+            hdatos.Add("@Editable", usuario.Editable)
+            hdatos.Add("@Intentos", usuario.Intentos)
             hdatos.Add("@IdIdioma", usuario.Idioma.ID)
 
-            
             resultado = oDatos.Escribir("s_Usuario_Modificar", hdatos)
             Return resultado
         End Function
 
 
-        Public Function ListarUsuarios() As List(Of EE.clsUsuario)
+        Public Function ListarUsuarios() As List(Of Servicios.Usuario)
 
             Dim oDatos As New DAL.Datos
             Dim DS As New DataSet
-            Dim listaUsuario As New List(Of EE.clsUsuario)
+            Dim listaUsuario As New List(Of Servicios.Usuario)
             Dim dt As New DataTable
-            Dim oUsu As EE.clsUsuario
+            Dim oUsu As Servicios.Usuario
 
             DS = oDatos.Leer("s_Usuarios_Listar", Nothing)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
                 For Each Item As DataRow In DS.Tables(0).Rows
-                    oUsu = New EE.clsUsuario
+                    oUsu = New Servicios.Usuario
                     oUsu.Id = Item("IdUsuario")
-                    oUsu.Nombre = Item("Nombre")
-                    oUsu.Apellido = Item("Apellido")
+                    oUsu.NombreUsuario = Item("NombreUsuario")
+                    oUsu.Password = Item("Password")
                     oUsu.DNI = Item("DNI")
-                    oUsu.Localidad.Id = Item("IdLocalidad")
-                    oUsu.Localidad.Descripcion = Item("Localidad")
                     oUsu.Activo = Item("Activo")
+                    oUsu.Perfil = Item("Perfil")
+                    oUsu.FechaAlta = Item("FechaAlta")
+                    oUsu.Editable = Item("Editables")
+                    oUsu.Intentos = Item("Intentos")
                     oUsu.Idioma.ID = Item("ID_Idioma")
                     oUsu.Idioma.Descripcion = Item("Descripcion")
 
@@ -89,12 +97,12 @@ Namespace MPP
             End If
         End Function
 
-        Public Function ListarUsuario(ByVal usuario As EE.clsUsuario) As EE.clsUsuario
+        Public Function ListarUsuario(ByVal usuario As Servicios.Usuario) As Servicios.Usuario
 
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable
             Dim DS As New DataSet
-            Dim oUsu As New EE.clsUsuario
+            Dim oUsu As New Servicios.Usuario
 
             hdatos.Add("@IdUsuario", usuario.Id)
             '   If DS.Tables(0).Rows.Count > 0 Then
@@ -104,14 +112,15 @@ Namespace MPP
             If DS.Tables(0).Rows.Count > 0 Then
 
                 For Each Item As DataRow In DS.Tables(0).Rows
-                    oUsu = New EE.clsUsuario
-                    oUsu.Id = Item("IdUsuario")
-                    oUsu.Nombre = Item("Nombre")
-                    oUsu.Apellido = Item("Apellido")
+                    oUsu.ID = Item("IdUsuario")
+                    oUsu.NombreUsuario = Item("NombreUsuario")
+                    oUsu.Password = Item("Password")
                     oUsu.DNI = Item("DNI")
-                    oUsu.Localidad.Id = Item("IdLocalidad")
-                    oUsu.Localidad.Descripcion = Item("Localidad")
                     oUsu.Activo = Item("Activo")
+                    oUsu.Perfil = Item("Perfil")
+                    oUsu.FechaAlta = Item("FechaAlta")
+                    oUsu.Editable = Item("Editables")
+                    oUsu.Intentos = Item("Intentos")
                     oUsu.Idioma.ID = Item("ID_Idioma")
                     oUsu.Idioma.Descripcion = Item("Descripcion")
                 Next

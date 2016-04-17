@@ -10,12 +10,12 @@
             End Set
         End Property
 
-        Private _Empleado As EE.clsUsuario
-        Public Property Empleado() As EE.clsUsuario
+        Private _Empleado As Servicios.Usuario
+        Public Property Empleado() As Servicios.Usuario
             Get
                 Return _Empleado
             End Get
-            Set(ByVal value As EE.clsUsuario)
+            Set(ByVal value As Servicios.Usuario)
                 _Empleado = value
             End Set
         End Property
