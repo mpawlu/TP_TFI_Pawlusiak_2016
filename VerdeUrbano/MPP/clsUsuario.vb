@@ -14,6 +14,7 @@ Namespace MPP
             hdatos.Add("@DNI", usuario.DNI)
             hdatos.Add("@Activo", usuario.Activo)
             hdatos.Add("@Perfil", usuario.Perfil)
+            hdatos.Add("@Bloqueado", usuario.Bloqueado)
             hdatos.Add("@FechaAlta", usuario.FechaAlta)
             hdatos.Add("@Editable", usuario.Editable)
             hdatos.Add("@Intentos", usuario.Intentos)
@@ -51,6 +52,7 @@ Namespace MPP
             hdatos.Add("@DNI", usuario.DNI)
             hdatos.Add("@Activo", usuario.Activo)
             hdatos.Add("@Perfil", usuario.Perfil)
+            hdatos.Add("@Bloqueado", usuario.Bloqueado)
             hdatos.Add("@FechaAlta", usuario.FechaAlta)
             hdatos.Add("@Editable", usuario.Editable)
             hdatos.Add("@Intentos", usuario.Intentos)
@@ -81,6 +83,7 @@ Namespace MPP
                     oUsu.DNI = Item("DNI")
                     oUsu.Activo = Item("Activo")
                     oUsu.Perfil = Item("Perfil")
+                    oUsu.Bloqueado = Item("Bloqueado")
                     oUsu.FechaAlta = Item("FechaAlta")
                     oUsu.Editable = Item("Editables")
                     oUsu.Intentos = Item("Intentos")
@@ -97,14 +100,14 @@ Namespace MPP
             End If
         End Function
 
-        Public Function ListarUsuario(ByVal usuario As Servicios.Usuario) As Servicios.Usuario
+        Public Function ConsultarUsuario(ByVal usuario As Servicios.Usuario) As Servicios.Usuario
 
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable
             Dim DS As New DataSet
             Dim oUsu As New Servicios.Usuario
 
-            hdatos.Add("@IdUsuario", usuario.Id)
+            hdatos.Add("@IdUsuario", usuario.ID)
             '   If DS.Tables(0).Rows.Count > 0 Then
 
             DS = oDatos.Leer("s_Usuario_Listar", hdatos)
@@ -118,6 +121,7 @@ Namespace MPP
                     oUsu.DNI = Item("DNI")
                     oUsu.Activo = Item("Activo")
                     oUsu.Perfil = Item("Perfil")
+                    oUsu.Bloqueado = Item("Bloqueado")
                     oUsu.FechaAlta = Item("FechaAlta")
                     oUsu.Editable = Item("Editables")
                     oUsu.Intentos = Item("Intentos")

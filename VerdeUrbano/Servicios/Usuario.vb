@@ -40,11 +40,11 @@
             End Set
         End Property
         Private _Activo As Boolean
-        Public Property Activo() As String
+        Public Property Activo() As Boolean
             Get
                 Return _Activo
             End Get
-            Set(ByVal value As String)
+            Set(ByVal value As Boolean)
                 _Activo = value
             End Set
         End Property
@@ -102,6 +102,16 @@
                 _Idioma = value
             End Set
         End Property
+        Private _DVH As String
+        Public Property NewProperty() As String
+            Get
+                Return _DVH
+            End Get
+            Set(ByVal value As String)
+                _DVH = value
+            End Set
+        End Property
+
         Private _Observadores As New List(Of Servicios.Obvserver)
         Public Property Observadores() As List(Of Servicios.Obvserver)
             Get

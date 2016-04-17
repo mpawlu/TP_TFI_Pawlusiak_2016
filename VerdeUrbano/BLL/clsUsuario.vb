@@ -53,7 +53,7 @@ Namespace BLL
             Dim resultado As New Servicios.Usuario
             Dim Mapper As New MPP.clsUsuario
 
-            resultado = Mapper.ListarUsuario(oUsuario)
+            resultado = Mapper.ConsultarUsuario(oUsuario)
 
             Return resultado
 
@@ -71,7 +71,7 @@ Namespace BLL
             Dim resultado As New Servicios.Usuario
             Dim Mapper As New MPP.clsUsuario
 
-            resultado = Mapper.ListarUsuario(oUsuario)
+            resultado = Mapper.ConsultarUsuario(oUsuario)
 
             Return resultado
 

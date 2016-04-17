@@ -20,6 +20,16 @@
                 _Leyenda = value
             End Set
         End Property
+        Private _DVH As String
+        Public Property DVH() As String
+            Get
+                Return _DVH
+            End Get
+            Set(ByVal value As String)
+                _DVH = value
+            End Set
+        End Property
+
 #End Region
         '#Region "Metodos"
         '        Public Function ListarLeyendas() As List(Of Servicios.clsLeyenda)
