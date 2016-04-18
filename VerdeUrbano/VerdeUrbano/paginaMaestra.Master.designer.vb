@@ -41,24 +41,6 @@ Partial Public Class paginaMaestra
     Protected WithEvents LogoMenu As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
-    '''Control txt_UsuarioLogin.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txt_UsuarioLogin As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control txt_PasswordLogin.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txt_PasswordLogin As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''Control menuPrincipal.
     '''</summary>
     '''<remarks>

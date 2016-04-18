@@ -11,6 +11,7 @@
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">¿Quienes Somos?</div>
                     <div class="panel-body">
+                        <br />
                         <p class="parrafo">
                             Somos una empresa dedicada a la comercialización de jardines verticales y terrazas verdes.  Nuestros productos le ayudaran a convertir sus paredes interiores y exteriores, en magníficos jardines verticales, y sus terrazas en agradables espacios verdes, mejorando las condiciones de habitabilidad y calidad de vida, además de contribuir con el medio ambiente.
 Nuestros productos personalizados se adaptan a diferentes tipos de diseños arquitectónicos, y superficies impensadas para ser habitados por plantas, transformándose en una solución a la falta de espacios verdes. La fácil implementación y mantenimiento es otra de las ventajas que ofrecen nuestros jardines.

@@ -1,6 +1,7 @@
 ﻿/*ESTRUCTURA DE LA PAGINA*/
 html {
     font-size: 18px;
+    font-family:'Century'
 }
 
 .panel-verdeOscuro {
@@ -36,7 +37,8 @@ html {
         background-color: #23B076;
         border-color: #000000;
         text-align: center;
-        font-weight:bold;
+        font-weight: bold;
+        font-size: 18px;
     }
 
         .panel-verdeClaro > .panel-heading + .panel-collapse > .panel-body {
@@ -150,8 +152,6 @@ html {
 .caja-texto-sinborde {
     color: #000;
     background-color: #fff;
-    font-family: 'Estrangelo Edessa';
-    font-size: 18px;
     width: 100%;
     border: hidden;
 }
@@ -162,8 +162,6 @@ html {
     border: solid;
     border-width: 4px;
     border-color: #C9302C;
-    font-family: 'Estrangelo Edessa';
-    font-size: 18px;
     width: 100%;
 }
 
@@ -185,8 +183,6 @@ html {
     border: solid 2px #333333;
     width: 100%;
     float: right;
-    font-size: 18px;
-    font-family: 'Estrangelo Edessa';
 }
 
     .combo:hover {
@@ -209,7 +205,6 @@ html {
         color: #ffffff;
         background: #333333;
         border-color: black;
-        font-size: 14px;
         text-align: center;
         font-weight: normal;
     }
@@ -217,7 +212,6 @@ html {
     .Grid-gris td {
         border-color: black;
         color: #000000;
-        font-size: 14px;
         text-align: center;
     }
 
@@ -235,7 +229,6 @@ html {
         color: #ffffff;
         background: #00919E;
         border-color: black;
-        font-size: 16px;
         text-align: center;
         font-weight: normal;
         height: 25px;
@@ -244,7 +237,6 @@ html {
     .Grid-verde td {
         border-color: black;
         color: #000000;
-        font-size: 16px;
         text-align: center;
     }
 
@@ -267,7 +259,6 @@ html {
     color: #C9302C;
     background-color: #F2DEDE;
     font-weight: bold;
-    font-size: 18px;
     height: 35px;
     text-align: center;
     padding-top: 15px;
@@ -278,7 +269,6 @@ html {
     color: #333333;
     background-color: #F5E2B7;
     font-weight: bold;
-    font-size: 18px;
     height: 35px;
     text-align: center;
     padding-top: 15px;
@@ -289,7 +279,6 @@ html {
     color: #00919E;
     background-color: #DFF0D8;
     font-weight: bold;
-    font-size: 18px;
     height: 35px;
     text-align: center;
     padding-top: 15px;
@@ -303,9 +292,8 @@ html {
 }
 
 .label {
-    font-size: 16px;
-    font-weight: bold;
-    color:#000000;
+    font-size:18px;
+    color: #000000;
 }
 
 .tituloNegrita {
@@ -352,7 +340,7 @@ a.tituloMaiz:focus {
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     text-align: center;
-    color:#333333;
+    color: #333333;
 }
 
     .panelBoton:hover {
@@ -378,18 +366,16 @@ a.tituloMaiz:focus {
 
 .panelBoton-texto {
     font-family: "Century";
-    font-size: 18px;
     padding-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px;
 }
 
-a:link   
-{   
- text-decoration:none;   
+a:link {
+    text-decoration: none;
 }
 
 .IconoLogin {
-width:24px;
-height:24px;
+    width: 24px;
+    height: 24px;
 }

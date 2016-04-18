@@ -143,6 +143,7 @@
     <Content Include="JS\jquery-ui.js" />
     <Content Include="JS\jssor.js" />
     <Content Include="JS\jssor.slider.js" />
+    <Content Include="login.aspx" />
     <Content Include="nuestrosProductos.aspx" />
     <Content Include="quienesSomos.aspx" />
     <Content Include="Web.config" />
@@ -174,6 +175,13 @@
     </Compile>
     <Compile Include="institucional.aspx.vb">
       <DependentUpon>institucional.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />

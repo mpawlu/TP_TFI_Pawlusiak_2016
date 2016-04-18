@@ -23,44 +23,19 @@
                         </div>
 
                         <div class="col-md-2 col-md-offset-6">
-                            <div class="row right">
-                                <br />
-                                <br />
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img class="IconoLogin" src="Imagenes/user-32.png" />
-                                    </div>
-                                    <div class="col-md-8">
-                                        <asp:TextBox ID="txt_UsuarioLogin" runat="server" CssClass="caja-texto"></asp:TextBox>
-                                    </div>
-                                </div>
-
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img class="IconoLogin" src="Imagenes/key-32.png" />
-                                    </div>
-                                    <div class="col-md-8">
-                                        <asp:TextBox ID="txt_PasswordLogin" runat="server" CssClass="caja-texto" TextMode="Password"></asp:TextBox>
-
-                                    </div>
-                                </div>
-                                <br />
-                            </div>
                         </div>
 
                     </div>
                     <div class="row fondoVerde bordeMenu">
                         <div class="col-md-12">
-                            <asp:Menu ID="menuPrincipal" runat="server" Orientation="Horizontal" Font-Names="Estrangelo Edessa" Font-Size="18PX" ForeColor="#FFFFFF" Height="37px">
+                            <asp:Menu ID="menuPrincipal" runat="server" Orientation="Horizontal" Font-Names="Century" Font-Size="18PX" ForeColor="#FFFFFF" Height="40px">
                                 <StaticSelectedStyle BackColor="#FFFFFF" />
-                                <StaticMenuItemStyle HorizontalPadding="10px" VerticalPadding="7px" />
+                                <StaticMenuItemStyle HorizontalPadding="10px" VerticalPadding="6px" />
                                 <StaticHoverStyle BackColor="#FFFFFF" ForeColor="#333333" />
                                 <DynamicHoverStyle BackColor="#FFFFFF" ForeColor="#333333" />
                                 <DynamicMenuStyle BackColor="#00919E" />
                                 <DynamicSelectedStyle BackColor="#00919E" />
-                                <DynamicMenuItemStyle HorizontalPadding="10px" VerticalPadding="7px" />
+                                <DynamicMenuItemStyle HorizontalPadding="10px" VerticalPadding="6px" />
                             </asp:Menu>
                         </div>
 
