@@ -8,15 +8,15 @@
             Dim dt As New DataTable
             Dim oLey As Servicios.clsLeyenda
 
-            DS = oDatos.Leer("s_Leyendas_Listar", Nothing)
+            DS = oDatos.Leer("s_Leyenda_ListarTodas", Nothing)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
                 For Each Item As DataRow In DS.Tables(0).Rows
                     oLey = New Servicios.clsLeyenda
-                    oLey.ID = Item("IdLeyenda")
+                    oLey.ID = Item("ID_Leyenda")
                     oLey.Leyenda = Item("Leyenda")
-                    oLey.DVH = Item("DVH")
+                    'oLey.DVH = Item("DVH")
 
                     listaLeyenda.Add(oLey)
                 Next

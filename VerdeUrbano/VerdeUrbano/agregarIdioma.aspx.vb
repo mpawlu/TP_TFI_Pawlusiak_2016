@@ -8,7 +8,7 @@
         Dim oTradBLL As New BLL.ClsTraduccion
         oIdioma.ID = 1
         oTrad = oTradBLL.ListarTraducciones(oIdioma)
-
+        CargarGrilla()
     End Sub
 
     Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click

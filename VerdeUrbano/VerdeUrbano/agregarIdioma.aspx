@@ -29,7 +29,7 @@
                     <asp:GridView ID="gv_Palabras" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
 
                         <Columns>
-                            <asp:BoundField DataField="ID_Control" HeaderText="ID" />
+                            <asp:BoundField DataField="ID" HeaderText="ID" />
                             <asp:BoundField DataField="Leyenda" HeaderText="Leyenda" />
                             <asp:TemplateField HeaderText="Nuevo Texto" HeaderStyle-Width="400px">
                                 <ItemTemplate>
