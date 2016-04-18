@@ -5,4 +5,9 @@
 
     End Sub
 
+    Protected Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
+        Dim _usu As Servicios.Usuario = (New BLL.clsUsuario).Login(Me.txt_usuario.Text, Me.txt_password.Text)
+
+
+    End Sub
 End Class

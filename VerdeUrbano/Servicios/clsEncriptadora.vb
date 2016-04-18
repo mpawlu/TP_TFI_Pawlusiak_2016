@@ -68,4 +68,18 @@ Public Class clsEncriptadora
         End Try
 
     End Function
+
+    Public Shared Function EncriptarPass(ByVal Texto As String) As String
+        Try
+            Dim MiMD5 As MD5 = MD5CryptoServiceProvider.Create()
+            Dim MiData As Byte() = MiMD5.ComputeHash(Encoding.Default.GetBytes(Texto))
+            Dim MiStringBuilder As StringBuilder = New StringBuilder()
+            For i As Integer = 0 To MiData.Length - 1
+                MiStringBuilder.AppendFormat("{0:x2}", MiData(i))
+            Next
+            Return MiStringBuilder.ToString.ToUpper
+        Catch ex As Exception
+
+        End Try
+    End Function
 End Class

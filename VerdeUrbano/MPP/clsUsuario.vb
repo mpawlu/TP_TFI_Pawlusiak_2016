@@ -64,7 +64,6 @@ Namespace MPP
             Return resultado
         End Function
 
-
         Public Function ListarUsuarios() As List(Of Servicios.Usuario)
 
             Dim oDatos As New DAL.Datos
@@ -135,6 +134,93 @@ Namespace MPP
                 Return Nothing
             End If
         End Function
+
+
+#Region "Login"
+        Public Function chequearContraseña(paramNombreUsuario As String, paramContraseña As String) As Boolean
+            Try
+                Dim oDatos As New DAL.Datos
+                Dim resultado As Boolean
+                Dim hdatos As New Hashtable
+                hdatos.Add("@NombreUsuario", paramNombreUsuario)
+                hdatos.Add("@Password", paramContraseña)
+                resultado = oDatos.Escribir("s_Usuario_chequearContraseña", hdatos)
+                Return resultado
+            Catch ex As Exception
+                Throw ex
+            End Try
+        End Function
+
+        Public Function ActualizarIntentos(paramUsuario As Servicios.Usuario) As Boolean
+            Try
+                Dim oDatos As New DAL.Datos
+                Dim resultado As Boolean
+                Dim hdatos As New Hashtable
+                hdatos.Add("@ID_Usuario", paramUsuario.ID)
+                hdatos.Add("@Intentos", paramUsuario.Intentos)
+                resultado = oDatos.Escribir("s_Usuario_ActualizarIntentos", hdatos)
+                Return resultado
+            Catch ex As Exception
+                Throw ex
+            End Try
+        End Function
+
+        Public Function bloquearUsuario(paramUsuario As Servicios.Usuario) As Boolean
+            Try
+                Dim oDatos As New DAL.Datos
+                Dim resultado As Boolean
+                Dim hdatos As New Hashtable
+                hdatos.Add("@ID_Usuario", paramUsuario.ID)
+                hdatos.Add("@Bloqueado", True)
+                resultado = oDatos.Escribir("s_Usuario_ManejoBloqueo", hdatos)
+                Return resultado
+            Catch ex As Exception
+                Throw ex
+            End Try
+        End Function
+
+        Public Function desbloquearUsuario(paramUsuario As Servicios.Usuario) As Boolean
+            Try
+                Dim oDatos As New DAL.Datos
+                Dim resultado As Boolean
+                Dim hdatos As New Hashtable
+                hdatos.Add("@ID_Usuario", paramUsuario.ID)
+                hdatos.Add("@Bloqueado", True)
+                resultado = oDatos.Escribir("s_Usuario_ManejoBloqueo", hdatos)
+                Return resultado
+            Catch ex As Exception
+                Throw ex
+            End Try
+        End Function
+
+        Public Function chequearUsuario(paramNombreUsuario As String) As Boolean
+            Try
+                Dim oDatos As New DAL.Datos
+                Dim resultado As Boolean
+                Dim hdatos As New Hashtable
+                hdatos.Add("@NombreUsuario", paramNombreUsuario)
+                '   resultado = oDatos.Leer("s_Usuario_chequearUsuario", hdatos)
+                Return resultado
+            Catch ex As Exception
+                Return False
+            End Try
+        End Function
+
+
+        Public Function chequearBloqueado(paramNombreUsuario As String) As Boolean
+            Try
+                Dim oDatos As New DAL.Datos
+                Dim resultado As Boolean
+                Dim hdatos As New Hashtable
+                hdatos.Add("@NombreUsuario", paramNombreUsuario)
+                '   resultado = oDatos.Leer("s_Usuario_chequearBloqueado", hdatos)
+                Return resultado
+            Catch ex As Exception
+                Throw ex
+            End Try
+        End Function
+#End Region
+
 
     End Class
 End Namespace
