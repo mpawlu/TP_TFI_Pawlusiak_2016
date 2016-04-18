@@ -32,10 +32,11 @@
                 For Each Item As DataRow In DS.Tables(0).Rows
                     oBita = New Servicios.clsBitacora
                     oBita.ID_Evento = Item("ID_Evento")
-                    Dim oUsu As New Servicios.Usuario
-                    oBita.Usuario.ID = Item("ID_Usuario")
-
-                    oBita.FechaHora = Item("Pass")
+                    Dim oUsu As New MPP.clsUsuario
+                    Dim oUsuServ As New Servicios.Usuario
+                    oUsuServ.ID = Item("ID_Usuario")
+                    oBita.Usuario = oUsu.ConsultarUsuario(oUsuServ)
+                    oBita.FechaHora = Item("FechaHora")
                     oBita.DescripcionEvento = Item("Evento")
 
                     listaBitacora.Add(oBita)

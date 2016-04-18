@@ -1,8 +1,6 @@
 ﻿Namespace Servicios
     Public Class PermisoCompuesto
-
         Inherits PermisoBase
-
 
         Private _lista As New List(Of PermisoBase)
         Public Property ListaPermisos() As List(Of PermisoBase)
