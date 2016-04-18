@@ -69,6 +69,7 @@
     <Compile Include="Excepciones\clsExcepcionPersonalizada.vb" />
     <Compile Include="Excepciones\Multi-Idioma\clsExcepcionLeyendasIncompletas.vb" />
     <Compile Include="Excepciones\Multi-Idioma\clsExcepcionNombreIdioma.vb" />
+    <Compile Include="Multi-Idioma\clsBitacora.vb" />
     <Compile Include="Multi-Idioma\clsIdioma.vb" />
     <Compile Include="Multi-Idioma\clsLeyenda.vb" />
     <Compile Include="Multi-Idioma\ClsTraduccion.vb" />

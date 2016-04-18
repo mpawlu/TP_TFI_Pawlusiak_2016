@@ -63,7 +63,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsBitacora.vb" />
     <Compile Include="clsLocalidad.vb" />
     <Compile Include="Multi-Idioma\clsTraduccion.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
