@@ -9,34 +9,22 @@
     <script type="text/javascript" src="JS/functionSlider.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1 col-md-offset-1">
-                <br />
-                <br />
-                <br />
-                <div class="row">
-                    <img src="Imagenes/urbano.png" class="img img-responsive" />
-                </div>
-                <br />
-                <br />
-                <br />
-                <div class="row">
-                    <img src="Imagenes/economico.png" class="img img-responsive" />
-                </div>
-                <br />
-                <br />
-                <br />
-                <div class="row">
-                    <img src="Imagenes/integral.png" class="img img-responsive" />
-                </div>
 
+    <br />
+    <br />
+    <br />
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-4">
+                <br />
+                <div class="panelBoton-titulo">Bienvenidos a AM Climatización</div>
+                <div class="panelBoton-texto">Hola aca va el texto de introducción para agregara  la pagina como para que puedan hacer una introducción a la empresa y ver las cosas viste. Me gustaria que el texto tenga un largo bastante importante para que sea largo y probar.</div>
             </div>
+
+
             <div class="col-md-6 col-md-offset-1">
-                <br />
-                <br />
-                <br />
-                <br />
+
                 <div id="slider1_container" class="slider-container center-block">
                     <div u="slides" class="slides">
                         <div>
@@ -73,61 +61,70 @@
                     <div u="arrowleft" class="jssora12l"></div>
                     <div u="arrowright" class="jssora12r"></div>
                 </div>
-                <br />
-                <br />
-                <br />
-                <br />
+
             </div>
 
-            <div class="col-md-1 col-md-offset-1">
-                <br />
-                <br />
-                <br />
-                <div class="row">
-                    <img src="Imagenes/sustentable.png" class="img img-responsive" />
-                </div>
-                <br />
-                <br />
-                <br />
-                <div class="row">
-                    <img src="Imagenes/natural.png" class="img img-responsive" />
-                </div>
-                <br />
-                <br />
-                <br />
-                <div class="row">
-                    <img src="Imagenes/saludable.png" class="img img-responsive" />
-                </div>
 
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-3">
+                <div class="panelBoton">
+                    <img src="Imagenes/RedesSociales/FaceBook_64x64.png" class="img-responsive panelBoton-imagen" />
+                    <div class="panelBoton-titulo">Facebook</div>
+                    <div class="panelBoton-texto">Seguí a VerdeUrbano en nuestro Facebook Oficial.</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panelBoton">
+                    <img src="Imagenes/RedesSociales/Twitter_64x64.png" class="img-responsive panelBoton-imagen" />
+                    <div class="panelBoton-titulo">Twitter</div>
+                    <div class="panelBoton-texto">Seguí todas las novedades de VerdeUrbano en nuestro Twitter Oficial.</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panelBoton">
+                    <img src="Imagenes/RedesSociales/Instagram-64.png" class="img-responsive panelBoton-imagen" />
+                    <div class="panelBoton-titulo">Instagram</div>
+                    <div class="panelBoton-texto">Visualiza todas las fotos de nuestros proyectos en el Instagram Oficial de VerdeUrbano.</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panelBoton">
+                    <img src="Imagenes/RedesSociales/youtube_64.png" class="img-responsive panelBoton-imagen" />
+                    <div class="panelBoton-titulo">YouTube</div>
+                    <div class="panelBoton-texto">Seguí a VerdeUrbano en nuestro canal oficial de YouTube con los mejores videos de nuestros proyectos.</div>
+                </div>
             </div>
         </div>
+        <asp:Label ID="Label1" runat="server" Text="Nombre de usuario"></asp:Label>
+        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+        <asp:TextBox ID="txtPass" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="Label3" runat="server" Text="DNI"></asp:Label>
+        <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
+        <br />
+        <asp:RadioButton ID="Activo" runat="server" Text="Activo" />
+        <br />
+        <asp:Label ID="Label4" runat="server" Text="Perfil"></asp:Label>
+        <asp:TextBox ID="txtPerfil" runat="server"></asp:TextBox>
+        <br />
+        <asp:RadioButton ID="bloqueado" runat="server" Text="Bloqueado" />
+        <br />
+        <asp:Label ID="Label5" runat="server" Text="Fecha Alta"></asp:Label>
+        <asp:TextBox ID="txtFechaAlta" runat="server"></asp:TextBox>
+        <br />
+        <asp:RadioButton ID="Editable" runat="server" Text="Editable" />
+        <br />
+        <asp:Label ID="Label6" runat="server" Text="ID Idioma"></asp:Label>
+        <asp:TextBox ID="txtIdioma" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
     </div>
-   
     <br />
-    <asp:Label ID="Label1" runat="server" Text="Nombre de usuario"></asp:Label>
-    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-    <asp:TextBox ID="txtPass" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="Label3" runat="server" Text="DNI"></asp:Label>
-    <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
-    <br />
-    <asp:RadioButton ID="Activo" runat="server" text="Activo" />
-     <br />
-    <asp:Label ID="Label4" runat="server" Text="Perfil"></asp:Label>
-    <asp:TextBox ID="txtPerfil" runat="server"></asp:TextBox>
-    <br />
-     <asp:RadioButton ID="bloqueado" runat="server" text="Bloqueado" />
-     <br />
-    <asp:Label ID="Label5" runat="server" Text="Fecha Alta"></asp:Label>
-    <asp:TextBox ID="txtFechaAlta" runat="server"></asp:TextBox>
-     <br />
-     <asp:RadioButton ID="Editable" runat="server" text="Editable" />
-     <br />  
-    <asp:Label ID="Label6" runat="server" Text="ID Idioma"></asp:Label>
-    <asp:TextBox ID="txtIdioma" runat="server"></asp:TextBox>
-     <br />
-    <br />
-    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
+
 </asp:Content>

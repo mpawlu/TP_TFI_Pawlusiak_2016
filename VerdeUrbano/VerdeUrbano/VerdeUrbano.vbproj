@@ -57,10 +57,15 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.vbproj">
       <Project>{1cea3f76-1691-4be5-8187-11c5dc76ebd0}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EE\EE.vbproj">
+      <Project>{85eb7d26-b2f0-4c0e-b4b6-24afa132282b}</Project>
+      <Name>EE</Name>
     </ProjectReference>
     <ProjectReference Include="..\Servicios\Servicios.vbproj">
       <Project>{a6a92d3a-d7a4-4595-a0c0-c8c939d7380c}</Project>
@@ -91,6 +96,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="agregarIdioma.aspx" />
     <Content Include="calcularPresupuesto.aspx" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\EstiloSlider.css" />
@@ -101,15 +107,15 @@
     <Content Include="CSS\MisEstilos.css" />
     <Content Include="Imagenes\economico.png" />
     <Content Include="Imagenes\facebook.png" />
-    <Content Include="Imagenes\RedesSociales\FaceBook_64x64.png" />
     <Content Include="Imagenes\INTEGRAL.png" />
     <Content Include="Imagenes\jardin.jpg" />
-    <Content Include="Imagenes\RedesSociales\Instagram-64.png" />
-    <Content Include="Imagenes\RedesSociales\jobbank.png" />
     <Content Include="Imagenes\logoVerdeUrbano.png" />
     <Content Include="Imagenes\maceta.jpg" />
     <Content Include="Imagenes\natural.png" />
-    <Content Include="Imagenes\RedesSociales\Youtube_64x64.png" />
+    <Content Include="Imagenes\RedesSociales\FaceBook_64x64.png" />
+    <Content Include="Imagenes\RedesSociales\Instagram-64.png" />
+    <Content Include="Imagenes\RedesSociales\Twitter_64x64.png" />
+    <Content Include="Imagenes\RedesSociales\youtube_64.png" />
     <Content Include="Imagenes\saludable.png" />
     <Content Include="Imagenes\Size-height-32.png" />
     <Content Include="Imagenes\Size-width-32.png" />
@@ -127,7 +133,6 @@
     <Content Include="Imagenes\sustentable.png" />
     <Content Include="Imagenes\terraza.jpg" />
     <Content Include="Imagenes\twitter.png" />
-    <Content Include="Imagenes\RedesSociales\Twitter_64x64.png" />
     <Content Include="Imagenes\urbano.png" />
     <Content Include="Imagenes\youtube.png" />
     <Content Include="index.aspx" />
@@ -142,6 +147,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agregarIdioma.aspx.designer.vb">
+      <DependentUpon>agregarIdioma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="agregarIdioma.aspx.vb">
+      <DependentUpon>agregarIdioma.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="calcularPresupuesto.aspx.designer.vb">
       <DependentUpon>calcularPresupuesto.aspx</DependentUpon>
     </Compile>
@@ -231,6 +243,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
