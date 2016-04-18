@@ -102,8 +102,32 @@
             </div>
         </div>
     </div>
+   
     <br />
-    <asp:Button ID="Button1" runat="server" Text="Button" />
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="Nombre de usuario"></asp:Label>
+    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
     <br />
+    <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+    <asp:TextBox ID="txtPass" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="Label3" runat="server" Text="DNI"></asp:Label>
+    <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
+    <br />
+    <asp:RadioButton ID="Activo" runat="server" text="Activo" />
+     <br />
+    <asp:Label ID="Label4" runat="server" Text="Perfil"></asp:Label>
+    <asp:TextBox ID="txtPerfil" runat="server"></asp:TextBox>
+    <br />
+     <asp:RadioButton ID="bloqueado" runat="server" text="Bloqueado" />
+     <br />
+    <asp:Label ID="Label5" runat="server" Text="Fecha Alta"></asp:Label>
+    <asp:TextBox ID="txtFechaAlta" runat="server"></asp:TextBox>
+     <br />
+     <asp:RadioButton ID="Editable" runat="server" text="Editable" />
+     <br />  
+    <asp:Label ID="Label6" runat="server" Text="ID Idioma"></asp:Label>
+    <asp:TextBox ID="txtIdioma" runat="server"></asp:TextBox>
+     <br />
+    <br />
+    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" />
 </asp:Content>

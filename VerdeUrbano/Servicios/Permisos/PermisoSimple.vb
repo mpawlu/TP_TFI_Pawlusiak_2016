@@ -1,8 +1,11 @@
-﻿Public Class PermisoSimple
-    Inherits PermisoBase
+﻿Namespace Servicios
+    Public Class PermisoSimple
+        Inherits PermisoBase
 
-    Public Overrides Function TieneHijos() As Boolean
-        Return False
+        Public Overrides Function TieneHijos() As Boolean
+            Return False
 
-    End Function
-End Class
+        End Function
+    End Class
+End Namespace
+

@@ -10,15 +10,16 @@ Namespace MPP
             Dim resultado As Boolean
 
             hdatos.Add("@NombreUsuario", usuario.NombreUsuario)
-            hdatos.Add("@Password", usuario.Password)
+            hdatos.Add("@Pass", usuario.Password)
             hdatos.Add("@DNI", usuario.DNI)
             hdatos.Add("@Activo", usuario.Activo)
-            hdatos.Add("@Perfil", usuario.Perfil)
+            hdatos.Add("@Perfil", usuario.Perfil.ID)
             hdatos.Add("@Bloqueado", usuario.Bloqueado)
             hdatos.Add("@FechaAlta", usuario.FechaAlta)
             hdatos.Add("@Editable", usuario.Editable)
             hdatos.Add("@Intentos", usuario.Intentos)
-            hdatos.Add("@IdIdioma", usuario.Idioma.ID)
+            hdatos.Add("@ID_Idioma", usuario.Idioma.ID)
+            hdatos.Add("@DVH", "ASFDDFD")
 
             resultado = oDatos.Escribir("s_Usuario_Crear", hdatos)
 
@@ -71,7 +72,7 @@ Namespace MPP
             Dim dt As New DataTable
             Dim oUsu As Servicios.Usuario
 
-            DS = oDatos.Leer("s_Usuarios_Listar", Nothing)
+            DS = oDatos.Leer("s_Usuario_ListarTodos", Nothing)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
@@ -107,10 +108,10 @@ Namespace MPP
             Dim DS As New DataSet
             Dim oUsu As New Servicios.Usuario
 
-            hdatos.Add("@IdUsuario", usuario.ID)
+            hdatos.Add("@ID_Usuario", usuario.ID)
             '   If DS.Tables(0).Rows.Count > 0 Then
 
-            DS = oDatos.Leer("s_Usuario_Listar", hdatos)
+            DS = oDatos.Leer("s_Usuario_Consultar", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 

@@ -103,7 +103,7 @@
             End Set
         End Property
         Private _DVH As String
-        Public Property NewProperty() As String
+        Public Property DVH() As String
             Get
                 Return _DVH
             End Get
@@ -149,6 +149,7 @@
             Catch ex As Exception
             End Try
         End Sub
+
 #End Region
 
     End Class
