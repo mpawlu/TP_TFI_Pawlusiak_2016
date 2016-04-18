@@ -16,17 +16,14 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-md-4 col-md-offset-1">
+            <div class="col-md-4">
                 <br />
-                <br />
-                <br />
-                <br />
-                <div class="panelBoton-titulo">Bienvenidos a VerdeUrbano</div>
+                <div class="panelBoton-titulo">Bienvenidos al Sitio Web de Verde Urbano</div>
                 <div class="panelBoton-texto">Hola aca va el texto de introducción para agregara  la pagina como para que puedan hacer una introducción a la empresa y ver las cosas viste. Me gustaria que el texto tenga un largo bastante importante para que sea largo y probar.</div>
             </div>
 
 
-            <div class="col-md-6">
+            <div class="col-md-6 col-md-offset-1">
 
                 <div id="slider1_container" class="slider-container center-block">
                     <div u="slides" class="slides">

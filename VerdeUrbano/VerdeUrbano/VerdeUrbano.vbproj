@@ -106,9 +106,9 @@
     <Content Include="CSS\jquery-ui.css" />
     <Content Include="CSS\MisEstilos.css" />
     <Content Include="Imagenes\economico.png" />
-    <Content Include="Imagenes\facebook.png" />
     <Content Include="Imagenes\INTEGRAL.png" />
     <Content Include="Imagenes\jardin.jpg" />
+    <Content Include="Imagenes\Key-32.png" />
     <Content Include="Imagenes\logoVerdeUrbano.png" />
     <Content Include="Imagenes\maceta.jpg" />
     <Content Include="Imagenes\natural.png" />
@@ -134,6 +134,7 @@
     <Content Include="Imagenes\terraza.jpg" />
     <Content Include="Imagenes\twitter.png" />
     <Content Include="Imagenes\urbano.png" />
+    <Content Include="Imagenes\user-32.png" />
     <Content Include="Imagenes\youtube.png" />
     <Content Include="index.aspx" />
     <Content Include="institucional.aspx" />

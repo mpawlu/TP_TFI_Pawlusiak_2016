@@ -30,8 +30,7 @@
 
                         <Columns>
                             <asp:BoundField DataField="ID_Control" HeaderText="ID" />
-                            <asp:BoundField DataField="Codigo" HeaderText="Codigo" />
-                            <asp:BoundField DataField="Traduccion" HeaderText="Traduccion" />
+                            <asp:BoundField DataField="Leyenda" HeaderText="Leyenda" />
                             <asp:TemplateField HeaderText="Nuevo Texto" HeaderStyle-Width="400px">
                                 <ItemTemplate>
                                     <asp:TextBox Width="350px" ID="txt_NuevoTexto" runat="server" CssClass="textarea" TextMode="MultiLine" Wrap="true"></asp:TextBox>

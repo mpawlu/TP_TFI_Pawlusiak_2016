@@ -22,7 +22,32 @@
                             <asp:Image ID="LogoMenu" CssClass="img img-responsive" runat="server" ImageUrl="~/Imagenes/logoVerdeUrbano.PNG" />
                         </div>
 
-                        <div class="col-md-3 col-md-offset-6">
+                        <div class="col-md-2 col-md-offset-6">
+                            <div class="row right">
+                                <br />
+                                <br />
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="IconoLogin" src="Imagenes/user-32.png" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <asp:TextBox ID="txt_UsuarioLogin" runat="server" CssClass="caja-texto"></asp:TextBox>
+                                    </div>
+                                </div>
+
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="IconoLogin" src="Imagenes/key-32.png" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <asp:TextBox ID="txt_PasswordLogin" runat="server" CssClass="caja-texto" TextMode="Password"></asp:TextBox>
+
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
                         </div>
 
                     </div>

@@ -87,10 +87,10 @@ html {
 .caja-texto {
     color: #000;
     background-color: #fff;
-    border-color: #2A2A2C;
+    border-color: #423535;
     font-size: 18px;
     width: 100%;
-    height: 20px;
+    height: 25px;
 }
 
     .caja-texto:hover {
@@ -387,4 +387,9 @@ a.tituloMaiz:focus {
 a:link   
 {   
  text-decoration:none;   
-}  
+}
+
+.IconoLogin {
+width:24px;
+height:24px;
+}
