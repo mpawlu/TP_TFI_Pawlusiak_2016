@@ -7,6 +7,7 @@
             Dim resultado As Boolean
 
             hdatos.Add("@Descripcion", idioma.Descripcion)
+            hdatos.Add("@DVH", idioma.DVH)
 
 
             resultado = oDatos.Escribir("s_Idioma_Crear", hdatos)
@@ -27,6 +28,7 @@
                     Dim oIdioma As New Servicios.clsIdioma
                     oIdioma.ID = Item(0)
                     oIdioma.Descripcion = Item(1)
+                    oIdioma.DVH = Item(2)
                     listIdiomas.Add(oIdioma)
                 Next
 

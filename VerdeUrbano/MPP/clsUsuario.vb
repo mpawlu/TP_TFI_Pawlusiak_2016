@@ -49,7 +49,7 @@ Namespace MPP
             'para el usuario cambia
             hdatos.Add("@IdUsuario", usuario.ID)
             hdatos.Add("@NombreUsuario", usuario.NombreUsuario)
-            hdatos.Add("@Password", usuario.Password)
+            hdatos.Add("@Pass", usuario.Password)
             hdatos.Add("@DNI", usuario.DNI)
             hdatos.Add("@Activo", usuario.Activo)
             hdatos.Add("@Perfil", usuario.Perfil)
@@ -58,6 +58,7 @@ Namespace MPP
             hdatos.Add("@Editable", usuario.Editable)
             hdatos.Add("@Intentos", usuario.Intentos)
             hdatos.Add("@IdIdioma", usuario.Idioma.ID)
+            hdatos.Add("@DVH", "ASFDDFD")
 
             resultado = oDatos.Escribir("s_Usuario_Modificar", hdatos)
             Return resultado
@@ -80,7 +81,7 @@ Namespace MPP
                     oUsu = New Servicios.Usuario
                     oUsu.Id = Item("IdUsuario")
                     oUsu.NombreUsuario = Item("NombreUsuario")
-                    oUsu.Password = Item("Password")
+                    oUsu.Password = Item("Pass")
                     oUsu.DNI = Item("DNI")
                     oUsu.Activo = Item("Activo")
                     oUsu.Perfil = Item("Perfil")
@@ -118,7 +119,7 @@ Namespace MPP
                 For Each Item As DataRow In DS.Tables(0).Rows
                     oUsu.ID = Item("IdUsuario")
                     oUsu.NombreUsuario = Item("NombreUsuario")
-                    oUsu.Password = Item("Password")
+                    oUsu.Password = Item("Pass")
                     oUsu.DNI = Item("DNI")
                     oUsu.Activo = Item("Activo")
                     oUsu.Perfil = Item("Perfil")

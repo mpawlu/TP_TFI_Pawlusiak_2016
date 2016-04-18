@@ -16,7 +16,7 @@
                     oLey = New Servicios.clsLeyenda
                     oLey.ID = Item("IdLeyenda")
                     oLey.Leyenda = Item("Leyenda")
-
+                    oLey.DVH = Item("DVH")
 
                     listaLeyenda.Add(oLey)
                 Next
