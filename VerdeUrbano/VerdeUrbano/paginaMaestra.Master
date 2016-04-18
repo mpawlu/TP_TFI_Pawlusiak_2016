@@ -6,17 +6,17 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <link href="CSS/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="CSS/MisEstilos.css" rel="stylesheet" type="text/css" />
     <link href="CSS/EstilosMaestra.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-
     <form id="form1" runat="server">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-10 col-md-offset-1 ">
+                <div class="col-md-12">
                     <div class="row fondoColor bordeColor">
                         <div class="col-md-3">
                             <asp:Image ID="LogoMenu" CssClass="img img-responsive" runat="server" ImageUrl="~/Imagenes/logoVerdeUrbano.PNG" />
