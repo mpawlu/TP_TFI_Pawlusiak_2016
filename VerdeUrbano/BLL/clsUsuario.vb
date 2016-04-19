@@ -75,25 +75,24 @@ Namespace BLL
 
 
         Public Function Login(ByVal nombreUsuario As String, ByVal Password As String) As Servicios.Usuario
-            Dim _Usuario As New Servicios.Usuario
-            _Usuario.NombreUsuario = nombreUsuario
-            _Usuario.Password = clsEncriptadora.EncriptarPass(Password)
+            Dim _UsuarioLogin As New Servicios.Usuario
+            Dim Mapper As New MPP.clsUsuario
+            _UsuarioLogin.NombreUsuario = nombreUsuario
+            _UsuarioLogin.Password = clsEncriptadora.EncriptarPass(Password)
             Try
-                'Existe el usuario?
-                If Me.chequearUsuario(_Usuario.NombreUsuario) = False Then
+                If Me.chequearUsuario(_UsuarioLogin) = False Then
                     '      Throw New UsuarioInexistenteException
                 Else
-
-                    'Esta bloquedo?
-                    If Me.chequearBloqueado(_Usuario.NombreUsuario) = True Then
-                        '         Throw New UsuarioBloqueadoException
+                    Dim _Usuario As New Servicios.Usuario
+                    _Usuario = Mapper.ConsultarUsuarioporNombre(_UsuarioLogin)
+                    If Me.chequearContraseña(_Usuario, _UsuarioLogin) = False Then
+                        Me.actualizarIntentos(_Usuario)
+                        '     Throw New PasswordIncorrectoException
                     Else
-                        'Esta bien la contraseña?
-                        If Me.chequearContraseña(_Usuario.NombreUsuario, _Usuario.Password) = False Then
-                            '     Throw New PasswordIncorrectoException
+
+                        If Me.chequearBloqueado(_Usuario) = True Then
+                            '         Throw New UsuarioBloqueadoException
                         Else
-                            'Resetear los intentos
-                            _Usuario = (New MPP.clsUsuario).ConsultarUsuario(_Usuario)
                             Me.resetearIntentos(_Usuario)
                             Return _Usuario
                         End If
@@ -110,20 +109,24 @@ Namespace BLL
             End Try
         End Function
 
-        Public Function chequearUsuario(paramNombreUsuario As String) As Boolean
+        Public Function chequearUsuario(ByVal oUsuario As Servicios.Usuario) As Boolean
             Try
-                Return (New MPP.clsUsuario).chequearUsuario(paramNombreUsuario)
+                Dim resultado As Boolean
+                Dim Mapper As New MPP.clsUsuario
+                resultado = Mapper.chequearUsuario(oUsuario)
+                Return resultado
             Catch ex As Exception
 
             End Try
         End Function
 
-        Public Function chequearContraseña(paramNombreUsuario As String, paramContraseña As String) As Boolean
+        Public Function chequearContraseña(ByVal oUsuario As Servicios.Usuario, ByVal oUsuarioLogueado As Servicios.Usuario) As Boolean
             Try
-                If (New MPP.clsUsuario).chequearContraseña(paramNombreUsuario, paramContraseña) = True Then
+                Dim Mapper As New MPP.clsUsuario
+                If oUsuario.Password = oUsuarioLogueado.Password Then
                     Return True
                 Else
-                    ' Me.actualizarIntentos(paramUsuario)
+                    Me.actualizarIntentos(oUsuario)
                     Return False
                 End If
             Catch ex As Exception
@@ -132,23 +135,29 @@ Namespace BLL
 
         End Function
 
-        Public Function chequearBloqueado(paramNombreUsuario As String) As Boolean
+        Public Function chequearBloqueado(ByVal oUsuario As Servicios.Usuario) As Boolean
             Try
-                Return (New MPP.clsUsuario).chequearBloqueado(paramNombreUsuario)
+                If oUsuario.Bloqueado = True Then
+                    Return True
+                Else
+                    Return False
+                End If
             Catch ex As Exception
 
             End Try
 
         End Function
 
-        Public Sub actualizarIntentos(ByVal paramUsuario As Servicios.Usuario)
+        Public Sub actualizarIntentos(ByVal oUsuario As Servicios.Usuario)
             Try
-                paramUsuario.Intentos += 1
-                Dim _usu As New MPP.clsUsuario
-                If paramUsuario.Intentos >= 3 Then
-                    Me.BloquearUsuario(paramUsuario)
+                Dim Mapper As New MPP.clsUsuario
+                Dim usuarioLogin As New Servicios.Usuario
+                usuarioLogin = Mapper.ConsultarUsuario(oUsuario)
+                usuarioLogin.Intentos += 1
+                If oUsuario.Intentos >= 3 Then
+                    Me.BloquearUsuario(oUsuario)
                 End If
-                _usu.ActualizarIntentos(paramUsuario)
+                Mapper.ActualizarIntentos(oUsuario)
             Catch ex As Exception
 
             End Try

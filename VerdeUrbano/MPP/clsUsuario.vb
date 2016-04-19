@@ -135,17 +135,56 @@ Namespace MPP
             End If
         End Function
 
+        Public Function ConsultarUsuarioporNombre(ByVal usuario As Servicios.Usuario) As Servicios.Usuario
+
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim DS As New DataSet
+            Dim oUsu As New Servicios.Usuario
+
+            hdatos.Add("@NombreUsuario", usuario.NombreUsuario)
+            '   If DS.Tables(0).Rows.Count > 0 Then
+
+            DS = oDatos.Leer("s_Usuario_Consultar_porNombre", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oUsu.ID = Item("IdUsuario")
+                    oUsu.NombreUsuario = Item("NombreUsuario")
+                    oUsu.Password = Item("Pass")
+                    oUsu.DNI = Item("DNI")
+                    oUsu.Activo = Item("Activo")
+                    oUsu.Perfil = Item("Perfil")
+                    oUsu.Bloqueado = Item("Bloqueado")
+                    oUsu.FechaAlta = Item("FechaAlta")
+                    oUsu.Editable = Item("Editables")
+                    oUsu.Intentos = Item("Intentos")
+                    oUsu.Idioma.ID = Item("ID_Idioma")
+                    oUsu.Idioma.Descripcion = Item("Descripcion")
+                Next
+                Return oUsu
+            Else
+                Return Nothing
+            End If
+        End Function
+
 
 #Region "Login"
-        Public Function chequearContraseña(paramNombreUsuario As String, paramContraseña As String) As Boolean
+        Public Function chequearContraseña(ByVal oUsuario As Servicios.Usuario) As Boolean
             Try
                 Dim oDatos As New DAL.Datos
                 Dim resultado As Boolean
                 Dim hdatos As New Hashtable
-                hdatos.Add("@NombreUsuario", paramNombreUsuario)
-                hdatos.Add("@Password", paramContraseña)
-                resultado = oDatos.Escribir("s_Usuario_chequearContraseña", hdatos)
-                Return resultado
+                Dim DS As New DataSet
+                hdatos.Add("@NombreUsuario", oUsuario.NombreUsuario)
+                hdatos.Add("@Pass", oUsuario.Password)
+                DS = oDatos.Leer("s_Usuario_chequearContraseña", hdatos)
+                If DS.Tables(0).Rows.Count > 0 Then
+                    Return True
+                Else
+                    Return False
+                End If
             Catch ex As Exception
                 Throw ex
             End Try
@@ -193,32 +232,21 @@ Namespace MPP
             End Try
         End Function
 
-        Public Function chequearUsuario(paramNombreUsuario As String) As Boolean
-            Try
-                Dim oDatos As New DAL.Datos
-                Dim resultado As Boolean
-                Dim hdatos As New Hashtable
-                hdatos.Add("@NombreUsuario", paramNombreUsuario)
-                '   resultado = oDatos.Leer("s_Usuario_chequearUsuario", hdatos)
-                Return resultado
-            Catch ex As Exception
+        Public Function chequearUsuario(ByVal oUsuario As Servicios.Usuario) As Boolean
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim DS As New DataSet
+            Dim oUsu As New Servicios.Usuario
+            hdatos.Add("@NombreUsuario", oUsuario.NombreUsuario)
+            DS = oDatos.Leer("s_Usuario_ChequearUsuario", hdatos)
+            If DS.Tables(0).Rows.Count > 0 Then
+                Return True
+            Else
                 Return False
-            End Try
+            End If
         End Function
 
 
-        Public Function chequearBloqueado(paramNombreUsuario As String) As Boolean
-            Try
-                Dim oDatos As New DAL.Datos
-                Dim resultado As Boolean
-                Dim hdatos As New Hashtable
-                hdatos.Add("@NombreUsuario", paramNombreUsuario)
-                '   resultado = oDatos.Leer("s_Usuario_chequearBloqueado", hdatos)
-                Return resultado
-            Catch ex As Exception
-                Throw ex
-            End Try
-        End Function
 #End Region
 
 
