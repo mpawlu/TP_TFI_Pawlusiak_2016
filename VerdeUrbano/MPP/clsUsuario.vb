@@ -109,14 +109,13 @@ Namespace MPP
             Dim oUsu As New Servicios.Usuario
 
             hdatos.Add("@ID_Usuario", usuario.ID)
-            '   If DS.Tables(0).Rows.Count > 0 Then
 
             DS = oDatos.Leer("s_Usuario_Consultar", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
                 For Each Item As DataRow In DS.Tables(0).Rows
-                    oUsu.ID = Item("IdUsuario")
+                    oUsu.ID = Item("ID_Usuario")
                     oUsu.NombreUsuario = Item("NombreUsuario")
                     oUsu.Password = Item("Pass")
                     oUsu.DNI = Item("DNI")
@@ -126,8 +125,13 @@ Namespace MPP
                     oUsu.FechaAlta = Item("FechaAlta")
                     oUsu.Editable = Item("Editables")
                     oUsu.Intentos = Item("Intentos")
-                    oUsu.Idioma.ID = Item("ID_Idioma")
-                    oUsu.Idioma.Descripcion = Item("Descripcion")
+                    'oUsu.Idioma.ID = Item("ID_Idioma")
+                    'oUsu.Idioma.Descripcion = Item("Descripcion")
+                    Dim oIdMPP As New MPP.clsIdioma
+                    Dim oIdioma As New Servicios.clsIdioma
+                    oIdioma.ID = oUsu.Idioma.ID
+                    oUsu.Idioma = oIdMPP.ConsultarIdioma(oIdioma)
+
                 Next
                 Return oUsu
             Else
