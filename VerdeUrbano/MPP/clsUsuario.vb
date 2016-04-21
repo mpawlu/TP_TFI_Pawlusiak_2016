@@ -47,17 +47,17 @@ Namespace MPP
             Dim hdatos As New Hashtable
             Dim resultado As Boolean
             'para el usuario cambia
-            hdatos.Add("@IdUsuario", usuario.ID)
+            hdatos.Add("@Id_Usuario", usuario.ID)
             hdatos.Add("@NombreUsuario", usuario.NombreUsuario)
             hdatos.Add("@Pass", usuario.Password)
             hdatos.Add("@DNI", usuario.DNI)
             hdatos.Add("@Activo", usuario.Activo)
-            hdatos.Add("@Perfil", usuario.Perfil)
+            hdatos.Add("@Perfil", 1) ' cambiar
             hdatos.Add("@Bloqueado", usuario.Bloqueado)
             hdatos.Add("@FechaAlta", usuario.FechaAlta)
             hdatos.Add("@Editable", usuario.Editable)
             hdatos.Add("@Intentos", usuario.Intentos)
-            hdatos.Add("@IdIdioma", usuario.Idioma.ID)
+            hdatos.Add("@Id_Idioma", 1) 'cambiar
             hdatos.Add("@DVH", "ASFDDFD")
 
             resultado = oDatos.Escribir("s_Usuario_Modificar", hdatos)
@@ -145,23 +145,24 @@ Namespace MPP
             hdatos.Add("@NombreUsuario", usuario.NombreUsuario)
             '   If DS.Tables(0).Rows.Count > 0 Then
 
-            DS = oDatos.Leer("s_Usuario_Consultar_porNombre", hdatos)
+            DS = oDatos.Leer("s_Usuario_Consultar_PorNombre", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
                 For Each Item As DataRow In DS.Tables(0).Rows
-                    oUsu.ID = Item("IdUsuario")
+                    oUsu.ID = Item("ID_Usuario")
                     oUsu.NombreUsuario = Item("NombreUsuario")
                     oUsu.Password = Item("Pass")
                     oUsu.DNI = Item("DNI")
-                    oUsu.Activo = Item("Activo")
-                    oUsu.Perfil = Item("Perfil")
-                    oUsu.Bloqueado = Item("Bloqueado")
-                    oUsu.FechaAlta = Item("FechaAlta")
-                    oUsu.Editable = Item("Editables")
+                    oUsu.Activo = CBool(Item("Activo"))
+
+                    '   oUsu.Perfil = Item("Perfil")
+                    oUsu.Bloqueado = CBool(Item("Bloqueado"))
+                    oUsu.FechaAlta = CDate(Item("FechaAlta"))
+                    oUsu.Editable = CBool(Item("Editable"))
                     oUsu.Intentos = Item("Intentos")
-                    oUsu.Idioma.ID = Item("ID_Idioma")
-                    oUsu.Idioma.Descripcion = Item("Descripcion")
+                    '         oUsu.Idioma.ID = Item("ID_Idioma")
+                    '     oUsu.Idioma.Descripcion = Item("Descripcion")
                 Next
                 Return oUsu
             Else
@@ -171,38 +172,7 @@ Namespace MPP
 
 
 #Region "Login"
-        Public Function chequearContraseña(ByVal oUsuario As Servicios.Usuario) As Boolean
-            Try
-                Dim oDatos As New DAL.Datos
-                Dim resultado As Boolean
-                Dim hdatos As New Hashtable
-                Dim DS As New DataSet
-                hdatos.Add("@NombreUsuario", oUsuario.NombreUsuario)
-                hdatos.Add("@Pass", oUsuario.Password)
-                DS = oDatos.Leer("s_Usuario_chequearContraseña", hdatos)
-                If DS.Tables(0).Rows.Count > 0 Then
-                    Return True
-                Else
-                    Return False
-                End If
-            Catch ex As Exception
-                Throw ex
-            End Try
-        End Function
-
-        Public Function ActualizarIntentos(paramUsuario As Servicios.Usuario) As Boolean
-            Try
-                Dim oDatos As New DAL.Datos
-                Dim resultado As Boolean
-                Dim hdatos As New Hashtable
-                hdatos.Add("@ID_Usuario", paramUsuario.ID)
-                hdatos.Add("@Intentos", paramUsuario.Intentos)
-                resultado = oDatos.Escribir("s_Usuario_ActualizarIntentos", hdatos)
-                Return resultado
-            Catch ex As Exception
-                Throw ex
-            End Try
-        End Function
+       
 
         Public Function bloquearUsuario(paramUsuario As Servicios.Usuario) As Boolean
             Try

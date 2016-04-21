@@ -11,95 +11,122 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class index
+Partial Public Class agregarUsuario
 
     '''<summary>
-    '''Control img1.
+    '''Control lbl_NombreUsuario.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents img1 As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents lbl_NombreUsuario As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control img2.
+    '''Control txtNombre.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents img2 As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control img3.
+    '''Control lbl_password.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents img3 As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents lbl_password As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control img4.
+    '''Control txtPass.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents img4 As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents txtPass As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control img5.
+    '''Control lbl_dni.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents img5 As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents lbl_dni As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control img6.
+    '''Control txtDNI.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents img6 As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents txtDNI As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control img7.
+    '''Control bloqueado.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents img7 As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents bloqueado As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
-    '''Control img8.
+    '''Control lbl_Perfil.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents img8 As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents lbl_Perfil As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control img9.
+    '''Control ddl_Perfil.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents img9 As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents ddl_Perfil As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control img10.
+    '''Control lbl_Idioma.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents img10 As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents lbl_Idioma As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control ddl_idioma.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ddl_idioma As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control btnGuardar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnCancelar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnCancelar As Global.System.Web.UI.WebControls.Button
 End Class

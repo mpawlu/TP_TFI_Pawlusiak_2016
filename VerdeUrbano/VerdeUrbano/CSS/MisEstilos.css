@@ -92,7 +92,7 @@ html {
     border-color: #423535;
     font-size: 18px;
     width: 100%;
-    height: 25px;
+    height: 28px;
 }
 
     .caja-texto:hover {
@@ -114,7 +114,7 @@ html {
     display: block;
     width: 100%;
     padding: 4px 12px;
-    height: 32px;
+    height: 28px;
 }
 
     .combo:hover {
@@ -378,4 +378,8 @@ a:link {
 .IconoLogin {
     width: 24px;
     height: 24px;
+}
+
+.radio {
+  margin-left: 100px;
 }

@@ -86,7 +86,6 @@ Namespace BLL
                     Dim _Usuario As New Servicios.Usuario
                     _Usuario = Mapper.ConsultarUsuarioporNombre(_UsuarioLogin)
                     If Me.chequearContraseña(_Usuario, _UsuarioLogin) = False Then
-                        Me.actualizarIntentos(_Usuario)
                         '     Throw New PasswordIncorrectoException
                     Else
 
@@ -151,13 +150,11 @@ Namespace BLL
         Public Sub actualizarIntentos(ByVal oUsuario As Servicios.Usuario)
             Try
                 Dim Mapper As New MPP.clsUsuario
-                Dim usuarioLogin As New Servicios.Usuario
-                usuarioLogin = Mapper.ConsultarUsuario(oUsuario)
-                usuarioLogin.Intentos += 1
+                oUsuario.Intentos += 1
                 If oUsuario.Intentos >= 3 Then
                     Me.BloquearUsuario(oUsuario)
                 End If
-                Mapper.ActualizarIntentos(oUsuario)
+                Mapper.ModificarUsuario(oUsuario)
             Catch ex As Exception
 
             End Try
@@ -167,7 +164,7 @@ Namespace BLL
             Try
                 paramUsuario.Intentos = 0
                 Dim _usu As New MPP.clsUsuario
-                _usu.ActualizarIntentos(paramUsuario)
+                _usu.ModificarUsuario(paramUsuario)
             Catch ex As Exception
 
             End Try
@@ -175,6 +172,7 @@ Namespace BLL
 
         Public Sub BloquearUsuario(ByVal paramUsuario As Servicios.Usuario)
             Try
+                paramUsuario.Bloqueado = True
                 Dim _usu As New MPP.clsUsuario
                 _usu.bloquearUsuario(paramUsuario)
             Catch ex As Exception
@@ -184,8 +182,9 @@ Namespace BLL
 
         Public Sub desbloquearUsuario(ByVal paramUsuario As Servicios.Usuario)
             Try
+                paramUsuario.Bloqueado = False
                 Dim _usu As New MPP.clsUsuario
-                _usu.desbloquearUsuario(paramUsuario)
+                _usu.ModificarUsuario(paramUsuario)
             Catch ex As Exception
 
             End Try

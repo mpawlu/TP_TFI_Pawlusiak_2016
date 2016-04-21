@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="agregarIdioma.aspx" />
+    <Content Include="agregarUsuario.aspx" />
     <Content Include="calcularPresupuesto.aspx" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\EstiloSlider.css" />
@@ -154,6 +155,13 @@
     </Compile>
     <Compile Include="agregarIdioma.aspx.vb">
       <DependentUpon>agregarIdioma.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="agregarUsuario.aspx.designer.vb">
+      <DependentUpon>agregarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="agregarUsuario.aspx.vb">
+      <DependentUpon>agregarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="calcularPresupuesto.aspx.designer.vb">
