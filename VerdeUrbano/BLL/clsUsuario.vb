@@ -174,7 +174,7 @@ Namespace BLL
             Try
                 paramUsuario.Bloqueado = True
                 Dim _usu As New MPP.clsUsuario
-                _usu.bloquearUsuario(paramUsuario)
+                _usu.ModificarUsuario(paramUsuario)
             Catch ex As Exception
 
             End Try

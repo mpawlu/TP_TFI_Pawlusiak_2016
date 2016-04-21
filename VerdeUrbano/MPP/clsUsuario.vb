@@ -174,33 +174,6 @@ Namespace MPP
 #Region "Login"
        
 
-        Public Function bloquearUsuario(paramUsuario As Servicios.Usuario) As Boolean
-            Try
-                Dim oDatos As New DAL.Datos
-                Dim resultado As Boolean
-                Dim hdatos As New Hashtable
-                hdatos.Add("@ID_Usuario", paramUsuario.ID)
-                hdatos.Add("@Bloqueado", True)
-                resultado = oDatos.Escribir("s_Usuario_ManejoBloqueo", hdatos)
-                Return resultado
-            Catch ex As Exception
-                Throw ex
-            End Try
-        End Function
-
-        Public Function desbloquearUsuario(paramUsuario As Servicios.Usuario) As Boolean
-            Try
-                Dim oDatos As New DAL.Datos
-                Dim resultado As Boolean
-                Dim hdatos As New Hashtable
-                hdatos.Add("@ID_Usuario", paramUsuario.ID)
-                hdatos.Add("@Bloqueado", True)
-                resultado = oDatos.Escribir("s_Usuario_ManejoBloqueo", hdatos)
-                Return resultado
-            Catch ex As Exception
-                Throw ex
-            End Try
-        End Function
 
         Public Function chequearUsuario(ByVal oUsuario As Servicios.Usuario) As Boolean
             Dim oDatos As New DAL.Datos
