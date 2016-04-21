@@ -37,7 +37,29 @@
                 Return Nothing
             End If
         End Function
+        Public Function ConsultarIdioma(ByVal oIdioma As Servicios.clsIdioma) As Servicios.clsIdioma
 
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim DS As New DataSet
+            Dim oId As New Servicios.clsIdioma
+
+            hdatos.Add("@ID_Idioma", oIdioma.ID)
+
+            DS = oDatos.Leer("s_Idioma_Consultar", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oId.ID = Item("ID_Idioma")
+                    oId.Descripcion = Item("Descripcion")
+
+                Next
+                Return oId
+            Else
+                Return Nothing
+            End If
+        End Function
     End Class
 End Namespace
 
