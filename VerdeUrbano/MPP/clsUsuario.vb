@@ -88,8 +88,11 @@ Namespace MPP
                     oUsu.FechaAlta = Item("FechaAlta")
                     oUsu.Editable = Item("Editables")
                     oUsu.Intentos = Item("Intentos")
-                    oUsu.Idioma.ID = Item("ID_Idioma")
-                    oUsu.Idioma.Descripcion = Item("Descripcion")
+                    Dim oIdMPP As New MPP.clsIdioma
+                    Dim oIdioma As New Servicios.clsIdioma
+                    oIdioma.ID = oUsu.Idioma.ID
+                    oUsu.Idioma = oIdMPP.ConsultarIdioma(oIdioma)
+
 
                     listaUsuario.Add(oUsu)
                 Next
@@ -167,6 +170,11 @@ Namespace MPP
                     oUsu.Intentos = Item("Intentos")
                     '         oUsu.Idioma.ID = Item("ID_Idioma")
                     '     oUsu.Idioma.Descripcion = Item("Descripcion")
+                    Dim oIdMPP As New MPP.clsIdioma
+                    Dim oIdioma As New Servicios.clsIdioma
+                    oIdioma.ID = oUsu.Idioma.ID
+                    oUsu.Idioma = oIdMPP.ConsultarIdioma(oIdioma)
+
                 Next
                 Return oUsu
             Else
