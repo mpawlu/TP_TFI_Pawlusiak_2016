@@ -100,18 +100,16 @@
     Private Sub CargarDDL()
         Dim oIdBLL As New BLL.clsIdioma
         Idiomas = oIdBLL.ListarIdiomas
-        'Me.DropDownList1.DataSource = Idiomas
-        'Me.DropDownList1.DataBind()
-        Me.DropDownList1.Items.Add("1")
-        Me.DropDownList1.Items.Add("3")
-        Me.DropDownList1.Items.Add("4")
-        Me.DropDownList1.Items.Add("5")
-        Me.DropDownList1.Items.Add("6")
+        Me.DropDownList1.DataSource = Idiomas
+        Me.DropDownList1.DataTextField = "Descripcion"
+        Me.DropDownList1.DataValueField = "ID"
+        Me.DropDownList1.DataBind()
     End Sub
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles btnActualizarIdioma.Click
         Dim oUsuBLL As New BLL.clsUsuario
         Dim NuevoIdioma As New Servicios.clsIdioma
-        NuevoIdioma.ID = CInt(DropDownList1.SelectedItem.Text)
+        NuevoIdioma.ID = Me.DropDownList1.SelectedValue
+
         Usuario.Idioma = NuevoIdioma
         oUsuBLL.ModificarUsuario(Usuario)
         Usuario.Notificar()
