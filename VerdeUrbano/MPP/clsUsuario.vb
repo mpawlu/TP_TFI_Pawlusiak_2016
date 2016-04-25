@@ -57,7 +57,7 @@ Namespace MPP
             hdatos.Add("@FechaAlta", usuario.FechaAlta)
             hdatos.Add("@Editable", usuario.Editable)
             hdatos.Add("@Intentos", usuario.Intentos)
-            hdatos.Add("@Id_Idioma", 1) 'cambiar
+            hdatos.Add("@Id_Idioma", usuario.Idioma.ID) 'cambiar
             hdatos.Add("@DVH", "ASFDDFD")
 
             resultado = oDatos.Escribir("s_Usuario_Modificar", hdatos)
@@ -128,11 +128,11 @@ Namespace MPP
                     oUsu.FechaAlta = Item("FechaAlta")
                     oUsu.Editable = Item("Editables")
                     oUsu.Intentos = Item("Intentos")
-                    'oUsu.Idioma.ID = Item("ID_Idioma")
-                    'oUsu.Idioma.Descripcion = Item("Descripcion")
+                    
+
                     Dim oIdMPP As New MPP.clsIdioma
                     Dim oIdioma As New Servicios.clsIdioma
-                    oIdioma.ID = oUsu.Idioma.ID
+                    oIdioma.ID = Item("ID_Idioma")
                     oUsu.Idioma = oIdMPP.ConsultarIdioma(oIdioma)
 
                 Next
@@ -168,11 +168,10 @@ Namespace MPP
                     oUsu.FechaAlta = CDate(Item("FechaAlta"))
                     oUsu.Editable = CBool(Item("Editable"))
                     oUsu.Intentos = Item("Intentos")
-                    '         oUsu.Idioma.ID = Item("ID_Idioma")
-                    '     oUsu.Idioma.Descripcion = Item("Descripcion")
+
                     Dim oIdMPP As New MPP.clsIdioma
                     Dim oIdioma As New Servicios.clsIdioma
-                    oIdioma.ID = oUsu.Idioma.ID
+                    oIdioma.ID = Item("ID_Idioma")
                     oUsu.Idioma = oIdMPP.ConsultarIdioma(oIdioma)
 
                 Next

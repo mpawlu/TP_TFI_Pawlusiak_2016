@@ -10,9 +10,7 @@ Namespace MPP
 
             hdatos.Add("@ID_Idioma", traduccion.Idioma.ID)
             hdatos.Add("@ID_leyenda", traduccion.Leyenda.ID)
-            hdatos.Add("@ID_Traduccion", traduccion.Traduccion)
-            hdatos.Add("@ID_Traduccion", traduccion.Traduccion)
-
+            hdatos.Add("@Traduccion", traduccion.Traduccion)
 
             resultado = oDatos.Escribir("s_Traduccion_Crear", hdatos)
 
@@ -71,7 +69,7 @@ Namespace MPP
                     oTrad.Leyenda.ID = Item("ID_Leyenda")
                     oTrad.Leyenda.Leyenda = Item("Leyenda")
                     oTrad.Traduccion = Item("Traduccion")
-                    oTrad.DVH = Item("DVH")
+                    'oTrad.DVH = Item("DVH")
 
                     listaTraducciones.Add(oTrad)
                 Next

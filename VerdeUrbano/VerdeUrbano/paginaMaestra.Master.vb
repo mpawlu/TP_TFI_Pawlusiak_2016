@@ -1,5 +1,6 @@
 ﻿Public Class paginaMaestra
     Inherits System.Web.UI.MasterPage
+    Implements Servicios.Obvserver
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         cargarMenuEstatico()
@@ -38,5 +39,83 @@
         menuPrincipal.Items.Add(miMenuProductos)
         menuPrincipal.Items.Add(Ingresar)
     End Sub
+    Public Sub ActualizarIdioma() Implements Servicios.Obvserver.ActualizarIdioma
+        ''Se dispara cuando el usuario cambia el idioma. Recorre todos los controles y reemplaza la propiedad text de los controles, por la que corresponda segun el idioma seleccionado.
+        For Each x As Control In Page.Form.Controls
+            If x.GetType() = Me.menuPrincipal.GetType() Then
+                Dim m As New Menu
+                m = DirectCast(x, Menu)
+                For Each i As MenuItem In m.Items
+                    traducirItem(i)
+                Next
+            Else
+                traducirControl(x)
+            End If
+        Next
 
+    End Sub
+
+    Private Sub traducirItem(ByVal menuItem As MenuItem)
+        Dim UsuarioActual As Servicios.Usuario = RecuperarUsuario()
+        Dim oTradBLL As New BLL.ClsTraduccion
+        Dim oTraducciones As List(Of Servicios.ClsTraduccion)
+        oTraducciones = oTradBLL.ListarTraducciones(UsuarioActual.Idioma)
+        For Each Trad As Servicios.ClsTraduccion In oTraducciones
+            If menuItem.Value = Trad.Leyenda.ID Then
+                menuItem.GetType.GetProperty("Text").SetValue(menuItem, Trad.Traduccion, Nothing)
+            End If
+            If menuItem.ChildItems.Count > 0 Then
+                For Each menuItemChild As MenuItem In menuItem.ChildItems
+                    traducirItem(menuItemChild)
+                Next
+            End If
+        Next
+    End Sub
+
+    Private Sub traducirControl(ByVal miControl As Control)
+        Dim UsuarioActual As Servicios.Usuario = RecuperarUsuario()
+        Dim oTradBLL As New BLL.ClsTraduccion
+        Dim oTraducciones As List(Of Servicios.ClsTraduccion)
+        oTraducciones = oTradBLL.ListarTraducciones(UsuarioActual.Idioma)
+        For Each Trad As Servicios.ClsTraduccion In oTraducciones
+            If Trad.Leyenda.ID = miControl.ID Then
+                miControl.GetType.GetProperty("Text").SetValue(miControl, Trad.Traduccion, Nothing)
+                'miControl.GetType.GetProperty("imageURL").SetValue(miControl, Trad.Traduccion, Nothing)
+            End If
+        Next
+
+    End Sub
+
+    Private Sub traducir(ByVal miButton As Button)
+        MsgBox("soy boton")
+    End Sub
+
+
+    Public Sub InicializarUsuario()
+        Dim UsuarioActual As New Servicios.Usuario
+        Dim usuarioBLL As New BLL.clsUsuario
+        'Le pongo el ID = 2 para traer un usuario de prueba
+        UsuarioActual.Id = 2
+        UsuarioActual = usuarioBLL.ListarUsuario(UsuarioActual)
+        UsuarioActual.AgregarObservador(Me)
+        Me.GuardarUsuario(UsuarioActual)
+        UsuarioActual.Notificar()
+    End Sub
+    Public Function RecuperarUsuario() As Servicios.Usuario
+        Dim resultado As New Servicios.Usuario
+        resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
+        Return resultado
+    End Function
+    Public Sub GuardarUsuario(ByVal usuario As Servicios.Usuario)
+        Dim UsuarioSesion As New Servicios.Usuario
+        UsuarioSesion = usuario
+        Session("Usuario") = UsuarioSesion
+    End Sub
+    Private Function TieneHijos(ByVal hijo As MenuItem) As Boolean
+        If hijo.ChildItems.Count > 0 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 End Class

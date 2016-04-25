@@ -22,20 +22,20 @@
             Dim oTrad As New Servicios.ClsTraduccion
             Dim oTradBLL As New BLL.ClsTraduccion
 
-            For Each r As DataRow In gv_Palabras.Rows
-                Try
-                    oLeyenda.ID = CInt(r(0))
-                    oLeyenda.Leyenda = CStr(r(1))
-                    oTrad.Leyenda = oLeyenda
-                    oTrad.Idioma = NuevoIdioma
-                    oTrad.Traduccion = CStr(r(2))
-                    If oTradBLL.CrearTraduccion(oTrad) = False Then
-                        'Excepcion Validacion traduccion
-                        Exit For
-                    End If
-                Catch ex As Exception
+            For Each r As GridViewRow In gv_Palabras.Rows
+                'Try
+                oLeyenda.ID = CStr(r.Cells(0).Text)
+                oLeyenda.Leyenda = CStr(r.Cells(1).Text)
+                oTrad.Leyenda = oLeyenda
+                oTrad.Idioma = NuevoIdioma
+                oTrad.Traduccion = CStr(r.Cells(2).Text)
+                If oTradBLL.CrearTraduccion(oTrad) = False Then
+                    'Excepcion Validacion traduccion
+                    Exit For
+                End If
+                'Catch ex As Exception
 
-                End Try
+                'End Try
             Next
         Else
             'Excepcion validacion nombre Idioma

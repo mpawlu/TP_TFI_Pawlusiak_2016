@@ -11,6 +11,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
 
     <br />
+    <asp:DropDownList ID="DropDownList1" runat="server">
+    </asp:DropDownList>
+    <asp:Button ID="btnActualizarIdioma" runat="server" Text="Actualizar Idioma" />
     <br />
     <br />
     <div class="container-fluid">

@@ -7,7 +7,7 @@
             Dim resultado As Boolean
 
             hdatos.Add("@Descripcion", idioma.Descripcion)
-            hdatos.Add("@DVH", idioma.DVH)
+            hdatos.Add("@DVH", "asd")
 
 
             resultado = oDatos.Escribir("s_Idioma_Crear", hdatos)
@@ -20,7 +20,7 @@
             Dim Ds As New DataSet
             Dim listIdiomas As New List(Of Servicios.clsIdioma)
 
-            Ds = oDatos.Leer("s_Idiomas_Listar", Nothing)
+            Ds = oDatos.Leer("s_Idioma_ListarTodos", Nothing)
 
             If Ds.Tables(0).Rows.Count > 0 Then
 
@@ -28,7 +28,7 @@
                     Dim oIdioma As New Servicios.clsIdioma
                     oIdioma.ID = Item(0)
                     oIdioma.Descripcion = Item(1)
-                    oIdioma.DVH = Item(2)
+                    oIdioma.DVH = "asdasd"
                     listIdiomas.Add(oIdioma)
                 Next
 

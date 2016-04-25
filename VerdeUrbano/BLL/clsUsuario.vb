@@ -79,33 +79,32 @@ Namespace BLL
             Dim Mapper As New MPP.clsUsuario
             _UsuarioLogin.NombreUsuario = nombreUsuario
             _UsuarioLogin.Password = clsEncriptadora.EncriptarPass(Password)
-            Try
-                If Me.chequearUsuario(_UsuarioLogin) = False Then
-                    '      Throw New UsuarioInexistenteException
+            'Try
+            If Me.chequearUsuario(_UsuarioLogin) = False Then
+                '      Throw New UsuarioInexistenteException
+            Else
+                Dim _Usuario As New Servicios.Usuario
+                _Usuario = Mapper.ConsultarUsuarioporNombre(_UsuarioLogin)
+                If Me.chequearContraseña(_Usuario, _UsuarioLogin) = False Then
+                    '     Throw New PasswordIncorrectoException
                 Else
-                    Dim _Usuario As New Servicios.Usuario
-                    _Usuario = Mapper.ConsultarUsuarioporNombre(_UsuarioLogin)
-                    If Me.chequearContraseña(_Usuario, _UsuarioLogin) = False Then
-                        '     Throw New PasswordIncorrectoException
+                    If Me.chequearBloqueado(_Usuario) = True Then
+                        '         Throw New UsuarioBloqueadoException
                     Else
-
-                        If Me.chequearBloqueado(_Usuario) = True Then
-                            '         Throw New UsuarioBloqueadoException
-                        Else
-                            Me.resetearIntentos(_Usuario)
-                            Return _Usuario
-                        End If
+                        Me.resetearIntentos(_Usuario)
+                        Return _Usuario
                     End If
                 End If
-                'Catch ex As UsuarioInexistenteException
-                '    Throw New BLL.UsuarioInexistenteException
-                'Catch ex As UsuarioBloqueadoException
-                '    Throw New BLL.UsuarioBloqueadoException
-                'Catch ex As PasswordIncorrectoException
-                '    Throw New BLL.PasswordIncorrectoException
-            Catch ex As Exception
+            End If
+            'Catch ex As UsuarioInexistenteException
+            '    Throw New BLL.UsuarioInexistenteException
+            'Catch ex As UsuarioBloqueadoException
+            '    Throw New BLL.UsuarioBloqueadoException
+            'Catch ex As PasswordIncorrectoException
+            '    Throw New BLL.PasswordIncorrectoException
+            'Catch ex As Exception
 
-            End Try
+            'End Try
         End Function
 
         Public Function chequearUsuario(ByVal oUsuario As Servicios.Usuario) As Boolean
