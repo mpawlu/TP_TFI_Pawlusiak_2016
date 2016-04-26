@@ -3,7 +3,9 @@
     Implements Servicios.Obvserver
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        cargarMenuEstatico()
+        If Not IsPostBack Then
+            cargarMenuEstatico()
+        End If
     End Sub
 
 
@@ -40,21 +42,64 @@
         menuPrincipal.Items.Add(Ingresar)
     End Sub
     Public Sub ActualizarIdioma() Implements Servicios.Obvserver.ActualizarIdioma
-        ''Se dispara cuando el usuario cambia el idioma. Recorre todos los controles y reemplaza la propiedad text de los controles, por la que corresponda segun el idioma seleccionado.
+
+        Dim miusuario As New Servicios.Usuario
+        miusuario = RecuperarUsuario()
+
+        If Not IsNothing(miusuario) Then
+            'Traduce el menú principal
+            Dim MiMenuP As Menu
+            MiMenuP = Me.FindControl("menuPrincipal")
+            For Each MiMenuItem As MenuItem In MiMenuP.Items
+                traducirItem(MiMenuItem)
+                If MiMenuItem.ChildItems.Count > 0 Then
+                    For Each MiMenuItemHijo As MenuItem In MiMenuItem.ChildItems
+                        traducirItem(MiMenuItemHijo)
+                    Next
+                End If
+            Next
+
+            'Recorro los controles de la página
+            Dim mpContentPlaceHolder As New ContentPlaceHolder
+            mpContentPlaceHolder = Me.FindControl("contenidoPagina")
+            traducirControl(mpContentPlaceHolder.Controls)
+        End If
+
+        ' ''Se dispara cuando el usuario cambia el idioma. Recorre todos los controles y reemplaza la propiedad text de los controles, por la que corresponda segun el idioma seleccionado.
+        'For Each x As Control In Page.Form.Controls
+        '    If x.GetType() = Me.menuPrincipal.GetType() Then
+        '        Dim m As New Menu
+        '        m = DirectCast(x, Menu)
+        '        For Each i As MenuItem In m.Items
+        '            traducirItem(i)
+        '        Next
+        '    Else
+        '        traducirControl(x)
+        '    End If
+        'Next
+    End Sub
 
 
-        For Each x As Control In Page.Form.Controls
-            If x.GetType() = Me.menuPrincipal.GetType() Then
-                Dim m As New Menu
-                m = DirectCast(x, Menu)
-                For Each i As MenuItem In m.Items
-                    traducirItem(i)
-                Next
-            Else
-                traducirControl(x)
+    ''' <summary>
+    ''' Traduce cada control de la página
+    ''' </summary>
+    ''' <param name="paramListaControl">Espera una control collection.</param>
+    Private Sub traducirControl(ByVal paramListaControl As ControlCollection)
+        For Each miControl As Control In paramListaControl
+            If TypeOf miControl Is Button Then
+                traducirControl(DirectCast(miControl, Button))
+            ElseIf TypeOf miControl Is CheckBox Then
+                traducirControl(DirectCast(miControl, CheckBox))
+            ElseIf TypeOf miControl Is RadioButton Then
+                traducirControl(DirectCast(miControl, RadioButton))
+            ElseIf TypeOf miControl Is Label Then
+                traducirControl(DirectCast(miControl, Label))
+            ElseIf TypeOf miControl Is ImageButton Then
+                traducirControl(DirectCast(miControl, ImageButton))
+            ElseIf TypeOf miControl Is HtmlGenericControl Then
+                traducirControl(miControl.Controls)
             End If
         Next
-
     End Sub
 
     Private Sub traducirItem(ByVal menuItem As MenuItem)

@@ -8,6 +8,7 @@
         Dim oIdBLL As New BLL.clsIdioma
         CargarDDL()
         Usuario.AgregarObservador(Me)
+        Usuario.Notificar()
     End Sub
 
     Public Sub ActualizarIdioma() Implements Servicios.Obvserver.ActualizarIdioma
