@@ -112,6 +112,16 @@
             End Set
         End Property
 
+
+        Public ReadOnly Property StringDVH() As String
+            Get
+                Return _ID & _NombreUsuario & _Idioma.ID & _Pass & _DNI & _Activo & _Bloqueado & _FechaAlta & _Editable & _Intentos
+
+            End Get
+
+        End Property
+
+
         Private _Observadores As New List(Of Servicios.Obvserver)
         Public Property Observadores() As List(Of Servicios.Obvserver)
             Get

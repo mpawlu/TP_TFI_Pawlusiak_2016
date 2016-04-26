@@ -41,6 +41,8 @@
     End Sub
     Public Sub ActualizarIdioma() Implements Servicios.Obvserver.ActualizarIdioma
         ''Se dispara cuando el usuario cambia el idioma. Recorre todos los controles y reemplaza la propiedad text de los controles, por la que corresponda segun el idioma seleccionado.
+
+
         For Each x As Control In Page.Form.Controls
             If x.GetType() = Me.menuPrincipal.GetType() Then
                 Dim m As New Menu

@@ -19,7 +19,7 @@ Namespace MPP
             hdatos.Add("@Editable", usuario.Editable)
             hdatos.Add("@Intentos", usuario.Intentos)
             hdatos.Add("@ID_Idioma", usuario.Idioma.ID)
-            hdatos.Add("@DVH", "ASFDDFD")
+            hdatos.Add("@DVH", MPP.DigitoVerificador.CalcularDVH(usuario.StringDVH))
 
             resultado = oDatos.Escribir("s_Usuario_Crear", hdatos)
 
@@ -58,7 +58,7 @@ Namespace MPP
             hdatos.Add("@Editable", usuario.Editable)
             hdatos.Add("@Intentos", usuario.Intentos)
             hdatos.Add("@Id_Idioma", usuario.Idioma.ID) 'cambiar
-            hdatos.Add("@DVH", "ASFDDFD")
+            hdatos.Add("@DVH", MPP.DigitoVerificador.CalcularDVH(usuario.StringDVH))
 
             resultado = oDatos.Escribir("s_Usuario_Modificar", hdatos)
             Return resultado
