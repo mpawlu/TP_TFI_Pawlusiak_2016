@@ -3,9 +3,16 @@
     Implements Servicios.Obvserver
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
         If Not IsPostBack Then
             cargarMenuEstatico()
+            Dim miusuario As New Servicios.Usuario
+            miusuario = RecuperarUsuario()
+            If Not IsNothing(miusuario) Then
+                miusuario.AgregarObservador(Me)
+            End If
         End If
+
     End Sub
 
 
@@ -109,7 +116,8 @@
         oTraducciones = oTradBLL.ListarTraducciones(UsuarioActual.Idioma)
         For Each Trad As Servicios.ClsTraduccion In oTraducciones
             If menuItem.Value = Trad.Leyenda.ID Then
-                menuItem.GetType.GetProperty("Text").SetValue(menuItem, Trad.Traduccion, Nothing)
+                menuItem.Text = Trad.Traduccion.ToString
+                'menuItem.GetType.GetProperty("Text").SetValue(menuItem, Trad.Traduccion, Nothing)
             End If
             If menuItem.ChildItems.Count > 0 Then
                 For Each menuItemChild As MenuItem In menuItem.ChildItems

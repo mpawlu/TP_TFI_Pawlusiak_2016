@@ -9,6 +9,7 @@
         Dim _usu As Servicios.Usuario = (New BLL.clsUsuario).Login(Me.txt_usuario.Text, Me.txt_password.Text)
         If Not _usu Is Nothing Then
             Me.GuardarUsuario(_usu)
+
             Response.Redirect("index.aspx")
         Else
             MsgBox("ADFSAD")

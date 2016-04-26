@@ -135,12 +135,12 @@
 
 #Region "Metods"
         Public Sub Notificar() Implements Observable.Notificar
-            Try
-                For Each ob As Servicios.Obvserver In Me.Observadores
-                    ob.ActualizarIdioma()
-                Next
-            Catch ex As Exception
-            End Try
+            'Try
+            For Each ob As Servicios.Obvserver In Me.Observadores
+                ob.ActualizarIdioma()
+            Next
+            'Catch ex As Exception
+            'End Try
 
         End Sub
 
