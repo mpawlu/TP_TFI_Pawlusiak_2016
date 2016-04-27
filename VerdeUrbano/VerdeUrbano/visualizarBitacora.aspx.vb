@@ -21,8 +21,10 @@
 
     Private Sub obtenerUsuarios()
         Try
-            'Dim _bllUsuario As New BLL.UsuarioBLL
-            'Me.ddlUsuario.DataSource = _bllUsuario.consultarUsuarios
+            Dim UsuarioBLL As New BLL.clsUsuario
+            Dim ListaUsuarios As New List(Of Servicios.Usuario)
+            ListaUsuarios = UsuarioBLL.ListarUsuarios
+            Me.ddlUsuario.DataSource = ListaUsuarios
             Me.ddlUsuario.DataBind()
             Me.ddlUsuario.Items.Insert(0, "Todos")
         Catch ex As Exception

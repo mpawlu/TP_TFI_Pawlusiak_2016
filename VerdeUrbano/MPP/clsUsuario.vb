@@ -78,22 +78,20 @@ Namespace MPP
 
                 For Each Item As DataRow In DS.Tables(0).Rows
                     oUsu = New Servicios.Usuario
-                    oUsu.Id = Item("IdUsuario")
+                    oUsu.ID = Item("Id_Usuario")
                     oUsu.NombreUsuario = Item("NombreUsuario")
                     oUsu.Password = Item("Pass")
                     oUsu.DNI = Item("DNI")
                     oUsu.Activo = Item("Activo")
-                    oUsu.Perfil = Item("Perfil")
+                    '      oUsu.Perfil = Item("Perfil")
                     oUsu.Bloqueado = Item("Bloqueado")
                     oUsu.FechaAlta = Item("FechaAlta")
-                    oUsu.Editable = Item("Editables")
+                    'oUsu.Editable = Item("Editable")
                     oUsu.Intentos = Item("Intentos")
                     Dim oIdMPP As New MPP.clsIdioma
                     Dim oIdioma As New Servicios.clsIdioma
-                    oIdioma.ID = oUsu.Idioma.ID
+                    oIdioma.ID = Item("ID_Idioma")
                     oUsu.Idioma = oIdMPP.ConsultarIdioma(oIdioma)
-
-
                     listaUsuario.Add(oUsu)
                 Next
 
