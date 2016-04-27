@@ -4,9 +4,12 @@
     Dim Usuario As New Servicios.Usuario
     Dim Idiomas As New List(Of Servicios.clsIdioma)
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Usuario = Me.RecuperarUsuario()
-        Dim oIdBLL As New BLL.clsIdioma
-        CargarDDL()
+        If Not IsPostBack Then
+            Usuario = Me.RecuperarUsuario()
+            Dim oIdBLL As New BLL.clsIdioma
+            CargarDDL()
+        End If
+     
         'Usuario.AgregarObservador(Me)
         'Usuario.Notificar()
     End Sub
@@ -109,10 +112,11 @@
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles btnActualizarIdioma.Click
         Dim oUsuBLL As New BLL.clsUsuario
         Dim NuevoIdioma As New Servicios.clsIdioma
+        Usuario = Me.RecuperarUsuario()
         NuevoIdioma.ID = Me.DropDownList1.SelectedValue
-
         Usuario.Idioma = NuevoIdioma
         oUsuBLL.ModificarUsuario(Usuario)
+        Me.GuardarUsuario(Usuario)
         Usuario.Notificar()
     End Sub
 End Class

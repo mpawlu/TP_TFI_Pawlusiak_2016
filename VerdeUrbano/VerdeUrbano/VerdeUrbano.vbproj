@@ -148,6 +148,8 @@
     <Content Include="login.aspx" />
     <Content Include="nuestrosProductos.aspx" />
     <Content Include="quienesSomos.aspx" />
+    <Content Include="realizarBackup.aspx" />
+    <Content Include="realizarRestore.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +240,20 @@
     </Compile>
     <Compile Include="quienesSomos.aspx.vb">
       <DependentUpon>quienesSomos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="realizarBackup.aspx.designer.vb">
+      <DependentUpon>realizarBackup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="realizarBackup.aspx.vb">
+      <DependentUpon>realizarBackup.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="realizarRestore.aspx.designer.vb">
+      <DependentUpon>realizarRestore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="realizarRestore.aspx.vb">
+      <DependentUpon>realizarRestore.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

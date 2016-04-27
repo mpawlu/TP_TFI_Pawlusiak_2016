@@ -48,13 +48,13 @@ Namespace MPP
             Dim resultado As Boolean
             'para el usuario cambia
             hdatos.Add("@Id_Usuario", usuario.ID)
-            hdatos.Add("@NombreUsuario", usuario.NombreUsuario)
+            ' hdatos.Add("@NombreUsuario", usuario.NombreUsuario)
             hdatos.Add("@Pass", usuario.Password)
             hdatos.Add("@DNI", usuario.DNI)
             hdatos.Add("@Activo", usuario.Activo)
             hdatos.Add("@Perfil", 1) ' cambiar
             hdatos.Add("@Bloqueado", usuario.Bloqueado)
-            hdatos.Add("@FechaAlta", usuario.FechaAlta)
+            ' hdatos.Add("@FechaAlta", usuario.FechaAlta)
             hdatos.Add("@Editable", usuario.Editable)
             hdatos.Add("@Intentos", usuario.Intentos)
             hdatos.Add("@Id_Idioma", usuario.Idioma.ID) 'cambiar

@@ -6,12 +6,16 @@ Namespace DAL
     Public Class Datos
 
         Private Str As String = "Data Source=.\SQLEXPRESS;Initial Catalog=VerdeUrbano;Integrated Security=True"
-
         Private Shared ComandoRestore As SqlCommand
         Private Cnn As New SqlConnection(Str)
         Private Tranx As SqlTransaction
         Private Cmd As SqlCommand
 
+        Shared Function retornaConexionMaestra() As SqlConnection
+            Dim _objConexionMaster As New SqlConnection
+            _objConexionMaster.ConnectionString = "Data Source=.\SQLEXPRESS;Initial Catalog=master;Integrated Security=True"
+            Return _objConexionMaster
+        End Function
 
         Public Function Leer(ByVal consulta As String, ByVal hdatos As Hashtable) As DataSet
 
@@ -74,54 +78,17 @@ Namespace DAL
             End Try
 
         End Function
-        Public Function crear_backup(ByVal Directorio As String, ByVal nombre As String, ByVal descripcion As String) As Boolean
-            If Directorio.Length <> 3 Then
-                Directorio = Directorio & "\" & nombre & ".bak"
-            Else
-                Directorio = Directorio & nombre & ".bak"
-            End If
-            If Cnn.State = ConnectionState.Closed Then
-                Cnn.ConnectionString = Str
-                Cnn.Open()
-            End If
-            Using Cnn
-                Try
-                    Dim sCmd As New StringBuilder
-                    sCmd.Append("BACKUP DATABASE [EjemploCapas] TO  DISK = '" & Directorio & "' ")
-                    sCmd.Append("WITH DESCRIPTION = '" & descripcion & "', NOFORMAT, NOINIT, ")
-                    sCmd.Append("NAME = '" & nombre & "', SKIP, NOREWIND, NOUNLOAD,  STATS = 10")
-                    Dim cmd As New SqlCommand(sCmd.ToString, Cnn)
-                    cmd.ExecuteNonQuery()
-                    crear_backup = True
-                Catch ex As Exception
-                    crear_backup = False
-                Finally
-                    Cnn.Close()
-                End Try
-            End Using
-        End Function
-        Public Function crear_restore(ByVal directorio As String) As Boolean
-            If Cnn.State = ConnectionState.Closed Then
-                Cnn.ConnectionString = Str
-                Cnn.Open()
-            End If
-
+        Public Function BackupRestore(ByVal Comando As SqlCommand, ByVal Cnn As SqlConnection) As Boolean
             Try
-                retornaComandoRestore(" ALTER DATABASE  [BestToy] SET SINGLE_USER WITH ROLLBACK IMMEDIATE RESTORE DATABASE [EjemploCapas] FROM DISK = '" & directorio & "'  With Replace ALTER DATABASE [BestToy] SET MULTI_USER ", Cnn)
-                crear_restore = True
+                Cnn.Open()
+                Comando.ExecuteNonQuery()
+                Return True
             Catch ex As Exception
-                crear_restore = False
-            Finally
-                Cnn.Close()
+                Return False
             End Try
+
         End Function
-        Public Shared Sub retornaComandoRestore(ByVal SelectCommand As String, ByVal conexion As SqlConnection)
-            ComandoRestore = New SqlCommand
-            ComandoRestore.CommandText = SelectCommand
-            ComandoRestore.CommandType = CommandType.Text
-            ComandoRestore.Connection = conexion
-            ComandoRestore.ExecuteNonQuery()
-        End Sub
+
     End Class
 
 End Namespace

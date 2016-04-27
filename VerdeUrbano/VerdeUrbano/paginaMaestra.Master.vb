@@ -6,11 +6,12 @@
 
         If Not IsPostBack Then
             cargarMenuEstatico()
-            Dim miusuario As New Servicios.Usuario
-            miusuario = RecuperarUsuario()
-            If Not IsNothing(miusuario) Then
-                miusuario.AgregarObservador(Me)
-            End If
+      
+        End If
+        Dim miusuario As New Servicios.Usuario
+        miusuario = RecuperarUsuario()
+        If Not IsNothing(miusuario) Then
+            miusuario.AgregarObservador(Me)
         End If
 
     End Sub
@@ -49,41 +50,46 @@
         menuPrincipal.Items.Add(Ingresar)
     End Sub
     Public Sub ActualizarIdioma() Implements Servicios.Obvserver.ActualizarIdioma
+        Try
+            Dim miusuario As New Servicios.Usuario
+            miusuario = RecuperarUsuario()
 
-        Dim miusuario As New Servicios.Usuario
-        miusuario = RecuperarUsuario()
+            If Not IsNothing(miusuario) Then
+                'Traduce el menú principal
+                Dim MiMenuP As Menu
+                MiMenuP = Me.FindControl("menuPrincipal")
+                For Each MiMenuItem As MenuItem In MiMenuP.Items
+                    traducirItem(MiMenuItem)
+                    If MiMenuItem.ChildItems.Count > 0 Then
+                        For Each MiMenuItemHijo As MenuItem In MiMenuItem.ChildItems
+                            traducirItem(MiMenuItemHijo)
+                        Next
+                    End If
+                Next
 
-        If Not IsNothing(miusuario) Then
-            'Traduce el menú principal
-            Dim MiMenuP As Menu
-            MiMenuP = Me.FindControl("menuPrincipal")
-            For Each MiMenuItem As MenuItem In MiMenuP.Items
-                traducirItem(MiMenuItem)
-                If MiMenuItem.ChildItems.Count > 0 Then
-                    For Each MiMenuItemHijo As MenuItem In MiMenuItem.ChildItems
-                        traducirItem(MiMenuItemHijo)
-                    Next
-                End If
-            Next
+                'Recorro los controles de la página
+                Dim mpContentPlaceHolder As New ContentPlaceHolder
+                mpContentPlaceHolder = Me.FindControl("contenidoPagina")
+                traducirControl(mpContentPlaceHolder.Controls)
+            End If
 
-            'Recorro los controles de la página
-            Dim mpContentPlaceHolder As New ContentPlaceHolder
-            mpContentPlaceHolder = Me.FindControl("contenidoPagina")
-            traducirControl(mpContentPlaceHolder.Controls)
-        End If
+            ' ''Se dispara cuando el usuario cambia el idioma. Recorre todos los controles y reemplaza la propiedad text de los controles, por la que corresponda segun el idioma seleccionado.
+            'For Each x As Control In Page.Form.Controls
+            '    If x.GetType() = Me.menuPrincipal.GetType() Then
+            '        Dim m As New Menu
+            '        m = DirectCast(x, Menu)
+            '        For Each i As MenuItem In m.Items
+            '            traducirItem(i)
+            '        Next
+            '    Else
+            '        traducirControl(x)
+            '    End If
+            'Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
-        ' ''Se dispara cuando el usuario cambia el idioma. Recorre todos los controles y reemplaza la propiedad text de los controles, por la que corresponda segun el idioma seleccionado.
-        'For Each x As Control In Page.Form.Controls
-        '    If x.GetType() = Me.menuPrincipal.GetType() Then
-        '        Dim m As New Menu
-        '        m = DirectCast(x, Menu)
-        '        For Each i As MenuItem In m.Items
-        '            traducirItem(i)
-        '        Next
-        '    Else
-        '        traducirControl(x)
-        '    End If
-        'Next
+
     End Sub
 
 
@@ -117,7 +123,7 @@
         For Each Trad As Servicios.ClsTraduccion In oTraducciones
             If menuItem.Value = Trad.Leyenda.ID Then
                 menuItem.Text = Trad.Traduccion.ToString
-                'menuItem.GetType.GetProperty("Text").SetValue(menuItem, Trad.Traduccion, Nothing)
+                menuItem.GetType.GetProperty("Text").SetValue(menuItem, Trad.Traduccion, Nothing)
             End If
             If menuItem.ChildItems.Count > 0 Then
                 For Each menuItemChild As MenuItem In menuItem.ChildItems
@@ -154,6 +160,7 @@
         UsuarioActual = usuarioBLL.ListarUsuario(UsuarioActual)
         UsuarioActual.AgregarObservador(Me)
         Me.GuardarUsuario(UsuarioActual)
+
         UsuarioActual.Notificar()
     End Sub
     Public Function RecuperarUsuario() As Servicios.Usuario
