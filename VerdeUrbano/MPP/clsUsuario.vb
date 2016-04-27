@@ -123,10 +123,10 @@ Namespace MPP
                     oUsu.Password = Item("Pass")
                     oUsu.DNI = Item("DNI")
                     oUsu.Activo = Item("Activo")
-                    oUsu.Perfil = Item("Perfil")
+                    'oUsu.Perfil = Item("Perfil")
                     oUsu.Bloqueado = Item("Bloqueado")
                     oUsu.FechaAlta = Item("FechaAlta")
-                    oUsu.Editable = Item("Editables")
+                    'oUsu.Editable = Item("Editable")
                     oUsu.Intentos = Item("Intentos")
                     
 

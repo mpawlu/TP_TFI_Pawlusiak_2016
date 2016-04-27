@@ -36,8 +36,9 @@
                     Dim oUsuServ As New Servicios.Usuario
                     oUsuServ.ID = Item("ID_Usuario")
                     oBita.Usuario = oUsu.ConsultarUsuario(oUsuServ)
+                    oBita.TipoOperacion = Item("TipoOperacion")
                     oBita.FechaHora = Item("FechaHora")
-                    oBita.DescripcionEvento = Item("Evento")
+                    oBita.DescripcionEvento = Item("DescripcionEvento")
 
                     listaBitacora.Add(oBita)
                 Next

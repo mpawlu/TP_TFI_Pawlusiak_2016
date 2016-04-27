@@ -150,6 +150,7 @@
     <Content Include="quienesSomos.aspx" />
     <Content Include="realizarBackup.aspx" />
     <Content Include="realizarRestore.aspx" />
+    <Content Include="visualizarBitacora.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -254,6 +255,13 @@
     </Compile>
     <Compile Include="realizarRestore.aspx.vb">
       <DependentUpon>realizarRestore.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="visualizarBitacora.aspx.designer.vb">
+      <DependentUpon>visualizarBitacora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="visualizarBitacora.aspx.vb">
+      <DependentUpon>visualizarBitacora.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
