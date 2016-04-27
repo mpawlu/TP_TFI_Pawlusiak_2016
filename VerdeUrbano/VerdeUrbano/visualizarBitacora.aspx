@@ -1,6 +1,14 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="visualizarBitacora.aspx.vb" Inherits="VerdeUrbano.visualizarBitacora" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="JS/jquery-1.9.1.min.js"></script>
+    <script src="JS/jquery-ui.js"></script>
+    <link href="CSS/DateTimePicker.css" rel="stylesheet" type="text/css" />
+    <script>
+        $(function () {
+            $("#contenidoPagina_datepicker").datepicker();
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
     <br />
@@ -16,7 +24,7 @@
                         <br />
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="col-md-2 col-md-offset-2">
+                                <div class="col-md-2 col-md-offset-1">
                                     <asp:ImageButton ID="imgfiltroUsuario" runat="server" ImageUrl="~/Imagenes/User-32.png" CssClass="IconoImagen center" />
                                 </div>
                                 <div class="col-md-6 margenFiltro">
@@ -25,7 +33,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <div class="col-md-2 col-md-offset-2">
+                                <div class="col-md-2 col-md-offset-1">
                                     <asp:ImageButton ID="imgfiltroFecha" runat="server" ImageUrl="~/Imagenes/Calendar-32.png" CssClass="IconoImagen center" />
                                 </div>
                                 <div class="col-md-6 margenFiltro">
@@ -34,7 +42,7 @@
 
                             </div>
                             <div class="col-md-4">
-                                <div class="col-md-2 col-md-offset-2">
+                                <div class="col-md-2 col-md-offset-1">
                                     <asp:ImageButton ID="imgTipoPrioridad" runat="server" ImageUrl="~/Imagenes/Question-type-one-correct-32.png" CssClass="IconoImagen center" />
                                 </div>
                                 <div class="col-md-6 margenFiltro">
@@ -72,9 +80,9 @@
                         </div>
                     </div>
                     <br />
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                            <asp:GridView ID="gv_Bitacora" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" >
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <asp:GridView ID="gv_Bitacora" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False">
                                 <Columns>
                                     <asp:BoundField DataField="ID_Evento" HeaderText="ID_Bitacora" Visible="False" />
                                     <asp:BoundField DataField="Usuario.NombreUsuario" HeaderText="Usuario" />

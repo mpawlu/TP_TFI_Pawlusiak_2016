@@ -112,12 +112,6 @@
             End Set
         End Property
 
-
-        Public Overrides Function ToString() As String
-            Return Me.NombreUsuario
-        End Function
-
-
         Public ReadOnly Property StringDVH() As String
             Get
                 Return _ID & _NombreUsuario & _Idioma.ID & _Pass & _DNI & _Activo & _Bloqueado & _FechaAlta & _Editable & _Intentos

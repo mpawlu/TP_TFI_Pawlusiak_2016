@@ -15,9 +15,12 @@
         ListaBitacora = oBitBll.ListarBitacora
         Me.gv_Bitacora.DataSource = ListaBitacora
         Me.gv_Bitacora.DataBind()
-
     End Sub
 
+    Private Sub cargarRegistros(ByVal listaRegistros As List(Of Servicios.clsBitacora))
+        Me.gv_Bitacora.DataSource = listaRegistros
+        Me.gv_Bitacora.DataBind()
+    End Sub
 
     Private Sub obtenerUsuarios()
         Try
@@ -25,6 +28,8 @@
             Dim ListaUsuarios As New List(Of Servicios.Usuario)
             ListaUsuarios = UsuarioBLL.ListarUsuarios
             Me.ddlUsuario.DataSource = ListaUsuarios
+            Me.ddlUsuario.DataTextField = "NombreUsuario"
+            Me.ddlUsuario.DataValueField = "ID"
             Me.ddlUsuario.DataBind()
             Me.ddlUsuario.Items.Insert(0, "Todos")
         Catch ex As Exception
@@ -41,4 +46,31 @@
         End Try
     End Sub
 
+    Protected Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+        Try
+            Dim _usuario As Servicios.Usuario = Nothing
+            Dim UsuarioBLL As New BLL.clsUsuario
+            Dim BitacoraBLL As New BLL.clsBitacora
+            Dim _fecha As Date
+            Dim _operacion As Integer = 0
+            If Not ddlUsuario.SelectedIndex = 0 Then
+                _usuario = New Servicios.Usuario
+                _usuario.ID = Me.ddlUsuario.SelectedValue
+                _usuario = UsuarioBLL.ListarUsuario(_usuario)
+            End If
+            If Not ddlOperacion.SelectedIndex = 0 Then
+                _operacion = ddlOperacion.SelectedIndex
+            End If
+            If Not datepicker.Text = "" Then
+                _fecha = CDate(datepicker.Text)
+            Else
+                _fecha = New Date(1, 1, 1)
+            End If
+            Dim _listabitacora As List(Of Servicios.clsBitacora) = BitacoraBLL.ListarBitacora(_usuario, _fecha, _operacion)
+            cargarRegistros(_listabitacora)
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 End Class

@@ -1,7 +1,7 @@
 ﻿/*ESTRUCTURA DE LA PAGINA*/
 html {
     font-size: 18px;
-    font-family:'Century'
+    font-family: 'Century';
 }
 
 .panel-verdeOscuro {
@@ -220,18 +220,18 @@ html {
     }
 
 .Grid-verde {
-    width: 95%;
+    width: 100%;
     background-color: #ffffff;
     border: solid 1px #333333;
 }
 
     .Grid-verde th {
-        color: #ffffff;
-        background: #00919E;
+        color: #000000;
+        background: #DED1AA;
         border-color: black;
         text-align: center;
-        font-weight: normal;
-        height: 25px;
+        font-weight: bold;
+        height: 30px;
     }
 
     .Grid-verde td {
@@ -244,46 +244,6 @@ html {
         background-color: #BCCDE0;
     }
 
-/* MENSAJES */
-.msj-primary {
-    color: #fff;
-    background-color: #333333;
-    font-weight: bold;
-    font-size: 18px;
-    height: 50px;
-    text-align: center;
-    padding-top: 15px;
-}
-
-.msj-error {
-    color: #C9302C;
-    background-color: #F2DEDE;
-    font-weight: bold;
-    height: 35px;
-    text-align: center;
-    padding-top: 15px;
-    clear: both;
-}
-
-.msj-warning {
-    color: #333333;
-    background-color: #F5E2B7;
-    font-weight: bold;
-    height: 35px;
-    text-align: center;
-    padding-top: 15px;
-    clear: both;
-}
-
-.msj-ok {
-    color: #00919E;
-    background-color: #DFF0D8;
-    font-weight: bold;
-    height: 35px;
-    text-align: center;
-    padding-top: 15px;
-    clear: both;
-}
 
 /* Texto y Parrafos */
 .parrafo {
@@ -292,7 +252,7 @@ html {
 }
 
 .label {
-    font-size:18px;
+    font-size: 18px;
     color: #000000;
 }
 
@@ -381,5 +341,27 @@ a:link {
 }
 
 .radio {
-  margin-left: 100px;
+    margin-left: 100px;
+}
+
+.margenFiltro {
+    padding-top: 8px;
+}
+
+
+.msj-error {
+    background-color: #F2DEDE;
+    text-align: center;
+}
+
+.labelError {
+    font-size: 16px;
+    color: #D9534F;
+    font-weight:700;
+}
+
+.validador {
+    font-size: 18px;
+    color: #D9534F;
+    font-weight:bold;
 }

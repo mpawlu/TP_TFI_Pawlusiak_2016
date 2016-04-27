@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="nuestrosProductos.aspx.vb" Inherits="VerdeUrbano.nuestrosProductos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.css"/>
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script>
@@ -13,11 +13,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
     <br />
     <div class="container">
-        <div class="row">
+        <!--        <div class="row">
             <div class="col-md-4 col-md-offset-7">
                 <a href="calcularPresupuesto.aspx" class="btn btn-success btn-block" role="button" style="text-decoration: none;">CALCULA TU PRESUPUESTO!!!</a>
             </div>
-        </div>
+        </div>-->
         <br />
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -42,7 +42,8 @@
                                     <img src="Imagenes/terraza.jpg" class="img img-responsive" style="padding-left: 5%" />
                                 </div>
                                 <div class="col-md-5 col-md-offset-1">
-                                    <p>Una cubierta verde es un sistema de ingeniería que permite el crecimiento de vegetación en la parte superior de los edificios (ya sea en techos o azoteas) manteniendo protegida su estructura. En general, tienen un impacto neto positivo sobre el ambiente: capturan agua de lluvia, reduciendo inundaciones y niveles de contaminación; mejoran el aislamiento térmico de los edificios y enfrían el aire; representan un hábitat para especies nativas o migratorias; y ayudan a mejorar la calidad de vida.
+                                    <p>
+                                    Una cubierta verde es un sistema de ingeniería que permite el crecimiento de vegetación en la parte superior de los edificios (ya sea en techos o azoteas) manteniendo protegida su estructura. En general, tienen un impacto neto positivo sobre el ambiente: capturan agua de lluvia, reduciendo inundaciones y niveles de contaminación; mejoran el aislamiento térmico de los edificios y enfrían el aire; representan un hábitat para especies nativas o migratorias; y ayudan a mejorar la calidad de vida.
                                 </div>
                             </div>
                             <h3>Macetas</h3>
@@ -63,11 +64,11 @@
                                     <p>Diseñado para interiores, de material hidrófugo, fácil de implementar y mantener. No mancha ni humedece las paredes.</p>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <br />
     <br />

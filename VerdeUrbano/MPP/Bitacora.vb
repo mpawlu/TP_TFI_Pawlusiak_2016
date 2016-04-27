@@ -49,5 +49,241 @@
                 Return Nothing
             End If
         End Function
+
+#Region "Filtros de Bitacora"
+        Public Function ListarBitacora(ByVal paramFecha As Date) As List(Of Servicios.clsBitacora)
+
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim listaBitacora As New List(Of Servicios.clsBitacora)
+            Dim dt As New DataTable
+            Dim oBita As Servicios.clsBitacora
+
+            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oBita = New Servicios.clsBitacora
+                    oBita.ID_Evento = Item("ID_Evento")
+                    Dim oUsu As New MPP.clsUsuario
+                    Dim oUsuServ As New Servicios.Usuario
+                    oUsuServ.ID = Item("ID_Usuario")
+                    oBita.Usuario = oUsu.ConsultarUsuario(oUsuServ)
+                    oBita.TipoOperacion = Item("TipoOperacion")
+                    oBita.FechaHora = Item("FechaHora")
+                    oBita.DescripcionEvento = Item("DescripcionEvento")
+
+                    listaBitacora.Add(oBita)
+                Next
+
+                Return listaBitacora
+
+            Else
+                Return Nothing
+            End If
+        End Function
+
+        Public Function ListarBitacora(ByVal paramOperacion As Integer) As List(Of Servicios.clsBitacora)
+
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim listaBitacora As New List(Of Servicios.clsBitacora)
+            Dim dt As New DataTable
+            Dim oBita As Servicios.clsBitacora
+
+            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oBita = New Servicios.clsBitacora
+                    oBita.ID_Evento = Item("ID_Evento")
+                    Dim oUsu As New MPP.clsUsuario
+                    Dim oUsuServ As New Servicios.Usuario
+                    oUsuServ.ID = Item("ID_Usuario")
+                    oBita.Usuario = oUsu.ConsultarUsuario(oUsuServ)
+                    oBita.TipoOperacion = Item("TipoOperacion")
+                    oBita.FechaHora = Item("FechaHora")
+                    oBita.DescripcionEvento = Item("DescripcionEvento")
+
+                    listaBitacora.Add(oBita)
+                Next
+
+                Return listaBitacora
+
+            Else
+                Return Nothing
+            End If
+        End Function
+
+        Public Function ListarBitacora(ByVal paramUsuario As Servicios.Usuario) As List(Of Servicios.clsBitacora)
+
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim listaBitacora As New List(Of Servicios.clsBitacora)
+            Dim dt As New DataTable
+            Dim oBita As Servicios.clsBitacora
+
+            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oBita = New Servicios.clsBitacora
+                    oBita.ID_Evento = Item("ID_Evento")
+                    Dim oUsu As New MPP.clsUsuario
+                    Dim oUsuServ As New Servicios.Usuario
+                    oUsuServ.ID = Item("ID_Usuario")
+                    oBita.Usuario = oUsu.ConsultarUsuario(oUsuServ)
+                    oBita.TipoOperacion = Item("TipoOperacion")
+                    oBita.FechaHora = Item("FechaHora")
+                    oBita.DescripcionEvento = Item("DescripcionEvento")
+
+                    listaBitacora.Add(oBita)
+                Next
+
+                Return listaBitacora
+
+            Else
+                Return Nothing
+            End If
+        End Function
+
+        Public Function ListarBitacora(ByVal paramFecha As Date, ByVal paramOperacion As Integer) As List(Of Servicios.clsBitacora)
+
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim listaBitacora As New List(Of Servicios.clsBitacora)
+            Dim dt As New DataTable
+            Dim oBita As Servicios.clsBitacora
+
+            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oBita = New Servicios.clsBitacora
+                    oBita.ID_Evento = Item("ID_Evento")
+                    Dim oUsu As New MPP.clsUsuario
+                    Dim oUsuServ As New Servicios.Usuario
+                    oUsuServ.ID = Item("ID_Usuario")
+                    oBita.Usuario = oUsu.ConsultarUsuario(oUsuServ)
+                    oBita.TipoOperacion = Item("TipoOperacion")
+                    oBita.FechaHora = Item("FechaHora")
+                    oBita.DescripcionEvento = Item("DescripcionEvento")
+
+                    listaBitacora.Add(oBita)
+                Next
+
+                Return listaBitacora
+
+            Else
+                Return Nothing
+            End If
+        End Function
+
+        Public Function ListarBitacora(ByVal paramUsuario As Servicios.Usuario, ByVal paramOperacion As Integer) As List(Of Servicios.clsBitacora)
+
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim listaBitacora As New List(Of Servicios.clsBitacora)
+            Dim dt As New DataTable
+            Dim oBita As Servicios.clsBitacora
+
+            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oBita = New Servicios.clsBitacora
+                    oBita.ID_Evento = Item("ID_Evento")
+                    Dim oUsu As New MPP.clsUsuario
+                    Dim oUsuServ As New Servicios.Usuario
+                    oUsuServ.ID = Item("ID_Usuario")
+                    oBita.Usuario = oUsu.ConsultarUsuario(oUsuServ)
+                    oBita.TipoOperacion = Item("TipoOperacion")
+                    oBita.FechaHora = Item("FechaHora")
+                    oBita.DescripcionEvento = Item("DescripcionEvento")
+
+                    listaBitacora.Add(oBita)
+                Next
+
+                Return listaBitacora
+
+            Else
+                Return Nothing
+            End If
+        End Function
+
+        Public Function ListarBitacora(ByVal paramUsuario As Servicios.Usuario, ByVal paramFecha As Date) As List(Of Servicios.clsBitacora)
+
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim listaBitacora As New List(Of Servicios.clsBitacora)
+            Dim dt As New DataTable
+            Dim oBita As Servicios.clsBitacora
+
+            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oBita = New Servicios.clsBitacora
+                    oBita.ID_Evento = Item("ID_Evento")
+                    Dim oUsu As New MPP.clsUsuario
+                    Dim oUsuServ As New Servicios.Usuario
+                    oUsuServ.ID = Item("ID_Usuario")
+                    oBita.Usuario = oUsu.ConsultarUsuario(oUsuServ)
+                    oBita.TipoOperacion = Item("TipoOperacion")
+                    oBita.FechaHora = Item("FechaHora")
+                    oBita.DescripcionEvento = Item("DescripcionEvento")
+
+                    listaBitacora.Add(oBita)
+                Next
+
+                Return listaBitacora
+
+            Else
+                Return Nothing
+            End If
+        End Function
+
+        Public Function ListarBitacora(ByVal paramUsuario As Servicios.Usuario, ByVal paramFecha As Date, ByVal paramOperacion As Integer) As List(Of Servicios.clsBitacora)
+
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim listaBitacora As New List(Of Servicios.clsBitacora)
+            Dim dt As New DataTable
+            Dim oBita As Servicios.clsBitacora
+
+            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oBita = New Servicios.clsBitacora
+                    oBita.ID_Evento = Item("ID_Evento")
+                    Dim oUsu As New MPP.clsUsuario
+                    Dim oUsuServ As New Servicios.Usuario
+                    oUsuServ.ID = Item("ID_Usuario")
+                    oBita.Usuario = oUsu.ConsultarUsuario(oUsuServ)
+                    oBita.TipoOperacion = Item("TipoOperacion")
+                    oBita.FechaHora = Item("FechaHora")
+                    oBita.DescripcionEvento = Item("DescripcionEvento")
+
+                    listaBitacora.Add(oBita)
+                Next
+
+                Return listaBitacora
+
+            Else
+                Return Nothing
+            End If
+        End Function
+#End Region
+
+
+
     End Class
 End Namespace

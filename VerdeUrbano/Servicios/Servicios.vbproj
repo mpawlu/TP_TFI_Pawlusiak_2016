@@ -65,8 +65,11 @@
   <ItemGroup>
     <Compile Include="clsBackupRestore.vb" />
     <Compile Include="clsEncriptadora.vb" />
-    <Compile Include="clsExcepcionUsuarioBloqueado.vb" />
     <Compile Include="Excepciones\clsExcepcionPersonalizada.vb" />
+    <Compile Include="Excepciones\clsExcepcionCamposIncompletos.vb" />
+    <Compile Include="Excepciones\Login\clsExcepcionPasswordIncorrecto.vb" />
+    <Compile Include="Excepciones\Login\clsExcepcionUsuarioBloqueado.vb" />
+    <Compile Include="Excepciones\Login\clsExcepcionUsuarioInexistente.vb" />
     <Compile Include="Excepciones\Multi-Idioma\clsExcepcionLeyendasIncompletas.vb" />
     <Compile Include="Excepciones\Multi-Idioma\clsExcepcionNombreIdioma.vb" />
     <Compile Include="clsBitacora.vb" />
@@ -120,9 +123,7 @@
       <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Excepciones\Login\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

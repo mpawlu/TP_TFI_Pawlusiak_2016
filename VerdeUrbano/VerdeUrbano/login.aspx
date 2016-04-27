@@ -4,8 +4,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
     <br />
-    <br />
     <div class="container-fluid">
+        <div class="row">
+            <div class="well well-lg col-md-12 msj-error" runat="server" visible="false" id="error">
+                   <asp:Label ID="lbl_TituloError" runat="server" CssClass="labelError"></asp:Label>
+            </div>
+        </div>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-verdeClaro">
                 <div class="panel-heading">Autenticación</div>
@@ -17,7 +21,7 @@
                             <asp:Image ID="img_user" runat="server" ImageUrl="~/Imagenes/user-32.png" />
                         </div>
                         <div class="col-md-2">
-                                <asp:Label ID="lbl_Usuario" runat="server" CssClass="label">Usuario</asp:Label>
+                            <asp:Label ID="lbl_Usuario" runat="server" CssClass="label">Usuario</asp:Label>
                         </div>
                         <div class="col-md-4 col-md-offset-1">
                             <asp:TextBox ID="txt_usuario" runat="server" CssClass="caja-texto" MaxLength="100"></asp:TextBox>
@@ -33,7 +37,7 @@
                             <asp:Image ID="img_pass" runat="server" ImageUrl="~/Imagenes/Key-32.png" />
                         </div>
                         <div class="col-md-2">
-                                <asp:Label ID="lbl_password" runat="server" CssClass="label">Contraseña</asp:Label>
+                            <asp:Label ID="lbl_password" runat="server" CssClass="label">Contraseña</asp:Label>
                         </div>
                         <div class="col-md-4 col-md-offset-1">
                             <asp:TextBox ID="txt_password" runat="server" CssClass="caja-texto" TextMode="Password" MaxLength="100"></asp:TextBox>
