@@ -58,8 +58,11 @@
             Dim listaBitacora As New List(Of Servicios.clsBitacora)
             Dim dt As New DataTable
             Dim oBita As Servicios.clsBitacora
+            Dim hdatos As New Hashtable
 
-            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+            hdatos.Add("@Fecha", paramFecha)
+
+            DS = oDatos.Leer("s_Bitacora_ListarFecha", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
@@ -91,8 +94,10 @@
             Dim listaBitacora As New List(Of Servicios.clsBitacora)
             Dim dt As New DataTable
             Dim oBita As Servicios.clsBitacora
+            Dim hdatos As New Hashtable
+            hdatos.Add("@Operacion", paramOperacion)
 
-            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+            DS = oDatos.Leer("s_Bitacora_ListarOperacion", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
@@ -124,8 +129,11 @@
             Dim listaBitacora As New List(Of Servicios.clsBitacora)
             Dim dt As New DataTable
             Dim oBita As Servicios.clsBitacora
+            Dim hdatos As New Hashtable
 
-            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+            hdatos.Add("@ID_Usuario", paramUsuario.ID)
+
+            DS = oDatos.Leer("s_Bitacora_ListarUsuario", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
@@ -157,8 +165,12 @@
             Dim listaBitacora As New List(Of Servicios.clsBitacora)
             Dim dt As New DataTable
             Dim oBita As Servicios.clsBitacora
+            Dim hdatos As New Hashtable
 
-            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+            hdatos.Add("@Fecha", paramFecha)
+            hdatos.Add("@Operacion", paramOperacion)
+
+            DS = oDatos.Leer("s_Bitacora_ListarFechaOperacion", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
@@ -190,8 +202,12 @@
             Dim listaBitacora As New List(Of Servicios.clsBitacora)
             Dim dt As New DataTable
             Dim oBita As Servicios.clsBitacora
+            Dim hdatos As New Hashtable
 
-            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+            hdatos.Add("@ID_Usuario", paramUsuario.ID)
+            hdatos.Add("@Operacion", paramOperacion)
+
+            DS = oDatos.Leer("s_Bitacora_ListarUsuarioOperacion", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
@@ -223,8 +239,12 @@
             Dim listaBitacora As New List(Of Servicios.clsBitacora)
             Dim dt As New DataTable
             Dim oBita As Servicios.clsBitacora
+            Dim hdatos As New Hashtable
 
-            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+            hdatos.Add("@ID_Usuario", paramUsuario.ID)
+            hdatos.Add("@Fecha", paramFecha)
+
+            DS = oDatos.Leer("s_Bitacora_ListarUsuarioFecha", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
@@ -256,8 +276,12 @@
             Dim listaBitacora As New List(Of Servicios.clsBitacora)
             Dim dt As New DataTable
             Dim oBita As Servicios.clsBitacora
+            Dim hdatos As New Hashtable
 
-            DS = oDatos.Leer("s_Bitacora_ListarTodos", Nothing)
+            hdatos.Add("@ID_Usuario", paramUsuario.ID)
+            hdatos.Add("@Fecha", paramFecha)
+            hdatos.Add("@Operacion", paramOperacion)
+            DS = oDatos.Leer("s_Bitacora_ListarUsuarioFechaOperacion", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 

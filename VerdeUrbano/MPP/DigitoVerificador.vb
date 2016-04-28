@@ -20,33 +20,31 @@ Namespace MPP
             End Try
 
         End Function
-        'Public Shared Function CalcularDVV(ByRef Fila As String, ByRef NombreTabla As String) As Boolean
-        '    Try
-        '        Dim commandVerificador As SqlCommand
-        '        Dim Command As SqlCommand = Acceso.MiComando("Select * from Digito_Verificador_Vertical where Nombre_Tabla = @Nombre_Tabla")
-        '        Command.Parameters.Add(New SqlParameter("@Nombre_Tabla", NombreTabla))
-        '        Dim DataTabla = Acceso.Lectura(Command)
-        '        Dim contador As Integer = 0
-        '        For Each row As DataRow In DataTabla.Rows
-        '            contador = contador + 1
-        '        Next
-        '        If contador = 0 Then
-        '            commandVerificador = Acceso.MiComando("Insert into Digito_Verificador_Vertical values (@Nombre_Tabla, @Digito)")
-        '        Else
-        '            commandVerificador = Acceso.MiComando("Update Digito_Verificador_Vertical set Digito=@Digito where Nombre_Tabla=@Nombre_Tabla")
-        '        End If
-        '        Dim Resumen As String
-        '        Resumen = CalcularDVH(Fila)
-        '        With commandVerificador.Parameters
-        '            .Add(New SqlParameter("@Nombre_Tabla", NombreTabla))
-        '            .Add(New SqlParameter("@Digito", Resumen))
-        '        End With
-        '        Acceso.Escritura(commandVerificador)
-        '        Return True
-        '    Catch ex As Exception
-        '        Throw ex
-        '    End Try
-        'End Function
+        Public Shared Function CalcularDVV(ByRef NombreTabla As String) As Boolean
+            Try
+                Dim oDatos As New DAL.Datos
+                Dim hdatos As New Hashtable
+                Dim DS As New DataSet
+
+
+                Dim fila As String
+                For Each dr As DataRow In RecorrerTabla(NombreTabla).Rows
+                    fila = fila & dr.Item("DVH")
+                Next
+
+                Dim DVV As String
+                DVV = CalcularDVH(Fila)
+
+                DS = oDatos.Leer("s_DVV_Listar", Nothing)
+                If DS.Tables(0).Rows.Count = 1 Then
+                    Return ModificarRegistro(NombreTabla, DVV)
+                Else
+                    Return GuardarRegistro(NombreTabla, DVV)
+                End If
+            Catch ex As Exception
+                Throw ex
+            End Try
+        End Function
         'Public Function VerificarIntegridad() As DataTable
         '    Try
         '        Dim Command As SqlCommand = Acceso.MiComando("Select * from Digito_Verificador_Vertical")
@@ -72,6 +70,40 @@ Namespace MPP
         '        Return False
         '    End Try
         'End Function
+        Private Shared Function GuardarRegistro(ByVal pTabla As String, ByVal pDVV As String) As Boolean
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim resultado As Boolean
 
+            hdatos.Add("@Tabla", pTabla)
+            hdatos.Add("@DVV", pDVV)
+            'Dim Resumen As String
+            'Resumen = CalcularDVH(pDVV)
+
+            resultado = oDatos.Escribir("s_DVV_Alta", hdatos)
+            Return resultado
+        End Function
+        Private Shared Function ModificarRegistro(ByVal pTabla As String, ByVal pDVV As String) As Boolean
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim resultado As Boolean
+
+            hdatos.Add("@Tabla", pTabla)
+            hdatos.Add("@DVV", pDVV)
+            'Dim Resumen As String
+            'Resumen = CalcularDVH(pDVV)
+
+            resultado = oDatos.Escribir("s_DVV_Modificar", hdatos)
+            Return resultado
+        End Function
+        Private Shared Function RecorrerTabla(ByVal pNombreTabla As String) As DataTable
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim DS As New DataSet
+
+            hdatos.Add("@NombreTabla", pNombreTabla)
+            DS = oDatos.Leer("s_ConsultarTabla", hdatos)
+            Return DS.Tables(0)
+        End Function
     End Class
 End Namespace
