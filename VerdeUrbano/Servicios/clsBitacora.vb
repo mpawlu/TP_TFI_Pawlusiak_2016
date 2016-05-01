@@ -60,6 +60,13 @@
                 _TipoOperacion = value
             End Set
         End Property
+        Public ReadOnly Property StringDVH() As String
+            Get
+                Return _ID.ToString & _Usuario.ID.ToString & _FechaHora.ToString.ToString & _DescEvento & _TipoOperacion
+
+            End Get
+
+        End Property
 
         Sub New()
 

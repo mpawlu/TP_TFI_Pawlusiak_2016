@@ -6,12 +6,14 @@
             Dim hdatos As New Hashtable
             Dim resultado As Boolean
 
-            hdatos.Add("@Usuario", Bitacora.Usuario.ID)
+            hdatos.Add("@ID_Usuario", Bitacora.Usuario.ID)
+            hdatos.Add("@TipoOperacion", CInt(Bitacora.TipoOperacion))
             hdatos.Add("@FechaHora", Bitacora.FechaHora)
-            hdatos.Add("@Usuario", Bitacora.DescripcionEvento)
-            hdatos.Add("@DVH", "ASFDDFD")
+            hdatos.Add("@Descripcion", Bitacora.DescripcionEvento)
+            hdatos.Add("@DVH", MPP.DigitoVerificador.CalcularDVH(Bitacora.StringDVH))
 
             resultado = oDatos.Escribir("s_Bitacora_Crear", hdatos)
+
 
             Return resultado
 

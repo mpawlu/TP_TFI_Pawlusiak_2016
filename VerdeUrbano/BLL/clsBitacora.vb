@@ -1,7 +1,10 @@
 ﻿Namespace BLL
     Public Class clsBitacora
         Public Shared Sub RegistrarEvento(ByVal Evento As Servicios.clsBitacora)
-            'Dim Bmpp As New MPP.Bitacora
+            Dim mpp As New MPP.Bitacora
+            Dim resultado As Boolean
+
+            resultado = mpp.CrearEvento(Evento)
 
         End Sub
 

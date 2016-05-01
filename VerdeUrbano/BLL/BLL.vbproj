@@ -137,6 +137,7 @@
     <Compile Include="Negocio\TipoDeRespuesta.vb" />
     <Compile Include="Negocio\TipoP.vb" />
     <Compile Include="Permisos\clsPermiso.vb" />
+    <Compile Include="Singleton.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

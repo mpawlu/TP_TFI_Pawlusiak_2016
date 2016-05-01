@@ -13,7 +13,7 @@ Namespace MPP
             hdatos.Add("@Pass", usuario.Password)
             hdatos.Add("@DNI", usuario.DNI)
             hdatos.Add("@Activo", usuario.Activo)
-            'hdatos.Add("@Perfil", usuario.Perfil.ID)
+            hdatos.Add("@Perfil", 1)
             hdatos.Add("@Bloqueado", usuario.Bloqueado)
             hdatos.Add("@FechaAlta", usuario.FechaAlta)
             hdatos.Add("@Editable", usuario.Editable)
@@ -23,7 +23,7 @@ Namespace MPP
 
             resultado = oDatos.Escribir("s_Usuario_Crear", hdatos)
 
-            DigitoVerificador.CalcularDVV("Usuario")
+            'DigitoVerificador.CalcularDVV("Usuario")
 
             Return resultado
 
@@ -38,7 +38,7 @@ Namespace MPP
             hdatos.Add("@IdUsuario", usuario.Id)
 
             resultado = oDatos.Escribir("s_Usuario_Baja", hdatos)
-
+            'DigitoVerificador.CalcularDVV("Usuario")
             Return resultado
 
         End Function
@@ -63,6 +63,7 @@ Namespace MPP
             hdatos.Add("@DVH", MPP.DigitoVerificador.CalcularDVH(usuario.StringDVH))
 
             resultado = oDatos.Escribir("s_Usuario_Modificar", hdatos)
+            'DigitoVerificador.CalcularDVV("Usuario")
             Return resultado
         End Function
 

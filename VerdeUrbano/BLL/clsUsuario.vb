@@ -10,6 +10,14 @@ Namespace BLL
 
             resultado = oMapper.CrearUsuario(oUsuario)
 
+            If resultado = True Then
+                Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Alta, "Se genero correctamente el usuario " & oUsuario.NombreUsuario)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            Else
+                Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Alta, "Ocurrio un error al intentar dar de alta un usuario")
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            End If
+
             Return resultado
 
         End Function
@@ -21,6 +29,14 @@ Namespace BLL
 
             resultado = oMapper.EliminarUsuario(oUsuario)
 
+            If resultado = True Then
+                Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Baja, "La baja del usuario " & oUsuario.NombreUsuario & "se realizó correctamente")
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            Else
+                Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Baja, "Ocurrio un error al intentar dar de baja un usuario")
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            End If
+
             Return resultado
 
         End Function
@@ -31,6 +47,14 @@ Namespace BLL
             Dim resultado As Boolean
 
             resultado = oMapper.ModificarUsuario(oUsuario)
+
+            If resultado = True Then
+                Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Modificacion, "Se modifico correctamente el usuario " & oUsuario.NombreUsuario)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            Else
+                Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Modificacion, "Ocurrio un error al intentar modificar el usuario " & oUsuario.NombreUsuario)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            End If
 
             Return resultado
 
@@ -77,6 +101,7 @@ Namespace BLL
         Public Function Login(ByVal nombreUsuario As String, ByVal Password As String) As Servicios.Usuario
             Dim _UsuarioLogin As New Servicios.Usuario
             Dim Mapper As New MPP.clsUsuario
+            Dim oBitacora As Servicios.clsBitacora
             _UsuarioLogin.NombreUsuario = nombreUsuario
             _UsuarioLogin.Password = clsEncriptadora.EncriptarPass(Password)
             'Try
@@ -86,12 +111,22 @@ Namespace BLL
                 Dim _Usuario As New Servicios.Usuario
                 _Usuario = Mapper.ConsultarUsuarioporNombre(_UsuarioLogin)
                 If Me.chequearContraseña(_Usuario, _UsuarioLogin) = False Then
+                    'Guardo el evento en la bitacora
+                    oBitacora = New Servicios.clsBitacora(_Usuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "El usuario " & _Usuario.NombreUsuario & " ingreso mal el password.")
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
+                    'Lanzo la excepcion
                     Throw New clsExcepcionPasswordIncorrecto
                 Else
                     If Me.chequearBloqueado(_Usuario) = True Then
+                        'Guardo el evento en la bitacora
+                        oBitacora = New Servicios.clsBitacora(_Usuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "El usuario " & _Usuario.NombreUsuario & " intento loguearse pero se encuentra bloqueado.")
+                        BLL.clsBitacora.RegistrarEvento(oBitacora)
                         Throw New clsExcepcionUsuarioBloqueado
                     Else
                         Me.resetearIntentos(_Usuario)
+                        'Guardo el evento en la bitacora
+                        oBitacora = New Servicios.clsBitacora(_Usuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "El usuario " & _Usuario.NombreUsuario & " se logueo correctamente en el sistema.")
+                        BLL.clsBitacora.RegistrarEvento(oBitacora)
                         Return _Usuario
                     End If
                 End If
