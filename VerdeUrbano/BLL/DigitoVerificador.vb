@@ -10,7 +10,7 @@ Namespace BLL
             'Thread.CurrentThread.CurrentUICulture = SessionBLL.SesionActual.IdiomaPredeterminado.Cultura
             Dim oBitacoraMPP As New MPP.Bitacora
             Dim oDV As New MPP.DigitoVerificador
-            Dim TablaDVV As String
+            '    Dim TablaDVV As String
 
             If Not oDV.ListarDVV Is Nothing Then
                 For Each dr As DataRow In oDV.ListarDVV.Rows
@@ -23,7 +23,7 @@ Namespace BLL
                         fila = fila & dr2.Item("DVH")
                     Next
                     DVVcalc = MPP.DigitoVerificador.CalcularDVH(fila)
-                    If TablaDVV <> DVVcalc Then
+                    If DVVtabla <> DVVcalc Then
                         Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, "La encontro un registro alterado en la tabla " & dr.Item("Nombre_table"))
                         oBitacoraMPP.CrearEvento(oBitacora)
                         Return False
