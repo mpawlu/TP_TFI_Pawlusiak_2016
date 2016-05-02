@@ -96,7 +96,7 @@ Namespace MPP
             resultado = oDatos.Escribir("s_DVV_Modificar", hdatos)
             Return resultado
         End Function
-        Private Shared Function RecorrerTabla(ByVal pNombreTabla As String) As DataTable
+        Public Shared Function RecorrerTabla(ByVal pNombreTabla As String) As DataTable
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable
             Dim DS As New DataSet
@@ -104,6 +104,15 @@ Namespace MPP
             hdatos.Add("@NombreTabla", pNombreTabla)
             DS = oDatos.Leer("s_ConsultarTabla", hdatos)
             Return DS.Tables(0)
+        End Function
+
+        Public Function ListarDVV() As DataTable
+            Dim oDatos As New DAL.Datos
+            Dim ds As New DataSet
+
+            ds = oDatos.Leer("s_DVV_Listar", Nothing)
+            Return ds.Tables(0)
+
         End Function
     End Class
 End Namespace

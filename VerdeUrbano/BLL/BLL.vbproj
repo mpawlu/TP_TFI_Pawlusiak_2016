@@ -67,6 +67,7 @@
     <Compile Include="clsBitacora.vb" />
     <Compile Include="clsLocalidad.vb" />
     <Compile Include="clsUsuario.vb" />
+    <Compile Include="DigitoVerificador.vb" />
     <Compile Include="Multi-Idioma\clsIdioma.vb" />
     <Compile Include="Multi-Idioma\clsLeyenda.vb" />
     <Compile Include="Multi-Idioma\ClsTraduccion.vb" />

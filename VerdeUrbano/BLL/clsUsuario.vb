@@ -112,7 +112,7 @@ Namespace BLL
                 _Usuario = Mapper.ConsultarUsuarioporNombre(_UsuarioLogin)
                 If Me.chequearContraseña(_Usuario, _UsuarioLogin) = False Then
                     'Guardo el evento en la bitacora
-                    oBitacora = New Servicios.clsBitacora(_Usuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "El usuario " & _Usuario.NombreUsuario & " ingreso mal el password.")
+                    oBitacora = New Servicios.clsBitacora(_Usuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "El usuario " & _Usuario.NombreUsuario & " ingreso mal la contraseña.")
                     BLL.clsBitacora.RegistrarEvento(oBitacora)
                     'Lanzo la excepcion
                     Throw New clsExcepcionPasswordIncorrecto
@@ -200,6 +200,10 @@ Namespace BLL
                 paramUsuario.Bloqueado = True
                 Dim _usu As New MPP.clsUsuario
                 _usu.ModificarUsuario(paramUsuario)
+
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(paramUsuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "Se ha bloqueado al usuario " & paramUsuario.NombreUsuario)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
             Catch ex As Exception
 
             End Try
@@ -210,6 +214,10 @@ Namespace BLL
                 paramUsuario.Bloqueado = False
                 Dim _usu As New MPP.clsUsuario
                 _usu.ModificarUsuario(paramUsuario)
+
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(paramUsuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "Se ha desbloqueado al usuario " & paramUsuario.NombreUsuario)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
             Catch ex As Exception
 
             End Try
