@@ -1,4 +1,4 @@
-﻿
+﻿Option Compare Text
 Imports System.Security.Cryptography
 Imports System.Text
 Imports System.Threading
@@ -17,15 +17,14 @@ Namespace BLL
                     Dim dt As DataTable
                     Dim fila As String
                     Dim DVVcalc As String
-                    Dim DVVtabla As String
-                    DVVtabla = dr.Item("dvv").ToString
-                    dt = MPP.DigitoVerificador.RecorrerTabla(dr.Item("Tabla"))
+                    Dim DVVtabla As String = dr.Item("DVV").ToString
+                    dt = MPP.DigitoVerificador.RecorrerTabla(dr.Item("Nombre_Table"))
                     For Each dr2 As DataRow In dt.Rows
                         fila = fila & dr2.Item("DVH")
                     Next
                     DVVcalc = MPP.DigitoVerificador.CalcularDVH(fila)
                     If TablaDVV <> DVVcalc Then
-                        Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, "La encontro un registro alterado en la tabla " & dr.Item("Tabla"))
+                        Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, "La encontro un registro alterado en la tabla " & dr.Item("Nombre_table"))
                         oBitacoraMPP.CrearEvento(oBitacora)
                         Return False
                         Exit For
