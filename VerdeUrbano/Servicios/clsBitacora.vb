@@ -62,8 +62,9 @@
         End Property
         Public ReadOnly Property StringDVH() As String
             Get
-                Return _ID.ToString & _Usuario.ID.ToString & _FechaHora.ToString.ToString & _DescEvento & _TipoOperacion
 
+                Return _Usuario.ID.ToString & _FechaHora.ToString.ToString & _DescEvento.ToString & _TipoOperacion.ToString
+             
             End Get
 
         End Property
@@ -78,6 +79,7 @@
             Me.DescripcionEvento = _descripcion
             Me.FechaHora = Now
         End Sub
+
     End Class
 End Namespace
 
