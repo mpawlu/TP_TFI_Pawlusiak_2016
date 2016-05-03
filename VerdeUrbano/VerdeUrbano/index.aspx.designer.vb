@@ -14,24 +14,6 @@ Option Explicit On
 Partial Public Class index
 
     '''<summary>
-    '''Control DropDownList1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''Control btnActualizarIdioma.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnActualizarIdioma As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''Control img1.
     '''</summary>
     '''<remarks>

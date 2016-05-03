@@ -100,6 +100,7 @@
     <Content Include="agregarIdioma.aspx" />
     <Content Include="agregarUsuario.aspx" />
     <Content Include="calcularPresupuesto.aspx" />
+    <Content Include="cambiarIdioma.aspx" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\DateTimePicker.css" />
     <Content Include="CSS\EstiloSlider.css" />
@@ -192,6 +193,13 @@
     </Compile>
     <Compile Include="calcularPresupuesto.aspx.vb">
       <DependentUpon>calcularPresupuesto.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="cambiarIdioma.aspx.designer.vb">
+      <DependentUpon>cambiarIdioma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cambiarIdioma.aspx.vb">
+      <DependentUpon>cambiarIdioma.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.vb">

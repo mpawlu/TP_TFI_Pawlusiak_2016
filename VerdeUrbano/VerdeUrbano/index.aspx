@@ -9,16 +9,11 @@
     <script type="text/javascript" src="JS/functionSlider.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
-
     <br />
-    <asp:DropDownList ID="DropDownList1" runat="server">
-    </asp:DropDownList>
-    <asp:Button ID="btnActualizarIdioma" runat="server" Text="Actualizar Idioma" />
     <br />
     <br />
     <div class="container-fluid">
         <div class="row">
-
             <div class="col-md-4">
                 <br />
                 <div class="panelBoton-titulo">Bienvenidos al Sitio Web de Verde Urbano</div>
