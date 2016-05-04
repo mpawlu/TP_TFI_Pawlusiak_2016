@@ -9,20 +9,18 @@ Public Class paginaMaestra
         If Not IsPostBack Then
             cargarMenuEstatico()
             If Not IsNothing(Session("Usuario")) Then
-                '      Me.menuVertical.Items.Clear()
-                '      ArmarMenuUsuario()
-                '      cargarMenuOpciones()
-                '      miMenuVertical.Attributes.Add("class", "col-md-2")
-                '      miContenidoPagina.Attributes.Add("class", "col-md-10")
+                '   Me.menuVertical.Items.Clear()
+                '     ArmarMenuUsuario()
+                cargarMenuOpciones()
                 obtenerIdioma()
             Else
-                '      Me.opcionesUsuario.Visible = False
-                '      miContenidoPagina.Attributes.Add("class", "col-md-12")
+                Me.opcionesUsuario.Visible = False
             End If
         End If
     End Sub
 
 
+#Region "MultiIdioma"
     Private Sub obtenerIdioma()
         If Not IsNothing(Session("Usuario")) Then
             traducirMenuPrincipal()
@@ -31,7 +29,6 @@ Public Class paginaMaestra
             traducirControl(mpContentPlaceHolder.Controls)
         End If
     End Sub
-
 
     Private Sub traducirMenuPrincipal()
         Dim MiMenuP As Menu
@@ -62,6 +59,23 @@ Public Class paginaMaestra
         Next
     End Sub
 
+#End Region
+#Region "Opciones de Usuario"
+    Private Sub cargarMenuOpciones()
+        Dim _usuarioLogueado As Servicios.Usuario = Me.RecuperarUsuario
+
+        Me.opcionesUsuario.Visible = True
+        Me.lbl_NombredeUsuarioLogueado.Text = _usuarioLogueado.NombreUsuario
+
+        ''Agregado para img
+        'If DirectCast(Session("Usuario"), Entidades.Usuario).Persona.Imagen <> "" Then
+        '    Me.img_Usuario.Src = DirectCast(Session("Usuario"), Entidades.Usuario).Persona.Imagen
+        'Else
+        '    Me.img_Usuario.Src = "~/Imagenes/userh.png"
+        'End If
+    End Sub
+
+#End Region
 #Region "Traductor"
 
     Private Sub traducir(ByVal _menuitem As MenuItem)
@@ -207,7 +221,7 @@ Public Class paginaMaestra
 
         Dim MenuItemHijo As New MenuItem
         MenuItemHijo.Text = paramPermiso.Descripcion
-        MenuItemHijo.NavigateUrl = paramPermiso.URL
+        MenuItemHijo.NavigateUrl = paramPermiso.Url
         menuPrincipal.Items(menuPrincipal.Items.IndexOf(MenuItemPadre)).ChildItems.Add(MenuItemHijo)
 
     End Sub
@@ -224,7 +238,6 @@ Public Class paginaMaestra
         Return Nothing
     End Function
 #End Region
-
 #Region "Manejo de Usuario"
     Public Sub InicializarUsuario()
         Dim UsuarioActual As New Servicios.Usuario
@@ -245,7 +258,24 @@ Public Class paginaMaestra
         UsuarioSesion = usuario
         Session("Usuario") = UsuarioSesion
     End Sub
+    Public Sub FinalizarUsuario()
+        Session.Remove("Usuario")
+        BLL.Singleton.InstanciaSing.oUsuarioSesion = Nothing
+        Me.opcionesUsuario.Visible = False
+        Response.Redirect("Index.aspx")
+    End Sub
 #End Region
 
+    Protected Sub cambiarPassword_Click(sender As Object, e As EventArgs)
+        Response.Redirect("cambiarPassword.aspx")
+    End Sub
 
+
+    Protected Sub cambiarIdioma_Click(sender As Object, e As EventArgs)
+        Response.Redirect("cambiarIdioma.aspx")
+    End Sub
+
+    Protected Sub cerrarSesion_Click(sender As Object, e As EventArgs)
+        Me.FinalizarUsuario()
+    End Sub
 End Class

@@ -21,10 +21,37 @@
                         <div class="col-md-3">
                             <asp:Image ID="LogoMenu" CssClass="img img-responsive" runat="server" ImageUrl="~/Imagenes/logoVerdeUrbano.PNG" />
                         </div>
-
-                        <div class="col-md-2 col-md-offset-6">
+                        <div class="col-md-2 col-md-offset-7">
+                            <div class="row">
+                            </div>
+                            <div id="opcionesUsuario" runat="server" visible="false">
+                                <div class="row">
+                                    <div class="row">
+                                        <div class="profile-header-container">
+                                            <div class="profile-header-img">
+                                                <img class="img-circle" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=64" />
+                                                <!-- badge -->
+                                                <div class="rank-label-container">
+                                                    <span class="label label-default rank-label"><asp:Label ID="lbl_NombredeUsuarioLogueado" runat="server">Nombre de Usuario</asp:Label></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-2">
+                                        <asp:LinkButton ID="cambiarPassword" runat="server" CssClass="btn btn-info btn-sm btn-round" OnClick="cambiarPassword_Click"><span class="glyphicon glyphicon-tags"></span></asp:LinkButton>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <asp:LinkButton ID="cambiarIdioma" runat="server" CssClass="btn btn-default btn-sm btn-round" OnClick="cambiarIdioma_Click"><span class="glyphicon glyphicon-globe"></span></asp:LinkButton>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <asp:LinkButton ID="cerrarSesion" runat="server" CssClass="btn btn-danger btn-sm btn-round" OnClick="cerrarSesion_Click"><span class="glyphicon glyphicon-off"></span></asp:LinkButton>
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
                         </div>
-
                     </div>
                     <div class="row fondoVerde bordeMenu">
                         <div class="col-md-12">
@@ -41,9 +68,11 @@
 
                     </div>
                     <div class="row fondoGrisClaro">
+
+
                         <div class="col-md-12">
 
-                            <div class="" id="miContenidoPagina" runat="server">
+                            <div id="miContenidoPagina" runat="server">
 
                                 <asp:ContentPlaceHolder ID="contenidoPagina" runat="server">
                                 </asp:ContentPlaceHolder>

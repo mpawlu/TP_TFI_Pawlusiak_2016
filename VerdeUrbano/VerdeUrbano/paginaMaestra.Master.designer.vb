@@ -41,6 +41,51 @@ Partial Public Class paginaMaestra
     Protected WithEvents LogoMenu As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
+    '''Control opcionesUsuario.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents opcionesUsuario As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control lbl_NombredeUsuarioLogueado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_NombredeUsuarioLogueado As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control cambiarPassword.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cambiarPassword As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control cambiarIdioma.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cambiarIdioma As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control cerrarSesion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cerrarSesion As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''Control menuPrincipal.
     '''</summary>
     '''<remarks>

@@ -15,8 +15,7 @@
 }
 
 .fondoGrisClaro {
-background-color: #F0EBD9;
-
+    background-color: #F0EBD9;
 }
 
 .fondoVerde {
@@ -34,4 +33,45 @@ background-color: #F0EBD9;
     border-width: 1px;
     border: solid;
     border-color: #0C553F;
+}
+
+.margenRowOpciones {
+    padding-top: 10%;
+}
+
+
+
+/*** PROFILE ***/
+.profile-header-container{
+    margin: 0 auto;
+    text-align: center;
+    padding-left:10%;
+    padding-top:7%;
+}
+
+.profile-header-img {
+    padding: 10px;
+}
+
+.profile-header-img > img.img-circle {
+    width: 82px;
+    height: 82px;
+    border: 2px solid #23B076;
+}
+
+.profile-header {
+    margin-top: 43px;
+}
+
+
+.rank-label-container {
+    margin-top: -19px;
+    /* z-index: 1000; */
+    text-align: center;
+}
+
+.label.label-default.rank-label {
+    background-color: #23B076;
+    padding: 5px 10px 5px 10px;
+    border-radius: 27px;
 }
