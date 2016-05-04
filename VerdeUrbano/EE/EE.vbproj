@@ -141,9 +141,6 @@
     <Compile Include="Negocio\TipoC.vb" />
     <Compile Include="Negocio\TipoDeRespuesta.vb" />
     <Compile Include="Negocio\TipoP.vb" />
-    <Compile Include="Permisos\clsPermiso.vb" />
-    <Compile Include="Permisos\clsPermisoCompuesto.vb" />
-    <Compile Include="Permisos\clsPermisoSimple.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

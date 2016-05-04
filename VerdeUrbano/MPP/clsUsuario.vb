@@ -13,7 +13,7 @@ Namespace MPP
             hdatos.Add("@Pass", usuario.Password)
             hdatos.Add("@DNI", usuario.DNI)
             hdatos.Add("@Activo", usuario.Activo)
-            hdatos.Add("@Perfil", 1)
+            hdatos.Add("@Perfil", usuario.Perfil.ID)
             hdatos.Add("@Bloqueado", usuario.Bloqueado)
             hdatos.Add("@FechaAlta", usuario.FechaAlta)
             hdatos.Add("@Editable", usuario.Editable)
@@ -86,7 +86,6 @@ Namespace MPP
                     oUsu.Password = Item("Pass")
                     oUsu.DNI = Item("DNI")
                     oUsu.Activo = Item("Activo")
-                    '      oUsu.Perfil = Item("Perfil")
                     oUsu.Bloqueado = Item("Bloqueado")
                     oUsu.FechaAlta = Item("FechaAlta")
                     'oUsu.Editable = Item("Editable")
@@ -96,6 +95,10 @@ Namespace MPP
                     oIdioma.ID = Item("ID_Idioma")
                     oUsu.Idioma = oIdMPP.ConsultarIdioma(oIdioma)
                     listaUsuario.Add(oUsu)
+                    Dim oPerfil As New Servicios.PermisoCompuesto
+                    Dim oPerMPP As New MPP.Permiso
+                    oPerfil.ID = Item("Perfil")
+                    oUsu.Perfil = oPerMPP.listarFamilias(oPerfil.ID)
                 Next
 
                 Return listaUsuario
@@ -124,7 +127,6 @@ Namespace MPP
                     oUsu.Password = Item("Pass")
                     oUsu.DNI = Item("DNI")
                     oUsu.Activo = Item("Activo")
-                    'oUsu.Perfil = Item("Perfil")
                     oUsu.Bloqueado = Item("Bloqueado")
                     oUsu.FechaAlta = Item("FechaAlta")
                     'oUsu.Editable = Item("Editable")
@@ -136,6 +138,10 @@ Namespace MPP
                     oIdioma.ID = Item("ID_Idioma")
                     oUsu.Idioma = oIdMPP.ConsultarIdioma(oIdioma)
 
+                    Dim oPerfil As New Servicios.PermisoCompuesto
+                    Dim oPerMPP As New MPP.Permiso
+                    oPerfil.ID = Item("Perfil")
+                    oUsu.Perfil = oPerMPP.listarFamilias(oPerfil.ID)
                 Next
                 Return oUsu
             Else
@@ -163,8 +169,6 @@ Namespace MPP
                     oUsu.Password = Item("Pass")
                     oUsu.DNI = Item("DNI")
                     oUsu.Activo = CBool(Item("Activo"))
-
-                    '   oUsu.Perfil = Item("Perfil")
                     oUsu.Bloqueado = CBool(Item("Bloqueado"))
                     oUsu.FechaAlta = CDate(Item("FechaAlta"))
                     oUsu.Editable = CBool(Item("Editable"))
@@ -174,6 +178,11 @@ Namespace MPP
                     Dim oIdioma As New Servicios.clsIdioma
                     oIdioma.ID = Item("ID_Idioma")
                     oUsu.Idioma = oIdMPP.ConsultarIdioma(oIdioma)
+
+                    Dim oPerfil As New Servicios.PermisoCompuesto
+                    Dim oPerMPP As New MPP.Permiso
+                    oPerfil.ID = Item("Perfil")
+                    oUsu.Perfil = oPerMPP.listarFamilias(oPerfil.ID)
 
                 Next
                 Return oUsu

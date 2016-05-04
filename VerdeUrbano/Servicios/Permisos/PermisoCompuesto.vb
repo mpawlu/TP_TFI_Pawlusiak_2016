@@ -3,6 +3,8 @@
         Inherits PermisoBase
 
 
+
+
         Private _lista As New List(Of PermisoBase)
         Public Property ListaPermisos() As List(Of PermisoBase)
             Get
@@ -32,6 +34,15 @@
 
         Public Overrides Function ObtenerHijos() As List(Of PermisoBase)
             Return Me.ListaPermisos
+        End Function
+
+        Public Overloads Overrides Function agregarHijo(permiso As PermisoBase) As Boolean
+            If Not ListaPermisos.Contains(permiso) Then
+                Me.ListaPermisos.Add(permiso)
+                Return True
+            Else
+                Return False
+            End If
         End Function
     End Class
 End Namespace
