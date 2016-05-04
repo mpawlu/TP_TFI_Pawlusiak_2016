@@ -18,9 +18,6 @@
         Public Sub QuitarPermiso(ByVal Permiso As PermisoBase)
             Me.ListaPermisos.Remove(Permiso)
         End Sub
-        Public Function ListarPermisos()
-
-        End Function
 
         Public Overrides Function TieneHijos() As Boolean
             Return True

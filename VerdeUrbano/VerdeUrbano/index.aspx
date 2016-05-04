@@ -93,6 +93,7 @@
                     <img src="Imagenes/RedesSociales/youtube_64.png" class="img-responsive panelBoton-imagen" />
                     <div class="panelBoton-titulo">YouTube</div>
                     <div class="panelBoton-texto">Seguí a VerdeUrbano en nuestro canal oficial de YouTube con los mejores videos de nuestros proyectos.</div>
+
                 </div>
             </div>
         </div>
