@@ -242,6 +242,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NegocioVista\CompositePermisos.vb" />
     <Compile Include="nuestrosProductos.aspx.designer.vb">
       <DependentUpon>nuestrosProductos.aspx</DependentUpon>
     </Compile>

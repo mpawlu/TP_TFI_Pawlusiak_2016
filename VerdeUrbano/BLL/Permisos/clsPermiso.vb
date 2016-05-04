@@ -3,13 +3,19 @@
 
     End Function
     Public Function ListarPerfiles() As List(Of Servicios.PermisoCompuesto)
+        'Para los Perfiles
         Dim ListaPerfiles As List(Of Servicios.PermisoCompuesto)
         For Each Perfil As Servicios.PermisoCompuesto In ListaPerfiles
+            ' esAccion = True
             Perfil.AgregarPermiso(Consultar(Perfil))
         Next
 
     End Function
+
+
     Public Function Consultar(ByVal _permiso As Servicios.PermisoBase) As Servicios.PermisoBase
+        'Estos pueden ser Permisos Simples o Compuestos
+
         Dim permMPP As New MPP.Permiso
         _permiso = permMPP.ConsultarPermiso(_permiso)
         If _permiso.TieneHijos = True Then

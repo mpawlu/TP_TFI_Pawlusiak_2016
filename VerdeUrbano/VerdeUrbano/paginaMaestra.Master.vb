@@ -1,4 +1,6 @@
-﻿Public Class paginaMaestra
+﻿Imports System.Xml
+
+Public Class paginaMaestra
     Inherits System.Web.UI.MasterPage
 
 
@@ -28,7 +30,6 @@
             mpContentPlaceHolder = Me.FindControl("contenidoPagina")
             traducirControl(mpContentPlaceHolder.Controls)
         End If
-
     End Sub
 
 
@@ -44,8 +45,6 @@
             End If
         Next
     End Sub
-
-
 
     Private Sub traducirControl(ByVal paramListaControl As ControlCollection)
         For Each miControl As Control In paramListaControl
@@ -128,7 +127,7 @@
         Next
     End Sub
 #End Region
-
+#Region "Menus"
     Private Sub cargarMenuEstatico()
         Dim MiMenuInicio As New MenuItem
         MiMenuInicio.NavigateUrl = "~/index.aspx"
@@ -162,8 +161,71 @@
         menuPrincipal.Items.Add(Ingresar)
     End Sub
 
-   
+    Private Sub ArmarMenuUsuario()
+        If Session("Usuario") IsNot Nothing Then
+            Dim _usu As Servicios.Usuario = RecuperarUsuario()
+            '     Me.NombreUsuario.Text = _usu.NombreUsuario
+            'Hago el Load para el Menu.xml
+            Dim archivo As New XmlDocument
+            archivo.Load(Server.MapPath("Menu.xml"))
+            'Recorro Todo el Menu en XML
+            For i As Integer = 0 To archivo.SelectNodes("menu/submenu").Count - 1
+                Dim NodoPadre As XmlNode = archivo.SelectNodes("menu/submenu").Item(i)
+                'Recorro los Items dentro del Nodo Sub Menu
+                For j As Integer = 0 To NodoPadre.ChildNodes.Count - 1
+                    Dim Nodohijo As XmlNode = NodoPadre.ChildNodes(j)
+                    '     chequearPermisos(_usu.Perfil.ListaPermisosSimple, NodoPadre.Attributes("nombre").Value.ToString(), Nodohijo.Attributes("nombre").Value.ToString)
+                Next
+            Next
+        End If
+    End Sub
+    Private Sub chequearPermisos(ByVal listaPermisos As List(Of Servicios.PermisoBase), ByVal paramNombrePadre As String, ByVal paramNombreHijo As String)
+        For Each per As Servicios.PermisoBase In listaPermisos
+            If per.TieneHijos = False Then ' Si tiene hijos va a ser un Permiso Compuesto
+                If per.Descripcion = paramNombreHijo Then
+                    crearItemMenu(paramNombrePadre, per)
+                End If
+            Else
+                'RECURSIVIDAD
+                Me.chequearPermisos(per.ObtenerHijos, paramNombrePadre, paramNombreHijo)
+            End If
+        Next
+    End Sub
+    Private Sub crearItemMenu(ByVal paramNombrePadre As String, ByVal paramPermiso As Servicios.PermisoBase)
+        'Creo el MenuItemPadre
+        Dim MenuItemPadre As New MenuItem
+        MenuItemPadre.Text = paramNombrePadre
+        MenuItemPadre.NavigateUrl = "#"
 
+        If MenuExiste(paramNombrePadre) = False Then
+            'Si no existe el MenuItem Padre
+            menuPrincipal.Items.Add(MenuItemPadre)
+        Else
+            'si no existe devolveme el que se llama asi
+            MenuItemPadre = BuscarMenu(MenuItemPadre.Text)
+        End If
+
+        Dim MenuItemHijo As New MenuItem
+        MenuItemHijo.Text = paramPermiso.Descripcion
+        MenuItemHijo.NavigateUrl = paramPermiso.URL
+        menuPrincipal.Items(menuPrincipal.Items.IndexOf(MenuItemPadre)).ChildItems.Add(MenuItemHijo)
+
+    End Sub
+    Private Function MenuExiste(ByVal paramNombrePadre As String) As Boolean
+        For Each MiItem As MenuItem In menuPrincipal.Items
+            If MiItem.Text = paramNombrePadre Then Return True
+        Next
+        Return False
+    End Function
+    Private Function BuscarMenu(ByVal paramNombrePadre As String) As MenuItem
+        For Each MiItem As MenuItem In menuPrincipal.Items
+            If MiItem.Text = paramNombrePadre Then Return MiItem
+        Next
+        Return Nothing
+    End Function
+#End Region
+
+#Region "Manejo de Usuario"
     Public Sub InicializarUsuario()
         Dim UsuarioActual As New Servicios.Usuario
         Dim usuarioBLL As New BLL.clsUsuario
@@ -183,5 +245,7 @@
         UsuarioSesion = usuario
         Session("Usuario") = UsuarioSesion
     End Sub
+#End Region
+
 
 End Class

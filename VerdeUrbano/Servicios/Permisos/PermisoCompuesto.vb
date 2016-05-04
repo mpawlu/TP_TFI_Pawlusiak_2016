@@ -2,6 +2,7 @@
     Public Class PermisoCompuesto
         Inherits PermisoBase
 
+
         Private _lista As New List(Of PermisoBase)
         Public Property ListaPermisos() As List(Of PermisoBase)
             Get
@@ -28,5 +29,9 @@
             Padre.Descripcion = "Huerfano"
             Me.Padre = Padre
         End Sub
+
+        Public Overrides Function ObtenerHijos() As List(Of PermisoBase)
+            Return Me.ListaPermisos
+        End Function
     End Class
 End Namespace

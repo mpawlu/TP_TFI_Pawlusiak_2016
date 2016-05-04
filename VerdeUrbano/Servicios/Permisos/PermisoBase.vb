@@ -48,5 +48,7 @@
 
 
         Public MustOverride Function TieneHijos() As Boolean
+        Public MustOverride Function ObtenerHijos() As List(Of PermisoBase)
+
     End Class
 End Namespace
