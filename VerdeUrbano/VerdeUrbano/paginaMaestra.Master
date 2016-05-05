@@ -26,14 +26,13 @@
                             </div>
                             <div id="opcionesUsuario" runat="server" visible="false">
                                 <div class="row">
-                                    <div class="row">
-                                        <div class="profile-header-container">
-                                            <div class="profile-header-img">
-                                                <img class="img-circle" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=64" />
-                                                <!-- badge -->
-                                                <div class="rank-label-container">
-                                                    <span class="label label-default rank-label"><asp:Label ID="lbl_NombredeUsuarioLogueado" runat="server">Nombre de Usuario</asp:Label></span>
-                                                </div>
+                                    <div class="profile-header-container">
+                                        <div class="profile-header-img">
+                                            <img class="img-circle" src="http://imguol.com/c/entretenimento/2014/09/09/andres-parra-e-o-protagonista-da-serie-pablo-escobar-o-senhor-do-trafico-da-globosat-1410307194283_300x420.jpg?sz=64" />
+                                            <!-- badge -->
+                                            <div class="rank-label-container">
+                                                <span class="label label-default rank-label">
+                                                    <asp:Label ID="lbl_NombredeUsuarioLogueado" runat="server">Nombre de Usuario</asp:Label></span>
                                             </div>
                                         </div>
                                     </div>
@@ -50,6 +49,11 @@
                                     </div>
                                 </div>
                                 <br />
+                            </div>
+                            <div id="opcionesLogin" runat="server" visible="true">
+                                <div class="row margenRowOpciones">
+                                    <a href="login.aspx" class="btn btn-block btn-social btn-login"><span class="fa fa-login"></span>Iniciar Sesión</a>
+                                </div>
                             </div>
                         </div>
                     </div>

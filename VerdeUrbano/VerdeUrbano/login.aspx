@@ -5,9 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
     <br />
     <div class="container-fluid">
+        <br />
+        <br />
         <div class="row">
             <div class="well well-lg col-md-12 msj-error" runat="server" visible="false" id="error">
-                   <asp:Label ID="lbl_TituloError" runat="server" CssClass="labelError"></asp:Label>
+                <asp:Label ID="lbl_TituloError" runat="server" CssClass="labelError"></asp:Label>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
@@ -16,6 +18,7 @@
                 <div class="panel-body">
                     <br />
                     <br />
+
                     <div class="row">
                         <div class="col-md-1  col-md-offset-2">
                             <asp:Image ID="img_user" runat="server" ImageUrl="~/Imagenes/user-32.png" />
@@ -61,6 +64,8 @@
                 </div>
 
             </div>
+                    <br />
+        <br />
         </div>
 
     </div>

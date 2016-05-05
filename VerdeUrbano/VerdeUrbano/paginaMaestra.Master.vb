@@ -15,6 +15,7 @@ Public Class paginaMaestra
                 obtenerIdioma()
             Else
                 Me.opcionesUsuario.Visible = False
+                Me.opcionesLogin.Visible = True
             End If
         End If
     End Sub
@@ -63,8 +64,8 @@ Public Class paginaMaestra
 #Region "Opciones de Usuario"
     Private Sub cargarMenuOpciones()
         Dim _usuarioLogueado As Servicios.Usuario = Me.RecuperarUsuario
-
         Me.opcionesUsuario.Visible = True
+        Me.opcionesLogin.Visible = False
         Me.lbl_NombredeUsuarioLogueado.Text = _usuarioLogueado.NombreUsuario
 
         ''Agregado para img
@@ -163,16 +164,11 @@ Public Class paginaMaestra
         miMenuProductos.Text = "Nuestros Productos"
         miMenuProductos.Value = "Nuestros Productos"
 
-        Dim Ingresar As New MenuItem
-        Ingresar.NavigateUrl = "~/login.aspx"
-        Ingresar.Text = "Ingresar"
-        Ingresar.Value = "Nuestros Productos"
 
         menuPrincipal.Items.Add(MiMenuInicio)
         menuPrincipal.Items.Add(MiMenuInstitucional)
         menuPrincipal.Items.Add(MiMenuServicios)
         menuPrincipal.Items.Add(miMenuProductos)
-        menuPrincipal.Items.Add(Ingresar)
     End Sub
 
     Private Sub ArmarMenuUsuario()

@@ -86,6 +86,15 @@ Partial Public Class paginaMaestra
     Protected WithEvents cerrarSesion As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
+    '''Control opcionesLogin.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents opcionesLogin As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''Control menuPrincipal.
     '''</summary>
     '''<remarks>
