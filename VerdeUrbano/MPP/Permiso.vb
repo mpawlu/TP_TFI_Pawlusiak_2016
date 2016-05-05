@@ -155,7 +155,12 @@
             End If
             _permiso.ID = CInt(_dr.Item("id_permiso"))
             _permiso.Descripcion = Convert.ToString(_dr.Item("Descripcion"))
-            _permiso.URL = _dr.Item("URL").ToString
+
+            If IsDBNull(_dr.Item("URL")) = True Then
+                _permiso.Url = Nothing
+            Else
+                _permiso.Url = _dr.Item("URL").ToString
+            End If
             If _permiso.tieneHijos Then
                 Dim ListaHijos As New List(Of Servicios.PermisoBase)
                 ListaHijos = Me.ListarHijos(_permiso.ID)
@@ -184,9 +189,15 @@
 
                     oPermiso.ID = Item("ID_Permiso")
                     oPermiso.Descripcion = Item("Descripcion")
-                    oPermiso.Url = Item("URL")
+                    If IsDBNull(Item("URL")) = True Then
+                        oPermiso.Url = Nothing
+                    Else
+                        oPermiso.Url = Item("URL")
+                    End If
                     oPermiso.Accion = Item("Accion")
-                    listaPermisos.Add(oPermiso)
+
+                    listaPermisos.Add(ConvertirDataRowEnPermiso(Item))
+
                 Next
 
                 Return listaPermisos
@@ -195,7 +206,6 @@
                 Return Nothing
             End If
 
-            Return listaPermisos
         End Function
 
         Public Sub AltaPermiso(paramPermiso As Servicios.PermisoBase)

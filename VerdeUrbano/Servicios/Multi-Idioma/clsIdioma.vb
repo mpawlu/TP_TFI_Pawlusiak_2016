@@ -32,25 +32,7 @@
         End Property
 
 #End Region
-        '#Region "Metodos"
-        '        Public Function CrearIdioma() As Boolean
-        '            Dim oMapper As New MPP.clsIdioma
-        '            Dim resultado As Boolean
 
-        '            resultado = oMapper.CrearIdioma(Me)
-
-        '            Return resultado
-
-        '        End Function
-        '        Public Function ListarIdiomas() As List(Of Servicios.clsIdioma)
-        '            Dim oMapper As New MPP.clsIdioma
-        '            Dim listaIdiomas As New List(Of Servicios.clsIdioma)
-
-        '            listaIdiomas = oMapper.ListarIdiomas()
-
-        '            Return listaIdiomas
-        '        End Function
-        '#End Region
 
     End Class
 End Namespace
