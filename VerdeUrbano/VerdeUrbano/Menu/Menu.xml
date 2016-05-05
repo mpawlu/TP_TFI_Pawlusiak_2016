@@ -1,9 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<menu>
-  <submenu nombre="Administrador" id="">
-    <item nombre="Visualizar Bitacora" id="2">
-    </item>
-    <item nombre="Administrar Usuarios" id="3">
-    </item>
-  </submenu>
-</menu>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Menus>
+  <Menu>
+    <Url>quienesSomos.aspx</Url>
+    <Text>Quienes Somos</Text>
+    <Value>Quienes Somos</Value>
+  </Menu>
+</Menus>

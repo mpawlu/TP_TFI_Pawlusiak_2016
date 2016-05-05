@@ -59,7 +59,7 @@
                     </div>
                     <div class="row fondoVerde bordeMenu">
                         <div class="col-md-12">
-                            <asp:Menu ID="menuPrincipal" runat="server" Orientation="Horizontal" Font-Names="Century" Font-Size="18PX" ForeColor="#FFFFFF" Height="40px">
+                            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" Font-Names="Century" Font-Size="18PX" ForeColor="#FFFFFF" Height="40px" OnMenuItemDataBound="Menu1_MenuItemDataBound">
                                 <StaticSelectedStyle BackColor="#FFFFFF" />
                                 <StaticMenuItemStyle HorizontalPadding="10px" VerticalPadding="6px" />
                                 <StaticHoverStyle BackColor="#FFFFFF" ForeColor="#333333" />
@@ -67,7 +67,12 @@
                                 <DynamicMenuStyle BackColor="#00919E" />
                                 <DynamicSelectedStyle BackColor="#00919E" />
                                 <DynamicMenuItemStyle HorizontalPadding="10px" VerticalPadding="6px" />
+                                <DataBindings>
+                                    <asp:MenuItemBinding DataMember="Menu" TextField="Text" ValueField="Value" NavigateUrlField="Url" />
+                                    <asp:MenuItemBinding DataMember="SubMenu" TextField="Text" ValueField="Value" NavigateUrlField="Url" />
+                                </DataBindings>
                             </asp:Menu>
+                            <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="Menu/Menu.xml" XPath="/Menus/Menu"></asp:XmlDataSource>
                         </div>
 
                     </div>

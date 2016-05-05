@@ -159,7 +159,9 @@
     <Content Include="JS\jssor.js" />
     <Content Include="JS\jssor.slider.js" />
     <Content Include="login.aspx" />
-    <Content Include="Menu\Menu.xml" />
+    <Content Include="Menu\Menus.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="nuestrosProductos.aspx" />
     <Content Include="quienesSomos.aspx" />
     <Content Include="realizarBackup.aspx" />

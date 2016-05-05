@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menus>
+  <Menu Url="javascript:;"  Text="Administrador" Value="Administrador">
+    <Menu Url="javascript:;" Text="Usuarios" Value="Usuarios">
+      <SubMenu Url ="~/administrarUsuarios.aspx" Text="Administrar Usuarios" Value="Administrar Usuarios"></SubMenu>
+      <SubMenu Url ="~/agregarUsuario.aspx" Text="Agregar Usuario" Value="Agregar Usuario"></SubMenu>
+    </Menu>
+    <SubMenu Url ="~/visualizarBitacora.aspx" Text="Visualizar Bitacora" Value="Visualizar Bitacora"></SubMenu>
+    <SubMenu Url ="~/prueba.aspx" Text="Visualizar Bitacora" Value="Altivo y Pasivo"></SubMenu>
+  </Menu>
+</Menus>

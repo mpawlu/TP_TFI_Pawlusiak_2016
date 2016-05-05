@@ -5,12 +5,9 @@ Public Class paginaMaestra
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
         If Not IsPostBack Then
-            cargarMenuEstatico()
+            generarXMLparaMenu()
             If Not IsNothing(Session("Usuario")) Then
-                '   Me.menuVertical.Items.Clear()
-                '     ArmarMenuUsuario()
                 cargarMenuOpciones()
                 obtenerIdioma()
             Else
@@ -24,25 +21,25 @@ Public Class paginaMaestra
 #Region "MultiIdioma"
     Private Sub obtenerIdioma()
         If Not IsNothing(Session("Usuario")) Then
-            traducirMenuPrincipal()
+            '  traducirMenuPrincipal()
             Dim mpContentPlaceHolder As New ContentPlaceHolder
             mpContentPlaceHolder = Me.FindControl("contenidoPagina")
             traducirControl(mpContentPlaceHolder.Controls)
         End If
     End Sub
 
-    Private Sub traducirMenuPrincipal()
-        Dim MiMenuP As Menu
-        MiMenuP = Me.FindControl("menuPrincipal")
-        For Each MiMenuItem As MenuItem In MiMenuP.Items
-            traducir(MiMenuItem)
-            If MiMenuItem.ChildItems.Count > 0 Then
-                For Each MiMenuItemHijo As MenuItem In MiMenuItem.ChildItems
-                    traducir(MiMenuItemHijo)
-                Next
-            End If
-        Next
-    End Sub
+    'Private Sub traducirMenuPrincipal()
+    '    Dim MiMenuP As Menu
+    '    MiMenuP = Me.FindControl("menuPrincipal")
+    '    For Each MiMenuItem As MenuItem In MiMenuP.Items
+    '        traducir(MiMenuItem)
+    '        If MiMenuItem.ChildItems.Count > 0 Then
+    '            For Each MiMenuItemHijo As MenuItem In MiMenuItem.ChildItems
+    '                traducir(MiMenuItemHijo)
+    '            Next
+    '        End If
+    '    Next
+    'End Sub
 
     Private Sub traducirControl(ByVal paramListaControl As ControlCollection)
         For Each miControl As Control In paramListaControl
@@ -142,7 +139,88 @@ Public Class paginaMaestra
         Next
     End Sub
 #End Region
-#Region "Menus"
+#Region "Generador Menu XML"
+    Private Sub generarXMLparaMenu()
+        Dim MiDirPath As String = Server.MapPath("~/Menu")
+        Dim MiPathAGuardar As String = String.Format("{0}\{1}", MiDirPath, "Menu.xml")
+        Dim writer As New XmlTextWriter(MiPathAGuardar, System.Text.Encoding.UTF8)
+        writer.WriteStartDocument(True)
+        writer.Formatting = Formatting.Indented
+        writer.Indentation = 2
+        writer.WriteStartElement("Menus")
+        crearMenuXMLestatico(writer)
+        If Not Me.RecuperarUsuario Is Nothing Then
+            Dim _perfil As Servicios.PermisoCompuesto = Me.RecuperarUsuario.Perfil
+            recorrerCompuesto(_perfil.ListaPermisos, writer)
+            cerrarMenu(writer)
+        End If
+        writer.WriteEndElement()
+        writer.WriteEndDocument()
+        writer.Close()
+        Menu1.DataSourceID = "XmlDataSource1"
+        Menu1.DataBind()
+
+    End Sub
+
+
+    Private Sub crearMenuXMLestatico(ByVal writer As XmlTextWriter)
+        writer.WriteStartElement("Menu")
+        writer.WriteString()
+        writer.WriteStartElement("Url")
+        writer.WriteString("quienesSomos.aspx")
+        writer.WriteEndElement()
+        writer.WriteStartElement("Text")
+        writer.WriteString("Quienes Somos")
+        writer.WriteEndElement()
+        writer.WriteStartElement("Value")
+        writer.WriteString("Quienes Somos")
+        writer.WriteEndElement()
+        writer.WriteEndElement()
+    End Sub
+
+    Private Sub recorrerCompuesto(ByVal _listaPermisos As List(Of Servicios.PermisoBase), ByVal writer As XmlTextWriter)
+        For Each p As Servicios.PermisoBase In _listaPermisos
+            If p.TieneHijos = True Then
+                createMenu(p.Url, p.Descripcion, p.Descripcion, writer)
+                recorrerCompuesto(p.ObtenerHijos, writer)
+            Else
+                createSubMenu(p.Url, p.Descripcion, p.Descripcion, writer)
+            End If
+        Next
+    End Sub
+
+    Private Sub createSubMenu(ByVal url As String, ByVal text As String, ByVal value As String, ByVal writer As XmlTextWriter)
+        writer.WriteStartElement("Submenu")
+        writer.WriteStartElement("Url")
+        writer.WriteString(url)
+        writer.WriteEndElement()
+        writer.WriteStartElement("Text")
+        writer.WriteString(text)
+        writer.WriteEndElement()
+        writer.WriteStartElement("Value")
+        writer.WriteString(value)
+        writer.WriteEndElement()
+        writer.WriteEndElement()
+    End Sub
+
+    Private Sub createMenu(ByVal url As String, ByVal text As String, ByVal value As String, ByVal writer As XmlTextWriter)
+        writer.WriteStartElement("Menu")
+        writer.WriteStartElement("Url")
+        writer.WriteString(url)
+        writer.WriteEndElement()
+        writer.WriteStartElement("Text")
+        writer.WriteString(text)
+        writer.WriteEndElement()
+        writer.WriteStartElement("Value")
+        writer.WriteString(value)
+        writer.WriteEndElement()
+    End Sub
+
+    Private Sub cerrarMenu(ByVal writer As XmlTextWriter)
+        writer.WriteEndElement()
+    End Sub
+
+
     Private Sub cargarMenuEstatico()
         Dim MiMenuInicio As New MenuItem
         MiMenuInicio.NavigateUrl = "~/index.aspx"
@@ -165,74 +243,13 @@ Public Class paginaMaestra
         miMenuProductos.Value = "Nuestros Productos"
 
 
-        menuPrincipal.Items.Add(MiMenuInicio)
-        menuPrincipal.Items.Add(MiMenuInstitucional)
-        menuPrincipal.Items.Add(MiMenuServicios)
-        menuPrincipal.Items.Add(miMenuProductos)
+        Menu1.Items.Add(MiMenuInicio)
+        Menu1.Items.Add(MiMenuInstitucional)
+        Menu1.Items.Add(MiMenuServicios)
+        Menu1.Items.Add(miMenuProductos)
     End Sub
 
-    Private Sub ArmarMenuUsuario()
-        If Session("Usuario") IsNot Nothing Then
-            Dim _usu As Servicios.Usuario = RecuperarUsuario()
-            '     Me.NombreUsuario.Text = _usu.NombreUsuario
-            'Hago el Load para el Menu.xml
-            Dim archivo As New XmlDocument
-            archivo.Load(Server.MapPath("Menu.xml"))
-            'Recorro Todo el Menu en XML
-            For i As Integer = 0 To archivo.SelectNodes("menu/submenu").Count - 1
-                Dim NodoPadre As XmlNode = archivo.SelectNodes("menu/submenu").Item(i)
-                'Recorro los Items dentro del Nodo Sub Menu
-                For j As Integer = 0 To NodoPadre.ChildNodes.Count - 1
-                    Dim Nodohijo As XmlNode = NodoPadre.ChildNodes(j)
-                    '     chequearPermisos(_usu.Perfil.ListaPermisosSimple, NodoPadre.Attributes("nombre").Value.ToString(), Nodohijo.Attributes("nombre").Value.ToString)
-                Next
-            Next
-        End If
-    End Sub
-    Private Sub chequearPermisos(ByVal listaPermisos As List(Of Servicios.PermisoBase), ByVal paramNombrePadre As String, ByVal paramNombreHijo As String)
-        For Each per As Servicios.PermisoBase In listaPermisos
-            If per.TieneHijos = False Then ' Si tiene hijos va a ser un Permiso Compuesto
-                If per.Descripcion = paramNombreHijo Then
-                    crearItemMenu(paramNombrePadre, per)
-                End If
-            Else
-                'RECURSIVIDAD
-                Me.chequearPermisos(per.ObtenerHijos, paramNombrePadre, paramNombreHijo)
-            End If
-        Next
-    End Sub
-    Private Sub crearItemMenu(ByVal paramNombrePadre As String, ByVal paramPermiso As Servicios.PermisoBase)
-        'Creo el MenuItemPadre
-        Dim MenuItemPadre As New MenuItem
-        MenuItemPadre.Text = paramNombrePadre
-        MenuItemPadre.NavigateUrl = "#"
 
-        If MenuExiste(paramNombrePadre) = False Then
-            'Si no existe el MenuItem Padre
-            menuPrincipal.Items.Add(MenuItemPadre)
-        Else
-            'si no existe devolveme el que se llama asi
-            MenuItemPadre = BuscarMenu(MenuItemPadre.Text)
-        End If
-
-        Dim MenuItemHijo As New MenuItem
-        MenuItemHijo.Text = paramPermiso.Descripcion
-        MenuItemHijo.NavigateUrl = paramPermiso.Url
-        menuPrincipal.Items(menuPrincipal.Items.IndexOf(MenuItemPadre)).ChildItems.Add(MenuItemHijo)
-
-    End Sub
-    Private Function MenuExiste(ByVal paramNombrePadre As String) As Boolean
-        For Each MiItem As MenuItem In menuPrincipal.Items
-            If MiItem.Text = paramNombrePadre Then Return True
-        Next
-        Return False
-    End Function
-    Private Function BuscarMenu(ByVal paramNombrePadre As String) As MenuItem
-        For Each MiItem As MenuItem In menuPrincipal.Items
-            If MiItem.Text = paramNombrePadre Then Return MiItem
-        Next
-        Return Nothing
-    End Function
 #End Region
 #Region "Manejo de Usuario"
     Public Sub InicializarUsuario()
@@ -262,10 +279,10 @@ Public Class paginaMaestra
     End Sub
 #End Region
 
+
     Protected Sub cambiarPassword_Click(sender As Object, e As EventArgs)
         Response.Redirect("cambiarPassword.aspx")
     End Sub
-
 
     Protected Sub cambiarIdioma_Click(sender As Object, e As EventArgs)
         Response.Redirect("cambiarIdioma.aspx")
@@ -273,5 +290,17 @@ Public Class paginaMaestra
 
     Protected Sub cerrarSesion_Click(sender As Object, e As EventArgs)
         Me.FinalizarUsuario()
+    End Sub
+
+    Protected Sub Menu1_MenuItemDataBound(sender As Object, e As MenuEventArgs)
+        Dim currentPage As String = Request.Url.Segments(Request.Url.Segments.Length - 1).Split(".")(0)
+        If e.Item.Text.Equals(currentPage, StringComparison.InvariantCultureIgnoreCase) Then
+            If e.Item.Parent IsNot Nothing Then
+                e.Item.Parent.Selected = True
+            Else
+                e.Item.Selected = True
+            End If
+        End If
+
     End Sub
 End Class
