@@ -12,7 +12,7 @@
     Private Sub cargarRegistros()
         Dim oBitBll As New BLL.clsBitacora
         Dim ListaBitacora As New List(Of Servicios.clsBitacora)
-        ListaBitacora = oBitBll.ListarBitacora
+        ListaBitacora = oBitBll.ListarBitacora(oBitBll.ConsultarUltimoID)
         Me.gv_Bitacora.DataSource = ListaBitacora
         Me.gv_Bitacora.DataBind()
     End Sub
@@ -57,6 +57,7 @@
                 _usuario = New Servicios.Usuario
                 _usuario.ID = Me.ddlUsuario.SelectedValue
                 _usuario = UsuarioBLL.ListarUsuario(_usuario)
+
             End If
             If Not ddlOperacion.SelectedIndex = 0 Then
                 _operacion = ddlOperacion.SelectedIndex
@@ -66,7 +67,15 @@
             Else
                 _fecha = New Date(1, 1, 1)
             End If
-            Dim _listabitacora As List(Of Servicios.clsBitacora) = BitacoraBLL.ListarBitacora(_usuario, _fecha, _operacion)
+
+            Dim paramDesde As Integer
+            If Me.gv_Bitacora.Rows.Count > 0 Then
+                paramDesde = CInt(Me.gv_Bitacora.TopPagerRow.Cells(0).Text)
+            Else
+                paramDesde = BitacoraBLL.ConsultarUltimoID
+            End If
+
+            Dim _listabitacora As List(Of Servicios.clsBitacora) = BitacoraBLL.ListarBitacora(_usuario, _fecha, _operacion, paramDesde)
             cargarRegistros(_listabitacora)
         Catch ex As Exception
 
