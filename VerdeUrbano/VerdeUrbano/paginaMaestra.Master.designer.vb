@@ -104,15 +104,6 @@ Partial Public Class paginaMaestra
     Protected WithEvents Menu1 As Global.System.Web.UI.WebControls.Menu
 
     '''<summary>
-    '''Control XmlDataSource1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents XmlDataSource1 As Global.System.Web.UI.WebControls.XmlDataSource
-
-    '''<summary>
     '''Control miContenidoPagina.
     '''</summary>
     '''<remarks>

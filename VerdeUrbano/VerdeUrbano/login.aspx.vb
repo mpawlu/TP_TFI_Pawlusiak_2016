@@ -12,7 +12,7 @@
             If Not _usu Is Nothing Then
                 Me.GuardarUsuario(_usu)
                 Dim nuevaBitacora As New Servicios.clsBitacora(_usu, Servicios.clsBitacora.tipoOperacionBitacora.Login, "Se ha logueado Correctamente")
-                Response.Redirect("index.aspx")
+                Response.Redirect("index.aspx", False)
             End If
         Catch ex As clsExcepcionCamposIncompletos
             Me.error.Visible = True

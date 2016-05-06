@@ -57,7 +57,9 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Menu\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.vbproj">
       <Project>{1cea3f76-1691-4be5-8187-11c5dc76ebd0}</Project>
@@ -159,9 +161,6 @@
     <Content Include="JS\jssor.js" />
     <Content Include="JS\jssor.slider.js" />
     <Content Include="login.aspx" />
-    <Content Include="Menu\Menus.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="nuestrosProductos.aspx" />
     <Content Include="quienesSomos.aspx" />
     <Content Include="realizarBackup.aspx" />

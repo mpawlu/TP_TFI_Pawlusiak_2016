@@ -72,7 +72,7 @@
                                     <asp:MenuItemBinding DataMember="SubMenu" TextField="Text" ValueField="Value" NavigateUrlField="Url" />
                                 </DataBindings>
                             </asp:Menu>
-                            <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="Menu/Menu.xml" XPath="/Menus/Menu"></asp:XmlDataSource>
+                     
                         </div>
 
                     </div>
