@@ -332,7 +332,7 @@
 
             If DS.Tables(0).Rows.Count > 0 Then
 
-                Return oBita.ID_Evento = DS.Tables(0).Rows(0).Item("ID_Evento")
+                Return DS.Tables(0).Rows(0).Item("ID_Evento")
 
             Else
                     Return Nothing

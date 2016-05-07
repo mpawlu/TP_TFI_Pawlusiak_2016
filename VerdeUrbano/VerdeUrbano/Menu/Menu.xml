@@ -4,4 +4,7 @@
   <Menu URL="~/Quienessomos.aspx" Text="Quienes Somos" Value="Quienes Somos" />
   <Menu URL="~/Institucional.aspx" Text="Institucional" Value="Institucional" />
   <Menu URL="~/nuestrosProductos.aspx" Text="Productos" Value="Productos" />
+  <Menu URL="" Text="Administrador" Value="Administrador">
+    <Submenu URL="~/visualizarBitacora.aspx" Text="Visualizar Bitacora" Value="Visualizar Bitacora" />
+  </Menu>
 </Menus>

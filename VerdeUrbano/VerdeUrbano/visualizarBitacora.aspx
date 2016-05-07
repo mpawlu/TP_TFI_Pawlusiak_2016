@@ -84,7 +84,7 @@
                         <div class="col-md-10 col-md-offset-1">
                             <asp:GridView ID="gv_Bitacora" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False">
                                 <Columns>
-                                    <asp:BoundField DataField="ID_Evento" HeaderText="ID_Bitacora" Visible="False" />
+                                    <asp:BoundField DataField="ID_Evento" HeaderText="ID_Bitacora" Visible="true" />
                                     <asp:BoundField DataField="Usuario.NombreUsuario" HeaderText="Usuario" />
                                     <asp:BoundField DataField="TipoOperacion" HeaderText="Tipo de Operacion" />
                                     <asp:BoundField DataField="FechaHora" HeaderText="Fecha y Hora" />
@@ -93,6 +93,12 @@
                             </asp:GridView>
                         </div>
                     </div>
+                    <br />
+                    <div class="col-md-6  col-md-offset-10">
+                    <asp:Button ID ="btnAnterior" runat= "server"  Text="<" />
+
+                    <asp:Button ID ="btnSiguiente" runat= "server"  Text=">" />
+                        </div>
                     <br />
                     <br />
                 </div>

@@ -6,6 +6,9 @@
             obtenerUsuarios()
             obtenerTipoOperacion()
             cargarRegistros()
+            Dim PagAnt As Integer = CInt(Me.gv_Bitacora.Rows(0).Cells(0).Text)
+            Session("PagAnt") = PagAnt
+            
         End If
     End Sub
 
@@ -81,5 +84,43 @@
 
         End Try
 
+    End Sub
+
+    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
+        Dim _usuario As Servicios.Usuario = Nothing
+        Dim UsuarioBLL As New BLL.clsUsuario
+        Dim BitacoraBLL As New BLL.clsBitacora
+        Dim _fecha As Date
+        Dim _operacion As Integer = 0
+        Dim PagAnt As Integer = CInt(Session("PagAnt"))
+        PagAnt = PagAnt - 10
+        If PagAnt <= 1 Then
+            PagAnt = 1
+            Session("PagAnt") = 1
+        Else
+            Session("PagAnt") = PagAnt
+        End If
+        Dim _listabitacora As List(Of Servicios.clsBitacora) = BitacoraBLL.ListarBitacora(_usuario, _fecha, _operacion, PagAnt)
+        cargarRegistros(_listabitacora)
+    End Sub
+
+    Private Sub btnAnterior_Click(sender As Object, e As EventArgs) Handles btnAnterior.Click
+        Dim _usuario As Servicios.Usuario = Nothing
+        Dim UsuarioBLL As New BLL.clsUsuario
+        Dim BitacoraBLL As New BLL.clsBitacora
+        Dim _fecha As Date
+        Dim _operacion As Integer = 0
+        Dim PagAnt As Integer = CInt(Session("PagAnt"))
+        PagAnt = PagAnt + 10
+        If PagAnt > BitacoraBLL.ConsultarUltimoID Then
+            PagAnt = BitacoraBLL.ConsultarUltimoID
+            Session("PagAnt") = BitacoraBLL.ConsultarUltimoID
+
+        Else
+            Session("PagAnt") = PagAnt
+        End If
+
+        Dim _listabitacora As List(Of Servicios.clsBitacora) = BitacoraBLL.ListarBitacora(_usuario, _fecha, _operacion, PagAnt)
+        cargarRegistros(_listabitacora)
     End Sub
 End Class

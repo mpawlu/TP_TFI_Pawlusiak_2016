@@ -129,4 +129,22 @@ Partial Public Class visualizarBitacora
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents gv_Bitacora As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control btnAnterior.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnAnterior As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnSiguiente.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnSiguiente As Global.System.Web.UI.WebControls.Button
 End Class
