@@ -8,7 +8,6 @@
             cargarRegistros()
             Dim PagAnt As Integer = CInt(Me.gv_Bitacora.Rows(0).Cells(0).Text)
             Session("PagAnt") = PagAnt
-            
         End If
     End Sub
 
@@ -95,8 +94,8 @@
         Dim PagAnt As Integer = CInt(Session("PagAnt"))
         PagAnt = PagAnt - 10
         If PagAnt <= 1 Then
-            PagAnt = 1
-            Session("PagAnt") = 1
+            PagAnt = CInt(gv_Bitacora.Rows(0).Cells(0).Text)
+            PagAnt = CInt(gv_Bitacora.Rows(0).Cells(0).Text)
         Else
             Session("PagAnt") = PagAnt
         End If
@@ -114,8 +113,8 @@
         PagAnt = PagAnt + 10
         If PagAnt > BitacoraBLL.ConsultarUltimoID Then
             PagAnt = BitacoraBLL.ConsultarUltimoID
-            Session("PagAnt") = BitacoraBLL.ConsultarUltimoID
-
+            Session("PagAnt") = CInt(gv_Bitacora.Rows(0).Cells(0).Text)
+            PagAnt = CInt(gv_Bitacora.Rows(0).Cells(0).Text)
         Else
             Session("PagAnt") = PagAnt
         End If
