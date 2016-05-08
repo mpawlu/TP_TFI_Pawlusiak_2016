@@ -17,6 +17,7 @@ Public Class paginaMaestra
                 Me.opcionesUsuario.Visible = False
                 Me.opcionesLogin.Visible = True
             End If
+            BLL.Singleton.InstanciaSing.oUsuarioSesion = RecuperarUsuario()
         End If
 
     End Sub

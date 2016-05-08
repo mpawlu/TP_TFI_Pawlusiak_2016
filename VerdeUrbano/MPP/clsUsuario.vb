@@ -10,20 +10,20 @@ Namespace MPP
             Dim resultado As Boolean
 
             hdatos.Add("@NombreUsuario", usuario.NombreUsuario)
-            hdatos.Add("@Pass", usuario.Password)
+            hdatos.Add("@Pass", clsEncriptadora.EncriptarPass(usuario.Password))
             hdatos.Add("@DNI", usuario.DNI)
-            hdatos.Add("@Activo", usuario.Activo)
+            hdatos.Add("@Activo", False)
             hdatos.Add("@Perfil", usuario.Perfil.ID)
             hdatos.Add("@Bloqueado", usuario.Bloqueado)
             hdatos.Add("@FechaAlta", usuario.FechaAlta)
-            hdatos.Add("@Editable", usuario.Editable)
+            hdatos.Add("@Editable", False)
             hdatos.Add("@Intentos", usuario.Intentos)
             hdatos.Add("@ID_Idioma", usuario.Idioma.ID)
             hdatos.Add("@DVH", MPP.DigitoVerificador.CalcularDVH(usuario.StringDVH))
 
             resultado = oDatos.Escribir("s_Usuario_Crear", hdatos)
 
-            'DigitoVerificador.CalcularDVV("Usuario")
+            DigitoVerificador.CalcularDVV("Usuario")
 
             Return resultado
 

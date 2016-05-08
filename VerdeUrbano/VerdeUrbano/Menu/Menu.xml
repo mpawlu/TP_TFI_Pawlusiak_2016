@@ -6,5 +6,9 @@
   <Menu URL="~/nuestrosProductos.aspx" Text="Productos" Value="Productos" />
   <Menu URL="" Text="Administrador" Value="Administrador">
     <Submenu URL="~/visualizarBitacora.aspx" Text="Visualizar Bitacora" Value="Visualizar Bitacora" />
+    <Menu URL="" Text="Usuarios" Value="Usuarios">
+      <Submenu URL="~/administrarUsuarios.aspx" Text="Administrar Usuarios" Value="Administrar Usuarios" />
+      <Submenu URL="~/administrarUsuarios.aspx" Text="Agregar Usuario" Value="Agregar Usuario" />
+    </Menu>
   </Menu>
 </Menus>

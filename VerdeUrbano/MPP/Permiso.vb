@@ -1,25 +1,29 @@
 ﻿Namespace MPP
     Public Class Permiso
-        Public Function ListarPerfiles() As List(Of Servicios.PermisoBase)
+        Public Function ListarPerfiles() As List(Of Servicios.PermisoCompuesto)
 
             Dim oDatos As New DAL.Datos
             Dim DS As New DataSet
-            Dim listaPermisos As New List(Of Servicios.PermisoBase)
+            Dim listaPermisos As New List(Of Servicios.PermisoCompuesto)
             Dim dt As New DataTable
-            Dim oPermiso As Servicios.PermisoBase
+
 
             DS = oDatos.Leer("s_Permiso_ListarHuerfanos", Nothing)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
                 For Each Item As DataRow In DS.Tables(0).Rows
+                    Dim oPermiso As New Servicios.PermisoCompuesto
                     oPermiso.ID = Item("ID_Permiso")
                     oPermiso.Descripcion = Item("Descripcion")
-                    oPermiso.Url = Item("URL")
+                    If IsDBNull(Item("URL")) = True Then
+                        oPermiso.Url = Nothing
+                    Else
+                        oPermiso.Url = Item("URL")
+                    End If
                     oPermiso.Accion = Item("Accion")
 
                     listaPermisos.Add(oPermiso)
-
                 Next
 
                 Return listaPermisos
@@ -43,7 +47,11 @@
                 For Each Item As DataRow In DS.Tables(0).Rows
                     oPermiso.ID = Item("ID_Permiso")
                     oPermiso.Descripcion = Item("Descripcion")
-                    oPermiso.Url = Item("URL")
+                    If IsDBNull(Item("URL")) = True Then
+                        oPermiso.Url = Nothing
+                    Else
+                        oPermiso.Url = Item("URL")
+                    End If
                     oPermiso.Accion = Item("Accion")
 
                     listaPermisos.Add(oPermiso)
@@ -74,7 +82,11 @@
                 For Each Item As DataRow In DS.Tables(0).Rows
                     oPermiso.ID = Item("ID_Permiso")
                     oPermiso.Descripcion = Item("Descripcion")
-                    oPermiso.Url = Item("URL")
+                    If IsDBNull(Item("URL")) = True Then
+                        oPermiso.Url = Nothing
+                    Else
+                        oPermiso.Url = Item("URL")
+                    End If
                     oPermiso.Accion = Item("Accion")
                     listaPermisos.Add(oPermiso)
                 Next
