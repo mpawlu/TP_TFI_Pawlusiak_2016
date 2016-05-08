@@ -22,8 +22,15 @@
     End Sub
 
     Private Sub cargarRegistros(ByVal listaRegistros As List(Of Servicios.clsBitacora))
-        Me.gv_Bitacora.DataSource = listaRegistros
-        Me.gv_Bitacora.DataBind()
+        If Not listaRegistros Is Nothing Then
+            Me.gv_Bitacora.DataSource = listaRegistros
+            Me.gv_Bitacora.DataBind()
+            btnSiguiente.Enabled = True
+        Else
+            btnSiguiente.Enabled = False
+            Me.gv_Bitacora.DataSource = Nothing
+            Me.gv_Bitacora.DataBind()
+        End If
 
     End Sub
 

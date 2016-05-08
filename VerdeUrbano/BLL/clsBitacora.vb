@@ -40,13 +40,13 @@
                     listaBitacora = oMapper.ListarBitacora(paramFecha, paramDesde)
                 ElseIf paramUsuario Is Nothing And paramFecha <> "#12:00:00 AM#" And paramOperacion <> 0 Then
                     'TIENE LA FECHA Y EL OPERACION
-                    listaBitacora = oMapper.ListarBitacora(paramFecha, paramOperacion)
+                    listaBitacora = oMapper.ListarBitacora(paramFecha, paramOperacion, paramDesde)
                 ElseIf Not paramUsuario Is Nothing And paramFecha = "#12:00:00 AM#" And paramOperacion = 0 Then
                     'TIENE EL USUARIO
                     listaBitacora = oMapper.ListarBitacora(paramUsuario, paramDesde)
                 ElseIf Not paramUsuario Is Nothing And paramFecha = "#12:00:00 AM#" And paramOperacion <> 0 Then
                     'TIENE EL USUARIO y EL OPERACION
-                    listaBitacora = oMapper.ListarBitacora(paramUsuario, paramOperacion)
+                    listaBitacora = oMapper.ListarBitacora(paramUsuario, paramOperacion, paramDesde)
                 ElseIf Not paramUsuario Is Nothing And paramFecha <> "#12:00:00 AM#" And paramOperacion = 0 Then
                     'TIENE EL USUARIO Y LA FECHA
                     listaBitacora = oMapper.ListarBitacora(paramUsuario, paramFecha, paramDesde)
