@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="administrarUsuarios.aspx.vb" Inherits="VerdeUrbano.administrarUsuarios" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="administrarUsuarios.aspx.vb" Inherits="VerdeUrbano.administrarUsuarios" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
@@ -20,7 +20,7 @@
                     <div class="panel-heading">Adminstración de Usuarios</div>
                     <div class="panel-body">
                         <br />
-                        <asp:GridView ID="gv_Usuarios" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
+                        <asp:GridView ID="gv_Usuarios" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center" AutoPostBack="true">
                             <Columns>
                                 <asp:BoundField DataField="ID" HeaderText="ID Usuario" Visible="false" />
                                 <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre de Usuario" />

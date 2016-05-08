@@ -4,7 +4,7 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        mensajeConfirmacion = "Desea Eliminarlo?"
+        mensajeConfirmacion = "Desea Eliminarlo?" 'esto va traducido
         obtenerUsuarios()
 
     End Sub
