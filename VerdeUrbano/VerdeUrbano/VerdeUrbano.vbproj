@@ -114,8 +114,12 @@
     <Content Include="Imagenes\Add-32.png" />
     <Content Include="Imagenes\Calendar-32.png" />
     <Content Include="Imagenes\Clock-32.png" />
+    <Content Include="Imagenes\Delete-32.png" />
     <Content Include="Imagenes\economico.png" />
+    <Content Include="Imagenes\Edit-32.png" />
     <Content Include="Imagenes\exit-32.png" />
+    <Content Include="Imagenes\lock2-32.png" />
+    <Content Include="Imagenes\Lock_32.png" />
     <Content Include="Imagenes\mision.png" />
     <Content Include="Imagenes\Forward-32.png" />
     <Content Include="Imagenes\INTEGRAL.png" />
@@ -124,6 +128,8 @@
     <Content Include="Imagenes\logoVerdeUrbano.png" />
     <Content Include="Imagenes\maceta.jpg" />
     <Content Include="Imagenes\Region-And-Language-32.png" />
+    <Content Include="Imagenes\Unlock-32.png" />
+    <Content Include="Imagenes\unlock2-32.png" />
     <Content Include="Imagenes\vision.png" />
     <Content Include="Imagenes\natural.png" />
     <Content Include="Imagenes\Question-type-one-correct-32.png" />

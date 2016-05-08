@@ -14,6 +14,8 @@
                     </div>
                     <div class="panel-body">
                         <br />
+                        <br />
+
                         <div class="row">
                             <div class="col-md-5 col-md-offset-1">
                                 <asp:Label ID="lbl_Nombre" runat="server" CssClass="label">Nombre</asp:Label>
@@ -26,19 +28,24 @@
                         <br />
                     </div>
                     <br />
-                    <asp:GridView ID="gv_Palabras" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <asp:GridView ID="gv_Palabras" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
 
-                        <Columns>
-                            <asp:BoundField DataField="ID" HeaderText="ID" />
-                            <asp:BoundField DataField="Leyenda" HeaderText="Leyenda" />
-                            <asp:TemplateField HeaderText="Nuevo Texto" HeaderStyle-Width="400px">
-                                <ItemTemplate>
-                                    <asp:TextBox Width="350px" ID="txt_NuevoTexto" runat="server" CssClass="textarea" TextMode="MultiLine" Wrap="true"></asp:TextBox>
-                                </ItemTemplate>
-                                <HeaderStyle Width="350px"></HeaderStyle>
-                            </asp:TemplateField>
-                        </Columns>
-                    </asp:GridView>
+                                <Columns>
+                                    <asp:BoundField DataField="ID" HeaderText="ID" />
+                                    <asp:BoundField DataField="Leyenda" HeaderText="Leyenda" />
+                                    <asp:TemplateField HeaderText="Nuevo Texto" HeaderStyle-Width="400px">
+                                        <ItemTemplate>
+                                            <asp:TextBox Width="350px" ID="txt_NuevoTexto" runat="server" CssClass="textarea" TextMode="MultiLine" Wrap="true"></asp:TextBox>
+                                        </ItemTemplate>
+                                        <HeaderStyle Width="350px"></HeaderStyle>
+                                    </asp:TemplateField>
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                    </div>
+                    <br />
                     <br />
                     <br />
                     <div class="row">
