@@ -12,7 +12,8 @@
                     <div class="panel-heading">Agregar Usuario</div>
                     <div class="panel-body">
                         <br />
-                        <div class="form-group">
+                        <br />
+                        <div class="row">
                             <div class="col-md-3 col-md-offset-1">
                                 <asp:Label ID="lbl_NombreUsuario" runat="server" Text="Nombre de Usuario" CssClass="label"></asp:Label>
                             </div>
@@ -23,7 +24,7 @@
                         </div>
                         <br />
                         <br />
-                        <div class="form-group">
+                        <div class="row">
                             <div class="col-md-3 col-md-offset-1">
                                 <asp:Label ID="lbl_password" runat="server" Text="Contraseña" CssClass="label"></asp:Label>
                             </div>
@@ -33,7 +34,7 @@
                         </div>
                         <br />
                         <br />
-                        <div class="form-group">
+                        <div class="row">
                             <div class="col-md-3 col-md-offset-1">
                                 <asp:Label ID="lbl_dni" runat="server" Text="DNI" CssClass="label"></asp:Label>
                             </div>
@@ -43,14 +44,7 @@
                         </div>
                         <br />
                         <br />
-                        <div class="form-group">
-                            <div class="col-md-3 col-md-offset-1">
-                                <asp:RadioButton ID="bloqueado" runat="server" Text="Bloqueado" CssClass="label" TextAlign="left" />
-                            </div>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="form-group">
+                        <div class="row">
                             <div class="col-md-3 col-md-offset-1">
                                 <asp:Label ID="lbl_Perfil" runat="server" Text="Perfil" CssClass="label"></asp:Label>
                             </div>
@@ -60,7 +54,7 @@
                         </div>
                         <br />
                         <br />
-                        <div class="form-group">
+                        <div class="row">
                             <div class="col-md-3 col-md-offset-1">
                                 <asp:Label ID="lbl_Idioma" runat="server" Text="Idioma" CssClass="label"></asp:Label>
                             </div>
@@ -68,6 +62,7 @@
                                 <asp:DropDownList ID="ddl_idioma" runat="server" CssClass="combo"></asp:DropDownList>
                             </div>
                         </div>
+                        <br />
                         <br />
                         <br />
                         <br />
@@ -79,7 +74,7 @@
                                 <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-block btn-warning" />
                             </div>
                         </div>
-
+                        <br />
                     </div>
                 </div>
             </div>

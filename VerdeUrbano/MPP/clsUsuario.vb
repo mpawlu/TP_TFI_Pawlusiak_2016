@@ -85,7 +85,7 @@ Namespace MPP
                     oUsu.Activo = Item("Activo")
                     oUsu.Bloqueado = Item("Bloqueado")
                     oUsu.FechaAlta = Item("FechaAlta")
-                    'oUsu.Editable = Item("Editable")
+                    oUsu.Editable = Item("Editable")
                     oUsu.Intentos = Item("Intentos")
                     Dim oIdMPP As New MPP.clsIdioma
                     Dim oIdioma As New Servicios.clsIdioma

@@ -12,7 +12,12 @@
             If Not _usu Is Nothing Then
                 Me.GuardarUsuario(_usu)
                 Dim nuevaBitacora As New Servicios.clsBitacora(_usu, Servicios.clsBitacora.tipoOperacionBitacora.Login, "Se ha logueado Correctamente")
-                Response.Redirect("index.aspx", False)
+                Dim Context As HttpContext = HttpContext.Current
+                If Context.Items.Contains("loginCorrecto") = True Then
+                    Context.Items.Remove("loginCorrecto")
+                End If
+                Context.Items.Add("loginCorrecto", True)
+                Server.Transfer("index.aspx", False)
             End If
         Catch ex As clsExcepcionCamposIncompletos
             Me.error.Visible = True

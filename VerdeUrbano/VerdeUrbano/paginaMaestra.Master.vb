@@ -272,7 +272,6 @@ Public Class paginaMaestra
         Session.Remove("Usuario")
         BLL.Singleton.InstanciaSing.oUsuarioSesion = Nothing
         Me.opcionesUsuario.Visible = False
-        Response.Redirect("Index.aspx")
     End Sub
 #End Region
 
@@ -287,6 +286,12 @@ Public Class paginaMaestra
 
     Protected Sub cerrarSesion_Click(sender As Object, e As EventArgs)
         Me.FinalizarUsuario()
+        Dim Context As HttpContext = HttpContext.Current
+        If Context.Items.Contains("logoutCorrecto") = True Then
+            Context.Items.Remove("logoutCorrecto")
+        End If
+        Context.Items.Add("logoutCorrecto", True)
+        Server.Transfer("index.aspx", false)
     End Sub
 
     Protected Sub Menu1_MenuItemDataBound(sender As Object, e As MenuEventArgs)
