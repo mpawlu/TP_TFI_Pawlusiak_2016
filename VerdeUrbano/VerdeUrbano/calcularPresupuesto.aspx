@@ -9,13 +9,13 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
-                    <div class="panel-heading">Calcular Presupuesto</div>
+                    <div class="panel-heading"><asp:Label ID="lbl_" runat="server" Text="Calcular Presupuesto"></asp:Label></div>
                     <div class="panel-body">
                         <br />
                         <br />
                         <div class="row">
                             <div class="col-md-8 col-md-offset-1">
-                                <label class="label">Ingrese las medidas de la Superficie (en Metros)</label>
+                                <asp:label runat="server" cssclass="label" Text="Ingrese las medidas de la Superficie (en Metros)"></asp:label>
                             </div>
                         </div>
                         <br />
@@ -28,7 +28,7 @@
                                 <label class="label">Alto:</label>
                             </div>
                             <div class="col-md-2">
-                                <asp:TextBox ID="metrosAltos" runat="server" class="caja-texto"></asp:TextBox>
+                                <asp:TextBox ID="metrosAltos" runat="server" cssclass="caja-texto"></asp:TextBox>
                             </div>
                         </div>
                         <br />
@@ -37,10 +37,10 @@
                                 <img src="Imagenes/Size-width-32.png" class="img img-responsive" />
                             </div>
                             <div class="col-md-2">
-                                <label class="label">Ancho:</label>
+                                <label class="label" >Ancho:</label>
                             </div>
                             <div class="col-md-2">
-                                <asp:TextBox ID="metros" runat="server" class="caja-texto"></asp:TextBox>
+                                <asp:TextBox ID="metros" runat="server" cssclass="caja-texto"></asp:TextBox>
                             </div>
                         </div>
                         <br />

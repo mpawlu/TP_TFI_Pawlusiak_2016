@@ -71,28 +71,28 @@
                 <div class="panelBoton">
                     <img src="Imagenes/RedesSociales/FaceBook_64x64.png" class="img-responsive panelBoton-imagen" />
                     <div class="panelBoton-titulo">Facebook</div>
-                    <div class="panelBoton-texto">Seguí a VerdeUrbano en nuestro Facebook Oficial.</div>
+                    <div class="panelBoton-texto"><asp:Label ID="lbl_fb" runat="server" Text="Seguí a VerdeUrbano en nuestro Facebook Oficial."></asp:Label></div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="panelBoton">
                     <img src="Imagenes/RedesSociales/Twitter_64x64.png" class="img-responsive panelBoton-imagen" />
                     <div class="panelBoton-titulo">Twitter</div>
-                    <div class="panelBoton-texto">Seguí todas las novedades de VerdeUrbano en nuestro Twitter Oficial.</div>
+                    <div class="panelBoton-texto"><asp:Label ID="lbl_tw" runat="server" Text="Seguí todas las novedades de VerdeUrbano en nuestro Twitter Oficial."></asp:Label></div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="panelBoton">
                     <img src="Imagenes/RedesSociales/Instagram-64.png" class="img-responsive panelBoton-imagen" />
                     <div class="panelBoton-titulo">Instagram</div>
-                    <div class="panelBoton-texto">Visualiza todas las fotos de nuestros proyectos en el Instagram Oficial de VerdeUrbano.</div>
+                    <div class="panelBoton-texto"><asp:Label ID="lbl_insta" runat="server" Text="Visualiza todas las fotos de nuestros proyectos en el Instagram Oficial de VerdeUrbano."></asp:Label></div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="panelBoton">
                     <img src="Imagenes/RedesSociales/youtube_64.png" class="img-responsive panelBoton-imagen" />
                     <div class="panelBoton-titulo">YouTube</div>
-                    <div class="panelBoton-texto">Seguí a VerdeUrbano en nuestro canal oficial de YouTube con los mejores videos de nuestros proyectos.</div>
+                    <div class="panelBoton-texto"><asp:Label ID="lbl_youtube" runat="server" Text="Seguí a VerdeUrbano en nuestro canal oficial de YouTube con los mejores videos de nuestros proyectos."></asp:Label></div>
 
                 </div>
             </div>

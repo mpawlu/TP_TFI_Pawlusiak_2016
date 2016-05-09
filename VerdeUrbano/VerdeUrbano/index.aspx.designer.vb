@@ -120,4 +120,40 @@ Partial Public Class index
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents img10 As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''Control lbl_fb.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_fb As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control lbl_tw.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_tw As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control lbl_insta.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_insta As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control lbl_youtube.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_youtube As Global.System.Web.UI.WebControls.Label
 End Class
