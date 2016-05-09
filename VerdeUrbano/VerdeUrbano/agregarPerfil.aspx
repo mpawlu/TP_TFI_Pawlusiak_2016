@@ -24,9 +24,12 @@
                             <div class="col-md-3 col-md-offset-1">
                                 <asp:Label ID="lbl_Nombre" runat="server" Text="Nombre" CssClass="label"></asp:Label>
                             </div>
-
                             <div class="col-md-6 col-md-offset-1">
                                 <asp:TextBox ID="txtNombre" runat="server" CssClass="caja-texto"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1 col-md-offset-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                    ControlToValidate="txtNombre" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <br />

@@ -28,6 +28,10 @@
                             <div class="col-md-6 col-md-offset-1">
                                 <asp:TextBox ID="txtNombre" runat="server" CssClass="caja-texto"></asp:TextBox>
                             </div>
+                            <div class="col-md-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                    ControlToValidate="txtNombre" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
+                            </div>
                         </div>
                         <br />
                         <br />
@@ -37,6 +41,10 @@
                             </div>
                             <div class="col-md-6 col-md-offset-1">
                                 <asp:TextBox ID="txtPass" runat="server" CssClass="caja-texto" TextMode="Password"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                    ControlToValidate="txtPass" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <br />
@@ -48,6 +56,10 @@
                             <div class="col-md-6 col-md-offset-1">
                                 <asp:TextBox ID="txtRepetirPass" runat="server" CssClass="caja-texto" TextMode="Password"></asp:TextBox>
                             </div>
+                            <div class="col-md-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+                                    ControlToValidate="txtRepetirPass" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
+                            </div>
                         </div>
                         <br />
                         <br />
@@ -57,6 +69,10 @@
                             </div>
                             <div class="col-md-6 col-md-offset-1">
                                 <asp:TextBox ID="txtDNI" runat="server" CssClass="caja-texto"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
+                                    ControlToValidate="txtDNI" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <br />

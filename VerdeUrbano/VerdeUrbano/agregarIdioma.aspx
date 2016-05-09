@@ -5,6 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
     <br />
     <br />
+    <div class="row">
+        <div class="well well-lg col-md-12 msj-error" runat="server" visible="false" id="error">
+            <asp:Label ID="lbl_TituloError" runat="server" CssClass="labelError"></asp:Label>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -21,7 +26,11 @@
                                 <asp:Label ID="lbl_Nombre" runat="server" CssClass="label">Nombre</asp:Label>
                             </div>
                             <div class="col-md-4 col-md-offset-1">
-                                <asp:TextBox ID="txt_NombreIdioma" runat="server" CssClass="caja-texto" MaxLength="50"></asp:TextBox>
+                                <asp:TextBox ID="txtNombre" runat="server" CssClass="caja-texto" MaxLength="50"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1 col-md-offset-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                    ControlToValidate="txtNombre" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <br />

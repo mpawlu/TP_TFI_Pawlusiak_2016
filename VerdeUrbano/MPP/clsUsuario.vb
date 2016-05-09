@@ -16,7 +16,7 @@ Namespace MPP
             hdatos.Add("@Perfil", usuario.Perfil.ID)
             hdatos.Add("@Bloqueado", usuario.Bloqueado)
             hdatos.Add("@FechaAlta", usuario.FechaAlta)
-            hdatos.Add("@Editable", False)
+            hdatos.Add("@Editable", True)
             hdatos.Add("@Intentos", usuario.Intentos)
             hdatos.Add("@ID_Idioma", usuario.Idioma.ID)
             hdatos.Add("@DVH", MPP.DigitoVerificador.CalcularDVH(usuario.StringDVH))
