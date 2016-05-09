@@ -18,7 +18,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lblVisualizarBitacora" runat="server">Visualizar Bitacora</asp:Label>
+                        <asp:Label ID="lbl_VisualizarBitacora" runat="server" Text="Visualizar Bitacora"></asp:Label>
                     </div>
                     <div class="panel-body">
                         <br />
@@ -28,7 +28,7 @@
                                     <asp:ImageButton ID="imgfiltroUsuario" runat="server" ImageUrl="~/Imagenes/User-32.png" CssClass="IconoImagen center" />
                                 </div>
                                 <div class="col-md-6 margenFiltro">
-                                    <asp:Label ID="lblUsuario" runat="server" CssClass="label">Usuario</asp:Label>
+                                    <asp:Label ID="lbl_Usuario" runat="server" CssClass="label" Text="Usuario"></asp:Label>
                                 </div>
                             </div>
 
@@ -37,7 +37,7 @@
                                     <asp:ImageButton ID="imgfiltroFecha" runat="server" ImageUrl="~/Imagenes/Calendar-32.png" CssClass="IconoImagen center" />
                                 </div>
                                 <div class="col-md-6 margenFiltro">
-                                    <asp:Label ID="lblFecha" runat="server" CssClass="label">Fecha</asp:Label>
+                                    <asp:Label ID="lbl_Fecha" runat="server" CssClass="label" Text="Fecha"></asp:Label>
                                 </div>
 
                             </div>
@@ -46,7 +46,7 @@
                                     <asp:ImageButton ID="imgTipoPrioridad" runat="server" ImageUrl="~/Imagenes/Question-type-one-correct-32.png" CssClass="IconoImagen center" />
                                 </div>
                                 <div class="col-md-6 margenFiltro">
-                                    <asp:Label ID="lblTipoOperacion" runat="server" CssClass="label">Tipo de Operacion</asp:Label>
+                                    <asp:Label ID="lbl_TipoOperacion" runat="server" CssClass="label" Text="Tipo de Operacion"></asp:Label>
                                 </div>
                             </div>
                         </div>

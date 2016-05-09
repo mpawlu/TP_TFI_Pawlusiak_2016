@@ -14,13 +14,13 @@ Option Explicit On
 Partial Public Class visualizarBitacora
 
     '''<summary>
-    '''Control lblVisualizarBitacora.
+    '''Control lbl_VisualizarBitacora.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblVisualizarBitacora As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_VisualizarBitacora As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control imgfiltroUsuario.
@@ -32,13 +32,13 @@ Partial Public Class visualizarBitacora
     Protected WithEvents imgfiltroUsuario As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''Control lblUsuario.
+    '''Control lbl_Usuario.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblUsuario As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_Usuario As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control imgfiltroFecha.
@@ -50,13 +50,13 @@ Partial Public Class visualizarBitacora
     Protected WithEvents imgfiltroFecha As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''Control lblFecha.
+    '''Control lbl_Fecha.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblFecha As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_Fecha As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control imgTipoPrioridad.
@@ -68,13 +68,13 @@ Partial Public Class visualizarBitacora
     Protected WithEvents imgTipoPrioridad As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''Control lblTipoOperacion.
+    '''Control lbl_TipoOperacion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblTipoOperacion As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_TipoOperacion As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control ddlUsuario.

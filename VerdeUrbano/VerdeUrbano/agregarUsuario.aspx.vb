@@ -14,7 +14,7 @@
         Dim p As New Servicios.PermisoCompuesto
         p.ID = ddl_Perfil.SelectedValue
         NuevoUsuario.Perfil = p
-        NuevoUsuario.Bloqueado = bloqueado.Checked
+        'NuevoUsuario.Bloqueado = bloqueado.Checked
         NuevoUsuario.FechaAlta = Today
         NuevoUsuario.Editable = True
         Dim I As New Servicios.clsIdioma

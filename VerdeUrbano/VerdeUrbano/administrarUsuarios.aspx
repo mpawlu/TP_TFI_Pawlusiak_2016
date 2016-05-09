@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
-                    <div class="panel-heading">Adminstración de Usuarios</div>
+                    <div class="panel-heading"><asp:Label ID="lbl_AdministracionDeUsuarios" runat="server" Text="Adminstración de Usuarios"></asp:Label></div>
                     <div class="panel-body">
                         <br />
                         <asp:GridView ID="gv_Usuarios" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center" AutoPostBack="true">

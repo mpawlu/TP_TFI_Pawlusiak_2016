@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-verdeClaro">
-                    <div class="panel-heading">Agregar Usuario</div>
+                    <div class="panel-heading"><asp:Label ID="lbl_AgregarUsuario" runat="server" Text="Agregar Usuario"></asp:Label></div>
                     <div class="panel-body">
                         <br />
                         <br />

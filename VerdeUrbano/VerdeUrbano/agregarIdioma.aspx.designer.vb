@@ -14,13 +14,13 @@ Option Explicit On
 Partial Public Class agregarIdioma
 
     '''<summary>
-    '''Control cab_AgregarIdioma.
+    '''Control lbl_AgregarIdioma.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cab_AgregarIdioma As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_AgregarIdioma As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control lbl_Nombre.
@@ -50,20 +50,20 @@ Partial Public Class agregarIdioma
     Protected WithEvents gv_Palabras As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''Control btn_agregar.
+    '''Control btn_Agregar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_agregar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_Agregar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control btn_cancelar.
+    '''Control btnCancelar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_cancelar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnCancelar As Global.System.Web.UI.WebControls.Button
 End Class

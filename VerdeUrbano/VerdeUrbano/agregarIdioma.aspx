@@ -10,7 +10,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="cab_AgregarIdioma" runat="server">Agregar Idioma</asp:Label>
+                        <asp:Label ID="lbl_AgregarIdioma" runat="server">Agregar Idioma</asp:Label>
                     </div>
                     <div class="panel-body">
                         <br />
@@ -50,10 +50,10 @@
                     <br />
                     <div class="row">
                         <div class="col-md-2 col-md-offset-3">
-                            <asp:Button ID="btn_agregar" runat="server" Text="Agregar" CssClass="btn btn-success btn-block" />
+                            <asp:Button ID="btn_Agregar" runat="server" Text="Agregar" CssClass="btn btn-success btn-block" />
                         </div>
                         <div class="col-md-2 col-md-offset-2">
-                            <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" CssClass="btn btn-warning btn-block" />
+                            <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-warning btn-block" />
                         </div>
                     </div>
                     <br />
