@@ -19,7 +19,7 @@
                 <div class="col-md-12">
                     <div class="row fondoColor bordeColor">
                         <div class="col-md-3">
-                            <asp:Image ID="LogoMenu" CssClass="img img-responsive" runat="server" ImageUrl="~/Imagenes/logoVerdeUrbano.PNG" />
+                            <asp:Image ID="LogoMenu" CssClass="img-responsive" runat="server" ImageUrl="~/Imagenes/logoVerdeUrbano.PNG" />
                         </div>
                         <div class="col-md-2 col-md-offset-7">
                             <div class="row">
@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3 col-md-offset-2">
-                                        <asp:LinkButton ID="cambiarPassword" runat="server" CssClass="btn btn-info btn-sm btn-round" OnClick="cambiarPassword_Click"><span class="glyphicon glyphicon-tags"></span></asp:LinkButton>
+                                        <asp:LinkButton ID="cambiarPassword" runat="server" CssClass="btn btn-info btn-sm btn-round" OnClick="cambiarPassword_Click"><span class="glyphicon glyphicon-lock"></span></asp:LinkButton>
                                     </div>
                                     <div class="col-md-3">
                                         <asp:LinkButton ID="cambiarIdioma" runat="server" CssClass="btn btn-default btn-sm btn-round" OnClick="cambiarIdioma_Click"><span class="glyphicon glyphicon-globe"></span></asp:LinkButton>

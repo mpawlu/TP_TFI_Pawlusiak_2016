@@ -14,6 +14,24 @@ Option Explicit On
 Partial Public Class agregarUsuario
 
     '''<summary>
+    '''Control error.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents [error] As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control lbl_TituloError.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control lbl_AgregarUsuario.
     '''</summary>
     '''<remarks>
@@ -57,6 +75,24 @@ Partial Public Class agregarUsuario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtPass As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lbl_repetirPassword.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_repetirPassword As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtRepetirPass.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtRepetirPass As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control lbl_dni.
@@ -113,13 +149,13 @@ Partial Public Class agregarUsuario
     Protected WithEvents ddl_idioma As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control btnGuardar.
+    '''Control btn_Guardar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_Guardar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Control btnCancelar.

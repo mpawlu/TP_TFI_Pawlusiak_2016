@@ -67,8 +67,11 @@
     <Compile Include="clsEncriptadora.vb" />
     <Compile Include="Excepciones\clsExcepcionPersonalizada.vb" />
     <Compile Include="Excepciones\clsExcepcionCamposIncompletos.vb" />
+    <Compile Include="Excepciones\Login\clsExcepcionPasswordCorto.vb" />
+    <Compile Include="Excepciones\Login\clsExcepcionPasswordDiferentes.vb" />
     <Compile Include="Excepciones\Login\clsExcepcionPasswordIncorrecto.vb" />
     <Compile Include="Excepciones\Login\clsExcepcionUsuarioBloqueado.vb" />
+    <Compile Include="Excepciones\Login\clsExcepcionUsuarioDuplicado.vb" />
     <Compile Include="Excepciones\Login\clsExcepcionUsuarioInexistente.vb" />
     <Compile Include="Excepciones\Multi-Idioma\clsExcepcionLeyendasIncompletas.vb" />
     <Compile Include="Excepciones\Multi-Idioma\clsExcepcionNombreIdioma.vb" />

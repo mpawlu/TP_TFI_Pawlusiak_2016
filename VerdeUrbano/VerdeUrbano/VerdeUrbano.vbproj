@@ -100,6 +100,7 @@
   <ItemGroup>
     <Content Include="administrarUsuarios.aspx" />
     <Content Include="agregarIdioma.aspx" />
+    <Content Include="agregarPerfil.aspx" />
     <Content Include="agregarUsuario.aspx" />
     <Content Include="calcularPresupuesto.aspx" />
     <Content Include="cambiarIdioma.aspx" />
@@ -111,9 +112,11 @@
     <Content Include="CSS\Imagenes\Slider\b05.png" />
     <Content Include="CSS\jquery-ui.css" />
     <Content Include="CSS\MisEstilos.css" />
+    <Content Include="enconstruccion.aspx" />
     <Content Include="Imagenes\Add-32.png" />
     <Content Include="Imagenes\Calendar-32.png" />
     <Content Include="Imagenes\Clock-32.png" />
+    <Content Include="Imagenes\construccion.png" />
     <Content Include="Imagenes\Delete-32.png" />
     <Content Include="Imagenes\economico.png" />
     <Content Include="Imagenes\Edit-32.png" />
@@ -189,6 +192,13 @@
       <DependentUpon>agregarIdioma.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="agregarPerfil.aspx.designer.vb">
+      <DependentUpon>agregarPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="agregarPerfil.aspx.vb">
+      <DependentUpon>agregarPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="agregarUsuario.aspx.designer.vb">
       <DependentUpon>agregarUsuario.aspx</DependentUpon>
     </Compile>
@@ -209,6 +219,13 @@
     </Compile>
     <Compile Include="cambiarIdioma.aspx.vb">
       <DependentUpon>cambiarIdioma.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="enconstruccion.aspx.designer.vb">
+      <DependentUpon>enconstruccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="enconstruccion.aspx.vb">
+      <DependentUpon>enconstruccion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.vb">

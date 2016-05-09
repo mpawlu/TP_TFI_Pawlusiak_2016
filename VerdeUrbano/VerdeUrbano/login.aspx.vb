@@ -19,16 +19,16 @@
                 Context.Items.Add("loginCorrecto", True)
                 Server.Transfer("index.aspx", False)
             End If
-        Catch ex As clsExcepcionCamposIncompletos
+        Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Mensaje
-        Catch ex As clsExcepcionUsuarioInexistente
+        Catch ex As Servicios.clsExcepcionUsuarioInexistente
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Mensaje
-        Catch ex As clsExcepcionPasswordIncorrecto
+        Catch ex As Servicios.clsExcepcionPasswordIncorrecto
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Mensaje
-        Catch ex As clsExcepcionUsuarioBloqueado
+        Catch ex As Servicios.clsExcepcionUsuarioBloqueado
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Mensaje
         Catch ex As Exception

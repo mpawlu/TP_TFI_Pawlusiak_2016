@@ -1,9 +1,9 @@
 ﻿Namespace Servicios
-    Public Class clsExcepcionUsuarioInexistente
+    Public Class clsExcepcionPasswordDiferentes
         Inherits clsExcepcionPersonalizada
 
         Public Overrides Function Mensaje() As String
-            Return "El Usuario no se encuentra registrado en el Sistema"
+            Return "Las contraseñas ingresadas no coinciden"
         End Function
     End Class
 

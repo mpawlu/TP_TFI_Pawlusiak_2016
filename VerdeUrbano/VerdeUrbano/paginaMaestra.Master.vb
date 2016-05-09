@@ -36,12 +36,16 @@ Public Class paginaMaestra
     Private Sub traducirMenuPrincipal()
         Dim MiMenuP As Menu
         MiMenuP = Me.FindControl("Menu1")
-        For Each MiMenuItem As MenuItem In MiMenuP.Items
+        If MiMenuP.Items.Count > 0 Then
+            traducirMenuRecursivo(MiMenuP.Items)
+        End If
+    End Sub
+
+    Private Sub traducirMenuRecursivo(ByVal _items As MenuItemCollection)
+        For Each MiMenuItem As MenuItem In _items
             traducir(MiMenuItem)
             If MiMenuItem.ChildItems.Count > 0 Then
-                For Each MiMenuItemHijo As MenuItem In MiMenuItem.ChildItems
-                    traducir(MiMenuItemHijo)
-                Next
+                traducirMenuRecursivo(MiMenuItem.ChildItems)
             End If
         Next
     End Sub
@@ -171,9 +175,9 @@ Public Class paginaMaestra
         crearMenuXMLestatico(writer)
         If Not Me.RecuperarUsuario Is Nothing Then
             Dim _perfil As Servicios.PermisoCompuesto = Me.RecuperarUsuario.Perfil
-            createMenu(_perfil.Url, _perfil.Descripcion, _perfil.Descripcion, writer)
+            '         createMenu(_perfil.Url, _perfil.Descripcion, _perfil.Descripcion, writer)
             recorrerCompuesto(_perfil.ListaPermisos, writer)
-            cerrarMenu(writer)
+            '     cerrarMenu(writer)
         End If
         writer.WriteEndElement()
         writer.WriteEndDocument()
@@ -215,6 +219,8 @@ Public Class paginaMaestra
             If p.TieneHijos = True Then
                 createMenu(p.Url, p.Descripcion, p.Descripcion, writer)
                 recorrerCompuesto(p.ObtenerHijos, writer)
+                cerrarMenu(writer)
+
             Else
                 createSubMenu(p.Url, p.Descripcion, p.Descripcion, writer)
             End If
