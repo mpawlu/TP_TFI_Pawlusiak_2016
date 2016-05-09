@@ -14,7 +14,7 @@ Public Class realizarBackup
         End If
     End Sub
 
-    Protected Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+    Protected Sub btn_Agregar_Click(sender As Object, e As EventArgs) Handles btn_Agregar.Click
         Try
             Dim MiBackupRestoreBLL As New BLL.BackupRestore
             Dim MiBackupRestoreEntidad As New Servicios.clsBackupRestore

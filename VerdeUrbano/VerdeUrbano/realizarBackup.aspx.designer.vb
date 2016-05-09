@@ -14,13 +14,22 @@ Option Explicit On
 Partial Public Class realizarBackup
 
     '''<summary>
-    '''Control lblNombre.
+    '''Control lbl_RealizarBackup.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblNombre As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_RealizarBackup As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control lbl_Nombre.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_Nombre As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control txtnombre.
@@ -41,13 +50,13 @@ Partial Public Class realizarBackup
     Protected WithEvents requerido_txt_nombre As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''Control lblDirectorio.
+    '''Control lbl_Directorio.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblDirectorio As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_Directorio As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control txtDirectorio.
@@ -68,13 +77,13 @@ Partial Public Class realizarBackup
     Protected WithEvents RequiredFieldValidatortxt_Directorio As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''Control btnAgregar.
+    '''Control btn_Agregar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnAgregar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_Agregar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Control btnCancelar.

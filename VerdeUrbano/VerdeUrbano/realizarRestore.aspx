@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
-                    <div class="panel-heading">Realizar Restore</div>
+                    <div class="panel-heading"><asp:Label ID="lbl_RealizarRestore" runat="server" Text="Realizar Restore"></asp:Label></div>
                     <div class="panel-body">
                         <br />
                         <br />
@@ -17,7 +17,7 @@
 
                         <div class="row">
                             <div class="col-md-2 col-md-offset-1">
-                                <asp:Label ID="lblNombre" runat="server" CssClass="label">Nombre</asp:Label>
+                                <asp:Label ID="lbl_Nombre" runat="server" CssClass="label" Text="Nombre"></asp:Label>
 
                             </div>
                             <div class="col-md-5 col-md-offset-2">
@@ -30,7 +30,7 @@
                         <br />
                         <div class="row">
                             <div class="col-md-2 col-md-offset-3">
-                                <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn btn-success btn-block" />
+                                <asp:Button ID="btn_Agregar" runat="server" Text="Agregar" CssClass="btn btn-success btn-block" />
                             </div>
                             <div class="col-md-2 col-md-offset-2">
                                 <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-warning btn-block" />

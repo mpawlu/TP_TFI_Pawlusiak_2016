@@ -14,13 +14,22 @@ Option Explicit On
 Partial Public Class realizarRestore
 
     '''<summary>
-    '''Control lblNombre.
+    '''Control lbl_RealizarRestore.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblNombre As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_RealizarRestore As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control lbl_Nombre.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_Nombre As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control fuRestore.
@@ -32,13 +41,13 @@ Partial Public Class realizarRestore
     Protected WithEvents fuRestore As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
-    '''Control btnAgregar.
+    '''Control btn_Agregar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnAgregar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_Agregar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Control btnCancelar.
