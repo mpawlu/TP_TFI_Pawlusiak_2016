@@ -16,8 +16,8 @@
         <div class="row">
             <div class="col-md-4">
                 <br />
-                <div class="panelBoton-titulo">Bienvenidos al Sitio Web de Verde Urbano</div>
-                <div class="panelBoton-texto">Hola aca va el texto de introducción para agregara  la pagina como para que puedan hacer una introducción a la empresa y ver las cosas viste. Me gustaria que el texto tenga un largo bastante importante para que sea largo y probar.</div>
+                <div class="panelBoton-titulo"><asp:Label ID="lbl_Bienvenido" runat="server" Text="Bienvenido al Sitio Web de Verde Urbano"></asp:Label></asp:Label> </div>
+                <div class="panelBoton-texto"><asp:Label ID="lbl_DescripcionEmpresa" runat="server" Text="Somos la emnpresa lider en instalación y mantenimiento de jardines verticales y terrazas verdes de Buenos Aires. Mas de 200 empresas ya nos han contratado y abalan la calidad de nuestros trabajos."></asp:Label></div>
             </div>
 
 

@@ -9,14 +9,14 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
-                    <div class="panel-heading">Cambiar Idioma</div>
+                    <div class="panel-heading"><asp:Label ID="lbl_CambiarIdioma" runat="server" Text="Cambiar Idioma"></asp:Label></div>
                     <div class="panel-body">
                         <br />
                         <br />
                         <br />
                         <div class="row">
                             <div class="col-md-2 col-md-offset-2">
-                                <asp:Label ID="lblIdioma" runat="server" CssClass="label">Idioma</asp:Label>
+                                <asp:Label ID="lbl_Idioma" runat="server" CssClass="label" Text="Idioma"></asp:Label>
 
                             </div>
                             <div class="col-md-5 col-md-offset-1">

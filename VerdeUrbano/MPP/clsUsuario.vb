@@ -12,7 +12,7 @@ Namespace MPP
             hdatos.Add("@NombreUsuario", usuario.NombreUsuario)
             hdatos.Add("@Pass", clsEncriptadora.EncriptarPass(usuario.Password))
             hdatos.Add("@DNI", usuario.DNI)
-            hdatos.Add("@Activo", False)
+            hdatos.Add("@Activo", True)
             hdatos.Add("@Perfil", usuario.Perfil.ID)
             hdatos.Add("@Bloqueado", usuario.Bloqueado)
             hdatos.Add("@FechaAlta", usuario.FechaAlta)
@@ -35,7 +35,7 @@ Namespace MPP
             Dim hdatos As New Hashtable
             Dim resultado As Boolean
 
-            hdatos.Add("@IdUsuario", usuario.Id)
+            hdatos.Add("@ID_Usuario", usuario.ID)
 
             resultado = oDatos.Escribir("s_Usuario_Baja", hdatos)
             'DigitoVerificador.CalcularDVV("Usuario")
@@ -48,15 +48,19 @@ Namespace MPP
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable
             Dim resultado As Boolean
+            Dim oPerf As New Servicios.PermisoCompuesto
+            Dim oIdioma As New Servicios.clsIdioma
             'para el usuario cambia
             hdatos.Add("@Id_Usuario", usuario.ID)
             hdatos.Add("@Pass", usuario.Password)
             hdatos.Add("@DNI", usuario.DNI)
-            hdatos.Add("@Perfil", usuario.Perfil.ID) ' cambiar
+            oPerf = usuario.Perfil
+            hdatos.Add("@Perfil", oPerf.ID) ' cambiar
             hdatos.Add("@Bloqueado", usuario.Bloqueado)
             hdatos.Add("@Editable", usuario.Editable)
             hdatos.Add("@Intentos", usuario.Intentos)
-            hdatos.Add("@Id_Idioma", usuario.Idioma.ID) 'cambiar
+            oIdioma = usuario.Idioma
+            hdatos.Add("@Id_Idioma", oIdioma.ID) 'cambiar
             hdatos.Add("@DVH", MPP.DigitoVerificador.CalcularDVH(usuario.StringDVH))
 
             resultado = oDatos.Escribir("s_Usuario_Modificar", hdatos)
@@ -126,7 +130,7 @@ Namespace MPP
                     oUsu.Activo = Item("Activo")
                     oUsu.Bloqueado = Item("Bloqueado")
                     oUsu.FechaAlta = Item("FechaAlta")
-                    'oUsu.Editable = Item("Editable")
+                    oUsu.Editable = Item("Editable")
                     oUsu.Intentos = Item("Intentos")
                     
 

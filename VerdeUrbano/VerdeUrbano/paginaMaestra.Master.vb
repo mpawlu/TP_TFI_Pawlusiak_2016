@@ -9,9 +9,9 @@ Public Class paginaMaestra
         If Not IsPostBack Then
             If Not IsNothing(Session("Usuario")) Then
                 cargarMenuOpciones()
-                obtenerIdioma()
                 eliminarArchivoMenu()
                 generarXMLparaMenu()
+                obtenerIdioma()
             Else
                 generarXMLEstatico()
                 Me.opcionesUsuario.Visible = False
@@ -26,25 +26,25 @@ Public Class paginaMaestra
 #Region "MultiIdioma"
     Private Sub obtenerIdioma()
         If Not IsNothing(Session("Usuario")) Then
-            '  traducirMenuPrincipal()
+            traducirMenuPrincipal()
             Dim mpContentPlaceHolder As New ContentPlaceHolder
             mpContentPlaceHolder = Me.FindControl("contenidoPagina")
             traducirControl(mpContentPlaceHolder.Controls)
         End If
     End Sub
 
-    'Private Sub traducirMenuPrincipal()
-    '    Dim MiMenuP As Menu
-    '    MiMenuP = Me.FindControl("menuPrincipal")
-    '    For Each MiMenuItem As MenuItem In MiMenuP.Items
-    '        traducir(MiMenuItem)
-    '        If MiMenuItem.ChildItems.Count > 0 Then
-    '            For Each MiMenuItemHijo As MenuItem In MiMenuItem.ChildItems
-    '                traducir(MiMenuItemHijo)
-    '            Next
-    '        End If
-    '    Next
-    'End Sub
+    Private Sub traducirMenuPrincipal()
+        Dim MiMenuP As Menu
+        MiMenuP = Me.FindControl("Menu1")
+        For Each MiMenuItem As MenuItem In MiMenuP.Items
+            traducir(MiMenuItem)
+            If MiMenuItem.ChildItems.Count > 0 Then
+                For Each MiMenuItemHijo As MenuItem In MiMenuItem.ChildItems
+                    traducir(MiMenuItemHijo)
+                Next
+            End If
+        Next
+    End Sub
 
     Private Sub traducirControl(ByVal paramListaControl As ControlCollection)
         For Each miControl As Control In paramListaControl

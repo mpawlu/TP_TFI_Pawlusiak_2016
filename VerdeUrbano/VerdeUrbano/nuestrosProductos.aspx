@@ -22,20 +22,20 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
-                    <div class="panel-heading">Conoce Nuestros Productos</div>
+                    <div class="panel-heading"><asp:Label ID="lbl_ConoceNuestrosProductos" runat="server" Text="Conoce Nuestros Productos"></asp:Label></div>
                     <div class="panel-body">
                         <br />
                         <div id="accordion">
-                            <h3>Jardín Vertical</h3>
+                            <h3><asp:Label ID="lbl_TitJardin" runat="server" Text="Jardín Vertical"></asp:Label></h3>
                             <div class="row">
                                 <div class="col-md-5">
                                     <img src="Imagenes/jardin.jpg" class="img img-responsive" style="padding-left: 5%" />
                                 </div>
                                 <div class="col-md-5 col-md-offset-1">
-                                    <p>Cultivar plantas en una superficie vertical ha sido posible gracias a estudios de locaciones verticales naturales (rocas, acantilados y troncos de árboles), lugares sin suelo y con abundancia de especies vegetales. Las técnicas imitan estas condiciones y se adaptan a cualquier geometría.</p>
+                                    <p><asp:Label ID="lbl_DetalleJardin" runat="server" Text="Cultivar plantas en una superficie vertical ha sido posible gracias a estudios de locaciones verticales naturales (rocas, acantilados y troncos de árboles), lugares sin suelo y con abundancia de especies vegetales. Las técnicas imitan estas condiciones y se adaptan a cualquier geometría."></asp:Label></p>
                                 </div>
                             </div>
-                            <h3>Terrazas Verdes</h3>
+                            <h3><asp:Label ID="lbl_TitTerraza" runat="server" Text="Terrazas Verdes"></asp:Label></h3>
 
                             <div class="row">
                                 <div class="col-md-5">
@@ -43,25 +43,25 @@
                                 </div>
                                 <div class="col-md-5 col-md-offset-1">
                                     <p>
-                                    Una cubierta verde es un sistema de ingeniería que permite el crecimiento de vegetación en la parte superior de los edificios (ya sea en techos o azoteas) manteniendo protegida su estructura. En general, tienen un impacto neto positivo sobre el ambiente: capturan agua de lluvia, reduciendo inundaciones y niveles de contaminación; mejoran el aislamiento térmico de los edificios y enfrían el aire; representan un hábitat para especies nativas o migratorias; y ayudan a mejorar la calidad de vida.
+                                    <asp:Label ID="lbl_DetalleTerraza" runat="server" Text="Una cubierta verde es un sistema de ingeniería que permite el crecimiento de vegetación en la parte superior de los edificios (ya sea en techos o azoteas) manteniendo protegida su estructura. En general, tienen un impacto neto positivo sobre el ambiente: capturan agua de lluvia, reduciendo inundaciones y niveles de contaminación; mejoran el aislamiento térmico de los edificios y enfrían el aire; representan un hábitat para especies nativas o migratorias; y ayudan a mejorar la calidad de vida."></asp:Label>
                                 </div>
                             </div>
-                            <h3>Macetas</h3>
+                            <h3><asp:Label ID="lbl_TitMacetas" runat="server" Text="Macetas"></asp:Label></h3>
                             <div class="row">
                                 <div class="col-md-5">
                                     <img src="Imagenes/maceta.jpg" class="img img-responsive" style="padding-left: 5%" />
                                 </div>
                                 <div class="col-md-5 col-md-offset-1">
-                                    <p>Puede utilizarse tanto en interiores como en exteriores. Fácil de implementar, impermeabilizada, ayuda a la respiración de las raíces, y mantiene regadas las plantas.</p>
+                                    <p><asp:Label ID="lbl_DetalleMacetas" runat="server" Text="Puede utilizarse tanto en interiores como en exteriores. Fácil de implementar, impermeabilizada, ayuda a la respiración de las raíces, y mantiene regadas las plantas."></asp:Label></p>
                                 </div>
                             </div>
-                            <h3>Sobres</h3>
+                            <h3><asp:Label ID="lbl_TitSobres" runat="server" Text="Sobres"></asp:Label></h3>
                             <div class="row">
                                 <div class="col-md-5">
                                     <img src="Imagenes/sobre.jpg" class="img img-responsive" style="padding-left: 5%" />
                                 </div>
                                 <div class="col-md-5 col-md-offset-1">
-                                    <p>Diseñado para interiores, de material hidrófugo, fácil de implementar y mantener. No mancha ni humedece las paredes.</p>
+                                    <p><asp:Label ID="lbl_DetalleSobres" runat="server" Text="Diseñado para interiores, de material hidrófugo, fácil de implementar y mantener. No mancha ni humedece las paredes."></asp:Label></p>
                                 </div>
                             </div>
                         </div>

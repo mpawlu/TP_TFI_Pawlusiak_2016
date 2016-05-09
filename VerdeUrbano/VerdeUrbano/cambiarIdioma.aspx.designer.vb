@@ -14,13 +14,22 @@ Option Explicit On
 Partial Public Class cambiarIdiomar
 
     '''<summary>
-    '''Control lblIdioma.
+    '''Control lbl_CambiarIdioma.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblIdioma As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_CambiarIdioma As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control lbl_Idioma.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_Idioma As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control DropDownList1.

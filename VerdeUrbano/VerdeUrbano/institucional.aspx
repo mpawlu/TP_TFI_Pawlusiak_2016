@@ -14,11 +14,11 @@
                         <div class="thumbnail fondoGrisClaro bordeColor">
                             <img src="Imagenes/mision.png" alt="Mision" class="img img-responsive">
                             <div class="caption">
-                                  <h3 class="tituloNegrita text-center">Mision</h3>
+                                  <h3 class="tituloNegrita text-center"><asp:Label ID="lbl_Mision" runat="server" Text="Mision"></asp:Label></h3>
                                 <br />
                                 <p class="parrafo">
-                                    Contribuir al desarrollo urbanístico sustentable, a través de la difusión, concientización y aplicación de tecnologías que disminuyan el impacto ambiental y que mejore la calidad de vida de la población, brindando un producto de alta calidad y duradero.
-Contribuir al bienestar de los habitantes de la Ciudad autónoma de buenos aires y la zona norte del conurbano bonaerense. 
+                                    <asp:Label ID="lbl_DetalleMision" runat="server" Text="Contribuir al desarrollo urbanístico sustentable, a través de la difusión, concientización y aplicación de tecnologías que disminuyan el impacto ambiental y que mejore la calidad de vida de la población, brindando un producto de alta calidad y duradero.
+Contribuir al bienestar de los habitantes de la Ciudad autónoma de buenos aires y la zona norte del conurbano bonaerense."></asp:Label> 
                        
                                 </p>
                             </div>
@@ -28,10 +28,10 @@ Contribuir al bienestar de los habitantes de la Ciudad autónoma de buenos aires
                         <div class="thumbnail fondoGrisClaro bordeColor">
                             <img src="Imagenes/vision.png" alt="Mision" class="img img-responsive">
                             <div class="caption">
-                                <h3 class="tituloNegrita text-center">Visión</h3>
+                                <h3 class="tituloNegrita text-center"><asp:Label ID="lbl_Vision" runat="server" Text="Visión"></asp:Label></h3>
                                 <br />
                                 <p class="parrafo">
-                                    Ser empresa líder en Jardines verticales y terrazas verdes, brindando las mejores tecnologías del mercado para trasformar las principales ciudades del país en color verde, mejorando la calidad de vida de las personas.                        
+                                    <asp:Label ID="lbl_DetalleVision" runat="server" Text="Ser empresa líder en Jardines verticales y terrazas verdes, brindando las mejores tecnologías del mercado para trasformar las principales ciudades del país en color verde, mejorando la calidad de vida de las personas."></asp:Label>                        
                                 </p>
                                 <br />
                                 <br />
