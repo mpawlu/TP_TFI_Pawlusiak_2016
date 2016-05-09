@@ -29,8 +29,13 @@
                     oLeyenda.ID = CStr(r.Cells(0).Text)
                     oLeyenda.Leyenda = CStr(r.Cells(1).Text)
                     oTrad.Leyenda = oLeyenda
-                    oTrad.Idioma = NuevoIdioma
-                    oTrad.Traduccion = CStr(r.Cells(2).Text)
+                    oTrad.Idioma = oIdiomaBLL.ConsultarPorNombre(Me.txtNombre.Text)
+                    If CStr(r.Cells(2).Text) = "" Then
+                        oTrad.Traduccion = CStr(r.Cells(1).Text)
+                    Else
+                        oTrad.Traduccion = CStr(r.Cells(2).Text)
+                    End If
+
                     If oTradBLL.CrearTraduccion(oTrad) = False Then
                         'Excepcion Validacion traduccion
                         Exit For

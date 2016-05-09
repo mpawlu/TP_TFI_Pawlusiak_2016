@@ -7,10 +7,11 @@ Namespace MPP
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable
             Dim resultado As Boolean
+            Dim oIdiomaMPP As New MPP.clsIdioma
 
             hdatos.Add("@ID_Idioma", traduccion.Idioma.ID)
-            hdatos.Add("@ID_leyenda", traduccion.Leyenda.ID)
-            hdatos.Add("@Traduccion", traduccion.Traduccion)
+            hdatos.Add("@ID_leyenda", CStr(traduccion.Leyenda.ID))
+            hdatos.Add("@Traduccion", CStr(traduccion.Traduccion))
 
             resultado = oDatos.Escribir("s_Traduccion_Crear", hdatos)
 

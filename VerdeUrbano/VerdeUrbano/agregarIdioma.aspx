@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="agregarIdioma.aspx.vb" Inherits="VerdeUrbano.agregarIdioma" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" UICulture="es" Culture="es-MX" CodeBehind="agregarIdioma.aspx.vb" Inherits="VerdeUrbano.agregarIdioma" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -28,7 +28,7 @@
                             <div class="col-md-4 col-md-offset-1">
                                 <asp:TextBox ID="txtNombre" runat="server" CssClass="caja-texto" MaxLength="50"></asp:TextBox>
                             </div>
-                            <div class="col-md-1 col-md-offset-1">
+                            <div class="col-md-1">
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
                                     ControlToValidate="txtNombre" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
@@ -42,7 +42,7 @@
                             <asp:GridView ID="gv_Palabras" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
 
                                 <Columns>
-                                    <asp:BoundField DataField="ID" HeaderText="ID" />
+                                    <asp:BoundField DataField="ID" HeaderText="ID"/>
                                     <asp:BoundField DataField="Leyenda" HeaderText="Leyenda" />
                                     <asp:TemplateField HeaderText="Nuevo Texto" HeaderStyle-Width="400px">
                                         <ItemTemplate>

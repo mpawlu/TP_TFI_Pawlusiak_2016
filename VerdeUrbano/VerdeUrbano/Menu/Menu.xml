@@ -4,11 +4,4 @@
   <Menu URL="~/Quienessomos.aspx" Text="Quienes Somos" Value="Quienes Somos" />
   <Menu URL="~/Institucional.aspx" Text="Institucional" Value="Institucional" />
   <Menu URL="~/nuestrosProductos.aspx" Text="Productos" Value="Productos" />
-  <Menu URL="" Text="Administrar Sistema" Value="Administrar Sistema">
-    <Submenu URL="~/visualizarBitacora.aspx" Text="Visualizar Bitacora" Value="Visualizar Bitacora" />
-    <Menu URL="" Text="Usuarios" Value="Usuarios">
-      <Submenu URL="~/administrarUsuarios.aspx" Text="Administrar Usuarios" Value="Administrar Usuarios" />
-      <Submenu URL="~/administrarUsuarios.aspx" Text="Agregar Usuario" Value="Agregar Usuario" />
-    </Menu>
-  </Menu>
 </Menus>

@@ -24,6 +24,11 @@
 
             Return listaIdiomas
         End Function
+        Public Function ConsultarPorNombre(ByVal oNombre As String) As Servicios.clsIdioma
+
+            Dim oMapper As New MPP.clsIdioma
+            Return oMapper.ConsultarIdioma(oNombre)
+        End Function
     End Class
 End Namespace
 

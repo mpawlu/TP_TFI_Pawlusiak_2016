@@ -1,6 +1,66 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="agregarPerfil.aspx.vb" Inherits="VerdeUrbano.agregarPerfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        function NodeOnCheckChanged(NodeEventData) {
+            alert("HOLA");
+
+            if (NodeEventData.Checked) {
+
+                // When node is checked, then check all parent nodes.
+
+                CheckParentNodes(NodeEventData);
+
+            }
+
+            else {
+
+                // When node is unchecked, then uncheck all child nodes recursive.
+
+                UnCheckChildNodesRecursive(NodeEventData);
+
+            }
+
+        }
+
+
+
+        function UnCheckChildNodesRecursive(oNode) {
+
+            var arrChildNodes = oNode.Nodes;
+
+            if (null != arrChildNodes) {
+
+                for (var i = 0; i < arrChildNodes.length; i++) {
+
+                    var oChildNode = arrChildNodes[i];
+
+                    oChildNode.UnCheck();
+
+                    UnCheckChildNodesRecursive(oChildNode);
+
+                }
+
+            }
+
+        }
+
+
+
+        function CheckParentNodes(oNode) {
+
+            var oParNode = oNode.ParentNode;
+
+            while (null != oParNode) {
+
+                oParNode.Check();
+
+                oParNode = oParNode.ParentNode;
+
+            }
+
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
     <br />
@@ -36,7 +96,7 @@
                         <br />
                         <div class="row">
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:TreeView ID="treeviewPermisos" runat="server" ExpandDepth="0" ForeColor="Black" CssClass="label" ShowCheckBoxes="all"></asp:TreeView>
+                                <asp:TreeView ID="treeviewPermisos" runat="server" ExpandDepth="0" ForeColor="Black" CssClass="label" ShowCheckBoxes="Leaf,Parent" ></asp:TreeView>
                             </div>
                         </div>
                         <br />

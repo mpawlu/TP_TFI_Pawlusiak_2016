@@ -14,7 +14,7 @@
             Dim _listapermisos As New List(Of Servicios.PermisoBase)
             Dim _perfiles As New List(Of Servicios.PermisoCompuesto)
             Dim _bllPermiso As New BLL.clsPermiso
-            _perfiles = _bllPermiso.ListarPerfiles
+            _perfiles = _bllPermiso.ListarFamiliasDePerfiles
             For Each _perfil As Servicios.PermisoCompuesto In _perfiles
                 armarTreeView(_perfil, Me.treeviewPermisos)
             Next
@@ -105,5 +105,4 @@
         resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
         Return resultado
     End Function
-
 End Class
