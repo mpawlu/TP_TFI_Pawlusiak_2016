@@ -23,7 +23,7 @@
                     End If
                     oPermiso.Accion = Item("Accion")
 
-                    listaPermisos.Add(oPermiso)
+                    listaPermisos.Add(ConvertirDataRowEnPermiso(Item))
                 Next
 
                 Return listaPermisos
