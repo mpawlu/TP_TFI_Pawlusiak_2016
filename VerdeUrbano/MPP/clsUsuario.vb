@@ -193,6 +193,14 @@ Namespace MPP
         End Function
 
 
+        Public Sub cambiarPassword(ByVal paramUsuario As Servicios.Usuario)
+            Try
+
+            Catch ex As Exception
+
+            End Try
+        End Sub
+
 #Region "Login"
        
 

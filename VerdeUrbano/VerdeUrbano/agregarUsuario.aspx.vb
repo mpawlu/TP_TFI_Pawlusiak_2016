@@ -6,6 +6,7 @@
             CargarDDLIdioma()
             CargarDDLPerfil()
         End If
+        Me.correcto.Visible = False
     End Sub
 
     Protected Sub btn_Guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
@@ -29,6 +30,7 @@
                     NuevoUsuario.Idioma = I
                     If usuBLL.chequearUsuario(NuevoUsuario) = False Then
                         usuBLL.CrearUsuario(NuevoUsuario)
+                        Me.correcto.Visible = True
                     Else
                         Throw New Servicios.clsExcepcionUsuarioDuplicado
                     End If

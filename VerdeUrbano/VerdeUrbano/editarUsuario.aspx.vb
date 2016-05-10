@@ -6,6 +6,7 @@
             CargarDDLIdioma()
             CargarDDLPerfil()
         End If
+        Me.correcto.Visible = False
     End Sub
     Protected Sub btn_Guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
         Try
@@ -21,7 +22,7 @@
             EditarUsuario.Idioma = I
             Dim oUsuBLL As New BLL.clsUsuario
             If oUsuBLL.ModificarUsuario(EditarUsuario) = True Then
-                MsgBox("Modificacion Exitosa")
+                Me.correcto.Visible = True
             End If
         Catch ex As servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True

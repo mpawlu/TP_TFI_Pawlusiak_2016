@@ -2,6 +2,7 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Me.correcto.visible = False
 
     End Sub
 
@@ -15,8 +16,15 @@
             MiBackupRestoreEntidad.Directorio = Path
             Dim oBRBLL As New BLL.BackupRestore
             Resultado = oBRBLL.RealizarRestore(MiBackupRestoreEntidad)
+            If Resultado = True Then
+                Me.correcto.Visible = True
+            Else
+                Me.correcto.Visible = False
+                Throw New Exception
+            End If
         Catch ex As Exception
-
+            Me.Error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
         End Try
 
     End Sub

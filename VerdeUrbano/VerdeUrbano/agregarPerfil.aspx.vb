@@ -105,4 +105,8 @@
         resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
         Return resultado
     End Function
+
+    Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Response.Redirect("index.aspx")
+    End Sub
 End Class

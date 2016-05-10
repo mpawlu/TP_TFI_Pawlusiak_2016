@@ -104,6 +104,7 @@
     <Content Include="agregarUsuario.aspx" />
     <Content Include="calcularPresupuesto.aspx" />
     <Content Include="cambiarIdioma.aspx" />
+    <Content Include="cambiarPassword.aspx" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\DateTimePicker.css" />
     <Content Include="CSS\EstiloSlider.css" />
@@ -124,6 +125,7 @@
     <Content Include="Imagenes\exit-32.png" />
     <Content Include="Imagenes\lock2-32.png" />
     <Content Include="Imagenes\Lock_32.png" />
+    <Content Include="Imagenes\logoVerdeUrbanoNuevo.png" />
     <Content Include="Imagenes\mision.png" />
     <Content Include="Imagenes\Forward-32.png" />
     <Content Include="Imagenes\INTEGRAL.png" />
@@ -220,6 +222,13 @@
     </Compile>
     <Compile Include="cambiarIdioma.aspx.vb">
       <DependentUpon>cambiarIdioma.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="cambiarPassword.aspx.designer.vb">
+      <DependentUpon>cambiarPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cambiarPassword.aspx.vb">
+      <DependentUpon>cambiarPassword.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="editarUsuario.aspx.designer.vb">

@@ -4,6 +4,9 @@
     Dim oLeyBLL As New BLL.clsLeyenda
     Dim oTrad As New Servicios.ClsTraduccion
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        '   If validaciones.validarPagina(Me) = False Then
+        ' Response.Redirect("error.aspx")
+        ' End If
         If Not IsPostBack Then
             Dim oTrad As New List(Of Servicios.ClsTraduccion)
             Dim oIdioma As New Servicios.clsIdioma
@@ -12,6 +15,7 @@
             oTrad = oTradBLL.ListarTraducciones(oIdioma)
             CargarGrilla()
         End If
+        Me.correcto.Visible = False
     End Sub
 
     Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_Agregar.Click
@@ -57,7 +61,7 @@
             Else
                         'El nombre de idioma elegido ya se encuentra registrado en la base de datos.
             End If
-
+            Me.correcto.Visible = True
         Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Mensaje

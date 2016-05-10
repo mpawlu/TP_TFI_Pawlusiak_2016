@@ -16,8 +16,10 @@
         <div class="row">
             <div class="col-md-4">
                 <br />
-                <div class="panelBoton-titulo"><asp:Label ID="lbl_Bienvenido" runat="server" Text="Bienvenido al Sitio Web de Verde Urbano"></asp:Label></asp:Label> </div>
-                <div class="panelBoton-texto"><asp:Label ID="lbl_DescripcionEmpresa" runat="server" Text="Somos la emnpresa lider en instalación y mantenimiento de jardines verticales y terrazas verdes de Buenos Aires. Mas de 200 empresas ya nos han contratado y abalan la calidad de nuestros trabajos."></asp:Label></div>
+                <div class="panelBoton-titulo">
+                    <asp:Label ID="lbl_Bienvenido" runat="server" Text="Bienvenido al Sitio Web de Verde Urbano"></asp:Label></asp:Label> </div>
+                <div class="panelBoton-texto">
+                    <asp:Label ID="lbl_DescripcionEmpresa" runat="server" Text="Somos la emnpresa lider en instalación y mantenimiento de jardines verticales y terrazas verdes de Buenos Aires. Mas de 200 empresas ya nos han contratado y abalan la calidad de nuestros trabajos."></asp:Label></div>
             </div>
 
 
@@ -71,28 +73,32 @@
                 <div class="panelBoton">
                     <img src="Imagenes/RedesSociales/FaceBook_64x64.png" class="img-responsive panelBoton-imagen" />
                     <div class="panelBoton-titulo">Facebook</div>
-                    <div class="panelBoton-texto"><asp:Label ID="lbl_fb" runat="server" Text="Seguí a VerdeUrbano en nuestro Facebook Oficial."></asp:Label></div>
+                    <div class="panelBoton-texto">
+                        <asp:Label ID="lbl_fb" runat="server" Text="Seguí a VerdeUrbano en nuestro Facebook Oficial."></asp:Label></div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="panelBoton">
                     <img src="Imagenes/RedesSociales/Twitter_64x64.png" class="img-responsive panelBoton-imagen" />
                     <div class="panelBoton-titulo">Twitter</div>
-                    <div class="panelBoton-texto"><asp:Label ID="lbl_tw" runat="server" Text="Seguí todas las novedades de VerdeUrbano en nuestro Twitter Oficial."></asp:Label></div>
+                    <div class="panelBoton-texto">
+                        <asp:Label ID="lbl_tw" runat="server" Text="Seguí todas las novedades de VerdeUrbano en nuestro Twitter Oficial."></asp:Label></div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="panelBoton">
                     <img src="Imagenes/RedesSociales/Instagram-64.png" class="img-responsive panelBoton-imagen" />
                     <div class="panelBoton-titulo">Instagram</div>
-                    <div class="panelBoton-texto"><asp:Label ID="lbl_insta" runat="server" Text="Visualiza todas las fotos de nuestros proyectos en el Instagram Oficial de VerdeUrbano."></asp:Label></div>
+                    <div class="panelBoton-texto">
+                        <asp:Label ID="lbl_insta" runat="server" Text="Visualiza todas las fotos de nuestros proyectos en el Instagram Oficial de VerdeUrbano."></asp:Label></div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="panelBoton">
                     <img src="Imagenes/RedesSociales/youtube_64.png" class="img-responsive panelBoton-imagen" />
                     <div class="panelBoton-titulo">YouTube</div>
-                    <div class="panelBoton-texto"><asp:Label ID="lbl_youtube" runat="server" Text="Seguí a VerdeUrbano en nuestro canal oficial de YouTube con los mejores videos de nuestros proyectos."></asp:Label></div>
+                    <div class="panelBoton-texto">
+                        <asp:Label ID="lbl_youtube" runat="server" Text="Seguí a VerdeUrbano en nuestro canal oficial de YouTube con los mejores videos de nuestros proyectos."></asp:Label></div>
 
                 </div>
             </div>

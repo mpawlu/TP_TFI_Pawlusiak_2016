@@ -223,6 +223,15 @@ Namespace BLL
             End Try
         End Sub
 
+        Public Sub cambiarPassword(ByVal paramUsuario As Servicios.Usuario)
+            Try
+                Dim _mppUsuario As New MPP.clsUsuario
+                _mppUsuario.cambiarPassword(paramUsuario)
+            Catch ex As Exception
+
+            End Try
+        End Sub
+
     End Class
 End Namespace
 

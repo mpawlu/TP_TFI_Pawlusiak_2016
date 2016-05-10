@@ -8,6 +8,11 @@
     <br />
     <br />
     <div class="row">
+        <div class="well well-lg col-md-12 msj-error" runat="server" visible="false" id="correcto">
+            <asp:Label ID="lbl_AccionCorrecta" runat="server" CssClass="labelError"></asp:Label>
+        </div>
+    </div>
+    <div class="row">
         <div class="well well-lg col-md-12 msj-error" runat="server" visible="false" id="error">
             <asp:Label ID="lbl_TituloError" runat="server" CssClass="labelError"></asp:Label>
         </div>

@@ -10,6 +10,7 @@
             Dim oIdBLL As New BLL.clsIdioma
             CargarDDL()
         End If
+        Me.correcto.Visible = False
     End Sub
 
     Private Sub CargarDDL()
@@ -25,7 +26,7 @@
 
 
     Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-
+        Response.Redirect("index.aspx")
     End Sub
 
     Public Function RecuperarUsuario() As Servicios.Usuario
@@ -40,13 +41,19 @@
     End Sub
 
     Protected Sub btnActualizarIdioma_Click(sender As Object, e As EventArgs) Handles btnActualizarIdioma.Click
-        Dim oUsuBLL As New BLL.clsUsuario
-        Dim NuevoIdioma As New Servicios.clsIdioma
-        Usuario = Me.RecuperarUsuario()
-        NuevoIdioma.ID = Me.DropDownList1.SelectedValue
-        Usuario.Idioma = NuevoIdioma
-        oUsuBLL.ModificarUsuario(Usuario)
-        Me.GuardarUsuario(Usuario)
-        Response.Redirect("index.aspx")
+        Try
+            Dim oUsuBLL As New BLL.clsUsuario
+            Dim NuevoIdioma As New Servicios.clsIdioma
+            Usuario = Me.RecuperarUsuario()
+            NuevoIdioma.ID = Me.DropDownList1.SelectedValue
+            Usuario.Idioma = NuevoIdioma
+            oUsuBLL.ModificarUsuario(Usuario)
+            Me.GuardarUsuario(Usuario)
+            Me.correcto.Visible = True
+        Catch ex As Exception
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
+        End Try
+
     End Sub
 End Class

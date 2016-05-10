@@ -14,6 +14,24 @@ Option Explicit On
 Partial Public Class index
 
     '''<summary>
+    '''Control correcto.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents correcto As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Control lbl_AccionCorrecta.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_AccionCorrecta As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control lbl_Bienvenido.
     '''</summary>
     '''<remarks>

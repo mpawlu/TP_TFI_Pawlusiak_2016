@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="agregarPerfil.aspx.vb" Inherits="VerdeUrbano.agregarPerfil" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="cambiarPassword.aspx.vb" Inherits="VerdeUrbano.cambiarPassword" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
     <br />
     <br />
-        <div class="row">
+    <div class="row">
         <div class="well well-lg col-md-12 msj-error" runat="server" visible="false" id="correcto">
             <asp:Label ID="lbl_AccionCorrecta" runat="server" CssClass="labelError"></asp:Label>
         </div>
@@ -27,21 +27,45 @@
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
-                                <asp:Label ID="lbl_Nombre" runat="server" Text="Nombre" CssClass="label"></asp:Label>
+                                <asp:Label ID="lbl_Password" runat="server" Text="Contraseña" CssClass="label"></asp:Label>
                             </div>
+
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:TextBox ID="txtNombre" runat="server" CssClass="caja-texto"></asp:TextBox>
+                                <asp:TextBox ID="txtPassword" runat="server" CssClass="caja-texto"></asp:TextBox>
                             </div>
-                            <div class="col-md-1 col-md-offset-1">
+                            <div class="col-md-1">
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-                                    ControlToValidate="txtNombre" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
+                                    ControlToValidate="txtPassword" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <br />
                         <br />
                         <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <asp:Label ID="lbl_NuevoPassword" runat="server" Text="Contraseña" CssClass="label"></asp:Label>
+                            </div>
+
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:TreeView ID="treeviewPermisos" runat="server" ExpandDepth="0" ForeColor="Black" CssClass="label" ShowCheckBoxes="Leaf,Parent" ></asp:TreeView>
+                                <asp:TextBox ID="txtnuevoPassword" runat="server" CssClass="caja-texto"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                    ControlToValidate="txtnuevoPassword" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <asp:Label ID="lbl_repitarPassword" runat="server" Text="Contraseña" CssClass="label"></asp:Label>
+                            </div>
+
+                            <div class="col-md-6 col-md-offset-1">
+                                <asp:TextBox ID="txtRepetirPassword" runat="server" CssClass="caja-texto"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+                                    ControlToValidate="txtRepetirPassword" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <br />

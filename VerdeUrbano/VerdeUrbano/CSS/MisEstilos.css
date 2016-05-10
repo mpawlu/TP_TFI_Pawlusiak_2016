@@ -354,14 +354,26 @@ a:link {
     text-align: center;
 }
 
+.msj-ok {
+    background-color: #23B076;
+    text-align: center;
+}
+
 .labelError {
     font-size: 16px;
     color: #D9534F;
-    font-weight:700;
+    font-weight: 700;
+}
+
+
+.labelOK {
+    font-size: 16px;
+    color: white;
+    font-weight: 700;
 }
 
 .validador {
     font-size: 18px;
     color: #D9534F;
-    font-weight:bold;
+    font-weight: bold;
 }

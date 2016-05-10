@@ -54,8 +54,8 @@
 }
 
     .profile-header-img > img.img-circle {
-        width: 82px;
-        height: 82px;
+        width: 64px;
+        height: 64px;
         border: 2px solid #23B076;
     }
 
@@ -73,8 +73,9 @@
 .label.label-default.rank-label {
     background-color: #23B076;
     padding: 5px 10px 5px 10px;
-    border-radius: 27px;
+    border-radius: 20px;
     color: white;
+    font-size:12px;
 }
 
 
@@ -104,4 +105,9 @@
 
 .fa-login:before {
   content: "\f007";
+}
+
+.imagenLogin {
+width:80%;
+height:80%;
 }

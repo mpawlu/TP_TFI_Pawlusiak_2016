@@ -5,11 +5,22 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
     <br />
     <br />
+    <div class="row">
+        <div class="well well-lg col-md-12 msj-error" runat="server" visible="false" id="correcto">
+            <asp:Label ID="lbl_AccionCorrecta" runat="server" CssClass="labelError"></asp:Label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="well well-lg col-md-12 msj-error" runat="server" visible="false" id="error">
+            <asp:Label ID="lbl_TituloError" runat="server" CssClass="labelError"></asp:Label>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
-                    <div class="panel-heading"><asp:Label ID="lbl_RealizarBackup" runat="server" Text="Realizar Backup"></asp:Label></div>
+                    <div class="panel-heading">
+                        <asp:Label ID="lbl_RealizarBackup" runat="server" Text="Realizar Backup"></asp:Label></div>
                     <div class="panel-body">
                         <br />
                         <br />
