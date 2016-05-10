@@ -14,7 +14,7 @@
 
 
         Public Overrides Function ObtenerID() As String
-
+            Return "msg_8"
         End Function
     End Class
 End Namespace
