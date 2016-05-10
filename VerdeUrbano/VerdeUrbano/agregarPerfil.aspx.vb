@@ -155,10 +155,12 @@
             If _nodo.ChildNodes.Count > 0 Then
                 _permisoBase = New Servicios.PermisoCompuesto
                 _permisoBase.Descripcion = _nodo.Text
+                _permisoBase.ID = BLL.clsPermiso.obtenerIDPermiso(_permisoBase.Descripcion)
                 recorrerNodeHijo(_nodo.ChildNodes, _permisoBase)
             Else
                 _permisoBase = New Servicios.PermisoSimple
                 _permisoBase.Descripcion = _nodo.Text
+                _permisoBase.ID = BLL.clsPermiso.obtenerIDPermiso(_permisoBase.Descripcion)
             End If
             _permisosTotales.Add(_permisoBase)
         Next
@@ -171,10 +173,12 @@
             If nodohijos.ChildNodes.Count > 0 Then
                 _permisoBase = New Servicios.PermisoCompuesto
                 _permisoBase.Descripcion = nodohijos.Text
+                _permisoBase.ID = BLL.clsPermiso.obtenerIDPermiso(_permisoBase.Descripcion)
                 recorrerNodeHijo(nodohijos.ChildNodes, _permisoBase)
             Else
                 _permisoBase = New Servicios.PermisoSimple
                 _permisoBase.Descripcion = nodohijos.Text
+                _permisoBase.ID = BLL.clsPermiso.obtenerIDPermiso(_permisoBase.Descripcion)
             End If
             _permisoPadre.ListaPermisos.Add(_permisoBase)
         Next

@@ -121,11 +121,11 @@
             Dim oDatos As New DAL.Datos
             Dim DS As New DataSet
             Dim hdatos As New Hashtable
-            Dim oPermiso As Servicios.PermisoBase
+            Dim oPermiso As New Servicios.PermisoSimple
 
             hdatos.Add("@Descripcion", pDescripcionPermiso)
 
-            DS = oDatos.Leer("s_Permiso_ConsultarPorDescripcion", hdatos)
+            DS = oDatos.Leer("s_Permiso_ConsultarPorNombre", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
@@ -146,7 +146,7 @@
             Dim DS As New DataSet
 
             hdatos.Add("@Descripcion", pDescripcionPermiso)
-            DS = oDatos.Leer("s_Permiso_ConsultarPorDescripcion", hdatos)
+            DS = oDatos.Leer("s_Permiso_ConsultarPorNombre", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
                 Return True
@@ -217,26 +217,29 @@
 
         End Function
 
-        Public Sub AltaPermiso(paramPermiso As Servicios.PermisoBase)
+        Public Sub AltaPermiso(ByVal paramPermiso As Servicios.PermisoBase)
             Try
                 Dim oDatos As New DAL.Datos
                 Dim hdatos As New Hashtable
                 Dim resultado As Boolean
 
                 hdatos.Add("@Descripcion", paramPermiso.Descripcion)
-                hdatos.Add("@URL", paramPermiso.Url)
-                hdatos.Add("@Accion", paramPermiso.Accion)
+                hdatos.Add("@URL", DBNull.Value)
+                hdatos.Add("@Accion", False)
 
                 resultado = oDatos.Escribir("s_Permiso_Crear", hdatos)
                 If resultado = True Then
+
                     Dim IDpadre As Integer
                     IDpadre = Me.obtenerIDPermiso(paramPermiso.Descripcion)
                     oDatos = Nothing
                     hdatos = Nothing
                     For Each MiPermiso As Servicios.PermisoBase In paramPermiso.ObtenerHijos
-                        hdatos.Add("@ID_PermisoPadre", IDpadre)
-                        hdatos.Add("@ID_Permiso", MiPermiso.ID)
-                        oDatos.Escribir("s_Permiso_Padre_Crear", hdatos)
+                        Dim hdatos2 As New Hashtable
+                        Dim oDatos2 As New DAL.Datos
+                        hdatos2.Add("@ID_PermisoPadre", IDpadre)
+                        hdatos2.Add("@ID_Permiso", MiPermiso.ID)
+                        oDatos2.Escribir("s_Permiso_Padre_Crear", hdatos2)
                     Next
                 End If
 
@@ -316,7 +319,42 @@
             End If
         End Function
 
+        Public Function ConsultarPermiso(ByVal ID As Integer) As Servicios.PermisoBase
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim oPermiso As Servicios.PermisoBase
+            Dim dt As New DataTable
+            Dim hdatos As New Hashtable
 
+
+            hdatos.Add("@ID_Permiso", ID)
+
+            DS = oDatos.Leer("s_Permiso_ConsultarPermiso", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    If IsDBNull(Item("URL")) = True Then
+                        oPermiso = New Servicios.PermisoSimple
+                        oPermiso.ID = Item("ID_Permiso")
+                        oPermiso.Descripcion = Item("Descripcion")
+                        oPermiso.Url = Item("URL")
+                        Return oPermiso
+                    Else
+                        oPermiso = New Servicios.PermisoCompuesto
+                        oPermiso.ID = Item("ID_Permiso")
+                        oPermiso.Descripcion = Item("Descripcion")
+                        oPermiso.Url = Nothing
+                        Return oPermiso
+                    End If
+
+                Next
+
+            Else
+                Return Nothing
+            End If
+
+        End Function
 
     End Class
 End Namespace

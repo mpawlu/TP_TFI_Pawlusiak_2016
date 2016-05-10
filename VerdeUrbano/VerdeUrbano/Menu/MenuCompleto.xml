@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu>
+  <submenu nombre="Administrar Sistema" id="">
+    <item nombre="Visualizar Bitacora" id="9">
+    </item>
+  </submenu>
+  <submenu nombre="Solicitudes">
+    <item nombre="Nueva" id="11">
+
+    </item>
+    <item nombre="En curso" id="12">
+
+    </item>
+    <item nombre="Finalizadas" id="13">
+
+    </item>
+  </submenu>
+  <submenu nombre="Cursos">
+    <item nombre="Consultar" id="15">
+
+    </item>
+  </submenu>
+</menu>

@@ -134,6 +134,10 @@
 
             End Try
         End Function
+        Public Function ConsultarPermiso(ByVal ID As Integer) As Servicios.PermisoBase
+            Dim MPP As New MPP.Permiso
+            Return MPP.ConsultarPermiso(ID)
+        End Function
     End Class
 End Namespace
 
