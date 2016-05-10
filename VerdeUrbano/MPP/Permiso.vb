@@ -334,7 +334,7 @@
             If DS.Tables(0).Rows.Count > 0 Then
 
                 For Each Item As DataRow In DS.Tables(0).Rows
-                    If IsDBNull(Item("URL")) = True Then
+                    If Not IsDBNull(Item("URL")) = True Then
                         oPermiso = New Servicios.PermisoSimple
                         oPermiso.ID = Item("ID_Permiso")
                         oPermiso.Descripcion = Item("Descripcion")

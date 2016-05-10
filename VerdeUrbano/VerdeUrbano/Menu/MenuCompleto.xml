@@ -1,10 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <menu>
-  <submenu nombre="Administrar Sistema" id="">
-    <item nombre="Visualizar Bitacora" id="9">
+  <submenu nombre="Administrar Sistema" id="16">
+    <item nombre="Visualizar Bitacora" id="2">
+    </item>
+ <submenu nombre="Usuarios" id="3">
+    <item nombre="Agregar Usuario" id="5">
+
     </item>
   </submenu>
-  <submenu nombre="Solicitudes">
+  </submenu>
+  <submenu nombre="Solicitudes" id="10">
     <item nombre="Nueva" id="11">
 
     </item>
