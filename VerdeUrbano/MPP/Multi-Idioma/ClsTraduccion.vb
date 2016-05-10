@@ -10,8 +10,8 @@ Namespace MPP
             Dim oIdiomaMPP As New MPP.clsIdioma
 
             hdatos.Add("@ID_Idioma", traduccion.Idioma.ID)
-            hdatos.Add("@ID_leyenda", CStr(traduccion.Leyenda.ID))
-            hdatos.Add("@Traduccion", CStr(traduccion.Traduccion))
+            hdatos.Add("@ID_leyenda", traduccion.Leyenda.ID)
+            hdatos.Add("@Traduccion", traduccion.Traduccion)
 
             resultado = oDatos.Escribir("s_Traduccion_Crear", hdatos)
 

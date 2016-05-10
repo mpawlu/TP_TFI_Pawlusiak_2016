@@ -29,6 +29,11 @@
             Dim oMapper As New MPP.clsIdioma
             Return oMapper.ConsultarIdioma(oNombre)
         End Function
+        Public Function ChequearNombre(ByVal oNombre As String) As Boolean
+
+            Dim oMapper As New MPP.clsIdioma
+            Return oMapper.chequearNombre(oNombre)
+        End Function
     End Class
 End Namespace
 

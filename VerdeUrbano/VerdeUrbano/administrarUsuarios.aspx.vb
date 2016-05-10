@@ -37,7 +37,12 @@
     End Sub
 
     Protected Sub btn_Editar_Command(sender As Object, e As CommandEventArgs)
-
+        Dim bll As New BLL.clsUsuario
+        Dim _usu As New servicios.Usuario
+        _usu.ID = CInt(sender.CommandArgument)
+        _usu = bll.RecuperarUsuario(_usu)
+        Session("EditarUsuario") = _usu
+        Response.Redirect("editarUsuario.aspx")
     End Sub
 
     Protected Sub btn_Eliminar_Click(sender As Object, e As ImageClickEventArgs)

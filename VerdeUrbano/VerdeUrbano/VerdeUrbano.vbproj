@@ -112,6 +112,7 @@
     <Content Include="CSS\Imagenes\Slider\b05.png" />
     <Content Include="CSS\jquery-ui.css" />
     <Content Include="CSS\MisEstilos.css" />
+    <Content Include="editarUsuario.aspx" />
     <Content Include="enconstruccion.aspx" />
     <Content Include="Imagenes\Add-32.png" />
     <Content Include="Imagenes\Calendar-32.png" />
@@ -219,6 +220,13 @@
     </Compile>
     <Compile Include="cambiarIdioma.aspx.vb">
       <DependentUpon>cambiarIdioma.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="editarUsuario.aspx.designer.vb">
+      <DependentUpon>editarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editarUsuario.aspx.vb">
+      <DependentUpon>editarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="enconstruccion.aspx.designer.vb">

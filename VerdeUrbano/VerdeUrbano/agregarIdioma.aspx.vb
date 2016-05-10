@@ -17,36 +17,47 @@
     Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_Agregar.Click
         Try
             validaciones.validarSubmit(Me, Me.error, Me.lbl_TituloError)
-            Dim NuevoIdioma As New Servicios.clsIdioma
-            NuevoIdioma.Descripcion = txtNombre.Text
             Dim oIdiomaBLL As New BLL.clsIdioma
-            If oIdiomaBLL.CrearIdioma(NuevoIdioma) = True Then
-                Dim oLeyenda As New Servicios.clsLeyenda
-                Dim oTrad As New Servicios.ClsTraduccion
-                Dim oTradBLL As New BLL.ClsTraduccion
-                For Each r As GridViewRow In gv_Palabras.Rows
-                    'Try
-                    oLeyenda.ID = CStr(r.Cells(0).Text)
-                    oLeyenda.Leyenda = CStr(r.Cells(1).Text)
-                    oTrad.Leyenda = oLeyenda
-                    oTrad.Idioma = oIdiomaBLL.ConsultarPorNombre(Me.txtNombre.Text)
-                    If CStr(r.Cells(2).Text) = "" Then
-                        oTrad.Traduccion = CStr(r.Cells(1).Text)
-                    Else
-                        oTrad.Traduccion = CStr(r.Cells(2).Text)
-                    End If
+            If oIdiomaBLL.ChequearNombre(txtNombre.Text) = False Then
+                Dim NuevoIdioma As New servicios.clsIdioma
+                NuevoIdioma.Descripcion = txtNombre.Text
 
-                    If oTradBLL.CrearTraduccion(oTrad) = False Then
-                        'Excepcion Validacion traduccion
-                        Exit For
-                    End If
-                    'Catch ex As Exception
-
-                    'End Try
-                Next
+                If oIdiomaBLL.CrearIdioma(NuevoIdioma) = True Then
+                    Dim oLeyenda As New servicios.clsLeyenda
+                    Dim oTrad As New servicios.ClsTraduccion
+                    Dim oTradBLL As New BLL.ClsTraduccion
+                    For Each r As GridViewRow In gv_Palabras.Rows
+                        Try
+                            oLeyenda.ID = CStr(r.Cells(0).Text)
+                            oLeyenda.Leyenda = CStr(r.Cells(1).Text)
+                            oTrad.Leyenda = oLeyenda
+                            oTrad.Idioma = oIdiomaBLL.ConsultarPorNombre(Me.txtNombre.Text)
+                            If r.Cells(2).HasControls() = True Then
+                                For Each micontrol As Control In r.Cells(2).Controls
+                                    If TypeOf (micontrol) Is TextBox Then
+                                        If Not DirectCast(micontrol, TextBox).Text = "" Then
+                                            oTrad.Traduccion = DirectCast(micontrol, TextBox).Text
+                                        Else
+                                            oTrad.Traduccion = CStr(r.Cells(1).Text)
+                                        End If
+                                    End If
+                                Next
+                            End If
+                            If oTradBLL.CrearTraduccion(oTrad) = False Then
+                                'Excepcion Validacion traduccion
+                                Exit For
+                            End If
+                        Catch ex As Exception
+                            'Ocurrio un error al querer guardar una traduccion
+                        End Try
+                    Next
+                        Else
+                            'Ocurrio un error al querer dar de alta el nuevo idioma por favor contacte al administrador.
+                        End If
             Else
-                'Excepcion validacion nombre Idioma
+                        'El nombre de idioma elegido ya se encuentra registrado en la base de datos.
             End If
+
         Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Mensaje

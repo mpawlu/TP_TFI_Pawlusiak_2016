@@ -23,7 +23,7 @@ Namespace MPP
 
             resultado = oDatos.Escribir("s_Usuario_Crear", hdatos)
 
-            DigitoVerificador.CalcularDVV("Usuario")
+            'DigitoVerificador.CalcularDVV("Usuario")
 
             Return resultado
 

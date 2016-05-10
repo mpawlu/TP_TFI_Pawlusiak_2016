@@ -10,14 +10,14 @@
         Try
             validaciones.validarSubmit(Me, Me.error, Me.lbl_TituloError)
             If txtPass.Text = txtRepetirPass.Text Then
-                If txtPass.Text.Length > 6 Then
+                If txtPass.Text.Length >= 6 Then
                     Dim NuevoUsuario As New Servicios.Usuario
                     NuevoUsuario.NombreUsuario = txtNombre.Text
                     NuevoUsuario.Password = txtPass.Text
                     NuevoUsuario.DNI = CInt(txtDNI.Text)
                     Dim p As New Servicios.PermisoCompuesto
                     Dim usuBLL As New BLL.clsUsuario
-                    p.ID = ddl_Perfil.SelectedValue
+                    p.ID = CInt(ddl_Perfil.SelectedItem.Value)
                     NuevoUsuario.Perfil = p
                     'NuevoUsuario.Bloqueado = bloqueado.Checked
                     NuevoUsuario.FechaAlta = Today

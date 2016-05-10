@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" UICulture="es" Culture="es-MX" CodeBehind="agregarIdioma.aspx.vb" Inherits="VerdeUrbano.agregarIdioma" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" UICulture="es" Culture="es-AR" CodeBehind="agregarIdioma.aspx.vb" Inherits="VerdeUrbano.agregarIdioma" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <meta http-equiv="content-type" content="text/html" charset="iso-8859-1" />
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
     <br />
@@ -42,11 +44,11 @@
                             <asp:GridView ID="gv_Palabras" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
 
                                 <Columns>
-                                    <asp:BoundField DataField="ID" HeaderText="ID"/>
-                                    <asp:BoundField DataField="Leyenda" HeaderText="Leyenda" />
+                                    <asp:BoundField DataField="ID" HeaderText="ID" HtmlEncode="False" />
+                                    <asp:BoundField DataField="Leyenda" HeaderText="Leyenda" HtmlEncode="False" />
                                     <asp:TemplateField HeaderText="Nuevo Texto" HeaderStyle-Width="400px">
                                         <ItemTemplate>
-                                            <asp:TextBox Width="350px" ID="txt_NuevoTexto" runat="server" CssClass="textarea" TextMode="MultiLine" Wrap="true"></asp:TextBox>
+                                            <asp:TextBox Width="350px" runat="server" CssClass="textarea" TextMode="MultiLine" Wrap="true"></asp:TextBox>
                                         </ItemTemplate>
                                         <HeaderStyle Width="350px"></HeaderStyle>
                                     </asp:TemplateField>

@@ -83,6 +83,23 @@
                 Return Nothing
             End If
         End Function
+        Public Function chequearNombre(ByVal oNombre As String) As Boolean
+            Try
+                Dim oDatos As New DAL.Datos
+                Dim hdatos As New Hashtable
+                Dim DS As New DataSet
+                Dim oUsu As New servicios.Usuario
+                hdatos.Add("@NombreIdioma", oNombre)
+                DS = oDatos.Leer("s_Idioma_ChequearNombre", hdatos)
+                If DS.Tables(0).Rows.Count > 0 Then
+                    Return True
+                Else
+                    Return False
+                End If
+            Catch ex As Exception
+
+            End Try
+        End Function
     End Class
 End Namespace
 
