@@ -2,8 +2,13 @@
     Public Class clsExcepcionUsuarioInexistente
         Inherits clsExcepcionPersonalizada
 
-        Public Overrides Function Mensaje() As String
-            Return "El Usuario no se encuentra registrado en el Sistema"
+
+        'Public Overrides Function Mensaje() As String
+        '    Return "El Usuario no se encuentra registrado en el Sistema"
+        'End Function
+
+        Public Overrides Function ObtenerID() As String
+
         End Function
     End Class
 

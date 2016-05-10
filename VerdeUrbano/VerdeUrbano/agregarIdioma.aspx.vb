@@ -60,7 +60,7 @@
 
         Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Mensaje
+            'Me.lbl_TituloError.Text = ex.Mensaje
         Catch ex As Exception
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message

@@ -23,9 +23,9 @@
             If oUsuBLL.ModificarUsuario(EditarUsuario) = True Then
                 MsgBox("Modificacion Exitosa")
             End If
-        Catch ex As servicios.clsExcepcionCamposIncompletos
+        Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Mensaje
+            'Me.lbl_TituloError.Text = ex.Mensaje
         Catch ex As Exception
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message

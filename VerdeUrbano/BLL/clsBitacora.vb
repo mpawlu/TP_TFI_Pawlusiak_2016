@@ -9,18 +9,28 @@
         End Sub
 
         Public Function ConsultarUltimoID() As Integer
-            Dim oMapper As New MPP.Bitacora
-            Return oMapper.UltimoID
+            Try
+                Dim oMapper As New MPP.Bitacora
+                Return oMapper.UltimoID
+            Catch ex As Exception
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            End Try
         End Function
         Public Function ListarBitacora(ByVal paramDesde As Integer) As List(Of Servicios.clsBitacora)
+            Try
+                Dim listaBitacora As New List(Of Servicios.clsBitacora)
+                Dim oMapper As New MPP.Bitacora
 
-            Dim listaBitacora As New List(Of Servicios.clsBitacora)
-            Dim oMapper As New MPP.Bitacora
+                listaBitacora = oMapper.ListarBitacora(paramDesde)
 
-            listaBitacora = oMapper.ListarBitacora(paramDesde)
-
-            Return listaBitacora
-
+                Return listaBitacora
+            Catch ex As Exception
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            End Try
         End Function
 
         Public Function ListarBitacora(ByVal paramUsuario As Servicios.Usuario, ByVal paramFecha As Date, ByVal paramOperacion As Integer, ByVal paramDesde As Integer) As List(Of Servicios.clsBitacora)
@@ -57,8 +67,10 @@
                 Return listaBitacora
             Catch ex As Exception
 
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
             End Try
-
         End Function
     End Class
 End Namespace

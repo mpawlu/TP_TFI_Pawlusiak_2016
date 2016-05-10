@@ -30,7 +30,7 @@ Namespace MPP
 
             '   If DS.Tables(0).Rows.Count > 0 Then
 
-            DS = oDatos.Leer("s_Traduccion_Listar", hdatos)
+            DS = oDatos.Leer("s_Traduccion_Consultar", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 

@@ -1,38 +1,13 @@
 ﻿Namespace BLL
     Public Class clsPermiso
-
-        'Public Function ListarPerfiles() As List(Of Servicios.PermisoCompuesto)
-        '    Dim ListaPerfiles As List(Of Servicios.PermisoCompuesto)
-        '    For Each Perfil As Servicios.PermisoCompuesto In ListaPerfiles
-        '        Perfil.AgregarPermiso(Consultar(Perfil))
-        '    Next
-
-        'End Function
-        'Public Function Consultar(ByVal _permiso As Servicios.PermisoBase) As Servicios.PermisoBase
-        '    Dim permMPP As New MPP.Permiso
-        '    _permiso = permMPP.ConsultarPermiso(_permiso)
-        '    If _permiso.TieneHijos = True Then
-        '        _permiso = New Servicios.PermisoCompuesto
-        '        DirectCast(_permiso, Servicios.PermisoCompuesto).ListaPermisos = permMPP.ConsultarHijos(_permiso)
-        '        For Each p As Servicios.PermisoBase In DirectCast(_permiso, Servicios.PermisoCompuesto).ListaPermisos
-        '            CType(_permiso, Servicios.PermisoCompuesto).ListaPermisos.Add(p)
-        '            If p.TieneHijos = True Then
-        '                Consultar(p)
-        '            End If
-        '        Next
-        '        Return _permiso
-        '    Else
-        '        Return CType(_permiso, Servicios.PermisoSimple)
-        '    End If
-        'End Function
-
-
         Public Function ListarPerfiles() As List(Of Servicios.PermisoCompuesto)
             Try
                 Dim PermisoMPP As New MPP.Permiso
                 Return PermisoMPP.ListarPerfiles()
             Catch ex As Exception
-
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
             End Try
         End Function
 
@@ -42,21 +17,9 @@
                 Dim PermisoMPP As New MPP.Permiso
                 Return PermisoMPP.listarFamilias()
             Catch ex As Exception
-
-            End Try
-        End Function
-        Public Function ListarFamiliasDePerfiles() As List(Of Servicios.PermisoCompuesto)
-            Try
-                Dim PermisoMPP As New MPP.Permiso
-                Dim ListaPerfiles As New List(Of Servicios.PermisoCompuesto)
-                Dim FamiliasDePerfiles As New List(Of Servicios.PermisoCompuesto)
-                ListaPerfiles = PermisoMPP.ListarPerfiles
-                For Each p As Servicios.PermisoCompuesto In ListaPerfiles
-                    FamiliasDePerfiles.Add(p)
-                Next
-                Return FamiliasDePerfiles
-            Catch ex As Exception
-
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
             End Try
         End Function
 
@@ -65,7 +28,9 @@
                 Dim PermisoMPP As New MPP.Permiso
                 Return PermisoMPP.listarFamilias(paramID)
             Catch ex As Exception
-                'Throw New BLL.excepcionGenerica
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
             End Try
         End Function
 
@@ -91,16 +56,31 @@
                 'BLL.BitacoraBLL.Alta(SesionBLL.Current.Usuario, Entidades.Bitacora.tipoPrioridadBitacora.Media, Entidades.Bitacora.tipoOperacionBitacora.Modificacion, "Se modifico el permiso " & paramPermiso.Nombre)
             Catch ex As Exception
                 'Throw New BLL.excepcionGenerica
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
             End Try
         End Sub
 
         Public Sub Baja(ByVal paramID As Integer)
             Try
                 Dim PermisoMPP As New MPP.Permiso
-                PermisoMPP.BajaPermiso(paramID)
-                'BLL.BitacoraBLL.Alta(SesionBLL.Current.Usuario, Entidades.Bitacora.tipoPrioridadBitacora.Alta, Entidades.Bitacora.tipoOperacionBitacora.Baja, "Se dio de baja el permiso " & paramID)
+
+                If PermisoMPP.BajaPermiso(paramID) = True Then
+                    Dim oBitacora As Servicios.clsBitacora
+                    oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, "Se dio de baja el perfil " & paramID)
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
+                Else
+                    Dim oBitacora As Servicios.clsBitacora
+                    oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, "Ocurrio un error al querer dar de baja el perfil " & paramID)
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
+                End If
+
             Catch ex As Exception
                 'Throw New BLL.excepcionGenerica
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
             End Try
         End Sub
 
@@ -110,6 +90,9 @@
                 Return PermisoMPP.obtenerIDPermiso(paramNombrePermiso)
             Catch ex As Exception
                 'Throw New BLL.excepcionGenerica
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
             End Try
         End Function
 
@@ -119,6 +102,9 @@
                 Return PermisoMPP.chequearNombrePermiso(paramNombrePermiso)
             Catch ex As Exception
                 'Throw New BLL.excepcionGenerica
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
             End Try
         End Function
     End Class
