@@ -42,16 +42,16 @@
             End If
         Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Mensaje
+            'Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir()
         Catch ex As Servicios.clsExcepcionPasswordDiferentes
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Mensaje
+            'Me.lbl_TituloError.Text = ex.Mensaje
         Catch ex As Servicios.clsExcepcionPasswordCorto
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Mensaje
+            'Me.lbl_TituloError.Text = ex.Mensaje
         Catch ex As Servicios.clsExcepcionUsuarioDuplicado
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Mensaje
+            'Me.lbl_TituloError.Text = ex.Mensaje
         Catch ex As Exception
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message

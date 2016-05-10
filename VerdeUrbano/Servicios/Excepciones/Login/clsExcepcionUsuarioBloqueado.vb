@@ -3,8 +3,13 @@
         Inherits clsExcepcionPersonalizada
 
 
-        Public Overrides Function Mensaje() As String
-            Return "El Usuario se encuentra Bloqueado"
+
+        'Public Overrides Function Mensaje() As String
+        '    Return "El Usuario se encuentra Bloqueado"
+        'End Function
+
+        Public Overrides Function ObtenerID() As String
+
         End Function
     End Class
 End Namespace

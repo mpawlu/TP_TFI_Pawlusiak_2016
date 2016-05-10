@@ -23,7 +23,7 @@ Namespace MPP
 
             resultado = oDatos.Escribir("s_Usuario_Crear", hdatos)
 
-            'DigitoVerificador.CalcularDVV("Usuario")
+            DigitoVerificador.CalcularDVV("Usuario")
 
             Return resultado
 
@@ -132,7 +132,7 @@ Namespace MPP
                     oUsu.FechaAlta = Item("FechaAlta")
                     oUsu.Editable = Item("Editable")
                     oUsu.Intentos = Item("Intentos")
-                    
+
 
                     Dim oIdMPP As New MPP.clsIdioma
                     Dim oIdioma As New Servicios.clsIdioma

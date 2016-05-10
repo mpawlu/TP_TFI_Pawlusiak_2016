@@ -250,18 +250,18 @@
 
         End Sub
 
-        Public Sub BajaPermiso(paramID As Integer)
+        Public Function BajaPermiso(paramID As Integer) As Boolean
             Try
                 Dim oDatos As New DAL.Datos
                 Dim hdatos As New Hashtable
 
                 hdatos.Add("@ID_Permiso", paramID)
 
-                oDatos.Escribir("s_Permiso_Baja", hdatos)
+                Return oDatos.Escribir("s_Permiso_Baja", hdatos)
 
             Catch ex As Exception
             End Try
-        End Sub
+        End Function
 
         Public Sub ModificarPermiso(paramPermiso As Servicios.PermisoBase)
             Try
@@ -282,7 +282,6 @@
                 End If
 
             Catch ex As Exception
-
 
             End Try
         End Sub
