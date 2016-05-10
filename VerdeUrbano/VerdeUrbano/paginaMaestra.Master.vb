@@ -247,9 +247,13 @@ Public Class paginaMaestra
     End Sub
 
     Private Sub eliminarArchivoMenu()
-        Dim MiDirPath As String = Server.MapPath("~/Menu")
-        Dim MiPathAEliminar As String = String.Format("{0}\{1}", MiDirPath, "Menu.xml")
-        File.Delete(MiPathAEliminar)
+        Try
+            Dim MiDirPath As String = Server.MapPath("~/Menu")
+            Dim MiPathAEliminar As String = String.Format("{0}\{1}", MiDirPath, "Menu.xml")
+            File.Delete(MiPathAEliminar)
+
+        Catch ex As Exception
+        End Try
 
     End Sub
 

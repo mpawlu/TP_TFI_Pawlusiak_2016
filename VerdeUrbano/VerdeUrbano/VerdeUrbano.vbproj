@@ -113,8 +113,11 @@
     <Content Include="CSS\Imagenes\Slider\b05.png" />
     <Content Include="CSS\jquery-ui.css" />
     <Content Include="CSS\MisEstilos.css" />
+    <Content Include="editarIdioma.aspx" />
+    <Content Include="editarPerfil.aspx" />
     <Content Include="editarUsuario.aspx" />
     <Content Include="enconstruccion.aspx" />
+    <Content Include="error.aspx" />
     <Content Include="Imagenes\Add-32.png" />
     <Content Include="Imagenes\Calendar-32.png" />
     <Content Include="Imagenes\Clock-32.png" />
@@ -231,6 +234,20 @@
       <DependentUpon>cambiarPassword.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="editarIdioma.aspx.designer.vb">
+      <DependentUpon>editarIdioma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editarIdioma.aspx.vb">
+      <DependentUpon>editarIdioma.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="editarPerfil.aspx.designer.vb">
+      <DependentUpon>editarPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editarPerfil.aspx.vb">
+      <DependentUpon>editarPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="editarUsuario.aspx.designer.vb">
       <DependentUpon>editarUsuario.aspx</DependentUpon>
     </Compile>
@@ -243,6 +260,13 @@
     </Compile>
     <Compile Include="enconstruccion.aspx.vb">
       <DependentUpon>enconstruccion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.vb">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.vb">
+      <DependentUpon>error.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.vb">

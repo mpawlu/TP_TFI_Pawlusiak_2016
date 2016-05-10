@@ -107,6 +107,22 @@
                 BLL.clsBitacora.RegistrarEvento(oBitacora)
             End Try
         End Function
+
+
+        Public Function ListarFamiliasDePerfiles() As List(Of Servicios.PermisoCompuesto)
+            Try
+                Dim PermisoMPP As New MPP.Permiso
+                Dim ListaPerfiles As New List(Of Servicios.PermisoCompuesto)
+                Dim FamiliasDePerfiles As New List(Of Servicios.PermisoCompuesto)
+                ListaPerfiles = PermisoMPP.ListarPerfiles
+                For Each p As Servicios.PermisoCompuesto In ListaPerfiles
+                    FamiliasDePerfiles.Add(p)
+                Next
+                Return FamiliasDePerfiles
+            Catch ex As Exception
+
+            End Try
+        End Function
     End Class
 End Namespace
 

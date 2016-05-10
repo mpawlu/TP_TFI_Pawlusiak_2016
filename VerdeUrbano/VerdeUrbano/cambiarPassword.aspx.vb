@@ -11,13 +11,13 @@
     Protected Sub btn_Guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
         Try
             validaciones.validarSubmit(Me, Me.error, Me.lbl_TituloError)
-            Dim _entidadUsuario As Servicios.Usuario = Me.recuperarUsuario
-            If clsEncriptadora.EncriptarPass(Me.txtPassword.Text) = _entidadUsuario.Password Then
+            Dim oUsuario As Servicios.Usuario = Me.RecuperarUsuario
+            If clsEncriptadora.EncriptarPass(Me.txtPassword.Text) = oUsuario.Password Then
                 If Me.txtnuevoPassword.Text.Length >= 6 Then
                     If Me.txtnuevoPassword.Text = Me.txtRepetirPassword.Text Then
                         Dim _usuariobll As New BLL.clsUsuario
-                        _entidadUsuario.Password = clsEncriptadora.EncriptarPass(Me.txtnuevoPassword.Text)
-                        _usuariobll.cambiarPassword(_entidadUsuario)
+                        oUsuario.Password = clsEncriptadora.EncriptarPass(Me.txtnuevoPassword.Text)
+                        _usuariobll.cambiarPassword(oUsuario)
                         Me.correcto.Visible = True
                     Else
                         Throw New Servicios.clsExcepcionPasswordDiferentes
@@ -30,13 +30,13 @@
             End If
         Catch ex As Servicios.clsExcepcionPasswordDiferentes
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Mensaje
+            '        Me.lbl_TituloError.Text = ex.Mensaje
         Catch ex As Servicios.clsExcepcionPasswordCorto
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Mensaje
+            '        Me.lbl_TituloError.Text = ex.Mensaje
         Catch ex As Servicios.clsExcepcionPasswordIncorrecto
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Mensaje
+            '        Me.lbl_TituloError.Text = ex.Mensaje
         Catch ex As Exception
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message

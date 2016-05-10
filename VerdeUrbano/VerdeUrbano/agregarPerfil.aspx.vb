@@ -42,13 +42,9 @@
         Try
             _tree.Nodes.Add(New TreeNode(_perfil.Descripcion))
             If _tree.Nodes.Count > 0 Then
-                ' For Each _per As Servicios.PermisoBase In _perfil.ListaPermisos
-                '  _tree.Nodes.Add(New TreeNode(_per.Descripcion))
-                '  _tree.Nodes(_tree.Nodes.Count - 1).ShowCheckBox = True
                 If _perfil.TieneHijos = True Then
                     agregarNodoHijo(_perfil, _tree.Nodes(_tree.Nodes.Count - 1))
                 End If
-                '  Next
             End If
         
         Catch ex As Exception
@@ -62,9 +58,6 @@
         Try
             For Each _per As Servicios.PermisoBase In _listaCompuesto.ListaPermisos
                 _treenodo.ChildNodes.Add(New TreeNode(_per.Descripcion))
-                If Not _per.Url = Nothing And _listaCompuesto.Url <> Nothing Then
-                    '  _treenodo.ChildNodes(_treenodo.ChildNodes.Count - 1).ShowCheckBox = True
-                End If
                 If _per.TieneHijos = True Then
                     agregarNodoHijo(_per, _treenodo.ChildNodes(_treenodo.ChildNodes.Count - 1))
                 End If
@@ -108,5 +101,51 @@
 
     Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Response.Redirect("index.aspx")
+    End Sub
+
+    Protected Sub btn_Guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
+        Try
+            validaciones.validarSubmit(Me, Me.error, Me.lbl_TituloError)
+            Dim _gestorPermiso As New BLL.clsPermiso
+            Dim _listapermisos As New List(Of Servicios.PermisoBase)
+            Dim flagNodo As Boolean = False
+            validarListaPermisos(Me.treeviewPermisos.Nodes, flagNodo)
+            If flagNodo = True Then
+                Dim _entidadPermiso As New Servicios.PermisoCompuesto
+                _entidadPermiso.Descripcion = txtNombre.Text
+
+                For Each _nodo As TreeNode In treeviewPermisos.CheckedNodes
+                    Dim _per As Servicios.PermisoBase = _listapermisos.Item(retornarIndice(_listapermisos, _nodo.Text))
+                    If revisarLista(_per, _entidadPermiso.ListaPermisos) = True Then
+                        _entidadPermiso.ListaPermisos.Add(_per)
+                    End If
+                Next
+                _gestorPermiso.Alta(_entidadPermiso)
+                Me.correcto.Visible = True
+            Else
+                Throw New Servicios.clsExcepcionCamposIncompletos
+            End If
+        Catch ex As Servicios.clsExcepcionCamposIncompletos
+            'Me.error.Visible = True
+            'Me.lbl_TituloError.Text = ex.Mensaje
+        Catch ex As Servicios.clsExcepcionPermisoDuplicado
+            'Me.error.Visible = True
+            'Me.lbl_TituloError.Text = ex.Mensaje
+        Catch ex As Exception
+            'Me.error.Visible = True
+            'Me.lbl_TituloError.Text = ex.Message
+        End Try
+    End Sub
+
+    Private Sub validarListaPermisos(ByVal tree As TreeNodeCollection, ByRef flag As Boolean)
+        For Each _node As TreeNode In tree
+            If _node.Checked = True Then
+                flag = True
+            Else
+                If _node.ChildNodes.Count > 0 Then
+                    validarListaPermisos(_node.ChildNodes, flag)
+                End If
+            End If
+        Next
     End Sub
 End Class

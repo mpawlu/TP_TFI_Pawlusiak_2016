@@ -239,9 +239,20 @@ Namespace BLL
         Public Sub cambiarPassword(ByVal paramUsuario As Servicios.Usuario)
             Try
                 Dim _mppUsuario As New MPP.clsUsuario
-                _mppUsuario.cambiarPassword(paramUsuario)
-            Catch ex As Exception
 
+                If _mppUsuario.cambiarPassword(paramUsuario) = True Then
+                    Dim oBitacora As New Servicios.clsBitacora
+                    oBitacora = New Servicios.clsBitacora(paramUsuario, Servicios.clsBitacora.tipoOperacionBitacora.Modificacion, "El usuario " & paramUsuario.NombreUsuario & " ha modificado su contraseña.")
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
+                Else
+                    Dim oBitacora As New Servicios.clsBitacora
+                    oBitacora = New Servicios.clsBitacora(paramUsuario, Servicios.clsBitacora.tipoOperacionBitacora.Modificacion, "Ocurrui un error cuando el usuario " & paramUsuario.NombreUsuario & " intento modificar su contraseña.")
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
+                End If
+            Catch ex As Exception
+                Dim oBitacora As New Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(paramUsuario, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
             End Try
         End Sub
 

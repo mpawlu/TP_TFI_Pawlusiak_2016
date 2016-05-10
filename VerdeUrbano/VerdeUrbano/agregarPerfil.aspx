@@ -32,7 +32,7 @@
                             <div class="col-md-6 col-md-offset-1">
                                 <asp:TextBox ID="txtNombre" runat="server" CssClass="caja-texto"></asp:TextBox>
                             </div>
-                            <div class="col-md-1 col-md-offset-1">
+                            <div class="col-md-1">
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
                                     ControlToValidate="txtNombre" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
@@ -41,7 +41,7 @@
                         <br />
                         <div class="row">
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:TreeView ID="treeviewPermisos" runat="server" ExpandDepth="0" ForeColor="Black" CssClass="label" ShowCheckBoxes="Leaf,Parent" ></asp:TreeView>
+                                <asp:TreeView ID="treeviewPermisos" runat="server" ExpandDepth="0" ForeColor="Black" CssClass="label" ShowCheckBoxes="Parent" ></asp:TreeView>
                             </div>
                         </div>
                         <br />

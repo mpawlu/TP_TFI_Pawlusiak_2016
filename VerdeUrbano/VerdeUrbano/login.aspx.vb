@@ -21,7 +21,7 @@
             End If
         Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(Nothing, ex.ObtenerID)
+            Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
         Catch ex As Servicios.clsExcepcionUsuarioInexistente
             Me.error.Visible = True
             'Me.lbl_TituloError.Text = ex.Mensaje
@@ -41,4 +41,9 @@
         UsuarioSesion = usuario
         Session("Usuario") = UsuarioSesion
     End Sub
+    Public Function RecuperarUsuario() As Servicios.Usuario
+        Dim resultado As New Servicios.Usuario
+        resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
+        Return resultado
+    End Function
 End Class

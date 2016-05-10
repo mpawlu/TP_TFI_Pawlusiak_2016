@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="clsBackupRestore.vb" />
     <Compile Include="clsEncriptadora.vb" />
+    <Compile Include="Excepciones\clsExcepcionPermisoDuplicado.vb" />
     <Compile Include="Excepciones\clsExcepcionPersonalizada.vb" />
     <Compile Include="Excepciones\clsExcepcionCamposIncompletos.vb" />
     <Compile Include="Excepciones\Login\clsExcepcionPasswordCorto.vb" />
