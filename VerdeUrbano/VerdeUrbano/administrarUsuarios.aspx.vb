@@ -6,7 +6,7 @@
         '   If validaciones.validarPagina(Me) = False Then
         ' Response.Redirect("error.aspx")
         ' End If
-        mensajeConfirmacion = "Desea Eliminarlo?" 'esto va traducido
+        mensajeConfirmacion = BLL.ClsTraduccion.Traducir(RecuperarUsuario, "msg_ConfirmarEdicion")
         obtenerUsuarios()
 
     End Sub
@@ -30,12 +30,17 @@
     End Sub
 
     Protected Sub btn_desBloqueo_Command(sender As Object, e As CommandEventArgs)
-        Dim bll As New BLL.clsUsuario
-        Dim _usu As New Servicios.Usuario
-        _usu.ID = CInt(e.CommandArgument)
-        _usu = bll.RecuperarUsuario(_usu)
-        bll.desbloquearUsuario(_usu)
-        Response.Redirect("administrarUsuarios.aspx")
+        Try
+            Dim bll As New BLL.clsUsuario
+            Dim _usu As New Servicios.Usuario
+            _usu.ID = CInt(e.CommandArgument)
+            _usu = bll.RecuperarUsuario(_usu)
+            bll.desbloquearUsuario(_usu)
+            Response.Redirect("administrarUsuarios.aspx")
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Protected Sub btn_Editar_Command(sender As Object, e As CommandEventArgs)
@@ -88,4 +93,9 @@
             gv_Usuarios.Columns(5).Visible = False
         Next
     End Sub
+    Public Function RecuperarUsuario() As Servicios.Usuario
+        Dim resultado As New Servicios.Usuario
+        resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
+        Return resultado
+    End Function
 End Class

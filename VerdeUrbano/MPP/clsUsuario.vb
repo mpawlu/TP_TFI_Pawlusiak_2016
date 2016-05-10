@@ -194,23 +194,16 @@ Namespace MPP
 
 
         Public Function cambiarPassword(ByVal paramUsuario As Servicios.Usuario) As Boolean
-            Dim i As Integer = 0
-            Dim oDatos As New DAL.Datos
-            Dim hdatos As New Hashtable
-            Dim resultado As Boolean
-            Dim oPerf As New Servicios.PermisoCompuesto
-            Dim oIdioma As New Servicios.clsIdioma
-            hdatos.Add("@Id_Usuario", paramUsuario.ID)
-            hdatos.Add("@Pass", paramUsuario.Password)
-            'hdatos.Add("@DVH", MPP.DigitoVerificador.CalcularDVH(paramUsuario.StringDVH))
 
-            resultado = oDatos.Escribir("s_Usuario_Pass", hdatos)
-            'DigitoVerificador.CalcularDVV("Usuario")
-            Return resultado
+            Try
+
+            Catch ex As Exception
+
+            End Try
         End Function
 
 #Region "Login"
-       
+
 
 
         Public Function chequearUsuario(ByVal oUsuario As Servicios.Usuario) As Boolean

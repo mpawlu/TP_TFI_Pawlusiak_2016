@@ -20,6 +20,8 @@
                         _usuariobll.cambiarPassword(oUsuario)
                         Me.correcto.Visible = True
                     Else
+                        'Dim ex As New Servicios.clsExcepcionPasswordDiferentes
+                        'ex. = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
                         Throw New Servicios.clsExcepcionPasswordDiferentes
                     End If
                 Else
@@ -30,13 +32,13 @@
             End If
         Catch ex As Servicios.clsExcepcionPasswordDiferentes
             Me.error.Visible = True
-            '        Me.lbl_TituloError.Text = ex.Mensaje
+            Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
         Catch ex As Servicios.clsExcepcionPasswordCorto
             Me.error.Visible = True
-            '        Me.lbl_TituloError.Text = ex.Mensaje
+            Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
         Catch ex As Servicios.clsExcepcionPasswordIncorrecto
             Me.error.Visible = True
-            '        Me.lbl_TituloError.Text = ex.Mensaje
+            Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
         Catch ex As Exception
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message

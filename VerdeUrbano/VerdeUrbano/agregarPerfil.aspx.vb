@@ -137,14 +137,14 @@
                 Throw New Servicios.clsExcepcionCamposIncompletos
             End If
         Catch ex As Servicios.clsExcepcionCamposIncompletos
-            'Me.error.Visible = True
-            'Me.lbl_TituloError.Text = ex.Mensaje
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
         Catch ex As Servicios.clsExcepcionPermisoDuplicado
             'Me.error.Visible = True
-            'Me.lbl_TituloError.Text = ex.Mensaje
+            Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
         Catch ex As Exception
-            'Me.error.Visible = True
-            'Me.lbl_TituloError.Text = ex.Message
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
         End Try
     End Sub
 

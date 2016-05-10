@@ -9,7 +9,7 @@
         'End Function
 
         Public Overrides Function ObtenerID() As String
-
+            Return "msg_5"
         End Function
     End Class
 End Namespace
