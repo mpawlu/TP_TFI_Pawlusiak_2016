@@ -123,6 +123,17 @@
 
             End Try
         End Function
+
+        Public Function ListarPermisos() As List(Of Servicios.PermisoSimple)
+            Try
+                Dim PermisoMPP As New MPP.Permiso
+                Dim ListaPermisos As New List(Of Servicios.PermisoSimple)
+                ListaPermisos = PermisoMPP.ListarPermisos
+                Return ListaPermisos
+            Catch ex As Exception
+
+            End Try
+        End Function
     End Class
 End Namespace
 

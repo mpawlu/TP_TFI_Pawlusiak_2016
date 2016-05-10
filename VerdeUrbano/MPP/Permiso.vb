@@ -65,8 +65,6 @@
             End If
         End Function
 
-
-
         Public Function listarFamilias() As List(Of Servicios.PermisoBase)
             Dim _listaFamilias As New List(Of Servicios.PermisoBase)
             Dim oDatos As New DAL.Datos
@@ -98,7 +96,6 @@
             End If
 
         End Function
-
 
         Public Function listarFamilias(paramID As Integer) As Servicios.PermisoCompuesto
             Dim oDatos As New DAL.Datos
@@ -285,6 +282,42 @@
 
             End Try
         End Sub
+
+        Public Function ListarPermisos() As List(Of Servicios.PermisoSimple)
+
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim listaPermisos As New List(Of Servicios.PermisoSimple)
+            Dim dt As New DataTable
+
+
+            DS = oDatos.Leer("obtenerPrueba", Nothing)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    Dim oPermiso As New Servicios.PermisoCompuesto
+                    oPermiso.ID = Item("ID_Permiso")
+                    oPermiso.Descripcion = Item("Descripcion")
+                    If IsDBNull(Item("URL")) = True Then
+                        oPermiso.Url = Nothing
+                    Else
+                        oPermiso.Url = Item("URL")
+                    End If
+                    oPermiso.Accion = Item("Accion")
+
+                    listaPermisos.Add(ConvertirDataRowEnPermiso(Item))
+                Next
+
+                Return listaPermisos
+
+            Else
+                Return Nothing
+            End If
+        End Function
+
+
+
     End Class
 End Namespace
 

@@ -175,9 +175,7 @@ Public Class paginaMaestra
         crearMenuXMLestatico(writer)
         If Not Me.RecuperarUsuario Is Nothing Then
             Dim _perfil As Servicios.PermisoCompuesto = Me.RecuperarUsuario.Perfil
-            '         createMenu(_perfil.Url, _perfil.Descripcion, _perfil.Descripcion, writer)
             recorrerCompuesto(_perfil.ListaPermisos, writer)
-            '     cerrarMenu(writer)
         End If
         writer.WriteEndElement()
         writer.WriteEndDocument()

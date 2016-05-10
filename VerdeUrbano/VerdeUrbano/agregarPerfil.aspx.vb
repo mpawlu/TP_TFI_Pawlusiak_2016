@@ -3,20 +3,37 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-            Me.CargarTreeView()
+            Me.CargarTreeViewFamilias()
+            Me.cargarPermisosSimples()
         End If
 
     End Sub
 
 
-    Private Sub CargarTreeView()
+    Private Sub CargarTreeViewFamilias()
         Try
-            Dim _listapermisos As New List(Of Servicios.PermisoBase)
             Dim _perfiles As New List(Of Servicios.PermisoCompuesto)
             Dim _bllPermiso As New BLL.clsPermiso
             _perfiles = _bllPermiso.ListarFamiliasDePerfiles
             For Each _perfil As Servicios.PermisoCompuesto In _perfiles
                 armarTreeView(_perfil, Me.treeviewPermisos)
+            Next
+        Catch ex As Exception
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
+        End Try
+    End Sub
+
+    Private Sub cargarPermisosSimples()
+        Try
+            Dim _listapermisos As New List(Of Servicios.PermisoSimple)
+            Dim _bllPermiso As New BLL.clsPermiso
+            _listapermisos = _bllPermiso.ListarPermisos
+            For Each _perfil As Servicios.PermisoSimple In _listapermisos
+                Dim _treenode As New TreeNode
+                _treenode.Text = _perfil.Descripcion
+                _treenode.ShowCheckBox = True
+                Me.treeviewPermisos.Nodes.Add(_treenode)
             Next
         Catch ex As Exception
             Me.error.Visible = True
@@ -113,13 +130,7 @@
             If flagNodo = True Then
                 Dim _entidadPermiso As New Servicios.PermisoCompuesto
                 _entidadPermiso.Descripcion = txtNombre.Text
-
-                For Each _nodo As TreeNode In treeviewPermisos.CheckedNodes
-                    Dim _per As Servicios.PermisoBase = _listapermisos.Item(retornarIndice(_listapermisos, _nodo.Text))
-                    If revisarLista(_per, _entidadPermiso.ListaPermisos) = True Then
-                        _entidadPermiso.ListaPermisos.Add(_per)
-                    End If
-                Next
+                _entidadPermiso.ListaPermisos = obtenerpermisosparaelPerfil()
                 _gestorPermiso.Alta(_entidadPermiso)
                 Me.correcto.Visible = True
             Else
@@ -135,6 +146,39 @@
             'Me.error.Visible = True
             'Me.lbl_TituloError.Text = ex.Message
         End Try
+    End Sub
+
+    Private Function obtenerpermisosparaelPerfil() As List(Of Servicios.PermisoBase)
+        Dim _permisosTotales As New List(Of Servicios.PermisoBase)
+        For Each _nodo As TreeNode In treeviewPermisos.CheckedNodes
+            Dim _permisoBase As Servicios.PermisoBase
+            If _nodo.ChildNodes.Count > 0 Then
+                _permisoBase = New Servicios.PermisoCompuesto
+                _permisoBase.Descripcion = _nodo.Text
+                recorrerNodeHijo(_nodo.ChildNodes, _permisoBase)
+            Else
+                _permisoBase = New Servicios.PermisoSimple
+                _permisoBase.Descripcion = _nodo.Text
+            End If
+            _permisosTotales.Add(_permisoBase)
+        Next
+        Return _permisosTotales
+    End Function
+
+    Private Sub recorrerNodeHijo(ByVal nodoshijos As TreeNodeCollection, ByRef _permisoPadre As Servicios.PermisoCompuesto)
+        For Each nodohijos As TreeNode In nodoshijos
+            Dim _permisoBase As Servicios.PermisoBase
+            If nodohijos.ChildNodes.Count > 0 Then
+                _permisoBase = New Servicios.PermisoCompuesto
+                _permisoBase.Descripcion = nodohijos.Text
+                recorrerNodeHijo(nodohijos.ChildNodes, _permisoBase)
+            Else
+                _permisoBase = New Servicios.PermisoSimple
+                _permisoBase.Descripcion = nodohijos.Text
+            End If
+            _permisoPadre.ListaPermisos.Add(_permisoBase)
+        Next
+
     End Sub
 
     Private Sub validarListaPermisos(ByVal tree As TreeNodeCollection, ByRef flag As Boolean)
