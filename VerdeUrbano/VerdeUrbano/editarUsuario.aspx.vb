@@ -2,9 +2,10 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        CargarDDLIdioma()
-        CargarDDLPerfil()
-
+        If Not IsPostBack Then
+            CargarDDLIdioma()
+            CargarDDLPerfil()
+        End If
     End Sub
     Protected Sub btn_Guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
         Try

@@ -2,8 +2,10 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        CargarDDLIdioma()
-        CargarDDLPerfil()
+        If Not IsPostBack Then
+            CargarDDLIdioma()
+            CargarDDLPerfil()
+        End If
     End Sub
 
     Protected Sub btn_Guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
@@ -17,7 +19,7 @@
                     NuevoUsuario.DNI = CInt(txtDNI.Text)
                     Dim p As New Servicios.PermisoCompuesto
                     Dim usuBLL As New BLL.clsUsuario
-                    p.ID = CInt(ddl_Perfil.SelectedItem.Value)
+                    p.ID = Me.ddl_Perfil.SelectedValue
                     NuevoUsuario.Perfil = p
                     'NuevoUsuario.Bloqueado = bloqueado.Checked
                     NuevoUsuario.FechaAlta = Today
