@@ -11,7 +11,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
-    <br />
+  <br />
     <br />
     <div class="row">
         <div class="well well-lg col-md-12 msj-ok" runat="server" visible="false" id="correcto">
