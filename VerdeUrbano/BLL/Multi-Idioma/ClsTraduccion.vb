@@ -68,5 +68,26 @@
             'Catch ex As Exception
             'End Try
         End Function
+
+        Public Function ModificarTraduccion(ByVal _Traduccion As Servicios.ClsTraduccion) As Boolean
+            Try
+                Dim oMapper As New MPP.ClsTraduccion
+                Dim resultado As Boolean
+                Dim oBitacora As Servicios.clsBitacora
+
+                resultado = oMapper.CrearModificar(_Traduccion)
+
+                Return resultado
+
+                If resultado = False Then
+                    oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Alta, "Ocurrio un error al intentar Modificar una traduccion.")
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
+                End If
+            Catch ex As Exception
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            End Try
+        End Function
     End Class
 End Namespace

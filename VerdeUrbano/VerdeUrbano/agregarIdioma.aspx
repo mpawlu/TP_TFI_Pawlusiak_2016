@@ -22,7 +22,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lbl_AgregarIdioma" runat="server">Agregar Idioma</asp:Label>
+                        <asp:Label ID="lbl_AgregarIdioma" runat="server" Text="Agregar Idioma"></asp:Label>
                     </div>
                     <div class="panel-body">
                         <br />

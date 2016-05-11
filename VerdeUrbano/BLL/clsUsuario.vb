@@ -97,37 +97,33 @@ Namespace BLL
             Dim oBitacora As Servicios.clsBitacora
             _UsuarioLogin.NombreUsuario = nombreUsuario
             _UsuarioLogin.Password = clsEncriptadora.EncriptarPass(Password)
-            Try
-                If Me.chequearUsuario(_UsuarioLogin) = False Then
-                    Throw New Servicios.clsExcepcionUsuarioInexistente
+            If Me.chequearUsuario(_UsuarioLogin) = False Then
+                Throw New Servicios.clsExcepcionUsuarioInexistente
+            Else
+                Dim _Usuario As New Servicios.Usuario
+                _Usuario = Mapper.ConsultarUsuarioporNombre(_UsuarioLogin)
+                If Me.chequearContraseña(_Usuario, _UsuarioLogin) = False Then
+                    'Guardo el evento en la bitacora
+                    oBitacora = New Servicios.clsBitacora(_Usuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "El usuario " & _Usuario.NombreUsuario & " ingreso mal la contraseña.")
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
+                    'Lanzo la excepcion
+                    Throw New Servicios.clsExcepcionPasswordIncorrecto
                 Else
-                    Dim _Usuario As New Servicios.Usuario
-                    _Usuario = Mapper.ConsultarUsuarioporNombre(_UsuarioLogin)
-                    If Me.chequearContraseña(_Usuario, _UsuarioLogin) = False Then
+                    If Me.chequearBloqueado(_Usuario) = True Then
                         'Guardo el evento en la bitacora
-                        oBitacora = New Servicios.clsBitacora(_Usuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "El usuario " & _Usuario.NombreUsuario & " ingreso mal la contraseña.")
+                        oBitacora = New Servicios.clsBitacora(_Usuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "El usuario " & _Usuario.NombreUsuario & " intento loguearse pero se encuentra bloqueado.")
                         BLL.clsBitacora.RegistrarEvento(oBitacora)
-                        'Lanzo la excepcion
-                        Throw New Servicios.clsExcepcionPasswordIncorrecto
+                        Throw New Servicios.clsExcepcionUsuarioBloqueado
                     Else
-                        If Me.chequearBloqueado(_Usuario) = True Then
-                            'Guardo el evento en la bitacora
-                            oBitacora = New Servicios.clsBitacora(_Usuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "El usuario " & _Usuario.NombreUsuario & " intento loguearse pero se encuentra bloqueado.")
-                            BLL.clsBitacora.RegistrarEvento(oBitacora)
-                            Throw New Servicios.clsExcepcionUsuarioBloqueado
-                        Else
-                            Me.resetearIntentos(_Usuario)
-                            'Guardo el evento en la bitacora
-                            oBitacora = New Servicios.clsBitacora(_Usuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "El usuario " & _Usuario.NombreUsuario & " se logueo correctamente en el sistema.")
-                            BLL.clsBitacora.RegistrarEvento(oBitacora)
-                            Return _Usuario
-                        End If
+                        Me.resetearIntentos(_Usuario)
+                        'Guardo el evento en la bitacora
+                        oBitacora = New Servicios.clsBitacora(_Usuario, Servicios.clsBitacora.tipoOperacionBitacora.Login, "El usuario " & _Usuario.NombreUsuario & " se logueo correctamente en el sistema.")
+                        BLL.clsBitacora.RegistrarEvento(oBitacora)
+                        Return _Usuario
                     End If
                 End If
-            Catch ex As Exception
-                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
-                BLL.clsBitacora.RegistrarEvento(oBitacora)
-            End Try
+            End If
+
 
         End Function
 

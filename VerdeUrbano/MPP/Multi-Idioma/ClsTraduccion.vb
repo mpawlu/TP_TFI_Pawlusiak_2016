@@ -81,6 +81,21 @@ Namespace MPP
                 Return Nothing
             End If
         End Function
+
+        Public Function ModificarTraduccion(ByVal _Traduccion As Servicios.ClsTraduccion) As Boolean
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim resultado As Boolean
+            Dim oIdiomaMPP As New MPP.clsIdioma
+
+            hdatos.Add("@ID_Idioma", _Traduccion.Idioma.ID)
+            hdatos.Add("@ID_leyenda", _Traduccion.Leyenda.ID)
+            hdatos.Add("@Traduccion", _Traduccion.Traduccion)
+
+            resultado = oDatos.Escribir("s_Traduccion_Modificar", hdatos)
+
+            Return resultado
+        End Function
     End Class
 End Namespace
 
