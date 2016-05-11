@@ -41,7 +41,6 @@ Namespace MPP
                     oTrad.Leyenda.ID = Item("ID_Leyenda")
                     oTrad.Leyenda.Leyenda = Item("Leyenda")
                     oTrad.Traduccion = Item("Traduccion")
-
                 Next
                 Return oTrad
             Else

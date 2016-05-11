@@ -75,7 +75,7 @@
                 Dim resultado As Boolean
                 Dim oBitacora As Servicios.clsBitacora
 
-                resultado = oMapper.CrearModificar(_Traduccion)
+                resultado = oMapper.ModificarTraduccion(_Traduccion)
 
                 Return resultado
 

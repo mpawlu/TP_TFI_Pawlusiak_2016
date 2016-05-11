@@ -153,7 +153,6 @@ Public Class paginaMaestra
             End If
 
         Catch ex As Exception
-            MsgBox("pinche")
         End Try
 
 
