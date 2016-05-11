@@ -3,6 +3,10 @@
   <submenu nombre="Administrar Sistema" id="">
     <item nombre="Visualizar Bitacora" id="9">
     </item>
+  <submenu nombre="Usuario" id="5">
+    <item nombre="Agregar Usuario" id="8">
+    </item>
+  </submenu>
   </submenu>
   <submenu nombre="Solicitudes">
     <item nombre="Nueva" id="11">
