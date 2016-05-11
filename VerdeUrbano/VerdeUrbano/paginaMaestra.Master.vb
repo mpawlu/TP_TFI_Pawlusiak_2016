@@ -19,7 +19,7 @@ Public Class paginaMaestra
                 Me.opcionesUsuario.Visible = False
                 Me.opcionesLogin.Visible = True
             End If
-            BLL.Singleton.InstanciaSing.oUsuarioSesion = RecuperarUsuario()
+            '   BLL.Singleton.InstanciaSing.oUsuarioSesion = RecuperarUsuario()
         End If
 
     End Sub
@@ -83,8 +83,9 @@ Public Class paginaMaestra
 
     Private Sub recorrerItems(ByVal _xmlNodeList As XmlNodeList, ByVal _permisosUsuario As List(Of Servicios.PermisoBase), ByVal nodoPadre As XmlNode)
         'ACA SE RECORREN LOS ITEMS
-        Dim _flag As Boolean = False
+
         For Each item As XmlNode In _xmlNodeList
+            Dim _flag As Boolean = False
             chequearPermisos(CInt(item.Attributes("id").Value.ToString), _permisosUsuario, _flag)
             If _flag = True Then
                 'QUIERE DECIR QUE LO TIENE
@@ -136,7 +137,6 @@ Public Class paginaMaestra
             Indice = CInt(Menu1.Items.IndexOf(MenuItemPadre))
             'Pregunto si lo que estoy recorriendo tiene padre
             Dim indicepapa As Integer
-            Dim mipapa As String
             If Not IsNothing(MenuItemPadre.Parent) Then ' Este es el ABUELO
                 'Si tiene abuelo, entra acá
                 Dim indiceabuelo As Integer

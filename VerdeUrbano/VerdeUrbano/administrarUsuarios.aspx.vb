@@ -3,30 +3,39 @@
     Protected mensajeConfirmacion As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        '   If validaciones.validarPagina(Me) = False Then
-        ' Response.Redirect("error.aspx")
-        ' End If
-        mensajeConfirmacion = BLL.ClsTraduccion.Traducir(RecuperarUsuario, "msg_ConfirmarEdicion")
-        obtenerUsuarios()
-
+        If validaciones.validarPagina(Me) = False Then
+            Response.Redirect("error.aspx")
+        End If
+        If Not IsPostBack Then
+            mensajeConfirmacion = BLL.ClsTraduccion.Traducir(RecuperarUsuario, "msg_ConfirmarEdicion")
+            obtenerUsuarios()
+        End If
     End Sub
 
     Private Sub obtenerUsuarios()
-        Dim _bllUsuario As New BLL.clsUsuario
-        Dim _listaUsuarios As New List(Of Servicios.Usuario)
-        _listaUsuarios = _bllUsuario.ListarUsuarios
-        Me.gv_Usuarios.DataSource = _listaUsuarios
-        Me.gv_Usuarios.DataBind()
+        Try
+            Dim _bllUsuario As New BLL.clsUsuario
+            Dim _listaUsuarios As New List(Of Servicios.Usuario)
+            _listaUsuarios = _bllUsuario.ListarUsuarios
+            Me.gv_Usuarios.DataSource = _listaUsuarios
+            Me.gv_Usuarios.DataBind()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
 
     Protected Sub btn_Bloqueo_Command(sender As Object, e As CommandEventArgs)
-        Dim bll As New BLL.clsUsuario
-        Dim _usu As New Servicios.Usuario
-        _usu.ID = CInt(e.CommandArgument)
-        _usu = bll.RecuperarUsuario(_usu)
-        bll.BloquearUsuario(_usu)
-        Response.Redirect("administrarUsuarios.aspx")
+        Try
+            Dim bll As New BLL.clsUsuario
+            Dim _usu As New Servicios.Usuario
+            _usu.ID = CInt(e.CommandArgument)
+            _usu = bll.RecuperarUsuario(_usu)
+            bll.BloquearUsuario(_usu)
+            Response.Redirect("administrarUsuarios.aspx")
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Protected Sub btn_desBloqueo_Command(sender As Object, e As CommandEventArgs)
@@ -44,21 +53,30 @@
     End Sub
 
     Protected Sub btn_Editar_Command(sender As Object, e As CommandEventArgs)
-        Dim bll As New BLL.clsUsuario
-        Dim _usu As New servicios.Usuario
-        _usu.ID = CInt(sender.CommandArgument)
-        _usu = bll.RecuperarUsuario(_usu)
-        Session("EditarUsuario") = _usu
-        Response.Redirect("editarUsuario.aspx")
+        Try
+            Dim bll As New BLL.clsUsuario
+            Dim _usu As New Servicios.Usuario
+            _usu.ID = CInt(sender.CommandArgument)
+            _usu = bll.RecuperarUsuario(_usu)
+            Session("EditarUsuario") = _usu
+            Response.Redirect("editarUsuario.aspx")
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Protected Sub btn_Eliminar_Click(sender As Object, e As ImageClickEventArgs)
-        Dim bll As New BLL.clsUsuario
-        Dim _usu As New Servicios.Usuario
-        _usu.ID = CInt(sender.CommandArgument)
-        _usu = bll.RecuperarUsuario(_usu)
-        bll.EliminarUsuario(_usu)
-        Response.Redirect("administrarUsuarios.aspx")
+        Try
+            Dim bll As New BLL.clsUsuario
+            Dim _usu As New Servicios.Usuario
+            _usu.ID = CInt(sender.CommandArgument)
+            _usu = bll.RecuperarUsuario(_usu)
+            bll.EliminarUsuario(_usu)
+            Response.Redirect("administrarUsuarios.aspx")
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub gv_Usuarios_DataBound(sender As Object, e As EventArgs) Handles gv_Usuarios.DataBound

@@ -40,6 +40,7 @@
         Dim UsuarioSesion As New Servicios.Usuario
         UsuarioSesion = usuario
         Session("Usuario") = UsuarioSesion
+        BLL.Singleton.InstanciaSing.oUsuarioSesion = usuario
     End Sub
     Public Function RecuperarUsuario() As Servicios.Usuario
         Dim resultado As New Servicios.Usuario

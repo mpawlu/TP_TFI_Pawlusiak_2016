@@ -14,18 +14,27 @@ Public Class validaciones
     End Sub
 
     Public Shared Function validarPagina(ByVal paramPage As Page) As Boolean
-        If BLL.Singleton.InstanciaSing.oUsuarioSesion Is Nothing Then
-            Return False
+        Dim _flag As Boolean = False
+        If BLL.Singleton.InstanciaSing.oUsuarioSesion.NombreUsuario = "" Then
+            Return _flag
+        Else
+            Dim _perfilUsuario As Servicios.PermisoCompuesto = DirectCast(BLL.Singleton.InstanciaSing.oUsuarioSesion.Perfil, Servicios.PermisoBase)
+            validaciones.comprobarPermiso(_flag, _perfilUsuario.ListaPermisos, paramPage)
+            Return _flag
         End If
-        Dim _perfilUsuario As Servicios.PermisoCompuesto = DirectCast(BLL.Singleton.InstanciaSing.oUsuarioSesion.Perfil, Servicios.PermisoBase)
-        For Each MiPermiso As Servicios.PermisoBase In _perfilUsuario.ObtenerHijos
-            If MiPermiso.Url.ToUpper = paramPage.AppRelativeVirtualPath.ToString.ToUpper Then
-                Return True
-            End If
-        Next
-        Return False
     End Function
 
-
-
+    Private Shared Sub comprobarPermiso(ByRef _flag As Boolean, ByVal misPermisos As List(Of Servicios.PermisoBase), ByVal paramPage As Page)
+        For Each MiPermiso As Servicios.PermisoBase In misPermisos
+            If Not MiPermiso.Url Is Nothing Then
+                If MiPermiso.Url.ToUpper = paramPage.AppRelativeVirtualPath.ToString.ToUpper Then
+                    _flag = True
+                End If
+            End If
+         
+            If MiPermiso.TieneHijos = True Then
+                comprobarPermiso(_flag, MiPermiso.ObtenerHijos, paramPage)
+            End If
+        Next
+    End Sub
 End Class
