@@ -58,11 +58,20 @@ Public Class paginaMaestra
             archivo.Load(Server.MapPath("Menu/MenuCompleto.xml"))
             Dim listaXMLnodes As XmlNodeList = archivo.SelectNodes("menu/submenu")
             'SON TODOS LOS SUBMENUS
-            For Each submenu As XmlNode In listaXMLnodes
+            recorrerSubMenu(listaXMLnodes, _usu.Perfil.ListaPermisos)
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub recorrerSubMenu(ByVal _xmlNodeList As XmlNodeList, ByVal _permisosUsuario As List(Of Servicios.PermisoBase))
+        Try
+            For Each submenu As XmlNode In _xmlNodeList
                 'COMPRUEBO QUE TENGA ITEMS
                 If submenu.ChildNodes.Count > 0 Then
                     Dim NodoPadre As XmlNode = submenu
-                    recorrerItems(submenu.ChildNodes, _usu.Perfil.ListaPermisos, NodoPadre)
+                    recorrerItems(submenu.ChildNodes, _permisosUsuario, NodoPadre)
                 End If
             Next
 
@@ -84,8 +93,12 @@ Public Class paginaMaestra
                 Dim _permisoEntidad As Servicios.PermisoBase = _bllPermiso.ConsultarPermiso(_idPermiso)
                 crearItemMenu(nodoPadre.Attributes("nombre").Value.ToString, _permisoEntidad)
             End If
+            If item.ChildNodes.Count > 0 Then
+                recorrerItems(item.ChildNodes, _permisosUsuario, item)
+            End If
         Next
     End Sub
+
 
     Private Sub chequearPermisos(ByVal idPermiso As Integer, ByVal _permisosUsuario As List(Of Servicios.PermisoBase), ByRef flag As Boolean)
         For Each _permiso As Servicios.PermisoBase In _permisosUsuario
@@ -101,34 +114,63 @@ Public Class paginaMaestra
 
     Private Sub crearItemMenu(ByVal paramNombrePadre As String, ByVal paramPermiso As Servicios.PermisoBase)
         'Creo el MenuItemPadre
-        Dim MenuItemPadre As New MenuItem
-        MenuItemPadre.Text = paramNombrePadre
-        MenuItemPadre.Value = paramNombrePadre
-        MenuItemPadre.NavigateUrl = "#"
-        If MenuExiste(paramNombrePadre) = False Then
-            Menu1.Items.Add(MenuItemPadre)
-        Else
-            MenuItemPadre = BuscarMenu(MenuItemPadre.Text)
-        End If
-        Dim MenuItemHijo As New MenuItem
-        MenuItemHijo.Text = paramPermiso.Descripcion
-        MenuItemHijo.Value = paramPermiso.Descripcion
-        MenuItemHijo.NavigateUrl = paramPermiso.Url
-        Menu1.Items(Menu1.Items.IndexOf(MenuItemPadre)).ChildItems.Add(MenuItemHijo)
+        Try
+            Dim MenuItemPadre As New MenuItem
+
+            Dim miFlag As Boolean = False
+            MenuExiste(paramNombrePadre, miFlag, Me.Menu1.Items)
+            If miFlag = False Then
+                Menu1.Items.Add(MenuItemPadre)
+            Else
+                BuscarMenu(MenuItemPadre.Text, Me.Menu1.Items, MenuItemPadre)
+            End If
+            MenuItemPadre.Text = paramNombrePadre
+            MenuItemPadre.Value = paramNombrePadre
+            MenuItemPadre.NavigateUrl = "#"
+            Dim MenuItemHijo As New MenuItem
+            MenuItemHijo.Text = paramPermiso.Descripcion
+            MenuItemHijo.Value = paramPermiso.Descripcion
+            MenuItemHijo.NavigateUrl = paramPermiso.Url
+
+            Menu1.Items(Menu1.Items.IndexOf(MenuItemPadre)).ChildItems.Add(MenuItemHijo)
+
+
+
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
-    Private Function MenuExiste(ByVal paramNombrePadre As String) As Boolean
-        For Each MiItem As MenuItem In Menu1.Items
-            If MiItem.Text = paramNombrePadre Then Return True
+
+
+
+
+    Private Sub MenuExiste(ByVal paramNombrePadre As String, ByRef flag As Boolean, ByVal menuitems As MenuItemCollection)
+        Try
+            For Each MiItem As MenuItem In menuitems
+                If MiItem.Text = paramNombrePadre Then
+                    flag = True
+                End If
+                If MiItem.ChildItems.Count > 0 Then
+                    MenuExiste(paramNombrePadre, flag, MiItem.ChildItems)
+                End If
+            Next
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+    Private Sub BuscarMenu(ByVal paramNombrePadre As String, ByVal menuitems As MenuItemCollection, ByRef menuItemPadre As MenuItem)
+        For Each MiItem As MenuItem In menuitems
+            If MiItem.Text = paramNombrePadre Then
+                menuItemPadre = MiItem
+            End If
+            If MiItem.ChildItems.Count > 0 Then
+                BuscarMenu(paramNombrePadre, MiItem.ChildItems, menuItemPadre)
+            End If
         Next
-        Return False
-    End Function
-    Private Function BuscarMenu(ByVal paramNombrePadre As String) As MenuItem
-        For Each MiItem As MenuItem In Menu1.Items
-            If MiItem.Text = paramNombrePadre Then Return MiItem
-        Next
-        Return Nothing
-    End Function
+    End Sub
 #End Region
 
 #Region "MultiIdioma"
