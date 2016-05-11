@@ -14,14 +14,12 @@
         </div>
         <br />
         <br />
-        <br />
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div id="error" class="msj-error col-md-12" runat="server">
-                    <asp:Label ID="lbl_TituloErrorGenerico" runat="server" CssClass="label">Se ha producido un error al ejecutar al acción. Se lo redireccionará al Inicio.</asp:Label>
-                </div>
+            <div class="well well-lg col-md-12 msj-error" runat="server">
+                <asp:Label ID="lbl_TituloError" runat="server" CssClass="labelError">Se ha producido un error. Se lo direccionará a la pagina de Inicio.</asp:Label>
             </div>
         </div>
     </div>
-
+            <br />
+        <br />
 </asp:Content>

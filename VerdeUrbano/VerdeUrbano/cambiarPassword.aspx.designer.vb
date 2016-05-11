@@ -50,22 +50,22 @@ Partial Public Class cambiarPassword
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lbl_AgregarUsuario.
+    '''Control lbl_CambiarPassword.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_AgregarUsuario As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_CambiarPassword As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lbl_Password.
+    '''Control lbl_PasswordActual.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_Password As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_PasswordActual As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control txtPassword.
@@ -113,13 +113,13 @@ Partial Public Class cambiarPassword
     Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''Control lbl_repitarPassword.
+    '''Control lbl_repetirPassword.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_repitarPassword As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_repetirPassword As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control txtRepetirPassword.
