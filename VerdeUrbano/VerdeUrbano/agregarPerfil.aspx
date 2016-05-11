@@ -41,7 +41,7 @@
                         <br />
                         <div class="row">
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:TreeView ID="treeviewPermisos" runat="server" ExpandDepth="0" ForeColor="Black" CssClass="label" ShowCheckBoxes="Parent" ></asp:TreeView>
+                                <asp:TreeView ID="treeviewPermisos" runat="server" ExpandDepth="0" ForeColor="Black" CssClass="label" ShowCheckBoxes="Root, Parent" ></asp:TreeView>
                             </div>
                         </div>
                         <br />
