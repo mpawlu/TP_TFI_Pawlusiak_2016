@@ -116,7 +116,9 @@ Public Class paginaMaestra
         'Creo el MenuItemPadre
         Try
             Dim MenuItemPadre As New MenuItem
-
+            MenuItemPadre.Text = paramNombrePadre
+            MenuItemPadre.Value = paramNombrePadre
+            MenuItemPadre.NavigateUrl = "#"
             Dim miFlag As Boolean = False
             MenuExiste(paramNombrePadre, miFlag, Me.Menu1.Items)
             If miFlag = False Then
@@ -124,20 +126,34 @@ Public Class paginaMaestra
             Else
                 BuscarMenu(MenuItemPadre.Text, Me.Menu1.Items, MenuItemPadre)
             End If
-            MenuItemPadre.Text = paramNombrePadre
-            MenuItemPadre.Value = paramNombrePadre
-            MenuItemPadre.NavigateUrl = "#"
             Dim MenuItemHijo As New MenuItem
             MenuItemHijo.Text = paramPermiso.Descripcion
             MenuItemHijo.Value = paramPermiso.Descripcion
             MenuItemHijo.NavigateUrl = paramPermiso.Url
 
-            Menu1.Items(Menu1.Items.IndexOf(MenuItemPadre)).ChildItems.Add(MenuItemHijo)
 
-
+            Dim Indice As Integer
+            Indice = CInt(Menu1.Items.IndexOf(MenuItemPadre))
+            'Pregunto si lo que estoy recorriendo tiene padre
+            Dim indicepapa As Integer
+            Dim mipapa As String
+            If Not IsNothing(MenuItemPadre.Parent) Then ' Este es el ABUELO
+                'Si tiene abuelo, entra acá
+                Dim indiceabuelo As Integer
+                indiceabuelo = Menu1.Items.IndexOf(MenuItemPadre.Parent)
+                indicepapa = MenuItemPadre.Parent.ChildItems.IndexOf(MenuItemPadre)
+                Dim _nuevoPapa As MenuItem = Menu1.Items(indiceabuelo).ChildItems(indicepapa)
+                Menu1.Items(indiceabuelo).ChildItems.Remove(_nuevoPapa)
+                _nuevoPapa.ChildItems.Add(MenuItemHijo)
+                '   mipapa = MenuItemPadre.Parent.Value
+                '  indicepapa = MenuItemPadre.Parent.ChildItems.IndexOf(MenuItemPadre)
+                Menu1.Items(indiceabuelo).ChildItems.Add(_nuevoPapa)
+            Else
+                Menu1.Items(Indice).ChildItems.Add(MenuItemHijo)
+            End If
 
         Catch ex As Exception
-
+            MsgBox("pinche")
         End Try
 
 
@@ -172,7 +188,6 @@ Public Class paginaMaestra
         Next
     End Sub
 #End Region
-
 #Region "MultiIdioma"
     Private Sub obtenerIdioma()
         If Not IsNothing(Session("Usuario")) Then

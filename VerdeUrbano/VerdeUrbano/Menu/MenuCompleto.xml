@@ -7,6 +7,9 @@
     <item nombre="Agregar Usuario" id="5">
 
     </item>
+    <item nombre="Modificar Usuario" id="26">
+
+    </item>
   </submenu>
   </submenu>
   <submenu nombre="Solicitudes" id="10">
