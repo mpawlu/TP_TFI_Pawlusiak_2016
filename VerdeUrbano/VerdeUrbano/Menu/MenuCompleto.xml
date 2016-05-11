@@ -3,14 +3,27 @@
   <submenu nombre="Administrar Sistema" id="16">
     <item nombre="Visualizar Bitacora" id="2">
     </item>
- <submenu nombre="Usuarios" id="3">
-    <item nombre="Agregar Usuario" id="5">
-
+ <submenu nombre="Administrar Usuarios" id="3">
+    <item nombre="Agregar Usuario" id="8">
     </item>
-    <item nombre="Modificar Usuario" id="26">
+    <item nombre="Editar Usuario" id="50">
 
     </item>
   </submenu>
+    <submenu nombre="Administrar Lenguajes" id="48">
+      <item nombre="Agregar Idioma" id="20">
+      </item>
+      <item nombre="Editar Idioma" id="52">
+      </item>
+    </submenu>
+    <submenu nombre="Administrar Perfiles" id="49">
+      <item nombre="Agregar Perfil" id="19">
+      </item>
+    </submenu>
+    <item nombre="Backup" id="2">
+    </item>
+    <item nombre="Restore" id="2">
+    </item>
   </submenu>
   <submenu nombre="Solicitudes" id="10">
     <item nombre="Nueva" id="11">
