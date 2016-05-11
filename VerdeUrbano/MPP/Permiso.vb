@@ -226,8 +226,9 @@
                 hdatos.Add("@Descripcion", paramPermiso.Descripcion)
                 hdatos.Add("@URL", DBNull.Value)
                 hdatos.Add("@Accion", False)
+                hdatos.Add("@EsPerfil", True)
 
-                resultado = oDatos.Escribir("s_Permiso_Crear", hdatos)
+                resultado = oDatos.Escribir("s_Permiso_CrearPerfil", hdatos)
                 If resultado = True Then
 
                     Dim IDpadre As Integer
@@ -237,9 +238,11 @@
                     For Each MiPermiso As Servicios.PermisoBase In paramPermiso.ObtenerHijos
                         Dim hdatos2 As New Hashtable
                         Dim oDatos2 As New DAL.Datos
-                        hdatos2.Add("@ID_PermisoPadre", IDpadre)
-                        hdatos2.Add("@ID_Permiso", MiPermiso.ID)
-                        oDatos2.Escribir("s_Permiso_Padre_Crear", hdatos2)
+                        If Me.ExisteRelacion(IDpadre, MiPermiso.ID) = False Then
+                            hdatos2.Add("@ID_PermisoPadre", IDpadre)
+                            hdatos2.Add("@ID_Permiso", MiPermiso.ID)
+                            oDatos2.Escribir("s_Permiso_Padre_Crear", hdatos2)
+                        End If
                     Next
                 End If
 
@@ -352,6 +355,25 @@
 
             Else
                 Return Nothing
+            End If
+
+        End Function
+        Public Function ExisteRelacion(ByVal paramID_Padre As Integer, ByVal paramID As Integer) As Boolean
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim DS As New DataSet
+            Dim oPermiso As Servicios.PermisoBase
+
+            hdatos.Add("@ID_Permiso_Padre", paramID_Padre)
+            hdatos.Add("@ID_Permiso", paramID)
+
+            DS = oDatos.Leer("s_Permiso_Padre_Existe", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                Return True
+            Else
+                Return False
             End If
 
         End Function
