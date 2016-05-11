@@ -24,25 +24,17 @@
         Me.ddl_idioma.DataBind()
     End Sub
     Private Sub CargarGrilla()
+        Try
+            Dim oIdioma As New Servicios.clsIdioma
+            Dim oIdiomaBLL As New BLL.clsIdioma
+            oIdioma.ID = Me.ddl_idioma.SelectedValue
+            Dim oTradBLL As New BLL.ClsTraduccion
+            Dim oTrad As New List(Of Servicios.ClsTraduccion)
+            oTrad = oTradBLL.ListarTraducciones(oIdioma)
+            Me.gv_Palabras.DataSource = oTrad
+            Me.gv_Palabras.DataBind()
 
-        Dim oIdioma As New Servicios.clsIdioma
-        Dim oIdiomaBLL As New BLL.clsIdioma
-
-        oLeyenda = oLeyBLL.ListarLeyendas
-        Me.gv_Palabras.DataSource = oLeyenda
-        Me.gv_Palabras.DataBind()
-
-
-        Dim oLey As New Servicios.clsLeyenda
-        Dim oTrad As New Servicios.ClsTraduccion
-        Dim oTradBLL As New BLL.ClsTraduccion
-        For Each r As GridViewRow In gv_Palabras.Rows
-            Try
-                oLey.ID = CStr(r.Cells(0).Text)
-                oLey.Leyenda = CStr(r.Cells(1).Text)
-                oTrad.Leyenda = oLey
-                oTrad.Idioma = oIdiomaBLL.ConsultarPorNombre(Me.ddl_idioma.SelectedItem.Text)
-                oTrad = oTradBLL.ConsultarTraduccion(oTrad)
+            For Each r As GridViewRow In gv_Palabras.Rows
                 If r.Cells(2).HasControls() = True Then
                     For Each micontrol As Control In r.Cells(2).Controls
                         If TypeOf (micontrol) Is TextBox Then
@@ -50,10 +42,13 @@
                         End If
                     Next
                 End If
-            Catch ex As Exception
+            Next
 
-            End Try
-        Next
+
+        Catch ex As Exception
+
+        End Try
+                'Next
     End Sub
 
     Private Sub ddl_idioma_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_idioma.SelectedIndexChanged
@@ -92,7 +87,7 @@
                     'Ocurrio un error al querer guardar una traduccion
                 End Try
             Next
-            Me.correcto.Visible = True
+            Response.Redirect("editarIdioma.aspx")
         Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
             Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)

@@ -13,8 +13,8 @@
             Dim Resultado As Boolean
             Dim MiBackupRestoreEntidad As New Servicios.clsBackupRestore
             Dim Path As String
-            Path = "E:\bkVerdeUrbano\"
-            Path = Path & Me.fuRestore.FileName
+            'Path = "E:\bkVerdeUrbano\"
+            Path = Me.fuRestore.PostedFile.FileName
             MiBackupRestoreEntidad.Directorio = Path
             Dim oBRBLL As New BLL.BackupRestore
             Resultado = oBRBLL.RealizarRestore(MiBackupRestoreEntidad)

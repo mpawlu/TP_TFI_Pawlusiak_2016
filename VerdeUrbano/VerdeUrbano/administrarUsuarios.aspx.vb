@@ -7,7 +7,7 @@
             Response.Redirect("error.aspx")
         End If
         If Not IsPostBack Then
-            mensajeConfirmacion = BLL.ClsTraduccion.Traducir(RecuperarUsuario, "msg_ConfirmarEdicion")
+            mensajeConfirmacion = BLL.ClsTraduccion.Traducir(RecuperarUsuario, "msg_ConfirmarEliminacion")
             obtenerUsuarios()
         End If
         Me.error.Visible = False

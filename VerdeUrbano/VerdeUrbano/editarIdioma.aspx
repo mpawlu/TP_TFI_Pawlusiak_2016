@@ -32,7 +32,7 @@
                                 <asp:Label ID="lbl_Idioma" runat="server" Text="Idioma" CssClass="label"></asp:Label>
                             </div>
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:DropDownList ID="ddl_idioma" runat="server" CssClass="combo"></asp:DropDownList>
+                                <asp:DropDownList ID="ddl_idioma" runat="server" CssClass="combo" AutoPostBack="true"></asp:DropDownList>
                             </div>
                         </div>
                         <br />
@@ -44,8 +44,8 @@
                             <asp:GridView ID="gv_Palabras" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
 
                                 <Columns>
-                                    <asp:BoundField DataField="ID" HeaderText="ID" HtmlEncode="False" />
-                                    <asp:BoundField DataField="Leyenda" HeaderText="Leyenda" HtmlEncode="False"/>
+                                    <asp:BoundField DataField="Leyenda.ID" HeaderText="ID" HtmlEncode="False" />
+                                    <asp:BoundField DataField="Traduccion" HeaderText="Leyenda" HtmlEncode="False"/>
                                     <asp:TemplateField HeaderText="Nuevo Texto" HeaderStyle-Width="400px">
                                         <ItemTemplate>
                                             <asp:TextBox Width="350px" runat="server" CssClass="textarea" TextMode="MultiLine" Wrap="true"></asp:TextBox>

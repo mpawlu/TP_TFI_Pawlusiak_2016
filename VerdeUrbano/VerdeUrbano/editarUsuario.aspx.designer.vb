@@ -59,6 +59,24 @@ Partial Public Class editarUsuario
     Protected WithEvents lbl_EditarUsuario As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Control lbl_usuario.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_usuario As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtUsuario.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtUsuario As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''Control lbl_dni.
     '''</summary>
     '''<remarks>

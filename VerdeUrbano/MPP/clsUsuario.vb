@@ -38,7 +38,7 @@ Namespace MPP
             hdatos.Add("@ID_Usuario", usuario.ID)
 
             resultado = oDatos.Escribir("s_Usuario_Baja", hdatos)
-            'DigitoVerificador.CalcularDVV("Usuario")
+            DigitoVerificador.CalcularDVV("Usuario")
             Return resultado
 
         End Function
@@ -64,7 +64,7 @@ Namespace MPP
             hdatos.Add("@DVH", MPP.DigitoVerificador.CalcularDVH(usuario.StringDVH))
 
             resultado = oDatos.Escribir("s_Usuario_Modificar", hdatos)
-            'DigitoVerificador.CalcularDVV("Usuario")
+            DigitoVerificador.CalcularDVV("Usuario")
             Return resultado
         End Function
 
@@ -196,7 +196,20 @@ Namespace MPP
         Public Function cambiarPassword(ByVal paramUsuario As Servicios.Usuario) As Boolean
 
             Try
+                Dim oDatos As New DAL.Datos
+                Dim hdatos As New Hashtable
+                Dim resultado As Boolean
+                Dim oPerf As New Servicios.PermisoCompuesto
+                Dim oIdioma As New Servicios.clsIdioma
+                'para el usuario cambia
+                hdatos.Add("@Id_Usuario", paramUsuario.ID)
+                hdatos.Add("@Pass", paramUsuario.Password)
 
+                hdatos.Add("@DVH", MPP.DigitoVerificador.CalcularDVH(paramUsuario.StringDVH))
+
+                resultado = oDatos.Escribir("s_Usuario_Pass", hdatos)
+                DigitoVerificador.CalcularDVV("Usuario")
+                Return resultado
             Catch ex As Exception
 
             End Try

@@ -33,11 +33,11 @@
                 MiResultado = _mpp.RealizarRestore(paramBackupRestoreEntidad)
                 If MiResultado = True Then
                     Dim oBitacora As Servicios.clsBitacora
-                    oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, "Se restauro correctamente la base de datos")
+                    oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Backup, "Se restauro correctamente la base de datos")
                     BLL.clsBitacora.RegistrarEvento(oBitacora)
                 Else
                     Dim oBitacora As Servicios.clsBitacora
-                    oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, "Ocurrio un error al intentar restaurar la base de datos")
+                    oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Restore, "Ocurrio un error al intentar restaurar la base de datos")
                     BLL.clsBitacora.RegistrarEvento(oBitacora)
                 End If
                 Return MiResultado

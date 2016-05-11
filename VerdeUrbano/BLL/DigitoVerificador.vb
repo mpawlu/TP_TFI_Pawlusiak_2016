@@ -22,7 +22,7 @@ Namespace BLL
                             fila = fila & dr2.Item("DVH")
                         Next
                         DVVcalc = MPP.DigitoVerificador.CalcularDVH(fila)
-                        DVVcalc = "sdfdsf"
+                        ' DVVcalc = "sdfdsf"
                         If DVVtabla <> DVVcalc Then
                             Return False
                             Exit For

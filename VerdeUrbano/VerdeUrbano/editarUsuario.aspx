@@ -6,8 +6,8 @@
     <br />
     <br />
     <div class="row">
-        <div class="well well-lg col-md-12 msj-error" runat="server" visible="false" id="correcto">
-            <asp:Label ID="lbl_AccionCorrecta" runat="server" CssClass="labelError"></asp:Label>
+        <div class="well well-lg col-md-12 msj-ok" runat="server" visible="false" id="correcto">
+            <asp:Label ID="lbl_AccionCorrecta" runat="server" CssClass="labelOK"></asp:Label>
         </div>
     </div>
     <div class="row">
@@ -23,6 +23,16 @@
                         <asp:Label ID="lbl_EditarUsuario" runat="server" Text="Editar Usuario"></asp:Label>
                     </div>
                     <div class="panel-body">
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <asp:Label ID="lbl_usuario" runat="server" Text="DNI" CssClass="label"></asp:Label>
+                            </div>
+                            <div class="col-md-6 col-md-offset-1">
+                                <asp:TextBox ID="txtUsuario" runat="server" CssClass="caja-texto" ReadOnly ="true"></asp:TextBox>
+                            </div>
+                        </div>
                         <br />
                         <br />
                         <div class="row">

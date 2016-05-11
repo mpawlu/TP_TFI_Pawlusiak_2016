@@ -116,6 +116,7 @@
     <Content Include="editarUsuario.aspx" />
     <Content Include="enconstruccion.aspx" />
     <Content Include="error.aspx" />
+    <Content Include="errorIntegridad.aspx" />
     <Content Include="Imagenes\Add-32.png" />
     <Content Include="Imagenes\Calendar-32.png" />
     <Content Include="Imagenes\Clock-32.png" />
@@ -267,6 +268,13 @@
     </Compile>
     <Compile Include="error.aspx.vb">
       <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="errorIntegridad.aspx.designer.vb">
+      <DependentUpon>errorIntegridad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="errorIntegridad.aspx.vb">
+      <DependentUpon>errorIntegridad.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.vb">

@@ -45,31 +45,7 @@ Namespace MPP
                 Throw ex
             End Try
         End Function
-        'Public Function VerificarIntegridad() As DataTable
-        '    Try
-        '        Dim Command As SqlCommand = Acceso.MiComando("Select * from Digito_Verificador_Vertical")
-        '        Dim DataTabla = Acceso.Lectura(Command)
-        '        Return DataTabla
-        '    Catch ex As Exception
-        '        Throw ex
-        '    End Try
-        'End Function
 
-        'Public Function ProbarConectividad() As Boolean
-        '    Try
-        '        Dim MiConecction As New SqlCommand
-        '        MiConecction.Connection = Acceso.MiConexion
-        '        MiConecction.Connection.Open()
-        '        If MiConecction.Connection.State = ConnectionState.Open Then
-        '            MiConecction.Connection.Close()
-        '            Return True
-        '        Else
-        '            Return False
-        '        End If
-        '    Catch ex As Exception
-        '        Return False
-        '    End Try
-        'End Function
         Private Shared Function GuardarRegistro(ByVal pTabla As String, ByVal pDVV As String) As Boolean
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable

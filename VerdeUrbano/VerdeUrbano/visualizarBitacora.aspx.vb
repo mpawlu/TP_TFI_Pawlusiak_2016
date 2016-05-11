@@ -98,8 +98,7 @@
             End If
             Me.error.Visible = False
         Catch ex As Exception
-            Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Message
+
         End Try
 
     End Sub

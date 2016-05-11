@@ -2,13 +2,15 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If validaciones.validarPagina(Me) = False Then
+        If BLL.Singleton.InstanciaSing.oUsuarioSesion Is Nothing Then
             Response.Redirect("error.aspx")
         End If
         If Not IsPostBack Then
             CargarDDLIdioma()
             CargarDDLPerfil()
         End If
+        Me.txtUsuario.Text = DirectCast(Session("editarUsuario"), Servicios.Usuario).NombreUsuario
+        Me.txtDNI.Text = DirectCast(Session("editarUsuario"), Servicios.Usuario).DNI
         Me.correcto.Visible = False
     End Sub
     Protected Sub btn_Guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
