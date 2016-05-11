@@ -10,6 +10,8 @@
             mensajeConfirmacion = BLL.ClsTraduccion.Traducir(RecuperarUsuario, "msg_ConfirmarEdicion")
             obtenerUsuarios()
         End If
+        Me.error.Visible = False
+        Me.lbl_TituloError.Text = ""
     End Sub
 
     Private Sub obtenerUsuarios()
@@ -20,7 +22,8 @@
             Me.gv_Usuarios.DataSource = _listaUsuarios
             Me.gv_Usuarios.DataBind()
         Catch ex As Exception
-
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
         End Try
     End Sub
 
@@ -34,7 +37,8 @@
             bll.BloquearUsuario(_usu)
             Response.Redirect("administrarUsuarios.aspx")
         Catch ex As Exception
-
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
         End Try
     End Sub
 
@@ -47,7 +51,8 @@
             bll.desbloquearUsuario(_usu)
             Response.Redirect("administrarUsuarios.aspx")
         Catch ex As Exception
-
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
         End Try
 
     End Sub
@@ -61,7 +66,8 @@
             Session("EditarUsuario") = _usu
             Response.Redirect("editarUsuario.aspx")
         Catch ex As Exception
-
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
         End Try
 
     End Sub
@@ -75,7 +81,8 @@
             bll.EliminarUsuario(_usu)
             Response.Redirect("administrarUsuarios.aspx")
         Catch ex As Exception
-
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
         End Try
     End Sub
 
@@ -96,7 +103,6 @@
                     imagen2.Visible = True
                 End If
             End If
-
             If Not row.Cells(5).Text = "" Then
                 If CBool(row.Cells(5).Text) = False Then
                     Dim imagenBloqueo As System.Web.UI.WebControls.ImageButton = DirectCast(row.FindControl("btn_Bloqueo"), System.Web.UI.WebControls.ImageButton)
@@ -107,7 +113,6 @@
                     imagenEditar.Visible = False
                 End If
             End If
-
             gv_Usuarios.Columns(5).Visible = False
         Next
     End Sub

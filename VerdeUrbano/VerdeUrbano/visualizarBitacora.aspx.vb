@@ -2,6 +2,9 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If validaciones.validarPagina(Me) = False Then
+            Response.Redirect("error.aspx")
+        End If
         If Not IsPostBack Then
             obtenerUsuarios()
             obtenerTipoOperacion()
@@ -93,9 +96,10 @@
                     btnSiguiente.Enabled = False
                     btnAnterior.Enabled = False
             End If
-
+            Me.error.Visible = False
         Catch ex As Exception
-
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
         End Try
 
     End Sub

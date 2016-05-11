@@ -50,6 +50,7 @@
             oUsuBLL.ModificarUsuario(Usuario)
             Me.GuardarUsuario(Usuario)
             Me.correcto.Visible = True
+            Me.error.Visible = False
         Catch ex As Exception
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message

@@ -2,8 +2,10 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Me.correcto.visible = False
-
+        If validaciones.validarPagina(Me) = False Then
+            Response.Redirect("error.aspx")
+        End If
+        Me.correcto.Visible = False
     End Sub
 
     Protected Sub btn_Agregar_Click(sender As Object, e As EventArgs) Handles btn_Agregar.Click
