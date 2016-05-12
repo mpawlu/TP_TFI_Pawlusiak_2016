@@ -38,7 +38,7 @@ Namespace MPP
             hdatos.Add("@ID_Usuario", usuario.ID)
 
             resultado = oDatos.Escribir("s_Usuario_Baja", hdatos)
-            'DigitoVerificador.CalcularDVV("Usuario")
+            DigitoVerificador.CalcularDVV("Usuario")
             Return resultado
 
         End Function
@@ -64,7 +64,7 @@ Namespace MPP
             hdatos.Add("@DVH", MPP.DigitoVerificador.CalcularDVH(usuario.StringDVH))
 
             resultado = oDatos.Escribir("s_Usuario_Modificar", hdatos)
-            'DigitoVerificador.CalcularDVV("Usuario")
+            DigitoVerificador.CalcularDVV("Usuario")
             Return resultado
         End Function
 

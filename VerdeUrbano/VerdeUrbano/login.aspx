@@ -50,11 +50,13 @@
                                 ControlToValidate="txt_password" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                         </div>
                     </div>
+                    <!--
                     <div class="row">
                         <div class="col-md-3 col-md-offset-8">
                             <asp:LinkButton ID="lb_OlvidoClave" PostBackUrl="~/recuperarClave.aspx" runat="server">¿Olvidó su clave?</asp:LinkButton>
                         </div>
                     </div>
+                    -->
                     <br />
                     <div class="row">
                         <div class="col-md-2 col-md-offset-5">

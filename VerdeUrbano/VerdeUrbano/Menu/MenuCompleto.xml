@@ -1,5 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <menu>
+
+  <submenu nombre="Administrar Curso" id="26">
+    <item nombre="Asignar a empleados" id="34">
+
+    </item>
+    <item nombre="Comprar" id="36">
+    </item>
+
+  </submenu>
+  <submenu nombre="Mis Cursos" id="27">
+    <item nombre="Cursos Pendientes" id="38">
+
+    </item>
+    <item nombre="Cursos Finalizados" id="39">
+    </item>
+
+  </submenu>
+  <submenu nombre="Solicitudes" id="10">
+    <item nombre="Solicitudes Pendientes" id="46">
+    </item>
+    
+    <item nombre="Solicitudes en curso" id="12">
+    </item>
+
+    <item nombre="Solicitudes Finalizadas" id="13">
+    </item>
+
+    <item nombre="Crear nueva solicitud" id="11">
+    </item>
+  </submenu>
+
+  <submenu nombre="Estadisticas" id="42">
+    <item nombre="Mis empleados" id="43">
+    </item>
+
+    <item nombre="Metricas de cursos" id="44">
+    </item>
+
+    <item nombre="Satisfaccion de clientes" id="45">
+    </item>
+
+    <item nombre="Mis resultados" id="47">
+    </item>
+  </submenu>
   <submenu nombre="Administrar Sistema" id="16">
     <submenu nombre="Administrar Usuarios" id="3">
       <item nombre="Agregar Usuario" id="8">
@@ -22,22 +66,6 @@
     <item nombre="Backup" id="23">
     </item>
     <item nombre="Restore" id="24">
-    </item>
-  </submenu>
-  <submenu nombre="Solicitudes" id="10">
-    <item nombre="Nueva" id="11">
-
-    </item>
-    <item nombre="En curso" id="12">
-
-    </item>
-    <item nombre="Finalizadas" id="13">
-
-    </item>
-  </submenu>
-  <submenu nombre="Cursos">
-    <item nombre="Consultar" id="15">
-
     </item>
   </submenu>
 </menu>
