@@ -15,7 +15,7 @@ Public Class validaciones
 
     Public Shared Function validarPagina(ByVal paramPage As Page) As Boolean
         Dim _flag As Boolean = False
-        If BLL.Singleton.InstanciaSing.oUsuarioSesion.NombreUsuario = "" Then
+        If BLL.Singleton.InstanciaSing.oUsuarioSesion.NombreUsuario Is Nothing Then
             Return _flag
         Else
             Dim _perfilUsuario As Servicios.PermisoCompuesto = DirectCast(BLL.Singleton.InstanciaSing.oUsuarioSesion.Perfil, Servicios.PermisoBase)
