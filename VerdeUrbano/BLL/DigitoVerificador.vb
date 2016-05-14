@@ -12,15 +12,27 @@ Namespace BLL
                 Dim oBitacoraMPP As New MPP.Bitacora
                 Dim oDV As New MPP.DigitoVerificador
                 If Not oDV.ListarDVV Is Nothing Then
+
                     For Each dr As DataRow In oDV.ListarDVV.Rows
                         Dim dt As DataTable
+                        Dim campo As String
                         Dim fila As String
                         Dim DVVcalc As String
                         Dim DVVtabla As String = dr.Item("DVV").ToString
                         dt = MPP.DigitoVerificador.RecorrerTabla(dr.Item("Nombre_Table"))
+                        Dim cont As Integer = 0
                         For Each dr2 As DataRow In dt.Rows
-                            fila = fila & dr2.Item("DVH")
+                            For Each item In dr2.ItemArray
+                                cont += 1
+                            Next
                         Next
+                        For Each dr2 As DataRow In dt.Rows
+                            For i As Integer = 0 To cont
+                                campo = dr2.Item(cont).ToString
+                                fila = fila & campo
+                            Next
+                        Next
+                        fila = MPP.DigitoVerificador.CalcularDVH(fila)
                         DVVcalc = MPP.DigitoVerificador.CalcularDVH(fila)
                         ' DVVcalc = "sdfdsf"
                         If DVVtabla <> DVVcalc Then
