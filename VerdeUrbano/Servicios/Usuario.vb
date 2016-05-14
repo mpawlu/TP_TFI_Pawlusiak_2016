@@ -114,7 +114,7 @@
 
         Public ReadOnly Property StringDVH() As String
             Get
-                Return _ID & _NombreUsuario & _Idioma.ID & _Pass & _DNI & _Activo & _Bloqueado & _FechaAlta & _Editable & _Intentos
+                Return _ID & _NombreUsuario & _Pass & _DNI & _Activo & Perfil.ID & _Bloqueado & _FechaAlta & _Editable & _Intentos & _Idioma.ID
 
             End Get
 
