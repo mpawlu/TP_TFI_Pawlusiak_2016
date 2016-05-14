@@ -11,15 +11,14 @@ Public Class paginaMaestra
             If Not IsNothing(Session("Usuario")) Then
                 cargarMenuOpciones()
                 ArmarMenuUsuario()
-                '  eliminarArchivoMenu()
-                '  generarXMLparaMenu()
+
                 obtenerIdioma()
             Else
-                '  generarXMLEstatico()
+
                 Me.opcionesUsuario.Visible = False
                 Me.opcionesLogin.Visible = True
             End If
-            '   BLL.Singleton.InstanciaSing.oUsuarioSesion = RecuperarUsuario()
+
         End If
 
     End Sub

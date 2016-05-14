@@ -64,41 +64,40 @@
     Protected Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
         Try
             'btnSiguiente.Enabled = True
-                Me.btnAnterior.Enabled = False
-                Dim _usuario As Servicios.Usuario = Nothing
-                Dim UsuarioBLL As New BLL.clsUsuario
-                Dim BitacoraBLL As New BLL.clsBitacora
-                Dim _fecha As Date
-                Dim _operacion As Integer = 0
-                If Not ddlUsuario.SelectedIndex = 0 Then
-                    _usuario = New Servicios.Usuario
-                    _usuario.ID = Me.ddlUsuario.SelectedValue
-                    _usuario = UsuarioBLL.ListarUsuario(_usuario)
+            Me.btnAnterior.Enabled = False
+            Dim _usuario As Servicios.Usuario = Nothing
+            Dim UsuarioBLL As New BLL.clsUsuario
+            Dim BitacoraBLL As New BLL.clsBitacora
+            Dim _fecha As Date
+            Dim _operacion As Integer = 0
+            If Not ddlUsuario.SelectedIndex = 0 Then
+                _usuario = New Servicios.Usuario
+                _usuario.ID = Me.ddlUsuario.SelectedValue
+                _usuario = UsuarioBLL.ListarUsuario(_usuario)
 
-                End If
-                If Not ddlOperacion.SelectedIndex = 0 Then
-                    _operacion = ddlOperacion.SelectedIndex
-                End If
-                If Not datepicker.Text = "" Then
-                    _fecha = CDate(datepicker.Text)
-                Else
-                    _fecha = New Date(1, 1, 1)
-                End If
-                Dim oBitacoraBLL As New BLL.clsBitacora
-                Dim PagAnt As Integer = oBitacoraBLL.ConsultarUltimoID
-                Session("PagAnt") = PagAnt
-                Dim _listabitacora As List(Of Servicios.clsBitacora) = BitacoraBLL.ListarBitacora(_usuario, _fecha, _operacion, PagAnt)
-                cargarRegistros(_listabitacora)
-                PagAnt = CInt(gv_Bitacora.Rows(0).Cells(0).Text)
-                Session("PagAnt") = PagAnt
-                Session("UltimoRegistro") = PagAnt
-                If gv_Bitacora.Rows.Count < 10 Then
-                    btnSiguiente.Enabled = False
-                    btnAnterior.Enabled = False
             End If
-            Me.error.Visible = False
-        Catch ex As Exception
+            If Not ddlOperacion.SelectedIndex = 0 Then
+                _operacion = ddlOperacion.SelectedIndex
+            End If
+            If Not datepicker.Text = "" Then
+                _fecha = CDate(datepicker.Text)
+            Else
+                _fecha = New Date(1, 1, 1)
+            End If
+            Dim oBitacoraBLL As New BLL.clsBitacora
+            Dim PagAnt As Integer = oBitacoraBLL.ConsultarUltimoID
+            Session("PagAnt") = PagAnt
+            Dim _listabitacora As List(Of Servicios.clsBitacora) = BitacoraBLL.ListarBitacora(_usuario, _fecha, _operacion, PagAnt)
+            cargarRegistros(_listabitacora)
+            PagAnt = CInt(gv_Bitacora.Rows(0).Cells(0).Text)
+            Session("PagAnt") = PagAnt
+            Session("UltimoRegistro") = PagAnt
+            If gv_Bitacora.Rows.Count < 10 Then
+                btnSiguiente.Enabled = False
+                btnAnterior.Enabled = False
+            End If
 
+        Catch ex As Exception
         End Try
 
     End Sub

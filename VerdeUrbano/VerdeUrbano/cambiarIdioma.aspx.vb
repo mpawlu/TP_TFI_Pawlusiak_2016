@@ -5,9 +5,6 @@
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If BLL.Singleton.InstanciaSing.oUsuarioSesion Is Nothing Then
-            Response.Redirect("error.aspx")
-        End If
         If Not IsPostBack Then
             Usuario = Me.RecuperarUsuario()
             Dim oIdBLL As New BLL.clsIdioma
