@@ -21,19 +21,17 @@ Namespace BLL
                         Dim DVVtabla As String = dr.Item("DVV").ToString
                         dt = MPP.DigitoVerificador.RecorrerTabla(dr.Item("Nombre_Table"))
                         Dim cont As Integer = 0
-                        'For Each dr2 As DataRow In dt.Rows
                         Dim dr2 As DataRow = dt.Rows(0)
                         For Each item In dr2.ItemArray
                             cont += 1
                         Next
-                        'Next
-                        fila = ""
+
                         For Each dr3 As DataRow In dt.Rows
+                            fila = ""
                             For i As Integer = 0 To cont - 2
                                 If TypeOf dr3.Item(i) Is DateTime Then
                                     Dim dia As Date
                                     dia = Convert.ToDateTime(dr3.Item(i))
-                                    'campo = dia.Date.ToShortDateString
                                     campo = dia.Date
                                 Else
                                     campo = dr3.Item(i).ToString
@@ -43,12 +41,16 @@ Namespace BLL
                             Next
                             fila = MPP.DigitoVerificador.CalcularDVH(fila)
 
+                            If fila <> dr3.Item("DVH") Then
+                                Return False
+                                Exit Function
+                            End If
+                            DVVcalc = DVVcalc & fila
                         Next
-                        DVVcalc = MPP.DigitoVerificador.CalcularDVH(fila)
-                        ' DVVcalc = "sdfdsf"
+                        DVVcalc = MPP.DigitoVerificador.CalcularDVH(DVVcalc)
                         If DVVtabla <> DVVcalc Then
                             Return False
-                            Exit For
+                            Exit Function
                         End If
                     Next
                     Return True
