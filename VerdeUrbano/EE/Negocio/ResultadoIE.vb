@@ -19,9 +19,7 @@
             End Set
         End Property
 
-        Sub New(ByVal Diseñador As Servicios.Usuario, ByVal IE As Double)
 
-        End Sub
     End Class
 End Namespace
 

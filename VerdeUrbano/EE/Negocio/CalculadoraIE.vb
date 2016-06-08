@@ -1,12 +1,12 @@
 ﻿Namespace EE
     Public Class CalculadoraIE
-        Private _Diseñadores As List(Of Servicios.Usuario)
-        Public Property Dieseñadores() As List(Of Servicios.Usuario)
+        Private _Diseñador As Servicios.Usuario
+        Public Property Dieseñador() As Servicios.Usuario
             Get
-                Return _Diseñadores
+                Return _Diseñador
             End Get
-            Set(ByVal value As List(Of Servicios.Usuario))
-                _Diseñadores = value
+            Set(ByVal value As Servicios.Usuario)
+                _Diseñador = value
             End Set
         End Property
         Private _Cursos As List(Of EE.Curso)
@@ -28,16 +28,15 @@
             End Set
         End Property
 
-        Private _Resultados As List(Of EE.ResultadoIE)
-        Public Property Resultados() As List(Of EE.ResultadoIE)
+        Private _IndiceDeSatisfaccion As Double
+        Public Property IndiceDeSatisfaccion() As Double
             Get
-                Return _Resultados
+                Return _IndiceDeSatisfaccion
             End Get
-            Set(ByVal value As List(Of EE.ResultadoIE))
-                _Resultados = value
+            Set(ByVal value As Double)
+                _IndiceDeSatisfaccion = value
             End Set
         End Property
-
 
         Sub New()
 

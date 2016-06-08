@@ -251,7 +251,9 @@ Namespace BLL
                 BLL.clsBitacora.RegistrarEvento(oBitacora)
             End Try
         End Sub
+        Public Function ListarPorPerfil(ByVal _Perfil As Servicios.PermisoCompuesto) As List(Of Servicios.Usuario)
 
+        End Function
     End Class
 End Namespace
 

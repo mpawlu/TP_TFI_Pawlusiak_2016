@@ -138,6 +138,9 @@
             Dim MPP As New MPP.Permiso
             Return MPP.ConsultarPermiso(ID)
         End Function
+        Public Function ObtenerPerfilDisenador() As Servicios.PermisoCompuesto
+
+        End Function
     End Class
 End Namespace
 
