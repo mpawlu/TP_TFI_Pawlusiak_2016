@@ -1,7 +1,7 @@
 ﻿Imports Servicios
 Namespace BLL
     Public Class CalculadoraIE
-        Public Function RankearDiseñadores(ByVal _Categoria As EE.Categoria) As List(Of Servicios.Usuario)
+        Public Function RankearDiseñadores(ByVal _Categoria As EE.Categoria) As List(Of EE.CalculadoraIE)
             Dim oReproducciones As New List(Of EE.CursoAsignado)
             Dim oCursos As New List(Of EE.Curso)
             Dim oCursosBLL As New BLL.Curso
@@ -36,6 +36,8 @@ Namespace BLL
                 End If
             Next
             'oResultados.Sort(
+            'Ordenar la lista por IE desc
+            Return oResultados
         End Function
         Private Function CalcularIE(ByVal _reproduccion As EE.CursoAsignado) As Double
 
