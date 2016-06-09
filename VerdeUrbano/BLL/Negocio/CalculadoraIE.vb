@@ -17,7 +17,7 @@ Namespace BLL
             oDisenadores = oUsuBLL.ListarPorPerfil(oPerfil)
 
             For Each Dis In oDisenadores
-                If Me.CumpleRestriccion(Dis) = True Then
+                If Me.CumpleRestriccion(Dis, _Categoria) = True Then
                     oCursos = Me.CursosPorCategoria(Dis, _Categoria)
                     Dim oResultadoID As New EE.ResultadoIE
                     oResultadoID.Diseñador = Dis
@@ -35,28 +35,48 @@ Namespace BLL
                     oResultados.Add(oID)
                 End If
             Next
-            'oResultados.Sort(
-            'Ordenar la lista por IE desc
-            Return oResultados
+            Return Me.OrdenarLista(oResultados)
         End Function
         Private Function CalcularIE(ByVal _reproduccion As EE.CursoAsignado) As Double
-
-
+            Dim _enc As New EE.EncuestaAsignada
+            _enc = _reproduccion.EncuestaAsignada
+            Dim res As Double
+            res = (_reproduccion.ResultadoObtenido * 50 + _enc.Dificultad * 20 + _enc.Utilidad * 30) / 100
+            Return res
         End Function
-        Private Function CumpleRestriccion(ByVal _usu As Servicios.Usuario) As Boolean
-
+        Private Function CumpleRestriccion(ByVal _usu As Servicios.Usuario, ByVal _cat As EE.Categoria) As Boolean
+            If CursosPorCategoria(_usu, _cat).Count >= 3 Then
+                For Each _curso As EE.Curso In CursosPorCategoria(_usu, _cat)
+                    If Me.ReprodPorCurso(_curso).Count >= 5 Then
+                        Return True
+                    Else
+                        Return False
+                    End If
+                Next
+            Else
+                Return False
+            End If
         End Function
 
-        Public Function ObtenerMayorIE() As Servicios.Usuario
-
+        Private Function OrdenarLista(ByVal _lista As List(Of EE.CalculadoraIE)) As List(Of EE.CalculadoraIE)
+            Dim listaOrdenada As New List(Of EE.CalculadoraIE)
+            _lista.Sort(Function(x, y) y.IndiceDeSatisfaccion.CompareTo(x.IndiceDeSatisfaccion))
+            listaOrdenada = _lista
+            Return listaOrdenada
         End Function
-        Public Function CursosPorCategoria(ByVal _usu As Servicios.Usuario, ByVal _cat As EE.Categoria) As List(Of EE.Curso)
+        Private Function CursosPorCategoria(ByVal _usu As Servicios.Usuario, ByVal _cat As EE.Categoria) As List(Of EE.Curso)
             ''aca tengo que listar los cursos que hizo el diseñador en esa categoria 
-
+            Dim Cursos As New List(Of EE.Curso)
+            Dim CursoBLL As New BLL.Curso
+            Return CursoBLL.ConsultarFinalizados(_cat, _usu)
         End Function
 
-        Public Function ReprodPorCurso(ByVal _curso As EE.Curso) As List(Of EE.CursoAsignado)
+        Private Function ReprodPorCurso(ByVal _curso As EE.Curso) As List(Of EE.CursoAsignado)
             ''aca tengo que listar las reproducciones finalizadas
+            Dim _CursoAsBLL As New BLL.CursoAsignado
+            Dim _CursosAsignado As New List(Of EE.CursoAsignado)
+            _CursosAsignado = _CursoAsBLL.ConsultarFinalizados(_curso)
+            Return _CursosAsignado
         End Function
         Sub New()
 

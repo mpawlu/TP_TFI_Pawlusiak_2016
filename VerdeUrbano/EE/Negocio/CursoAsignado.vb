@@ -115,5 +115,9 @@
         Sub New(ByVal QueEmpleado As Servicios.Usuario, ByVal QueCurso As EE.Curso)
 
         End Sub
+        Sub New()
+
+        End Sub
+
     End Class
 End Namespace

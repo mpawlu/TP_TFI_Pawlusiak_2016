@@ -50,6 +50,9 @@
 
 
         End Function
+        Public Function ConsultarFinalizados(ByVal QueCurso As EE.Curso) As List(Of EE.CursoAsignado)
+
+        End Function
     End Class
 End Namespace
 
