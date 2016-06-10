@@ -42,15 +42,6 @@
             End Set
         End Property
 
-        Private _FechaUltimoIngreso As Date
-        Public Property FechaUltimoIngreso() As Date
-            Get
-                Return _FechaUltimoIngreso
-            End Get
-            Set(ByVal value As Date)
-                _FechaUltimoIngreso = value
-            End Set
-        End Property
 
         Private _FechaVencimiento As Date
         Public Property FechaVencimiento() As Date

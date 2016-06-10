@@ -106,7 +106,6 @@
     <Compile Include="Negocio\PreguntaEncuesta.vb" />
     <Compile Include="Negocio\Respuesta.vb" />
     <Compile Include="Negocio\Respuesta_Curso.vb" />
-    <Compile Include="Negocio\Resultado.vb" />
     <Compile Include="Negocio\ResultadoIE.vb" />
     <Compile Include="Negocio\SatisfaccionCliente.vb" />
     <Compile Include="Negocio\Slide.vb" />
@@ -142,6 +141,7 @@
     <Compile Include="Negocio\TipoDeRespuesta.vb" />
     <Compile Include="Negocio\TipoP.vb" />
     <Compile Include="Negocio\TipoSlide.vb" />
+    <Compile Include="Negocio\Persona.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
