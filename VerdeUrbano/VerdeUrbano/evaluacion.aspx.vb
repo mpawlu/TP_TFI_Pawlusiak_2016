@@ -7,16 +7,16 @@
 
     Private Sub generarPreguntas(ByVal paramListadoPreguntas As List(Of EE.Pregunta))
         Try
-            Dim _contador As Integer = 1
-            For Each MiPregunta As EE.Pregunta In paramListadoPreguntas
-                Dim label As Label = Me.panelPreguntas.FindControl("lbl_pregunta" & _contador)
-                Dim labelID As Label = Me.panelPreguntas.FindControl("id_" & _contador)
-                label.Text = MiPregunta.Pregunta
-                labelID.Text = MiPregunta.ID
-                _contador += 1
-                rb_pregunta1.DataSource = MiPregunta.Opciones
+            'Dim _contador As Integer = 1
+            'For Each MiPregunta As EE.Pregunta In paramListadoPreguntas
+            '    Dim label As Label = Me.panelPreguntas.FindControl("lbl_pregunta" & _contador)
+            '    Dim labelID As Label = Me.panelPreguntas.FindControl("id_" & _contador)
+            '    label.Text = MiPregunta.Pregunta
+            '    labelID.Text = MiPregunta.ID
+            '    _contador += 1
+            '    rb_pregunta1.DataSource = MiPregunta.Opciones
 
-            Next
+            'Next
 
             '    rb_pregunta1.DataSource =
             '    rb_pregunta1.DataBind()
