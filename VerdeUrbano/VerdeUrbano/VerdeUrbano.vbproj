@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -99,6 +100,7 @@
     <Content Include="administrarUsuarios.aspx" />
     <Content Include="agregarIdioma.aspx" />
     <Content Include="agregarPerfil.aspx" />
+    <Content Include="agregarSolicitudCurso.aspx" />
     <Content Include="agregarUsuario.aspx" />
     <Content Include="calcularPresupuesto.aspx" />
     <Content Include="cambiarIdioma.aspx" />
@@ -204,6 +206,13 @@
     </Compile>
     <Compile Include="agregarPerfil.aspx.vb">
       <DependentUpon>agregarPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="agregarSolicitudCurso.aspx.designer.vb">
+      <DependentUpon>agregarSolicitudCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="agregarSolicitudCurso.aspx.vb">
+      <DependentUpon>agregarSolicitudCurso.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="agregarUsuario.aspx.designer.vb">
