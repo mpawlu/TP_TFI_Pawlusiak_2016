@@ -21,12 +21,12 @@
         End Property
 
 
-        Private _Tipo As String
-        Public Property Tipo() As String
+        Private _Tipo As EE.TipoSlide
+        Public Property Tipo() As EE.TipoSlide
             Get
                 Return _Tipo
             End Get
-            Set(ByVal value As String)
+            Set(ByVal value As EE.TipoSlide)
                 _Tipo = value
             End Set
         End Property

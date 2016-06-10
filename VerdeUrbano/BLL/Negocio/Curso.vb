@@ -47,13 +47,48 @@ Namespace BLL
 
         End Function
         Public Function ConsultarFinalizados() As List(Of EE.Curso)
+            Try
+                Dim resultado As New List(Of EE.Curso)
+                Dim Mapper As New MPP.Curso
 
+                resultado = Mapper.ConsultarFinalizados()
+
+                Return resultado
+            Catch ex As Exception
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            End Try
         End Function
+
         Public Function ConsultarFinalizados(ByVal QueCategoria As EE.Categoria) As List(Of EE.Curso)
+            Try
+                Dim resultado As New List(Of EE.Curso)
+                Dim Mapper As New MPP.Curso
 
+                resultado = Mapper.ConsultarFinalizados(QueCategoria)
+
+                Return resultado
+            Catch ex As Exception
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            End Try
         End Function
-        Public Function ConsultarFinalizados(ByVal QueCategoria As EE.Categoria, ByVal QueUsuario As Servicios.Usuario) As List(Of EE.Curso)
 
+        Public Function ConsultarFinalizados(ByVal QueCategoria As EE.Categoria, ByVal QueUsuario As Servicios.Usuario) As List(Of EE.Curso)
+            Try
+                Dim resultado As New List(Of EE.Curso)
+                Dim Mapper As New MPP.Curso
+
+                resultado = Mapper.ConsultarFinalizados(QueCategoria, QueUsuario)
+
+                Return resultado
+            Catch ex As Exception
+                Dim oBitacora As Servicios.clsBitacora
+                oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            End Try
         End Function
     End Class
 End Namespace

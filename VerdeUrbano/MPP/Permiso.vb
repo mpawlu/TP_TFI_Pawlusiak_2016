@@ -377,6 +377,34 @@
             End If
 
         End Function
+        Public Function ObtenerPermisoCrearCurso() As Servicios.PermisoSimple
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim oPermiso As Servicios.PermisoSimple
+            Dim dt As New DataTable
+            Dim listaPermisos As New List(Of Servicios.PermisoBase)
+
+            DS = oDatos.Leer("s_Permiso_CrearCurso", Nothing)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+                oPermiso = New Servicios.PermisoSimple
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oPermiso.ID = Item("ID_Permiso")
+                    oPermiso.Descripcion = Item("Descripcion")
+                    If IsDBNull(Item("URL")) = True Then
+                        oPermiso.Url = Nothing
+                    Else
+                        oPermiso.Url = Item("URL")
+                    End If
+                    oPermiso.Accion = Item("Accion")
+                Next
+
+                Return oPermiso
+
+            Else
+                Return Nothing
+            End If
+        End Function
 
     End Class
 End Namespace

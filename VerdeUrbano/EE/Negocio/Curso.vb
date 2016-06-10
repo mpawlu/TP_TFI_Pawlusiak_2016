@@ -1,12 +1,12 @@
 ﻿Namespace EE
     Public Class Curso
-        Private _Codigo As Integer
-        Public Property Codigo() As Integer
+        Private _ID As Integer
+        Public Property ID() As Integer
             Get
-                Return _Codigo
+                Return _ID
             End Get
             Set(ByVal value As Integer)
-                _Codigo = value
+                _ID = value
             End Set
         End Property
 
@@ -31,6 +31,15 @@
                 _Descripcion = value
             End Set
         End Property
+        Private _Categoria As EE.Categoria
+        Public Property Categoria() As EE.Categoria
+            Get
+                Return _Categoria
+            End Get
+            Set(ByVal value As EE.Categoria)
+                _Categoria = value
+            End Set
+        End Property
 
 
         Private _Duracion As Integer
@@ -44,12 +53,12 @@
         End Property
 
 
-        Private _Valor As Integer
-        Public Property Valor() As Integer
+        Private _Valor As Double
+        Public Property Valor() As Double
             Get
                 Return _Valor
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Double)
                 _Valor = value
             End Set
         End Property
@@ -65,16 +74,6 @@
             End Set
         End Property
 
-
-        Private _SecAct As Integer
-        Public Property SeccionActual() As Integer
-            Get
-                Return _SecAct
-            End Get
-            Set(ByVal value As Integer)
-                _SecAct = value
-            End Set
-        End Property
 
         Private _SolAsociada As SolicitudCurso
         Public Property SolicitudCurso() As SolicitudCurso
@@ -107,6 +106,7 @@
                 _Seccion = value
             End Set
         End Property
+
         Private _Diseñador As Servicios.Usuario
         Public Property Diseñador() As Servicios.Usuario
             Get

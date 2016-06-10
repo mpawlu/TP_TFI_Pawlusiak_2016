@@ -251,8 +251,34 @@ Namespace BLL
                 BLL.clsBitacora.RegistrarEvento(oBitacora)
             End Try
         End Sub
-        Public Function ListarPorPerfil(ByVal _Perfil As Servicios.PermisoCompuesto) As List(Of Servicios.Usuario)
+        Public Function ListarPorPermiso(ByVal _Permiso As Servicios.PermisoSimple) As List(Of Servicios.Usuario)
+            Dim mpp As New MPP.clsUsuario
+            Dim todos As New List(Of Servicios.Usuario)
+            Dim resultado As New List(Of Servicios.Usuario)
+            todos = mpp.ListarUsuarios()
+            For Each _usu As Servicios.Usuario In todos
+                If Me.TienePermiso(_usu, _Permiso) = True Then
+                    resultado.Add(_usu)
+                End If
+            Next
+            Return resultado
 
+        End Function
+
+        Public Function TienePermiso(ByVal _usu As Servicios.Usuario, ByVal _permiso As Servicios.PermisoSimple) As Boolean
+            For Each p As Servicios.PermisoBase In _usu.Perfil.ListaPermisos
+                If p.TieneHijos = True Then
+                    For Each pp As Servicios.PermisoBase In p.ObtenerHijos
+                        TienePermiso(_usu, pp)
+                    Next
+                Else
+                    If p.ID = _permiso.ID Then
+                        Return True
+                    Else
+                        Return False
+                    End If
+                End If
+            Next
         End Function
     End Class
 End Namespace

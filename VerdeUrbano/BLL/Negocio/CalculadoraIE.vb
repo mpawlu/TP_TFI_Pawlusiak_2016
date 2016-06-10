@@ -7,14 +7,15 @@ Namespace BLL
             Dim oCursosBLL As New BLL.Curso
             Dim oDisenadores As New List(Of Servicios.Usuario)
             Dim oUsuBLL As New BLL.clsUsuario
-            Dim oPerfil As New Servicios.PermisoCompuesto
+            Dim oPermiso As New Servicios.PermisoSimple
             Dim oPerfilBLL As New BLL.clsPermiso
             Dim oResultados As New List(Of EE.CalculadoraIE)
 
             Dim Ranking As New List(Of Servicios.Usuario)
 
-            oPerfil = oPerfilBLL.ObtenerPerfilDisenador
-            oDisenadores = oUsuBLL.ListarPorPerfil(oPerfil)
+            oPermiso = oPerfilBLL.ObtenerPermisoDisenador
+
+            oDisenadores = oUsuBLL.ListarPorPermiso(oPermiso)
 
             For Each Dis In oDisenadores
                 If Me.CumpleRestriccion(Dis, _Categoria) = True Then
