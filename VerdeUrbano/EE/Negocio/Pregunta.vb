@@ -1,7 +1,7 @@
 ﻿Namespace EE
     Public Class Pregunta
         Private _ID As Integer
-        Public Property Pregunta() As Integer
+        Public Property ID() As Integer
             Get
                 Return _ID
             End Get
@@ -11,7 +11,7 @@
         End Property
 
         Private _Texto As String
-        Public Property Texto() As String
+        Public Property Pregunta() As String
             Get
                 Return _Texto
             End Get
@@ -31,7 +31,7 @@
             End Set
         End Property
 
-        Private _Opciones As List(Of Opcion)
+        Private _Opciones As New List(Of Opcion)
         Public Property Opciones() As List(Of Opcion)
             Get
                 Return _Opciones
