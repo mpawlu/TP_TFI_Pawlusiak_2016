@@ -2,17 +2,15 @@
     Public Class TipoP
         Inherits Slide
 
-        Private _Pregunta As Pregunta
-        Public Property Pregunta() As Pregunta
+        Private _Preguntas As New List(Of EE.Pregunta)
+        Public Property Preguntas() As List(Of EE.Pregunta)
             Get
-                Return _Pregunta
+                Return _Preguntas
             End Get
-            Set(ByVal value As Pregunta)
-                _Pregunta = value
+            Set(ByVal value As List(Of EE.Pregunta))
+                _Preguntas = value
             End Set
         End Property
-        Sub New(ByVal pregunta As Pregunta)
 
-        End Sub
     End Class
 End Namespace

@@ -83,13 +83,13 @@
         End Property
 
 
-        Private _respuestas As List(Of Opcion)
+        Private _respuestas As New List(Of EE.Respuesta_Curso)
 
-        Public Property Respuestas() As List(Of Opcion)
+        Public Property Respuestas() As List(Of EE.Respuesta_Curso)
             Get
                 Return _respuestas
             End Get
-            Set(ByVal value As List(Of Opcion))
+            Set(ByVal value As List(Of EE.Respuesta_Curso))
                 _respuestas = value
             End Set
         End Property
@@ -103,6 +103,17 @@
                 _ResultadoObtenido = value
             End Set
         End Property
+
+        Private _aprobado As Boolean
+        Public Property Aprobado() As Boolean
+            Get
+                Return _aprobado
+            End Get
+            Set(ByVal value As Boolean)
+                _aprobado = value
+            End Set
+        End Property
+
         Private _EncuestaAsignada As EE.EncuestaAsignada
         Public Property EncuestaAsignada() As EE.EncuestaAsignada
             Get

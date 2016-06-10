@@ -64,7 +64,7 @@
         End Property
 
 
-        Private _Correlatividades As List(Of EE.Curso)
+        Private _Correlatividades As New List(Of EE.Curso)
         Public Property Correlatividades() As List(Of EE.Curso)
             Get
                 Return _Correlatividades
@@ -97,15 +97,26 @@
         End Property
 
 
-        Private _Seccion As List(Of Seccion)
-        Public Property Secciones() As List(Of Seccion)
+        Private _Secciones As New List(Of Informativa)
+        Public Property Secciones() As List(Of Informativa)
             Get
-                Return _Seccion
+                Return _Secciones
             End Get
-            Set(ByVal value As List(Of Seccion))
-                _Seccion = value
+            Set(ByVal value As List(Of Informativa))
+                _Secciones = value
             End Set
         End Property
+
+        Private _eval As EE.Evaluacion
+        Public Property Evaluacion() As EE.Evaluacion
+            Get
+                Return _eval
+            End Get
+            Set(ByVal value As EE.Evaluacion)
+                _eval = value
+            End Set
+        End Property
+
 
         Private _Diseñador As Servicios.Usuario
         Public Property Diseñador() As Servicios.Usuario
@@ -116,6 +127,7 @@
                 _Diseñador = value
             End Set
         End Property
+
 
         Sub New(ByVal Nombre As String, ByVal Descripcion As String, ByVal Duracion As Double)
 

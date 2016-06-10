@@ -31,12 +31,12 @@
             End Set
         End Property
 
-        Private _Opciones As New List(Of Opcion)
-        Public Property Opciones() As List(Of Opcion)
+        Private _Opciones As New List(Of Opcion_PregCurso)
+        Public Property Opciones() As List(Of Opcion_PregCurso)
             Get
                 Return _Opciones
             End Get
-            Set(ByVal value As List(Of Opcion))
+            Set(ByVal value As List(Of Opcion_PregCurso))
                 _Opciones = value
             End Set
         End Property

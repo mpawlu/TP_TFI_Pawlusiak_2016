@@ -97,10 +97,10 @@
     <Compile Include="Negocio\EncuestaRealizada.vb" />
     <Compile Include="Negocio\EstadoCupon.vb" />
     <Compile Include="Negocio\EstadoCurso.vb" />
-    <Compile Include="Negocio\Evaluativa.vb" />
+    <Compile Include="Negocio\Evaluacion.vb" />
     <Compile Include="Negocio\Informativa.vb" />
     <Compile Include="Negocio\Localidad.vb" />
-    <Compile Include="Negocio\Opcion.vb" />
+    <Compile Include="Negocio\Opcion_PregCurso.vb" />
     <Compile Include="Negocio\Pago.vb" />
     <Compile Include="Negocio\Pregunta.vb" />
     <Compile Include="Negocio\PreguntaEncuesta.vb" />
@@ -109,7 +109,6 @@
     <Compile Include="Negocio\Resultado.vb" />
     <Compile Include="Negocio\ResultadoIE.vb" />
     <Compile Include="Negocio\SatisfaccionCliente.vb" />
-    <Compile Include="Negocio\Seccion.vb" />
     <Compile Include="Negocio\Slide.vb" />
     <Compile Include="Negocio\SolicitudCurso.vb" />
     <Compile Include="Negocio\State\Cupon\Cupon_State.vb" />
@@ -130,6 +129,7 @@
     <Compile Include="Negocio\State\EncuestaAsignada\EncuestaAsignada_State.vb" />
     <Compile Include="Negocio\State\EncuestaAsignada\Finalizada.vb" />
     <Compile Include="Negocio\State\EncuestaAsignada\PendienteE.vb" />
+    <Compile Include="Negocio\Opcion_PregEnc.vb" />
     <Compile Include="Negocio\State\SolicitudCurso\EnConstruccion.vb" />
     <Compile Include="Negocio\State\SolicitudCurso\Solicitado.vb" />
     <Compile Include="Negocio\State\SolicitudCurso\SolicitudCurso_State.vb" />

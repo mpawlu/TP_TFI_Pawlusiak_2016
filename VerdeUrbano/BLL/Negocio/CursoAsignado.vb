@@ -21,11 +21,11 @@
 
         End Function
 
-        Public Function ActualizarSeccionActual(ByVal QueCursoAsignado As EE.CursoAsignado) As EE.Seccion
+        Public Function ActualizarSeccionActual(ByVal QueCursoAsignado As EE.CursoAsignado) As EE.Informativa
 
 
         End Function
-        Public Function ActualiarSldeActual(ByVal QueSeccion As EE.Seccion) As EE.Slide
+        Public Function ActualiarSldeActual(ByVal QueSeccion As EE.Informativa) As EE.Slide
 
         End Function
 
@@ -53,6 +53,21 @@
         Public Function ConsultarFinalizados(ByVal QueCurso As EE.Curso) As List(Of EE.CursoAsignado)
 
         End Function
+        Private Function CalcularResultado(ByVal _cursoAsgnado As EE.CursoAsignado) As Double
+            Dim PuntajeFinal As Double
+            For Each _respuesta As EE.Respuesta_Curso In _cursoAsgnado.Respuestas
+                If _respuesta.OpcionElegida.Correcta = True Then
+                    PuntajeFinal += _respuesta.Pregunta.Valor
+                End If
+            Next
+            Return PuntajeFinal
+        End Function
+        Public Sub FinalizarCurso(ByVal _cursoAsignado As EE.CursoAsignado)
+            _cursoAsignado.ResultadoObtenido = CalcularResultado(_cursoAsignado)
+            _cursoAsignado.Estado.PasarAFinalizado(_cursoAsignado)
+            Me.Guardar(_cursoAsignado)
+        End Sub
     End Class
+
 End Namespace
 

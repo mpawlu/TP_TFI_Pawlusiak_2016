@@ -5,10 +5,10 @@ Namespace BLL
             QueCurso.Correlatividades.Add(QueCorrelatividad)
         End Sub
 
-        Public Function MostrarSiguienteSeccion(ByVal QueCurso As EE.Curso) As EE.Seccion
+        Public Function MostrarSiguienteSeccion(ByVal QueCurso As EE.Curso) As EE.Informativa
 
         End Function
-        Public Sub AgregarSeccion(ByVal QueCurso As EE.Curso, ByVal QueSeccion As EE.Seccion)
+        Public Sub AgregarSeccion(ByVal QueCurso As EE.Curso, ByVal QueSeccion As EE.Informativa)
             QueCurso.Secciones.Add(QueSeccion)
         End Sub
 

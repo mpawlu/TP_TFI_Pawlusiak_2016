@@ -1,5 +1,5 @@
 ﻿Namespace EE
-    Public Class Opcion
+    Public Class Opcion_PregEnc
         Private _ID As Integer
         Public Property ID() As Integer
             Get
@@ -36,5 +36,7 @@
 
 
         End Sub
+
     End Class
 End Namespace
+
