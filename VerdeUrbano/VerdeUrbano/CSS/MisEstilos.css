@@ -377,3 +377,44 @@ a:link {
     color: #D9534F;
     font-weight: bold;
 }
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+body {
+    font-family: 'Lato', 'sans-serif';
+}
+
+.profile {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+    background-color: #FBF9D7;
+    border: 1px solid #0C553F;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #23B076;
+}
+
+.profile-nombre {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.profile-titulo {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.profile-texto {
+    font-size: 16px;
+}
+
+.profile-rating {
+    font-size: 40px;
+    font-weight: bold;
+}

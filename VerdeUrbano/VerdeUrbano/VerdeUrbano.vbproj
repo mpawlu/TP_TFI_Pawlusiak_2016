@@ -102,6 +102,7 @@
     <Content Include="agregarPerfil.aspx" />
     <Content Include="agregarSolicitudCurso.aspx" />
     <Content Include="agregarUsuario.aspx" />
+    <Content Include="calculadorDisenador.aspx" />
     <Content Include="calcularPresupuesto.aspx" />
     <Content Include="cambiarIdioma.aspx" />
     <Content Include="cambiarPassword.aspx" />
@@ -224,6 +225,13 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="App_Code\validaciones.vb" />
+    <Compile Include="calculadorDisenador.aspx.designer.vb">
+      <DependentUpon>calculadorDisenador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="calculadorDisenador.aspx.vb">
+      <DependentUpon>calculadorDisenador.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="calcularPresupuesto.aspx.designer.vb">
       <DependentUpon>calcularPresupuesto.aspx</DependentUpon>
     </Compile>
