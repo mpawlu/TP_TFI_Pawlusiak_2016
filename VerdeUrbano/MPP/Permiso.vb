@@ -384,7 +384,7 @@
             Dim dt As New DataTable
             Dim listaPermisos As New List(Of Servicios.PermisoBase)
 
-            DS = oDatos.Leer("s_Permiso_CrearCurso", Nothing)
+            DS = oDatos.Leer("s_Permiso_SolicitudesPendientes", Nothing)
 
             If DS.Tables(0).Rows.Count > 0 Then
                 oPermiso = New Servicios.PermisoSimple

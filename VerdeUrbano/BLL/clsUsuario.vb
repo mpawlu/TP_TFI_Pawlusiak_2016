@@ -257,29 +257,64 @@ Namespace BLL
             Dim resultado As New List(Of Servicios.Usuario)
             todos = mpp.ListarUsuarios()
             For Each _usu As Servicios.Usuario In todos
-                If Me.TienePermiso(_usu, _Permiso) = True Then
+                If Me.TienePermiso(_usu) = True Then
                     resultado.Add(_usu)
                 End If
             Next
             Return resultado
 
         End Function
-
-        Public Function TienePermiso(ByVal _usu As Servicios.Usuario, ByVal _permiso As Servicios.PermisoSimple) As Boolean
-            For Each p As Servicios.PermisoBase In _usu.Perfil.ListaPermisos
-                If p.TieneHijos = True Then
-                    For Each pp As Servicios.PermisoBase In p.ObtenerHijos
-                        TienePermiso(_usu, pp)
-                    Next
-                Else
-                    If p.ID = _permiso.ID Then
-                        Return True
-                    Else
-                        Return False
-                    End If
+#Region "Listar usuarios con permisos para crear curso (Diseñandores)"
+        Public Function ObtenerDisenadores() As List(Of Servicios.Usuario)
+            Dim oUsuariosTodos As New List(Of Servicios.Usuario)
+            Dim oDisenadores As New List(Of Servicios.Usuario)
+            oUsuariosTodos = Me.ListarUsuarios
+            For Each disenador As Servicios.Usuario In oUsuariosTodos
+                If Me.TienePermiso(disenador) = True Then
+                    oDisenadores.Add(disenador)
                 End If
             Next
+            Return oDisenadores
         End Function
+        Public Function TienePermiso(ByVal _usu As Servicios.Usuario) As Boolean
+            Dim resultado As Boolean
+            resultado = False
+            For Each p As Servicios.PermisoBase In _usu.Perfil.ListaPermisos
+                If p.TieneHijos = True Then
+                    If p.ID = 10 Then
+                        resultado = True
+                        Return resultado
+                    Else
+                        resultado = Me.RecorrerHijos(p)
+                    End If
+                Else
+                    If p.ID = 46 Then
+                        resultado = True
+                        Return resultado
+                    End If
+                End If
+
+            Next
+            Return resultado
+        End Function
+        Public Function RecorrerHijos(ByVal _hijo As Servicios.PermisoBase) As Boolean
+            If _hijo.TieneHijos = True Then
+                If _hijo.ID = 10 Then
+                    Return True
+                Else
+                    _hijo = New Servicios.PermisoCompuesto
+                    For Each pHijo As Servicios.PermisoBase In _hijo.ObtenerHijos
+                        Me.RecorrerHijos(_hijo)
+                    Next
+                End If
+            Else
+                If _hijo.ID = 46 Then
+                    Return True
+                End If
+            End If
+
+        End Function
+#End Region
     End Class
 End Namespace
 

@@ -1,40 +1,36 @@
 ﻿Imports Servicios
 Namespace BLL
     Public Class CalculadoraIE
-        Public Function RankearDiseñadores(ByVal _Categoria As EE.Categoria) As List(Of EE.CalculadoraIE)
+        Public Function RankearDiseñadores(ByVal _Diseanadores As List(Of servicios.Usuario)) As List(Of EE.CalculadoraIE)
             Dim oReproducciones As New List(Of EE.CursoAsignado)
             Dim oCursos As New List(Of EE.Curso)
             Dim oCursosBLL As New BLL.Curso
-            Dim oDisenadores As New List(Of Servicios.Usuario)
             Dim oUsuBLL As New BLL.clsUsuario
-            Dim oPermiso As New Servicios.PermisoSimple
+            Dim oPermiso As New servicios.PermisoSimple
             Dim oPerfilBLL As New BLL.clsPermiso
             Dim oResultados As New List(Of EE.CalculadoraIE)
+            Dim oUsuariosTodos As New List(Of servicios.Usuario)
+            Dim Ranking As New List(Of servicios.Usuario)
 
-            Dim Ranking As New List(Of Servicios.Usuario)
 
-            oPermiso = oPerfilBLL.ObtenerPermisoDisenador
-
-            oDisenadores = oUsuBLL.ListarPorPermiso(oPermiso)
-
-            For Each Dis In oDisenadores
-                If Me.CumpleRestriccion(Dis, _Categoria) = True Then
-                    oCursos = Me.CursosPorCategoria(Dis, _Categoria)
-                    Dim oResultadoID As New EE.ResultadoIE
-                    oResultadoID.Diseñador = Dis
-                    For Each cur As EE.Curso In oCursos
-                        oReproducciones = Me.ReprodPorCurso(cur)
-                        For Each rep As EE.CursoAsignado In oReproducciones
-                            oResultadoID.IE += Me.CalcularIE(rep)
-                        Next
-                    Next
-                    Dim oID As New EE.CalculadoraIE
-                    oID.Dieseñador = Dis
-                    oID.Cursos = oCursos
-                    oID.Reproducciones = oReproducciones
-                    oResultadoID.IE = oResultadoID.IE / oReproducciones.Count
-                    oResultados.Add(oID)
-                End If
+            For Each Dis In _Diseanadores
+                'If Me.CumpleRestriccion(Dis, _Categoria) = True Then
+                '    oCursos = Me.CursosPorCategoria(Dis, _Categoria)
+                '    Dim oResultadoID As New EE.ResultadoIE
+                '    oResultadoID.Diseñador = Dis
+                '    For Each cur As EE.Curso In oCursos
+                '        oReproducciones = Me.ReprodPorCurso(cur)
+                '        For Each rep As EE.CursoAsignado In oReproducciones
+                '            oResultadoID.IE += Me.CalcularIE(rep)
+                '        Next
+                '    Next
+                '    Dim oID As New EE.CalculadoraIE
+                '    oID.Dieseñador = Dis
+                '    oID.Cursos = oCursos
+                '    oID.Reproducciones = oReproducciones
+                '    oResultadoID.IE = oResultadoID.IE / oReproducciones.Count
+                '    oResultados.Add(oID)
+                'End If
             Next
             Return Me.OrdenarLista(oResultados)
         End Function

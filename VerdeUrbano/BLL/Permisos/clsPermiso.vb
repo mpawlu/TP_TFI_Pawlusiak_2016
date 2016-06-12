@@ -140,7 +140,25 @@
         End Function
         Public Function ObtenerPermisoDisenador() As Servicios.PermisoSimple
             Dim MPP As New MPP.Permiso
+            Dim Perfiles As New List(Of Servicios.PermisoCompuesto)
+            Perfiles = Me.ListarPerfiles
+            Dim resultado As Boolean
+
+            For Each p As Servicios.PermisoCompuesto In Perfiles
+                For Each hijo As Servicios.PermisoBase In p.ListaPermisos
+                    ComprobarPermisoCrearCurso(hijo)
+                Next
+            Next
             Return MPP.ObtenerPermisoCrearCurso
+        End Function
+        Private Function ComprobarPermisoCrearCurso(ByVal _permiso As Servicios.PermisoBase) As Boolean
+            If _permiso.TieneHijos = True Then
+                If _permiso.ID = 10 Then
+                    Return True
+                End If
+            Else
+
+            End If
         End Function
     End Class
 End Namespace
