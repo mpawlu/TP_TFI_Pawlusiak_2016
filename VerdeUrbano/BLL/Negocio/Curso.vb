@@ -4,6 +4,10 @@ Namespace BLL
         Public Sub AgregarCorrelatividad(ByVal QueCurso As EE.Curso, ByVal QueCorrelatividad As EE.Curso)
             QueCurso.Correlatividades.Add(QueCorrelatividad)
         End Sub
+        Public Function Guardar(ByVal _Curso As EE.Curso) As Boolean
+            Dim oMPP As New MPP.Curso
+            Return oMPP.Guardar(_Curso)
+        End Function
 
         Public Function MostrarSiguienteSeccion(ByVal QueCurso As EE.Curso) As EE.Informativa
 

@@ -31,4 +31,43 @@
         Me.ddlCategoria.DataBind()
 
     End Sub
+
+    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
+        Dim oDisenador As New Servicios.Usuario
+        Dim oSolicitante As New Servicios.Usuario
+        Dim oSolicitud As New EE.SolicitudCurso
+        Dim oEstadoSolicitud As New EE.EnConstruccion
+        Dim oCurso As New EE.Curso
+        Dim oEstadoCurso As New EE.EnCreacion
+        Dim oUsuBLL As New BLL.clsUsuario
+        Dim oCategoria As New EE.Categoria
+        Dim oSolicitudBLL As New BLL.SolicitudCurso
+        Dim oCursoBLL As New BLL.Curso
+        oCategoria.ID = ddlCategoria.SelectedValue
+        oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
+        oSolicitante = CType(Session("Usuario"), Servicios.Usuario)
+        ''oDisenador.ID = aca tengo que poner el ID del disenador que selecciono
+        oDisenador.ID = 11  ''Y comentar esta linea
+        oDisenador = oUsuBLL.RecuperarUsuario(oDisenador)
+        oSolicitud.Disenador = oDisenador
+        oSolicitud.Solicitante = oSolicitante
+        oCurso.Estado = oEstadoCurso
+        oCurso.Categoria = oCategoria
+        oSolicitud.Titulo = Me.txtTitulo.Text
+        oSolicitud.Detalle = Me.txtDetalle.Text
+        oSolicitud.FechaLimiteDeCreacion = Today
+        oSolicitud.FechaSolicitud = Today
+        oSolicitud.Estado = oEstadoSolicitud
+        If oSolicitudBLL.Guardar(oSolicitud) = True Then
+            oCurso.SolicitudCurso = oSolicitudBLL.ConsultarUltima
+            If oCursoBLL.Guardar(oCurso) = True Then
+                ''Operacion exitossa
+            Else
+                ''FALLO Operacion
+            End If
+        Else
+            ''Fallo operacion
+        End If
+
+    End Sub
 End Class

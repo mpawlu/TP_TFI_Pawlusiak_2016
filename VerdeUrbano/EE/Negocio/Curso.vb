@@ -128,7 +128,9 @@
             End Set
         End Property
 
+        Sub New()
 
+        End Sub
         Sub New(ByVal Nombre As String, ByVal Descripcion As String, ByVal Duracion As Double)
 
         End Sub

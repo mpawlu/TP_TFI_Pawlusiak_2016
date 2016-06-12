@@ -9,15 +9,7 @@
                 _id = value
             End Set
         End Property
-        Private _Categoria As Categoria
-        Public Property Categoria() As Categoria
-            Get
-                Return _Categoria
-            End Get
-            Set(ByVal value As Categoria)
-                _Categoria = value
-            End Set
-        End Property
+
         Private _Solicitante As Servicios.Usuario
         Public Property Solicitante() As Servicios.Usuario
             Get
@@ -27,13 +19,13 @@
                 _Solicitante = value
             End Set
         End Property
-        Private _Diseñador As Servicios.Usuario
-        Public Property Diseñador() As Servicios.Usuario
+        Private _Disenador As Servicios.Usuario
+        Public Property Disenador() As Servicios.Usuario
             Get
-                Return _Diseñador
+                Return _Disenador
             End Get
             Set(ByVal value As Servicios.Usuario)
-                _Diseñador = value
+                _Disenador = value
             End Set
         End Property
         Private _Titulo As String
