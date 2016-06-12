@@ -70,4 +70,7 @@
         End If
 
     End Sub
+    Protected Sub btnCalculador_Click(sender As Object, e As EventArgs) Handles btnCalculador.Click
+        Response.Redirect("calculadorDisenador.aspx")
+    End Sub
 End Class
