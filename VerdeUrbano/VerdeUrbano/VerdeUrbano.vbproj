@@ -121,6 +121,7 @@
     <Content Include="error.aspx" />
     <Content Include="errorIntegridad.aspx" />
     <Content Include="evaluacion.aspx" />
+    <Content Include="examenFinalizado.aspx" />
     <Content Include="Imagenes\Add-32.png" />
     <Content Include="Imagenes\Calendar-32.png" />
     <Content Include="Imagenes\Clock-32.png" />
@@ -300,6 +301,13 @@
     </Compile>
     <Compile Include="evaluacion.aspx.vb">
       <DependentUpon>evaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="examenFinalizado.aspx.designer.vb">
+      <DependentUpon>examenFinalizado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="examenFinalizado.aspx.vb">
+      <DependentUpon>examenFinalizado.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.vb">

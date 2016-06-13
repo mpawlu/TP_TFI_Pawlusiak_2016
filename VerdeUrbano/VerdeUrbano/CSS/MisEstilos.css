@@ -418,3 +418,77 @@ body {
     font-size: 40px;
     font-weight: bold;
 }
+
+
+
+.notaResumen {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+    background-color: #16A085;
+    border: 4px solid #0C553F;
+}
+
+.circle-tile-heading {
+    border: 3px solid #FFFFFF;
+    border-radius: 100%;
+    color: #FFFFFF;
+    height: 80px;
+    margin: 0 auto -40px;
+    position: relative;
+    transition: all 0.3s ease-in-out 0s;
+    width: 80px;
+    text-align:center;
+}
+.circle-tile-heading .fa {
+    line-height: 80px;
+}
+
+.notaResumen-titulo {
+    font-size: 28px;
+    font-weight: bold;
+    text-align:left;
+    color:#FFFFFF;
+}
+
+.notaResumen-texto {
+    font-size: 20px;
+    font-weight: bold;
+    text-align:left;
+    color:#FFFFFF;
+}
+
+.notaResumen-rating {
+    font-size: 50px;
+    font-weight: bold;
+    color:#FFFFFF;
+}
+
+
+
+
+.notaResumendes {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+    background-color: #FF6862;
+    border: 4px solid #DB0000;
+}
+
+.circle-tile-heading-des {
+    border: 3px solid #FFFFFF;
+    border-radius: 100%;
+    color: #FFFFFF;
+    height: 80px;
+    margin: 0 auto -40px;
+    position: relative;
+    transition: all 0.3s ease-in-out 0s;
+    width: 80px;
+    text-align:center;
+}
+.circle-tile-heading-des .fa {
+    line-height: 80px;
+}
+
