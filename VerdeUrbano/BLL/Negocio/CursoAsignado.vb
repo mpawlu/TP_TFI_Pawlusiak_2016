@@ -2,9 +2,11 @@
     Public Class CursoAsignado
         Public Function Guardar(ByVal QueAsignacion As EE.CursoAsignado) As Boolean
 
+
         End Function
         Public Function Modificar(ByVal QueAsignacion As EE.CursoAsignado) As Boolean
-
+            Dim oCurAsigMPP As New MPP.CursoAsignado
+            oCurAsigMPP.Modificar(QueAsignacion)
         End Function
         Public Sub InicializarDatos(ByVal Asignacion As EE.CursoAsignado, ByVal curso As EE.Curso, ByVal empleado As Servicios.Usuario)
             Asignacion.Curso = curso
@@ -66,7 +68,7 @@
         Public Sub FinalizarCurso(ByVal _cursoAsignado As EE.CursoAsignado)
             _cursoAsignado.ResultadoObtenido = CalcularResultado(_cursoAsignado)
             _cursoAsignado.Estado.PasarAFinalizado(_cursoAsignado)
-            Me.Guardar(_cursoAsignado)
+            Me.Modificar(_cursoAsignado)
         End Sub
     End Class
 

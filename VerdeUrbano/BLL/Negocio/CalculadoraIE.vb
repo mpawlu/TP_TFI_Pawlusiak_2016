@@ -14,6 +14,7 @@ Namespace BLL
 
 
             For Each Dis In _Diseanadores
+                Dim IE As Double
                 If Me.CumpleRestriccion(Dis, _Categoria) = True Then
                     oCursos = Me.CursosPorCategoria(Dis, _Categoria)
                     Dim oResultadoID As New EE.ResultadoIE
@@ -21,18 +22,21 @@ Namespace BLL
                     For Each cur As EE.Curso In oCursos
                         oReproducciones = Me.ReprodPorCurso(cur)
                         For Each rep As EE.CursoAsignado In oReproducciones
-                            oResultadoID.IE += Me.CalcularIE(rep)
+                            IE += Me.CalcularIE(rep)
                         Next
                     Next
                     Dim oID As New EE.CalculadoraIE
                     oID.Dieseñador = Dis
                     oID.Cursos = oCursos
                     oID.Reproducciones = oReproducciones
-                    oResultadoID.IE = oResultadoID.IE / oReproducciones.Count
+                    'IE = oResultadoID.IE / oReproducciones.Count
+                    oID.IndiceDeSatisfaccion = IE / oReproducciones.Count
                     oResultados.Add(oID)
+
                 End If
             Next
             Return Me.OrdenarLista(oResultados)
+
         End Function
         Private Function CalcularIE(ByVal _reproduccion As EE.CursoAsignado) As Double
             Dim _enc As New EE.EncuestaAsignada

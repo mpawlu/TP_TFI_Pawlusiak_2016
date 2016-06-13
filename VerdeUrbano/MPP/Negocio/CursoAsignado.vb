@@ -48,6 +48,25 @@
                 Return resultado
             Else
             End If
+        End Function
+        Public Function Modificar(ByVal _CursoAsignado As EE.CursoAsignado) As Boolean
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim resultado As Boolean
+
+            hdatos.Add("@ID_Curso", _CursoAsignado.Curso.ID)
+            hdatos.Add("@ID_Usuario", _CursoAsignado.Empleado.ID)
+            hdatos.Add("@ID_Estado", _CursoAsignado.Estado.ID)
+            hdatos.Add("@Fecha_Asignacion", _CursoAsignado.FechaAsignacion)
+            hdatos.Add("@Fecha_Vencimiento", _CursoAsignado.FechaVencimiento)
+            hdatos.Add("@Progreso", _CursoAsignado.Progreso)
+            hdatos.Add("@Intento", _CursoAsignado.Intentos)
+            hdatos.Add("@Resultado", _CursoAsignado.ResultadoObtenido)
+            hdatos.Add("@Aprobado", _CursoAsignado.Aprobado)
+
+            resultado = oDatos.Escribir("s_Curso_Asignado_Modificar", hdatos)
+
+            Return resultado
 
         End Function
     End Class
