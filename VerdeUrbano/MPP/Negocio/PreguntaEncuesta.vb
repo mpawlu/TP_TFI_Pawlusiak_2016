@@ -13,7 +13,7 @@
 
                 For Each Item As DataRow In DS.Tables(0).Rows
                     oPreg = New EE.PreguntaEncuesta
-                    oPreg.ID_Pregunta = Item("ID_Pregunta_Encuesta")
+                    oPreg.ID_Pregunta = Item("ID_Pregunta")
                     oPreg.Pregunta = Item("Texto")
 
                     If IsDBNull(Item("Valor")) = True Then
@@ -21,7 +21,7 @@
                     Else
                         oPreg.Valor = Item("Valor")
                     End If
-
+                    oPreg.Es_Choice = Item("EsChoice")
                     oListaPreg.Add(oPreg)
 
                 Next
@@ -46,7 +46,7 @@
 
                 For Each Item As DataRow In DS.Tables(0).Rows
                     oPreg = New EE.PreguntaEncuesta
-                    oPreg.ID_Pregunta = Item("ID_Pregunta_Encuesta")
+                    oPreg.ID_Pregunta = Item("ID_Pregunta")
                     oPreg.Pregunta = Item("Texto")
 
                     If IsDBNull(Item("Valor")) = True Then
@@ -54,7 +54,7 @@
                     Else
                         oPreg.Valor = Item("Valor")
                     End If
-
+                    oPreg.Es_Choice = Item("EsChoice")
                     Return oPreg
                 Next
             End If

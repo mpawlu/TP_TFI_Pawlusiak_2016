@@ -31,10 +31,9 @@
 
                     For Each r As EE.Respuesta In oEncAsig.Respuestas
                         If r.PreguntaEncuesta.ID_Pregunta = 1 Then
-                            'oEncAsig.Dificultad = 
+                            oEncAsig.Dificultad = r.Valor
                         ElseIf r.PreguntaEncuesta.ID_Pregunta = 2 Then
-                        ElseIf r.PreguntaEncuesta.ID_Pregunta = 3 Then
-
+                            oEncAsig.Utilidad = r.Valor
                         End If
                     Next
                     Return oEncAsig

@@ -21,15 +21,16 @@
         End Property
 
 
-        Private _tipoResp As TipoDeRespuesta
-        Public Property TipoDeRespuesta() As TipoDeRespuesta
+        Private _esChoice As Boolean
+        Public Property Es_Choice() As Boolean
             Get
-                Return _tipoResp
+                Return _esChoice
             End Get
-            Set(ByVal value As TipoDeRespuesta)
-                _tipoResp = value
+            Set(ByVal value As Boolean)
+                _esChoice = value
             End Set
         End Property
+
 
         Private _Valor As Double
         Public Property Valor() As Double

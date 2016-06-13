@@ -11,7 +11,7 @@
             hdatos.Add("@ID_Curso", _curso.ID)
             hdatos.Add("@ID_Empleado", _usuario.ID)
 
-            DS = oDatos.Leer("s_RespuestaEncuesta_Listar", Nothing)
+            DS = oDatos.Leer("s_RespuestaEncuesta_Consultar", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 

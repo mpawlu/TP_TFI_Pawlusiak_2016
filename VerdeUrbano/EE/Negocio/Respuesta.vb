@@ -25,9 +25,25 @@
                 Return _OpcionElegida
             End Get
             Set(ByVal value As etipoRespuesta)
-                _OpcionElegida = value
+                If Me.PreguntaEncuesta.Es_Choice = True Then
+                    _OpcionElegida = value
+                Else
+                    _OpcionElegida = Nothing
+                    Valor = value
+                End If
             End Set
         End Property
+
+        Private _Valor As Integer
+        Public Property Valor() As Integer
+            Get
+                Return _Valor
+            End Get
+            Set(ByVal value As Integer)
+                _Valor = value
+            End Set
+        End Property
+
 
     End Class
 End Namespace

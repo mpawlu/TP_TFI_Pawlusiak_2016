@@ -41,6 +41,8 @@
                     oCurAsig.Intentos = Item("Intento")
                     oCurAsig.ResultadoObtenido = Item("Resultado")
                     oCurAsig.Aprobado = Item("Aprobado")
+                    Dim oEncAsigMPP As New MPP.EncuestaAsignada
+                    oCurAsig.EncuestaAsignada = oEncAsigMPP.Consultar(oCurAsig)
                     resultado.Add(oCurAsig)
                 Next
                 Return resultado
