@@ -42,14 +42,20 @@ Namespace BLL
             Return res
         End Function
         Private Function CumpleRestriccion(ByVal _usu As Servicios.Usuario, ByVal _cat As EE.Categoria) As Boolean
-            If CursosPorCategoria(_usu, _cat).Count >= 3 Then
-                For Each _curso As EE.Curso In CursosPorCategoria(_usu, _cat)
-                    If Me.ReprodPorCurso(_curso).Count >= 5 Then
-                        Return True
-                    Else
-                        Return False
-                    End If
-                Next
+            Dim oCursosFinalizados As New List(Of EE.Curso)
+            oCursosFinalizados = CursosPorCategoria(_usu, _cat)
+            If Not oCursosFinalizados Is Nothing Then
+                If oCursosFinalizados.Count >= 1 Then
+                    For Each _curso As EE.Curso In oCursosFinalizados
+                        If Me.ReprodPorCurso(_curso).Count >= 5 Then
+                            Return True
+                        Else
+                            Return False
+                        End If
+                    Next
+                Else
+                    Return False
+                End If
             Else
                 Return False
             End If
@@ -65,7 +71,12 @@ Namespace BLL
             ''aca tengo que listar los cursos que hizo el diseñador en esa categoria 
             Dim Cursos As New List(Of EE.Curso)
             Dim CursoBLL As New BLL.Curso
-            Return CursoBLL.ConsultarFinalizados(_cat, _usu)
+            If CursoBLL.ConsultarFinalizados(_cat, _usu) Is Nothing Then
+                Return Nothing
+            Else
+                Return CursoBLL.ConsultarFinalizados(_cat, _usu)
+            End If
+
         End Function
 
         Private Function ReprodPorCurso(ByVal _curso As EE.Curso) As List(Of EE.CursoAsignado)

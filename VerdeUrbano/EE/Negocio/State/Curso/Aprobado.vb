@@ -1,4 +1,7 @@
-﻿Public Class Aprobado
-    Inherits EE.Curso_State
+﻿Namespace EE
+    Public Class Aprobado
+        Inherits EE.Curso_State
 
-End Class
+    End Class
+End Namespace
+

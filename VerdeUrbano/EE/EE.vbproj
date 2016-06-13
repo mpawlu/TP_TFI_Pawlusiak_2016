@@ -129,7 +129,7 @@
     <Compile Include="Negocio\State\EncuestaAsignada\Finalizada.vb" />
     <Compile Include="Negocio\State\EncuestaAsignada\PendienteE.vb" />
     <Compile Include="Negocio\Opcion_PregEnc.vb" />
-    <Compile Include="Negocio\State\SolicitudCurso\EnCurso.vb" />
+    <Compile Include="Negocio\State\SolicitudCurso\EnConstruccion.vb" />
     <Compile Include="Negocio\State\SolicitudCurso\Solicitado.vb" />
     <Compile Include="Negocio\State\SolicitudCurso\SolicitudCurso_State.vb" />
     <Compile Include="Negocio\State\SolicitudCurso\SolicitudFinalizada.vb" />

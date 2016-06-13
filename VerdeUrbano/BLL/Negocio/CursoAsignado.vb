@@ -51,7 +51,8 @@
 
         End Function
         Public Function ConsultarFinalizados(ByVal QueCurso As EE.Curso) As List(Of EE.CursoAsignado)
-
+            Dim oMPP As New MPP.CursoAsignado
+            Return oMPP.ConsultarRepFinalizadas(QueCurso)
         End Function
         Private Function CalcularResultado(ByVal _cursoAsgnado As EE.CursoAsignado) As Double
             Dim PuntajeFinal As Double

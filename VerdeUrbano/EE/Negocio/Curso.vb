@@ -116,17 +116,16 @@
                 _eval = value
             End Set
         End Property
-
-
-        Private _Diseñador As Servicios.Usuario
-        Public Property Diseñador() As Servicios.Usuario
+        Private _fechaCrecaion As Date
+        Public Property FechaCreacion() As Date
             Get
-                Return _Diseñador
+                Return _fechaCrecaion
             End Get
-            Set(ByVal value As Servicios.Usuario)
-                _Diseñador = value
+            Set(ByVal value As Date)
+                _fechaCrecaion = value
             End Set
         End Property
+
 
         Sub New()
 

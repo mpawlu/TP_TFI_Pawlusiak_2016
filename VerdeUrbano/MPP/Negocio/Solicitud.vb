@@ -43,6 +43,51 @@
                 Return Nothing
             End If
         End Function
+        Public Function ConsultarSolicitud(ByVal _solicitud As EE.SolicitudCurso) As EE.SolicitudCurso
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim dt As New DataTable
+            Dim oSol As EE.SolicitudCurso
+            Dim hdatos As New Hashtable
+
+            hdatos.Add("@ID_Solicitud", _solicitud.ID)
+            DS = oDatos.Leer("s_Solicitud_Consultar", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oSol = New EE.SolicitudCurso
+                    oSol.ID = Item("Id_Solicitud")
+                    oSol.Titulo = Item("Titulo")
+                    oSol.Detalle = Item("Detalle")
+                    oSol.FechaSolicitud = Item("Fecha_Solicitud")
+                    oSol.FechaLimiteDeCreacion = Item("Fecha_Limite_Creacion")
+
+                    Dim oUsuMPP As New MPP.clsUsuario
+                    Dim oDisenador As New Servicios.Usuario
+                    oDisenador.ID = Item("ID_Disenador")
+                    oSol.Disenador = oUsuMPP.ConsultarUsuario(oDisenador)
+
+                    Dim oSolicitante As New Servicios.Usuario
+                    oSolicitante.ID = Item("ID_Solicitante")
+                    oSol.Solicitante = oUsuMPP.ConsultarUsuario(oSolicitante)
+
+                    Select Case Item("ID_Estado")
+                        Case Item("ID_Estado") = 1
+                            oSol.Estado = New EE.EnConstruccion
+                        Case Item("ID_Estado") = 2
+                            oSol.Estado = New EE.SolicitudFinalizada
+                        Case Item("ID_Estado") = 3
+                            oSol.Estado = New EE.Solicitado
+                    End Select
+                Next
+
+                Return oSol
+
+            Else
+                Return Nothing
+            End If
+        End Function
     End Class
 End Namespace
 

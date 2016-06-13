@@ -18,28 +18,30 @@ Namespace DAL
         End Function
 
         Public Function Leer(ByVal consulta As String, ByVal hdatos As Hashtable) As DataSet
+            Try
+                Dim Ds As New DataSet
+                Cmd = New SqlCommand
 
-            Dim Ds As New DataSet
-            Cmd = New SqlCommand
+                Cmd.Connection = Cnn
+                Cmd.CommandText = consulta
+                Cmd.CommandType = CommandType.StoredProcedure
 
-            Cmd.Connection = Cnn
-            Cmd.CommandText = consulta
-            Cmd.CommandType = CommandType.StoredProcedure
+                If Not hdatos Is Nothing Then
 
-            If Not hdatos Is Nothing Then
+                    'si la hashtable no esta vacia, y tiene el dato q busco 
+                    For Each dato As String In hdatos.Keys
+                        'cargo los parametros que le estoy pasando con la Hash
+                        Cmd.Parameters.AddWithValue(dato, hdatos(dato))
+                    Next
+                End If
 
-                'si la hashtable no esta vacia, y tiene el dato q busco 
-                For Each dato As String In hdatos.Keys
-                    'cargo los parametros que le estoy pasando con la Hash
-                    Cmd.Parameters.AddWithValue(dato, hdatos(dato))
-                Next
-            End If
+                Dim Adaptador As New SqlDataAdapter(Cmd)
+                Adaptador.Fill(Ds)
+                Return Ds
+                Cnn.Close()
 
-            Dim Adaptador As New SqlDataAdapter(Cmd)
-            Adaptador.Fill(Ds)
-            Return Ds
-            Cnn.Close()
-
+            Catch ex As Exception
+            End Try
 
         End Function
 

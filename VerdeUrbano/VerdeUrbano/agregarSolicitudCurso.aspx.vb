@@ -71,6 +71,16 @@
 
     End Sub
     Protected Sub btnCalculador_Click(sender As Object, e As EventArgs) Handles btnCalculador.Click
+       Dim _bllUsuario As New BLL.clsUsuario
+        Dim _listaUsuarios As New List(Of Servicios.Usuario)
+        _listaUsuarios = _bllUsuario.ObtenerDisenadores
+        Dim oCategoria As New EE.Categoria
+        oCategoria.ID = ddlCategoria.SelectedValue
+        oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
+
+        Dim ie As New BLL.CalculadoraIE
+        ie.RankearDiseñadores(_listaUsuarios, oCategoria)
         Response.Redirect("calculadorDisenador.aspx")
+
     End Sub
 End Class
