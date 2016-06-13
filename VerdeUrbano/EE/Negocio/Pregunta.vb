@@ -43,6 +43,9 @@
         Sub New(ByVal pregunta As String, ByVal valor As Integer)
 
         End Sub
+        Sub New()
+
+        End Sub
     End Class
 End Namespace
 

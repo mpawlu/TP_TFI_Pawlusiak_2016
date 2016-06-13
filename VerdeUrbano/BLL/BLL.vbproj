@@ -102,7 +102,7 @@
     <Compile Include="Negocio\EncuestaRealizada.vb" />
     <Compile Include="Negocio\EstadoCupon.vb" />
     <Compile Include="Negocio\EstadoCurso.vb" />
-    <Compile Include="Negocio\Evaluativa.vb" />
+    <Compile Include="Negocio\Evaluacion.vb" />
     <Compile Include="Negocio\Informativa.vb" />
     <Compile Include="Negocio\Opcion.vb" />
     <Compile Include="Negocio\Pago.vb" />

@@ -40,6 +40,9 @@
             End Set
         End Property
 
+        Sub New()
+
+        End Sub
 
         Sub New(ByVal Titulo As String, ByVal Descripcion As String)
             

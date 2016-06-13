@@ -29,7 +29,6 @@ Namespace BLL
                     oID.Dieseñador = Dis
                     oID.Cursos = oCursos
                     oID.Reproducciones = oReproducciones
-                    'IE = oResultadoID.IE / oReproducciones.Count
                     oID.IndiceDeSatisfaccion = IE / oReproducciones.Count
                     oResultados.Add(oID)
 

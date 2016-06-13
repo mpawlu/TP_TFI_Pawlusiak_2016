@@ -91,9 +91,13 @@
     <Compile Include="Negocio\CursoAsignado.vb" />
     <Compile Include="Negocio\Encuesta.vb" />
     <Compile Include="Negocio\EncuestaAsignada.vb" />
+    <Compile Include="Negocio\Evaluacion.vb" />
     <Compile Include="Negocio\PreguntaEncuesta.vb" />
+    <Compile Include="Negocio\PreguntaEvaluacion.vb" />
+    <Compile Include="Negocio\RespuestaCurso.vb" />
     <Compile Include="Negocio\RespuestasEncuesta.vb" />
     <Compile Include="Negocio\Solicitud.vb" />
+    <Compile Include="OpcionPregEval.vb" />
     <Compile Include="Permiso.vb" />
   </ItemGroup>
   <ItemGroup>

@@ -64,7 +64,16 @@
             hdatos.Add("@Resultado", _CursoAsignado.ResultadoObtenido)
             hdatos.Add("@Aprobado", _CursoAsignado.Aprobado)
 
-            resultado = oDatos.Escribir("s_Curso_Asignado_Modificar", hdatos)
+            If Not _CursoAsignado.Respuestas Is Nothing Then
+                If _CursoAsignado.Respuestas.Count > 0 Then
+                    Dim oRespMPP As New MPP.RespuestaCurso
+                    If oRespMPP.Guardar(_CursoAsignado) = True Then
+                        resultado = oDatos.Escribir("s_Curso_Asignado_Modificar", hdatos)
+                    Else
+                        resultado = False
+                    End If
+                End If
+            End If
 
             Return resultado
 
