@@ -112,7 +112,7 @@
                         <br />
                         <div class="row">
                             <div class="col-md-2 col-md-offset-3">
-                                <asp:Button ID="btnCalculador" runat="server" Text="Calculador" CssClass="btn btn-block btn-success" />
+                                <asp:Button ID="btnCalculador" runat="server" Text="Calculo de Coeficiente" CssClass="btn btn-block btn-success" />
                             </div>
                             <div class="col-md-2 col-md-offset-2">
                                 <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente >>" CssClass="btn btn-block btn-info" />
