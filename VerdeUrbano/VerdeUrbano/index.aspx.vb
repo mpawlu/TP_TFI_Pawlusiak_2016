@@ -2,20 +2,10 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'Pruebaaaa
-        Dim oCat As New EE.Categoria
-        oCat.ID = 2
-        Dim _bllUsuario As New BLL.clsUsuario
-        Dim _listaUsuarios As New List(Of Servicios.Usuario)
-        _listaUsuarios = _bllUsuario.ObtenerDisenadores
-        Dim ie As New BLL.CalculadoraIE
-        ie.RankearDiseñadores(_listaUsuarios, oCat)
 
-        '-----
-
-        If BLL.DigitoVerificador.Integridad() = False Then
-            Response.Redirect("errorIntegridad.aspx")
-        End If
+        'If BLL.DigitoVerificador.Integridad() = False Then
+        '    Response.Redirect("errorIntegridad.aspx")
+        'End If
 
         Dim Context As HttpContext = HttpContext.Current
         If Context.Items.Contains("loginCorrecto") Then
