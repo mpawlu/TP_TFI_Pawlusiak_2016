@@ -125,7 +125,6 @@
     <Compile Include="Negocio\State\Curso\EnCreacion.vb" />
     <Compile Include="Negocio\State\Curso\PendienteDeAprobacion.vb" />
     <Compile Include="Negocio\State\Curso\Rechazado.vb" />
-    <Compile Include="Negocio\Opcion_PregEnc.vb" />
     <Compile Include="Negocio\State\SolicitudCurso\EnConstruccion.vb" />
     <Compile Include="Negocio\State\SolicitudCurso\Solicitado.vb" />
     <Compile Include="Negocio\State\SolicitudCurso\SolicitudCurso_State.vb" />

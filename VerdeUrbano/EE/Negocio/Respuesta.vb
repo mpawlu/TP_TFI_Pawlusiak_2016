@@ -1,5 +1,14 @@
 ﻿Namespace EE
     Public Class Respuesta
+
+        Enum etipoRespuesta
+            Excelente = 0
+            Bueno = 1
+            Regular = 2
+            Malo = 3
+            Pesimo = 4
+        End Enum
+
         Private _PreguntaEncuesta As PreguntaEncuesta
         Public Property PreguntaEncuesta() As PreguntaEncuesta
             Get
@@ -10,12 +19,12 @@
             End Set
         End Property
 
-        Private _OpcionElegida As EE.Opcion_PregEnc
-        Public Property OpcionElegida() As EE.Opcion_PregEnc
+        Private _OpcionElegida As etipoRespuesta
+        Public Property OpcionElegida() As etipoRespuesta
             Get
                 Return _OpcionElegida
             End Get
-            Set(ByVal value As EE.Opcion_PregEnc)
+            Set(ByVal value As etipoRespuesta)
                 _OpcionElegida = value
             End Set
         End Property
