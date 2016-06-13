@@ -27,85 +27,94 @@
                     <div class="panel-body">
                         <br />
                         <br />
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="well profile">
-                                    <div class="col-md-2">
-                                        <figure>
-                                            <img src="Imagenes/maceta.jpg" class="img-circle profile-img img-responsive" />
-                                        </figure>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <br />
-                                        <asp:Label ID="lbl_NombreDisenador1" runat="server" Text="Pantenne" CssClass="profile-nombre"></asp:Label>
-                                        <br />
-                                        <asp:Label ID="lbl_CursosRealizados1" runat="server" Text="Cursos Realizados:" CssClass="profile-titulo"></asp:Label>
-                                        <asp:Label ID="lbl_CantidadCursosRealizado1" runat="server" Text="18" CssClass="profile-texto"></asp:Label>
-                                        <br />
-                                        <asp:Label ID="lbl_UltimoCurso1" runat="server" Text="Último Curso Dictado:" CssClass="profile-titulo"></asp:Label>
-                                        <asp:Label ID="lbl_DetalleUltimoCurso1" runat="server" Text="Un pase de faja para un Try." CssClass="profile-texto"></asp:Label>
-                                    </div>
-                                    <div class="col-md-2 text-center">
-                                        <br />
-                                        <asp:Label ID="lbl_rating1" runat="server" Text="78" CssClass="profile-rating"></asp:Label>
-                                        <asp:Button ID="btn_Seleccionar1" runat="server" Text="Seleccionar" class="btn btn-success btn-block" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="well profile">
-                                    <div class="col-md-2">
-                                        <figure>
-                                            <img src="Imagenes/maceta.jpg" class="img-circle profile-img img-responsive" />
-                                        </figure>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <br />
-                                        <asp:Label ID="lbl_NombreDisenador2" runat="server" Text="Pantenne" CssClass="profile-nombre"></asp:Label>
-                                        <br />
-                                        <asp:Label ID="lbl_CursosRealizados2" runat="server" Text="Cursos Realizados:" CssClass="profile-titulo"></asp:Label>
-                                        <asp:Label ID="lbl_CantidadCursosRealizado2" runat="server" Text="18" CssClass="profile-texto"></asp:Label>
-                                        <br />
-                                        <asp:Label ID="lbl_UltimoCurso2" runat="server" Text="Último Curso Dictado:" CssClass="profile-titulo"></asp:Label>
-                                        <asp:Label ID="lbl_DetalleUltimoCurso2" runat="server" Text="Un pase de faja para un Try." CssClass="profile-texto"></asp:Label>
-                                    </div>
-                                    <div class="col-md-2 text-center">
-                                        <br />
-                                        <asp:Label ID="lbl_rating2" runat="server" Text="78" CssClass="profile-rating"></asp:Label>
-                                        <asp:Button ID="btn_Seleccionar2" runat="server" Text="Seleccionar" class="btn btn-success btn-block" />
+                        <asp:Panel ID="calculadorEA" runat="server">
+
+                        <div id="top1" runat="server" visible="false">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="well profile">
+                                        <div class="col-md-2">
+                                            <figure>
+                                                <img src="Imagenes/maceta.jpg" class="img-circle profile-img img-responsive" />
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <br />
+                                            <asp:Label ID="lbl_NombreDisenador1" runat="server" Text="Pantenne" CssClass="profile-nombre"></asp:Label>
+                                            <br />
+                                            <asp:Label ID="lbl_CursosRealizados1" runat="server" Text="Cursos Realizados:" CssClass="profile-titulo"></asp:Label>
+                                            <asp:Label ID="lbl_CantidadCursosRealizado1" runat="server" Text="18" CssClass="profile-texto"></asp:Label>
+                                            <br />
+                                            <asp:Label ID="lbl_UltimoCurso1" runat="server" Text="Último Curso Dictado:" CssClass="profile-titulo"></asp:Label>
+                                            <asp:Label ID="lbl_DetalleUltimoCurso1" runat="server" Text="Un pase de faja para un Try." CssClass="profile-texto"></asp:Label>
+                                        </div>
+                                        <div class="col-md-2 text-center">
+                                            <br />
+                                            <asp:Label ID="lbl_rating1" runat="server" Text="78" CssClass="profile-rating"></asp:Label>
+                                            <asp:Button ID="btn_Seleccionar1" runat="server" Text="Seleccionar" class="btn btn-success btn-block" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="well profile">
-                                    <div class="col-md-2">
-                                        <figure>
-                                            <img src="Imagenes/maceta.jpg" class="img-circle profile-img img-responsive" />
-                                        </figure>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <br />
-                                        <asp:Label ID="lbl_NombreDisenador3" runat="server" Text="Pantenne" CssClass="profile-nombre"></asp:Label>
-                                        <br />
-                                        <asp:Label ID="lbl_CursosRealizados3" runat="server" Text="Cursos Realizados:" CssClass="profile-titulo"></asp:Label>
-                                        <asp:Label ID="lbl_CantidadCursosRealizado3" runat="server" Text="18" CssClass="profile-texto"></asp:Label>
-                                        <br />
-                                        <asp:Label ID="lbl_UltimoCurso3" runat="server" Text="Último Curso Dictado:" CssClass="profile-titulo"></asp:Label>
-                                        <asp:Label ID="lbl_DetalleUltimoCurso3" runat="server" Text="Un pase de faja para un Try." CssClass="profile-texto"></asp:Label>
-                                    </div>
-                                    <div class="col-md-2 text-center">
-                                        <br />
-                                        <asp:Label ID="lbl_rating3" runat="server" Text="78" CssClass="profile-rating"></asp:Label>
-                                        <asp:Button ID="btn_Seleccionar3" runat="server" Text="Seleccionar" class="btn btn-success btn-block" />
+                        <div id="top2" runat="server"  visible="false">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="well profile">
+                                        <div class="col-md-2">
+                                            <figure>
+                                                <img src="Imagenes/maceta.jpg" class="img-circle profile-img img-responsive" />
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <br />
+                                            <asp:Label ID="lbl_NombreDisenador2" runat="server" Text="Pantenne" CssClass="profile-nombre"></asp:Label>
+                                            <br />
+                                            <asp:Label ID="lbl_CursosRealizados2" runat="server" Text="Cursos Realizados:" CssClass="profile-titulo"></asp:Label>
+                                            <asp:Label ID="lbl_CantidadCursosRealizado2" runat="server" Text="18" CssClass="profile-texto"></asp:Label>
+                                            <br />
+                                            <asp:Label ID="lbl_UltimoCurso2" runat="server" Text="Último Curso Dictado:" CssClass="profile-titulo"></asp:Label>
+                                            <asp:Label ID="lbl_DetalleUltimoCurso2" runat="server" Text="Un pase de faja para un Try." CssClass="profile-texto"></asp:Label>
+                                        </div>
+                                        <div class="col-md-2 text-center">
+                                            <br />
+                                            <asp:Label ID="lbl_rating2" runat="server" Text="78" CssClass="profile-rating"></asp:Label>
+                                            <asp:Button ID="btn_Seleccionar2" runat="server" Text="Seleccionar" class="btn btn-success btn-block" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div id="top3" runat="server"  visible="false">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="well profile">
+                                        <div class="col-md-2">
+                                            <figure>
+                                                <img src="Imagenes/maceta.jpg" class="img-circle profile-img img-responsive" />
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <br />
+                                            <asp:Label ID="lbl_NombreDisenador3" runat="server" Text="Pantenne" CssClass="profile-nombre"></asp:Label>
+                                            <br />
+                                            <asp:Label ID="lbl_CursosRealizados3" runat="server" Text="Cursos Realizados:" CssClass="profile-titulo"></asp:Label>
+                                            <asp:Label ID="lbl_CantidadCursosRealizado3" runat="server" Text="18" CssClass="profile-texto"></asp:Label>
+                                            <br />
+                                            <asp:Label ID="lbl_UltimoCurso3" runat="server" Text="Último Curso Dictado:" CssClass="profile-titulo"></asp:Label>
+                                            <asp:Label ID="lbl_DetalleUltimoCurso3" runat="server" Text="Un pase de faja para un Try." CssClass="profile-texto"></asp:Label>
+                                        </div>
+                                        <div class="col-md-2 text-center">
+                                            <br />
+                                            <asp:Label ID="lbl_rating3" runat="server" Text="78" CssClass="profile-rating"></asp:Label>
+                                            <asp:Button ID="btn_Seleccionar3" runat="server" Text="Seleccionar" class="btn btn-success btn-block" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="top4" runat="server"  visible="false">
+                            <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="well profile">
                                     <div class="col-md-2">
@@ -131,7 +140,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        </div>
+                        <div id="top5" runat="server"  visible="false">
+                            <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="well profile">
                                     <div class="col-md-2">
@@ -157,6 +168,9 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
+                            
+                        </asp:Panel>
                         <br />
                         <div class="row">
                             <div class="col-md-2 col-md-offset-5">
