@@ -20,7 +20,7 @@
             End Set
         End Property
 
-        Private _Respuestas As List(Of EE.Respuesta)
+        Private _Respuestas As New List(Of EE.Respuesta)
         Public Property Respuestas() As List(Of EE.Respuesta)
             Get
                 Return _Respuestas
@@ -47,15 +47,6 @@
             End Get
             Set(ByVal value As Double)
                 _Dificultad = value
-            End Set
-        End Property
-        Private _Estado As EE.EncuestaAsignada_State
-        Public Property Estado() As EE.EncuestaAsignada_State
-            Get
-                Return _Estado
-            End Get
-            Set(ByVal value As EE.EncuestaAsignada_State)
-                _Estado = value
             End Set
         End Property
 

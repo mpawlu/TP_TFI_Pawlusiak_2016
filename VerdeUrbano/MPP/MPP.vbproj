@@ -89,6 +89,10 @@
     <Compile Include="Negocio\Categoria.vb" />
     <Compile Include="Negocio\Curso.vb" />
     <Compile Include="Negocio\CursoAsignado.vb" />
+    <Compile Include="Negocio\Encuesta.vb" />
+    <Compile Include="Negocio\EncuestaAsignada.vb" />
+    <Compile Include="Negocio\PreguntaEncuesta.vb" />
+    <Compile Include="Negocio\RespuestasEncuesta.vb" />
     <Compile Include="Negocio\Solicitud.vb" />
     <Compile Include="Permiso.vb" />
   </ItemGroup>

@@ -20,15 +20,6 @@
             End Set
         End Property
 
-        Private _Correcta As Boolean
-        Public Property Correcta() As Boolean
-            Get
-                Return _Correcta
-            End Get
-            Set(ByVal value As Boolean)
-                _Correcta = value
-            End Set
-        End Property
         Sub New(ByVal texto As String, ByVal EsCorrecta As Boolean)
 
         End Sub
