@@ -106,9 +106,11 @@
     <Compile Include="Negocio\Informativa.vb" />
     <Compile Include="Negocio\Opcion.vb" />
     <Compile Include="Negocio\Pago.vb" />
+    <Compile Include="Negocio\Persona.vb" />
     <Compile Include="Negocio\PreguntaCurso.vb" />
     <Compile Include="Negocio\PreguntaEncuesta.vb" />
     <Compile Include="Negocio\Respuesta.vb" />
+    <Compile Include="Negocio\RespuestaCurso.vb" />
     <Compile Include="Negocio\Resultado.vb" />
     <Compile Include="Negocio\SatisfaccionCliente.vb" />
     <Compile Include="Negocio\Seccion.vb" />

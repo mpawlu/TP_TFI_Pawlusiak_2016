@@ -182,6 +182,7 @@
     <Content Include="JS\jssor.slider.js" />
     <Content Include="login.aspx" />
     <Content Include="Menu\MenuCompleto.xml" />
+    <Content Include="cursosPendientes.aspx" />
     <Content Include="nuestrosProductos.aspx" />
     <Content Include="quienesSomos.aspx" />
     <Content Include="realizarBackup.aspx" />
@@ -351,6 +352,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="NegocioVista\CompositePermisos.vb" />
+    <Compile Include="cursosPendientes.aspx.designer.vb">
+      <DependentUpon>cursosPendientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cursosPendientes.aspx.vb">
+      <DependentUpon>cursosPendientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="nuestrosProductos.aspx.designer.vb">
       <DependentUpon>nuestrosProductos.aspx</DependentUpon>
     </Compile>

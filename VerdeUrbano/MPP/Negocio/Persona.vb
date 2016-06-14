@@ -26,10 +26,14 @@
                     oUsu.DNI = Item("DNI")
                     oPer.Usuario = oUsuMPP.ConsultarUsuarioporDNI(oUsu)
 
-                    Dim oEmpMPP As New MPP.Empresa
-                    Dim oEmp As New EE.Empresa
-                    oEmp.ID = Item("ID_Empresa")
-                    oPer.Empresa = oEmpMPP.Consultar(oEmp)
+                    If IsDBNull(Item("ID_Empresa")) = True Then
+                        oPer.Empresa = Nothing
+                    Else
+                        Dim oEmpMPP As New MPP.Empresa
+                        Dim oEmp As New EE.Empresa
+                        oEmp.ID = Item("ID_Empresa")
+                        oPer.Empresa = oEmpMPP.Consultar(oEmp)
+                    End If
 
                     oListaEmpleados.Add(oPer)
                 Next
@@ -37,6 +41,22 @@
             Else
                 Return Nothing
             End If
+        End Function
+        Public Function Guardar(ByVal quePersona As EE.Persona) As Boolean
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim resultado As Boolean
+
+            hdatos.Add("@DNI", quePersona.DNI)
+            hdatos.Add("@Nombres", quePersona.Nombres)
+            hdatos.Add("@Apellido", quePersona.Apellido)
+            hdatos.Add("@Tel", quePersona.Telefono)
+            hdatos.Add("@Email", quePersona.Email)
+            hdatos.Add("@ID_Empresa", quePersona.Empresa.ID)
+
+            resultado = oDatos.Escribir("s_Persona_Crear", hdatos)
+
+            Return resultado
         End Function
     End Class
 End Namespace

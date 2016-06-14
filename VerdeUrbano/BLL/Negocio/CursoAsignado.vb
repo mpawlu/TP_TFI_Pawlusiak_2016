@@ -20,7 +20,8 @@
 
         End Sub
         Public Function ConsultarCursosPendientes(ByVal empleado As Servicios.Usuario) As List(Of EE.CursoAsignado)
-
+            Dim oMPP As New MPP.CursoAsignado
+            Return oMPP.ConsultarCursosPendientes(empleado)
         End Function
 
         Public Function ActualizarSeccionActual(ByVal QueCursoAsignado As EE.CursoAsignado) As EE.Informativa
@@ -31,12 +32,13 @@
 
         End Function
 
-        Public Sub GuardarRespuesta(ByRef Respuesta As Opcion)
-            'Me.Respuestas.Add(Respuesta)
-        End Sub
-        Public Function ConsultarCursoRealizado(ByVal curso As EE.Curso, ByVal empleado As Servicios.Usuario) As EE.CursoAsignado
-
-
+        Public Function GuardarRespuestas(ByVal _CursoAs As EE.CursoAsignado) As Boolean
+            Dim oMPP As New MPP.RespuestaCurso
+            Return oMPP.Guardar(_CursoAs)
+        End Function
+        Public Function ConsultarCursosRealizados(ByVal empleado As EE.Persona) As List(Of EE.CursoAsignado)
+            Dim oMPP As New MPP.CursoAsignado
+            Return oMPP.ConsultarCursosFinalizados(empleado)
         End Function
         Public Function ObtenerResultado(ByVal QueCursoAsignado As EE.CursoAsignado) As Double
             Return QueCursoAsignado.ResultadoObtenido
@@ -70,6 +72,10 @@
             _cursoAsignado.Estado.PasarAFinalizado(_cursoAsignado)
             Me.Modificar(_cursoAsignado)
         End Sub
+        Public Function Consutar(ByVal _CursoAsignado As EE.CursoAsignado) As EE.CursoAsignado
+            Dim oMPP As New MPP.CursoAsignado
+            Return oMPP.Consultar(_CursoAsignado)
+        End Function
     End Class
 
 End Namespace

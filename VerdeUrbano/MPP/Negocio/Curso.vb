@@ -156,6 +156,9 @@
                         oCur.FechaCreacion = Item("Fecha_Creacion")
                     End If
 
+                    Dim oEvalMPP As New MPP.Evaluacion
+                    oCur.Evaluacion = oEvalMPP.Consultar(oCur)
+
                     Return oCur
 
                 Next

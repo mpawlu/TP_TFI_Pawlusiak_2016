@@ -17,6 +17,14 @@
             validaciones.validarSubmit(Me, Me.error, Me.lbl_TituloError)
             If txtPass.Text = txtRepetirPass.Text Then
                 If txtPass.Text.Length >= 6 Then
+                    ''-----AGREGADO PARA PERSONA-----
+                    Dim NuevaPersona As New EE.Persona
+                    'NuevaPersona.Nombres '= txtnombres
+                    'NuevaPersona.Apellido '= txtap
+                    'NuevaPersona.Telefono ' = txttel
+                    'NuevaPersona.Empresa '= comboEmpresa.value
+                    NuevaPersona.DNI = txtDNI.Text
+                    'NuevaPersona.Email '= txtEmail
                     Dim NuevoUsuario As New Servicios.Usuario
                     NuevoUsuario.NombreUsuario = txtNombre.Text
                     NuevoUsuario.Password = txtPass.Text
@@ -32,8 +40,12 @@
                     I.ID = ddl_idioma.SelectedValue
                     NuevoUsuario.Idioma = I
                     If usuBLL.chequearUsuario(NuevoUsuario) = False Then
-                        usuBLL.CrearUsuario(NuevoUsuario)
-                        Me.correcto.Visible = True
+                        NuevaPersona.Usuario = NuevoUsuario
+                        Dim PerBLL As New BLL.Persona
+                        If PerBLL.Guardar(NuevaPersona) = True Then
+                            usuBLL.CrearUsuario(NuevoUsuario)
+                            Me.correcto.Visible = True
+                        End If
                     Else
                         Throw New Servicios.clsExcepcionUsuarioDuplicado
                     End If

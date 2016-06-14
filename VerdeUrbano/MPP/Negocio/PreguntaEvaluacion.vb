@@ -28,6 +28,31 @@
 
         End Function
 
+        Public Function Consultar(ByVal _preg As EE.Pregunta) As EE.Pregunta
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim dt As New DataTable
+            Dim oPreg As EE.Pregunta
+            Dim hdatos As New Hashtable
+
+            hdatos.Add("@ID_Pregunta", _preg.ID)
+            DS = oDatos.Leer("s_Pregunta_Consultar", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oPreg = New EE.Pregunta
+                    oPreg.ID = Item("ID_Pregunta")
+                    oPreg.Pregunta = Item("Texto")
+                    oPreg.Valor = Item("Valor")
+                    Dim oOpcMPP As New MPP.OpcionPregEval
+                    oPreg.Opciones = oOpcMPP.Consultar(oPreg)
+                    Return oPreg
+                Next
+            Else
+                Return Nothing
+            End If
+
+        End Function
     End Class
 End Namespace
 

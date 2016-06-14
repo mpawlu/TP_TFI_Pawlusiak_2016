@@ -38,6 +38,8 @@
                     Next
                     Return oEncAsig
                 Next
+            Else
+                Return Nothing
             End If
 
         End Function
