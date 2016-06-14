@@ -1,13 +1,12 @@
 ﻿Namespace EE
     Public Class Empleado
-
-        Private _legajo As String
-        Public Property Legajo() As String
+        Private _DNI As String
+        Public Property DNI() As String
             Get
-                Return _legajo
+                Return _DNI
             End Get
             Set(ByVal value As String)
-                _legajo = value
+                _DNI = value
             End Set
         End Property
 
@@ -42,14 +41,25 @@
             End Set
         End Property
 
-        Private _Telefono As Telefono
-        Public Property Telefono() As Telefono
+        Private _Telefono As String
+        Public Property Telefono() As String
             Get
                 Return _Telefono
             End Get
-            Set(ByVal value As Telefono)
+            Set(ByVal value As String)
                 _Telefono = value
             End Set
         End Property
+
+        Private _empresa As EE.Empresa
+        Public Property Empresa() As EE.Empresa
+            Get
+                Return _empresa
+            End Get
+            Set(ByVal value As EE.Empresa)
+                _empresa = value
+            End Set
+        End Property
+
     End Class
 End Namespace

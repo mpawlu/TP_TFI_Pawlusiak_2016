@@ -30,15 +30,6 @@
             End Set
         End Property
 
-        Private _Valor4 As Double
-        Public Property Valor4() As Double
-            Get
-                Return _Valor4
-            End Get
-            Set(ByVal value As Double)
-                _Valor4 = value
-            End Set
-        End Property
 
         Private _Valor5 As Double
         Public Property Valor5() As Double

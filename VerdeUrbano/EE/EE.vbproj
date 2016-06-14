@@ -130,7 +130,6 @@
     <Compile Include="Negocio\State\SolicitudCurso\SolicitudCurso_State.vb" />
     <Compile Include="Negocio\State\SolicitudCurso\SolicitudFinalizada.vb" />
     <Compile Include="Negocio\State\State.vb" />
-    <Compile Include="Negocio\Telefono.vb" />
     <Compile Include="Negocio\TipoA.vb" />
     <Compile Include="Negocio\TipoB.vb" />
     <Compile Include="Negocio\TipoC.vb" />

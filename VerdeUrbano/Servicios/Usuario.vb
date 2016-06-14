@@ -102,6 +102,7 @@
                 _Idioma = value
             End Set
         End Property
+
         Private _DVH As String
         Public Property DVH() As String
             Get

@@ -1,5 +1,15 @@
 ﻿Namespace EE
     Public Class Empresa
+        Private _ID As Integer
+        Public Property ID() As Integer
+            Get
+                Return _ID
+            End Get
+            Set(ByVal value As Integer)
+                _ID = value
+            End Set
+        End Property
+
         Private _CUIT As String
         Public Property CUIT() As String
             Get
@@ -41,23 +51,22 @@
             End Set
         End Property
 
-        Private _Telefono As Telefono
-        Public Property Telefono() As Telefono
+        Private _Telefono As String
+        Public Property Telefono() As String
             Get
                 Return _Telefono
             End Get
-            Set(ByVal value As Telefono)
+            Set(ByVal value As String)
                 _Telefono = value
             End Set
         End Property
 
-
-        Private _Direccion As Direccion
-        Public Property Direccion() As Direccion
+        Private _Direccion As String
+        Public Property Direccion() As String
             Get
                 Return _Direccion
             End Get
-            Set(ByVal value As Direccion)
+            Set(ByVal value As String)
                 _Direccion = value
             End Set
         End Property

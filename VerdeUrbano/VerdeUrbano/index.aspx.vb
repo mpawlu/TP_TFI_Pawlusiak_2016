@@ -2,11 +2,10 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim curso As New EE.Curso
-        curso.ID = 1
-        Dim obll As New BLL.Evaluacion
-        Dim oEval As New EE.Evaluacion
-        oEval = obll.Consultar(curso)
+        Dim empresa As New EE.Empresa
+        empresa.ID = 1
+        Dim obll As New BLL.SatisfaccionCliente
+        obll.CalcularSatisfaccion(empresa)
         'If BLL.DigitoVerificador.Integridad() = False Then
         '    Response.Redirect("errorIntegridad.aspx")
         'End If

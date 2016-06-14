@@ -191,7 +191,47 @@ Namespace MPP
                 Return Nothing
             End If
         End Function
+        Public Function ConsultarUsuarioporDNI(ByVal usuario As Servicios.Usuario) As Servicios.Usuario
 
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim DS As New DataSet
+            Dim oUsu As New Servicios.Usuario
+
+            hdatos.Add("@DNI", usuario.DNI)
+            '   If DS.Tables(0).Rows.Count > 0 Then
+
+            DS = oDatos.Leer("s_Usuario_Consultar_PorDNI", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oUsu.ID = Item("ID_Usuario")
+                    oUsu.NombreUsuario = Item("NombreUsuario")
+                    oUsu.Password = Item("Pass")
+                    oUsu.DNI = Item("DNI")
+                    oUsu.Activo = CBool(Item("Activo"))
+                    oUsu.Bloqueado = CBool(Item("Bloqueado"))
+                    oUsu.FechaAlta = CDate(Item("FechaAlta"))
+                    oUsu.Editable = CBool(Item("Editable"))
+                    oUsu.Intentos = Item("Intentos")
+
+                    Dim oIdMPP As New MPP.clsIdioma
+                    Dim oIdioma As New Servicios.clsIdioma
+                    oIdioma.ID = Item("ID_Idioma")
+                    oUsu.Idioma = oIdMPP.ConsultarIdioma(oIdioma)
+
+                    Dim oPerfil As New Servicios.PermisoCompuesto
+                    Dim oPerMPP As New MPP.Permiso
+                    oPerfil.ID = Item("Perfil")
+                    oUsu.Perfil = oPerMPP.listarFamilias(oPerfil.ID)
+
+                Next
+                Return oUsu
+            Else
+                Return Nothing
+            End If
+        End Function
 
         Public Function cambiarPassword(ByVal paramUsuario As Servicios.Usuario) As Boolean
 
