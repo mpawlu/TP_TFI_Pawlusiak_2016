@@ -30,7 +30,7 @@
             Dim oOpc As EE.Opcion_PregCurso
             Dim hdatos As New Hashtable
 
-            hdatos.Add("@ID_Pregunta", _opcion.ID)
+            hdatos.Add("@ID_Opcion", _opcion.ID)
             DS = oDatos.Leer("s_Opcion_Consultar", hdatos)
             If DS.Tables(0).Rows.Count > 0 Then
                 For Each Item As DataRow In DS.Tables(0).Rows

@@ -99,7 +99,7 @@
     <Compile Include="Negocio\RespuestaCurso.vb" />
     <Compile Include="Negocio\RespuestasEncuesta.vb" />
     <Compile Include="Negocio\Solicitud.vb" />
-    <Compile Include="OpcionPregEval.vb" />
+    <Compile Include="Negocio\OpcionPregEval.vb" />
     <Compile Include="Permiso.vb" />
   </ItemGroup>
   <ItemGroup>
