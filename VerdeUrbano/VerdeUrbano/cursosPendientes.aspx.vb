@@ -2,7 +2,10 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        CargarGrilla()
+        If Not IsPostBack Then
+            CargarGrilla()
+        End If
+
 
     End Sub
     Private Function ListarCursosPendientes() As List(Of EE.CursoAsignado)
@@ -28,7 +31,7 @@
             End If
         Catch ex As servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Message
+            Me.lbl_TituloError.Text = ex.Titulo
         Catch ex As Exception
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message

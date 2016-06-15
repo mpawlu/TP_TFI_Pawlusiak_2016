@@ -75,7 +75,7 @@
             End If
         Catch ex As servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Message
+            Me.lbl_TituloError.Text = ex.Titulo
         Catch ex As Exception
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message
