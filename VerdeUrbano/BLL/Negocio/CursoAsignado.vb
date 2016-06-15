@@ -58,17 +58,24 @@
             Dim oMPP As New MPP.CursoAsignado
             Return oMPP.ConsultarRepFinalizadas(QueCurso)
         End Function
-        Private Function CalcularResultado(ByVal _cursoAsgnado As EE.CursoAsignado) As Double
+        Private Sub CalcularResultado(ByVal _cursoAsgnado As EE.CursoAsignado)
             Dim PuntajeFinal As Double
+            Dim puntajeIdeal As Double
             For Each _respuesta As EE.Respuesta_Curso In _cursoAsgnado.Respuestas
+                puntajeIdeal = _respuesta.Pregunta.Valor
                 If _respuesta.OpcionElegida.Correcta = True Then
                     PuntajeFinal += _respuesta.Pregunta.Valor
                 End If
             Next
-            Return PuntajeFinal
-        End Function
+            _cursoAsgnado.ResultadoObtenido = (PuntajeFinal * 100) / puntajeIdeal
+            If _cursoAsgnado.ResultadoObtenido >= 80 Then
+                _cursoAsgnado.Aprobado = True
+            Else
+                _cursoAsgnado.Aprobado = False
+            End If
+        End Sub
         Public Sub FinalizarCurso(ByVal _cursoAsignado As EE.CursoAsignado)
-            _cursoAsignado.ResultadoObtenido = CalcularResultado(_cursoAsignado)
+            Me.CalcularResultado(_cursoAsignado)
             _cursoAsignado.Estado.PasarAFinalizado(_cursoAsignado)
             Me.Modificar(_cursoAsignado)
         End Sub
