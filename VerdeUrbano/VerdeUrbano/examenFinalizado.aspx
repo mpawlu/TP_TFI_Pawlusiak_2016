@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--
+  
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2">
                                 <asp:Panel ID="panelPreguntas" runat="server">
@@ -161,11 +161,10 @@
                                         <br />
                                         <br />
                                         <asp:RadioButtonList ID="rb_pregunta10" runat="server"></asp:RadioButtonList>
-             
+                                    </div>
                                 </asp:Panel>
                             </div>
-                                                   </div> 
-                        </div>-->
+                        </div>
                         <br />
                         <br />
 
