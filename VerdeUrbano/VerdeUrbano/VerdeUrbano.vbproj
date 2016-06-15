@@ -114,6 +114,7 @@
     <Content Include="CSS\Imagenes\Slider\b05.png" />
     <Content Include="CSS\jquery-ui.css" />
     <Content Include="CSS\MisEstilos.css" />
+    <Content Include="detalleSatisfaccion.aspx" />
     <Content Include="editarIdioma.aspx" />
     <Content Include="editarPerfil.aspx" />
     <Content Include="editarUsuario.aspx" />
@@ -254,6 +255,13 @@
     </Compile>
     <Compile Include="cambiarPassword.aspx.vb">
       <DependentUpon>cambiarPassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="detalleSatisfaccion.aspx.designer.vb">
+      <DependentUpon>detalleSatisfaccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="detalleSatisfaccion.aspx.vb">
+      <DependentUpon>detalleSatisfaccion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="editarIdioma.aspx.designer.vb">

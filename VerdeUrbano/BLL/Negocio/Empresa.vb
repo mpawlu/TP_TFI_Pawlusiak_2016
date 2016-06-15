@@ -18,7 +18,12 @@
             Dim oBLL As New BLL.SatisfaccionCliente
             Return oBLL.CalcularSatisfaccion(QueEmpresa)
         End Function
-        Public Function ConsultarEmpresa(ByVal QueEmpresa As EE.Empresa)
+        Public Function ConsultarEmpresa(ByVal QueEmpresa As EE.Empresa) As EE.Empresa
+            Try
+                Dim oMPP As New MPP.Empresa
+                Return oMPP.Consultar(QueEmpresa)
+            Catch ex As Exception
+            End Try
 
         End Function
     End Class

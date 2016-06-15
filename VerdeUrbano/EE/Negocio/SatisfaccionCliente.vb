@@ -1,5 +1,15 @@
 ﻿Namespace EE
     Public Class SatisfaccionCliente
+        Private _Empresa As EE.Empresa
+        Public Property Empresa() As EE.Empresa
+            Get
+                Return _Empresa
+            End Get
+            Set(ByVal value As EE.Empresa)
+                _Empresa = value
+            End Set
+        End Property
+
         Private _Valor1 As Double
         Public Property Valor1() As Double
             Get
@@ -60,9 +70,7 @@
             End Set
         End Property
 
-        Sub New(ByVal Val1 As Double, ByVal Val2 As Double, ByVal Val3 As Double, ByVal Val4 As Double, ByVal Val5 As Double)
 
-        End Sub
 
     End Class
 End Namespace
