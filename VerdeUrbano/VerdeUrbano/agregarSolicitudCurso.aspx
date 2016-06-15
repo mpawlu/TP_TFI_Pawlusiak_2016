@@ -29,7 +29,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lbl_AgregarUsuario" runat="server" Text="Agregar Usuario"></asp:Label>
+                        <asp:Label ID="lbl_AgregarSolicitudCurso" runat="server" Text="Agregar Solicitud de Curso"></asp:Label>
                     </div>
                     <div class="panel-body">
                         <br />
