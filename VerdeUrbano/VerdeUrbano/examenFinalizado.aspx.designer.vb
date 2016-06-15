@@ -32,31 +32,31 @@ Partial Public Class examenFinalizado
     Protected WithEvents aprobado As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''Control lbl_NombreDisenador1.
+    '''Control lbl_Atitulo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_NombreDisenador1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_Atitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lbl_correctas.
+    '''Control lbl_Acorrectas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_correctas As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_Acorrectas As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lbl_rating.
+    '''Control lbl_Arating.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_rating As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_Arating As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control desaprobado.
@@ -68,31 +68,31 @@ Partial Public Class examenFinalizado
     Protected WithEvents desaprobado As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''Control Label1.
+    '''Control lbl_Dtitulo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_Dtitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control Label2.
+    '''Control lbl_Dcorrectas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_Dcorrectas As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control Label3.
+    '''Control lbl_Drating.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_Drating As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control panelPreguntas.

@@ -18,7 +18,7 @@
             For Each MiPregunta As EE.Pregunta In paramListadoPreguntas
                 Dim label As Label = Me.panelPreguntas.FindControl("lbl_pregunta" & _contador)
                 Dim labelID As Label = Me.panelPreguntas.FindControl("id_" & _contador)
-                label.Text = MiPregunta.Pregunta
+                label.Text = _contador & ")" & MiPregunta.Pregunta
                 labelID.Text = MiPregunta.ID
                 For Each _opcion As EE.Opcion_PregCurso In MiPregunta.Opciones
                     Dim radio As RadioButtonList = Me.panelPreguntas.FindControl("rb_pregunta" & _contador)
@@ -27,18 +27,23 @@
                     item.Value = _opcion.ID
                     radio.Items.Add(item)
                 Next
-                'rb_pregunta1.DataSource = MiPregunta.Opciones
-                'Dim radio As RadioButtonList = Me.panelPreguntas.FindControl("rb_pregunta" & _contador)
-                'radio.DataSource = MiPregunta.Opciones
-                'radio.DataTextField = "Texto"
-                'radio.DataValueField = "ID"
-                'radio.DataBind()
                 _contador += 1
             Next
+            ocultarRestantes(_contador)
         Catch ex As Exception
             '    Me.Error.Visible = True
             '    Me.lbl_TituloError.Text = ex.Message
         End Try
+
+    End Sub
+
+    Private Sub ocultarRestantes(ByVal cant As Integer)
+        If cant < 10 Then
+            For i = cant To 10
+                Dim div As HtmlControl = Me.panelPreguntas.FindControl("pregunta" & i)
+                div.Visible = False
+            Next
+        End If
 
     End Sub
 

@@ -7,8 +7,6 @@
         CargarDiv(oCuAs)
     End Sub
     Public Sub CargarDiv(ByVal _CursoAsignado As EE.CursoAsignado)
-        Me.lbl_rating.Text = _CursoAsignado.ResultadoObtenido
-        Me.Label3.Text = _CursoAsignado.ResultadoObtenido
         Dim correctas As Integer
         correctas = 0
         For Each r As EE.Respuesta_Curso In _CursoAsignado.Respuestas
@@ -16,12 +14,18 @@
                 correctas += 1
             End If
         Next
-        lbl_correctas.Text = "Respuestas Correctas:    " & correctas & "/" & _CursoAsignado.Respuestas.Count
-        Label2.Text = "Respuestas Correctas:    " & correctas & "/" & _CursoAsignado.Respuestas.Count
+
         If _CursoAsignado.Aprobado = True Then
+            aprobado.Visible = True
+            Me.lbl_Acorrectas.Text = "Respuestas Correctas:    " & correctas & "/" & _CursoAsignado.Respuestas.Count
+            Me.lbl_Atitulo.Text = "Aprobado"
+            Me.lbl_Arating.Text = _CursoAsignado.ResultadoObtenido
 
         Else
-
+            desaprobado.Visible = True
+            Me.lbl_Dcorrectas.Text = "Respuestas Correctas:    " & correctas & "/" & _CursoAsignado.Respuestas.Count
+            Me.lbl_Dtitulo.Text = "Desaprobado"
+            Me.lbl_Drating.Text = _CursoAsignado.ResultadoObtenido
         End If
     End Sub
 End Class

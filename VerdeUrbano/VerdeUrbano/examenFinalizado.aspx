@@ -26,14 +26,14 @@
                                             </figure>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:Label ID="lbl_NombreDisenador1" runat="server" Text="Aprobado" CssClass="notaResumen-titulo"></asp:Label>
+                                            <asp:Label ID="lbl_Atitulo" runat="server" Text="Aprobado" CssClass="notaResumen-titulo"></asp:Label>
                                             <br />
-                                            <asp:Label ID="lbl_correctas" runat="server" CssClass="notaResumen-texto"></asp:Label>
+                                            <asp:Label ID="lbl_Acorrectas" runat="server" CssClass="notaResumen-texto"></asp:Label>
 
                                         </div>
                                         <div class="col-md-2 text-center">
                                             <p>
-                                                <asp:Label ID="lbl_rating" runat="server" CssClass="notaResumen-rating"></asp:Label>
+                                                <asp:Label ID="lbl_Arating" runat="server" CssClass="notaResumen-rating"></asp:Label>
                                             </p>
                                         </div>
                                     </div>
@@ -51,21 +51,21 @@
                                             </figure>
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:Label ID="Label1" runat="server" Text="Desaprobado" CssClass="notaResumen-titulo"></asp:Label>
+                                            <asp:Label ID="lbl_Dtitulo" runat="server" Text="Desaprobado" CssClass="notaResumen-titulo"></asp:Label>
                                             <br />
-                                            <asp:Label ID="Label2" runat="server" Text="Preguntas Correctas: 2/10" CssClass="notaResumen-texto"></asp:Label>
+                                            <asp:Label ID="lbl_Dcorrectas" runat="server" Text="Preguntas Correctas: 2/10" CssClass="notaResumen-texto"></asp:Label>
 
                                         </div>
                                         <div class="col-md-2 text-center">
                                             <p>
-                                                <asp:Label ID="Label3" runat="server" Text="2" CssClass="notaResumen-rating"></asp:Label>
+                                                <asp:Label ID="lbl_Drating" runat="server" Text="2" CssClass="notaResumen-rating"></asp:Label>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                        <!--
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2">
                                 <asp:Panel ID="panelPreguntas" runat="server">
@@ -161,10 +161,11 @@
                                         <br />
                                         <br />
                                         <asp:RadioButtonList ID="rb_pregunta10" runat="server"></asp:RadioButtonList>
-                                    </div>
+             
                                 </asp:Panel>
                             </div>
-                        </div>
+                                                   </div> 
+                        </div>-->
                         <br />
                         <br />
 
