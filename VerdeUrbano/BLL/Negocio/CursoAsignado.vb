@@ -62,7 +62,7 @@
             Dim PuntajeFinal As Double
             Dim puntajeIdeal As Double
             For Each _respuesta As EE.Respuesta_Curso In _cursoAsgnado.Respuestas
-                puntajeIdeal = _respuesta.Pregunta.Valor
+                puntajeIdeal += _respuesta.Pregunta.Valor
                 If _respuesta.OpcionElegida.Correcta = True Then
                     PuntajeFinal += _respuesta.Pregunta.Valor
                 End If

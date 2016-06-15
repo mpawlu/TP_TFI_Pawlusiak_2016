@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
-    <br />
+     <br />
     <br />
     <div class="container-fluid">
         <div class="row">
@@ -173,4 +173,5 @@
             </div>
         </div>
     </div>
+
 </asp:Content>
