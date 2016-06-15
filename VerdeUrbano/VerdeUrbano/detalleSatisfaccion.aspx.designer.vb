@@ -68,13 +68,22 @@ Partial Public Class detalleSatisfaccion
     Protected WithEvents aprobado As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''Control lbl_Atitulo.
+    '''Control lbl_ANombreEmpresa.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_Atitulo As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_ANombreEmpresa As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lbl_Acuit.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_Acuit As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control lbl_Arating.
@@ -95,13 +104,22 @@ Partial Public Class detalleSatisfaccion
     Protected WithEvents desaprobado As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''Control lbl_Dtitulo.
+    '''Control lbl_DNombreEmpresa.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_Dtitulo As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_DNombreEmpresa As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lbl_Dcuit.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_Dcuit As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control lbl_Drating.
