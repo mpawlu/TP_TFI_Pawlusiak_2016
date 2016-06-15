@@ -25,14 +25,14 @@
                                         </figure>
                                     </div>
                                     <div class="col-md-8">
-                                        <asp:Label ID="lbl_NombreDisenador1" runat="server" Text="Aprobado" CssClass="notaResumen-titulo"></asp:Label>
+                                        <asp:Label ID="lbl_NombreDisenador1" runat="server" text="Aprobado" CssClass="notaResumen-titulo"></asp:Label>
                                         <br />
-                                        <asp:Label ID="lbl_correctas" runat="server" Text="Preguntas Correctas: 8/10" CssClass="notaResumen-texto"></asp:Label>
+                                        <asp:Label ID="lbl_correctas" runat="server"  CssClass="notaResumen-texto"></asp:Label>
 
                                     </div>
                                     <div class="col-md-2 text-center">
                                         <p>
-                                            <asp:Label ID="lbl_rating" runat="server" Text="8" CssClass="notaResumen-rating"></asp:Label>
+                                            <asp:Label ID="lbl_rating" runat="server"  CssClass="notaResumen-rating"></asp:Label>
                                         </p>
                                     </div>
                                 </div>
