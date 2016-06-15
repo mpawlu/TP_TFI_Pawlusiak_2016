@@ -36,86 +36,87 @@
                                         <br />
                                         <br />
                                         <asp:RadioButtonList ID="rb_pregunta1" runat="server"></asp:RadioButtonList>
+                                        <br />
+                                        <br />
                                     </div>
-                                    <br />
-                                    <br />
                                     <div id="pregunta2" runat="server">
                                         <asp:Label ID="lbl_pregunta2" runat="server" CssClass="label"></asp:Label>
                                         <asp:Label ID="id_2" runat="server" Visible="false"></asp:Label>
                                         <br />
                                         <br />
                                         <asp:RadioButtonList ID="rb_pregunta2" runat="server"></asp:RadioButtonList>
+                                        <br />
+                                        <br />
                                     </div>
-                                    <br />
-                                    <br />
+
                                     <div id="pregunta3" runat="server">
                                         <asp:Label ID="lbl_pregunta3" runat="server" CssClass="label"></asp:Label>
                                         <asp:Label ID="id_3" runat="server" Visible="false"></asp:Label>
                                         <br />
                                         <br />
                                         <asp:RadioButtonList ID="rb_pregunta3" runat="server"></asp:RadioButtonList>
+                                        <br />
+                                        <br />
                                     </div>
-                                    <br />
-                                    <br />
+
                                     <div id="pregunta4" runat="server">
                                         <asp:Label ID="lbl_pregunta4" runat="server" CssClass="label"></asp:Label>
                                         <asp:Label ID="id_4" runat="server" Visible="false"></asp:Label>
                                         <br />
                                         <br />
                                         <asp:RadioButtonList ID="rb_pregunta4" runat="server"></asp:RadioButtonList>
+                                        <br />
+                                        <br />
                                     </div>
-                                    <br />
-                                    <br />
+
                                     <div id="pregunta5" runat="server">
                                         <asp:Label ID="lbl_pregunta5" runat="server" CssClass="label"></asp:Label>
                                         <asp:Label ID="id_5" runat="server" Visible="false"></asp:Label>
                                         <br />
                                         <br />
                                         <asp:RadioButtonList ID="rb_pregunta5" runat="server"></asp:RadioButtonList>
+                                        <br />
+                                        <br />
                                     </div>
-                                    
-                                    <br />
-                                    <br />
+
                                     <div id="pregunta6" runat="server">
                                         <asp:Label ID="lbl_pregunta6" runat="server" CssClass="label"></asp:Label>
                                         <asp:Label ID="id_6" runat="server" Visible="false"></asp:Label>
                                         <br />
                                         <br />
                                         <asp:RadioButtonList ID="rb_pregunta6" runat="server"></asp:RadioButtonList>
+                                        <br />
+                                        <br />
                                     </div>
-                                    
-                                    <br />
-                                    <br />
                                     <div id="pregunta7" runat="server">
                                         <asp:Label ID="lbl_pregunta7" runat="server" CssClass="label"></asp:Label>
                                         <asp:Label ID="id_7" runat="server" Visible="false"></asp:Label>
                                         <br />
                                         <br />
                                         <asp:RadioButtonList ID="rb_pregunta7" runat="server"></asp:RadioButtonList>
+                                        <br />
+                                        <br />
                                     </div>
-                                    
-                                    <br />
-                                    <br />
+
                                     <div id="pregunta8" runat="server">
                                         <asp:Label ID="lbl_pregunta8" runat="server" CssClass="label"></asp:Label>
                                         <asp:Label ID="id_8" runat="server" Visible="false"></asp:Label>
                                         <br />
                                         <br />
                                         <asp:RadioButtonList ID="rb_pregunta8" runat="server"></asp:RadioButtonList>
+                                        <br />
+                                        <br />
                                     </div>
-                                    
-                                    <br />
-                                    <br />
+
                                     <div id="pregunta9" runat="server">
                                         <asp:Label ID="lbl_pregunta9" runat="server" CssClass="label"></asp:Label>
                                         <asp:Label ID="id_9" runat="server" Visible="false"></asp:Label>
                                         <br />
                                         <br />
                                         <asp:RadioButtonList ID="rb_pregunta9" runat="server"></asp:RadioButtonList>
+                                        <br />
+                                        <br />
                                     </div>
-                                    
-                                    <br />
-                                    <br />
                                     <div id="pregunta10" runat="server">
                                         <asp:Label ID="lbl_pregunta10" runat="server" CssClass="label"></asp:Label>
                                         <asp:Label ID="id_10" runat="server" Visible="false"></asp:Label>
@@ -128,7 +129,7 @@
                         </div>
                         <br />
                         <br />
-                          <div class="row">
+                        <div class="row">
                             <div class="col-md-2 col-md-offset-5">
                                 <asp:Button ID="btnFinalizar" runat="server" Text="Finalizar" CssClass="btn btn-block btn-danger" />
                             </div>

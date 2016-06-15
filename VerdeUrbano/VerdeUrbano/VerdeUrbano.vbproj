@@ -187,6 +187,7 @@
     <Content Include="quienesSomos.aspx" />
     <Content Include="realizarBackup.aspx" />
     <Content Include="realizarRestore.aspx" />
+    <Content Include="seleccionarSatisfaccion.aspx" />
     <Content Include="visualizarBitacora.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -392,6 +393,13 @@
     </Compile>
     <Compile Include="realizarRestore.aspx.vb">
       <DependentUpon>realizarRestore.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="seleccionarSatisfaccion.aspx.designer.vb">
+      <DependentUpon>seleccionarSatisfaccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seleccionarSatisfaccion.aspx.vb">
+      <DependentUpon>seleccionarSatisfaccion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="visualizarBitacora.aspx.designer.vb">

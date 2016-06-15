@@ -1,17 +1,8 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="cursosPendientes.aspx.vb" Inherits="VerdeUrbano.cursosPendientes" %>
-
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="seleccionarSatisfaccion.aspx.vb" Inherits="VerdeUrbano.seleccionarSatisfaccion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="JS/jquery-1.9.1.min.js"></script>
-    <script src="JS/jquery-ui.js"></script>
-    <link href="CSS/DateTimePicker.css" rel="stylesheet" type="text/css" />
-    <script>
-        $(function () {
-            $("#contenidoPagina_txtFechaCreacion").datepicker();
-        });
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
-    <br />
+      <br />
     <br />
     <div class="row">
         <div class="well well-lg col-md-12 msj-ok" runat="server" visible="false" id="correcto">
@@ -28,14 +19,14 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lbl_CursosPendientes" runat="server" Text="Cursos Pendientes"></asp:Label>
+                        <asp:Label ID="lbl_SatisfaccionCliente" runat="server" Text="Satisfaccion de Cliente"></asp:Label>
                     </div>
                     <div class="panel-body">
                         <br />
                         <br />
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
-                                <asp:GridView ID="gv_cursos" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
+                                <asp:GridView ID="gv_Clientes" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
 
                                     <Columns>
                                         <asp:BoundField DataField="Curso.ID" HeaderText="Código" HtmlEncode="False" />
@@ -58,7 +49,7 @@
                         <br />
                         <div class="row">
                             <div class="col-md-2 col-md-offset-5">
-                                <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente >>" CssClass="btn btn-block btn-info" />
+                                <asp:Button ID="btnSeleccionar" runat="server" Text="Seleccionar" CssClass="btn btn-block btn-info" />
                             </div>
                         </div>
                         <br />
@@ -68,5 +59,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>

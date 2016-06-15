@@ -23,6 +23,15 @@ Partial Public Class examenFinalizado
     Protected WithEvents lbl_AgregarUsuario As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''Control aprobado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents aprobado As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
     '''Control lbl_NombreDisenador1.
     '''</summary>
     '''<remarks>
@@ -48,6 +57,15 @@ Partial Public Class examenFinalizado
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_rating As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control desaprobado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents desaprobado As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
     '''Control Label1.
