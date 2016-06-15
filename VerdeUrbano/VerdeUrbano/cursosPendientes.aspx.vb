@@ -19,8 +19,22 @@
     End Sub
 
     Protected Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
-        Session("CursoAsignado") = Me.Seleccionado
-        Response.Redirect("evaluacion.aspx")
+        Try
+            If validarCheckBox() = True Then
+                Session("CursoAsignado") = Me.Seleccionado
+                Response.Redirect("evaluacion.aspx")
+            Else
+                Throw New Servicios.clsExcepcionCamposIncompletos
+            End If
+        Catch ex As servicios.clsExcepcionCamposIncompletos
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
+        Catch ex As Exception
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
+        End Try
+
+
     End Sub
     Public Function Seleccionado() As EE.CursoAsignado
         Dim _usuSesion As New Servicios.Usuario
@@ -40,4 +54,18 @@
         Dim oca As New EE.CursoAsignado
         Return oBLL.ConsultarCursosPendientes(_usuSesion)(indice)
     End Function
+
+
+    Private Function validarCheckBox() As Boolean
+        Dim _flag As Boolean = False
+        For Each row As GridViewRow In Me.gv_cursos.Rows
+            Dim checkbox As System.Web.UI.WebControls.CheckBox = DirectCast(row.FindControl("chk_sel"), System.Web.UI.WebControls.CheckBox)
+            If checkbox.Checked = True Then
+                Return True
+            End If
+        Next
+        Return _flag
+    End Function
+
+
 End Class
