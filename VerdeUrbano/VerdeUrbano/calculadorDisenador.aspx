@@ -22,11 +22,66 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lbl_AgregarUsuario" runat="server" Text="Agregar Usuario"></asp:Label>
+                        <asp:Label ID="lbl_AgregarSolicitudCurso" runat="server" Text="Agregar Solicitud de Curso"></asp:Label>
                     </div>
                     <div class="panel-body">
                         <br />
                         <br />
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <asp:Label ID="lbl_titulo" runat="server" Text="Titulo" CssClass="label"></asp:Label>
+                            </div>
+
+                            <div class="col-md-6 col-md-offset-1">
+                                <asp:TextBox ID="txtTitulo" runat="server" CssClass="caja-texto"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                    ControlToValidate="txtTitulo" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <asp:Label ID="lbl_detalle" runat="server" Text="Detalle" CssClass="label"></asp:Label>
+                            </div>
+
+                            <div class="col-md-6 col-md-offset-1">
+                                <asp:TextBox ID="txtDetalle" runat="server" CssClass="caja-texto"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                    ControlToValidate="txtDetalle" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <asp:Label ID="lbl_categoria" runat="server" Text="Categoria" CssClass="label"></asp:Label>
+                            </div>
+
+                            <div class="col-md-6 col-md-offset-1">
+                                <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="combo"></asp:DropDownList>
+
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <asp:Label ID="lbl_fechaCreacion" runat="server" Text="Fecha de Creacion" CssClass="label"></asp:Label>
+                            </div>
+
+                            <div class="col-md-6 col-md-offset-1">
+                                <asp:TextBox ID="txtFechaCreacion" runat="server" CssClass="caja-texto" MaxLength="12"></asp:TextBox>
+
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-2 col-md-offset-4 ">
+                                <asp:Label ID="Label1" runat="server" Text="Seleccione el Profesor" CssClass="label"></asp:Label>
+                            </div>
+                        </div>
                         <asp:Panel ID="calculadorEA" runat="server">
 
                         <div id="top1" runat="server" visible="false">
