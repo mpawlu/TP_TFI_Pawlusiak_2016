@@ -95,6 +95,15 @@ Partial Public Class detalleSatisfaccion
     Protected WithEvents lbl_Arating As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''Control lbl_AratingDetalle.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_AratingDetalle As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Control desaprobado.
     '''</summary>
     '''<remarks>
@@ -129,6 +138,15 @@ Partial Public Class detalleSatisfaccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_Drating As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lbl_DratingDetalle.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_DratingDetalle As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control btnVolver.

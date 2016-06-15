@@ -17,7 +17,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
                         <asp:Label ID="lbl_SatisfaccionCliente" runat="server" Text="Satisfaccion de Cliente"></asp:Label>
@@ -29,23 +29,17 @@
                             <div class="col-md-10 col-md-offset-1">
                                 <div id="aprobado" runat="server" visible="false">
                                     <div class="row">
-                                        <div class="col-md-10 col-md-offset-1">
+                                        <div class="col-md-12">
                                             <div class="well notaResumen">
-                                                <div class="col-md-2">
-                                                    <figure>
-                                                        <div class="circle-tile-heading"><i class="fa fa-thumbs-o-up fa-fw fa-3x"></i></div>
-                                                    </figure>
-                                                </div>
                                                 <div class="col-md-8">
                                                     <asp:Label ID="lbl_ANombreEmpresa" runat="server" Text="Aprobado" CssClass="notaResumen-titulo"></asp:Label>
                                                     <br />
                                                     <asp:Label ID="lbl_Acuit" runat="server" Text="Aprobado" CssClass="notaResumen-texto"></asp:Label>
-
                                                 </div>
-                                                <div class="col-md-2 text-center">
-                                                    <p>
-                                                        <asp:Label ID="lbl_Arating" runat="server" CssClass="notaResumen-rating"></asp:Label>
-                                                    </p>
+                                                <div class="col-md-4 text-center">
+                                                        <asp:Label ID="lbl_Arating" runat="server" Text="2" CssClass="notaResumen-texto"></asp:Label>
+                                                    <br />
+                                                        <asp:Label ID="lbl_AratingDetalle" runat="server" CssClass="notaResumen-titulo"></asp:Label>
                                                 </div>
                                             </div>
                                         </div>
@@ -54,22 +48,17 @@
                                 <br />
                                 <div id="desaprobado" runat="server" visible="false">
                                     <div class="row">
-                                        <div class="col-md-10 col-md-offset-1">
+                                        <div class="col-md-12">
                                             <div class="well notaResumendes">
-                                                <div class="col-md-2">
-                                                    <figure>
-                                                        <div class="circle-tile-heading"><i class="fa fa-thumbs-o-down fa-fw fa-3x"></i></div>
-                                                    </figure>
-                                                </div>
                                                 <div class="col-md-8">
                                                     <asp:Label ID="lbl_DNombreEmpresa" runat="server" Text="Desaprobado" CssClass="notaResumen-titulo"></asp:Label>
+                                                                                                        <br />
                                                     <asp:Label ID="lbl_Dcuit" runat="server" Text="Aprobado" CssClass="notaResumen-texto"></asp:Label>
-                                                    <br />
                                                 </div>
-                                                <div class="col-md-2 text-center">
-                                                    <p>
-                                                        <asp:Label ID="lbl_Drating" runat="server" Text="2" CssClass="notaResumen-rating"></asp:Label>
-                                                    </p>
+                                                <div class="col-md-4 text-center">
+                                                        <asp:Label ID="lbl_Drating" runat="server" Text="2" CssClass="notaResumen-texto"></asp:Label>
+                                                    <br />
+                                                        <asp:Label ID="lbl_DratingDetalle" runat="server" CssClass="notaResumen-titulo"></asp:Label>
                                                 </div>
                                             </div>
                                         </div>
