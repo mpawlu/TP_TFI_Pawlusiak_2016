@@ -10,7 +10,8 @@
 
         End Sub
         Public Function ListarClientes() As List(Of EE.Empresa)
-
+            Dim oMPP As New MPP.Empresa
+            Return oMPP.Listar
 
         End Function
         Public Function CalcularSatisfaccion(ByVal QueEmpresa As EE.Empresa) As EE.SatisfaccionCliente
