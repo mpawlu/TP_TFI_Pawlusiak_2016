@@ -19,13 +19,13 @@
             aprobado.Visible = True
             Me.lbl_Acorrectas.Text = "Respuestas Correctas:    " & correctas & "/" & _CursoAsignado.Respuestas.Count
             Me.lbl_Atitulo.Text = "Aprobado"
-            Me.lbl_Arating.Text = _CursoAsignado.ResultadoObtenido
+            Me.lbl_Arating.Text = Math.Round(_CursoAsignado.ResultadoObtenido, 2)
 
         Else
             desaprobado.Visible = True
             Me.lbl_Dcorrectas.Text = "Respuestas Correctas:    " & correctas & "/" & _CursoAsignado.Respuestas.Count
             Me.lbl_Dtitulo.Text = "Desaprobado"
-            Me.lbl_Drating.Text = _CursoAsignado.ResultadoObtenido
+            Me.lbl_Drating.Text = Math.Round(_CursoAsignado.ResultadoObtenido, 2)
         End If
     End Sub
 End Class
