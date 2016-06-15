@@ -64,17 +64,10 @@
             If oBLL.GuardarRespuestas(oCuAs) = True Then
                 oCuAs = oBLL.Consutar(oCuAs)
                 oBLL.FinalizarCurso(oCuAs)
+                Session("CursoAsignado") = oCuAs
+                Response.Redirect("examenFinalizado.aspx")
             End If
 
-            'Response.Redirect("visualizarExamenesAlumno.aspx", True)
-            'Catch ex As BLL.excepcionGenerica
-            '    Me.error.Visible = True
-            '    Me.lbl_TituloError.Text = ex.Mensaje
-            'Catch ex As Exception
-            '    Me.error.Visible = True
-            '    Me.lbl_TituloError.Text = ex.Message
-
-            'oRespBLL.GuardarRespuestas(oCursoAsignado)
         Catch ex As Exception
 
         End Try

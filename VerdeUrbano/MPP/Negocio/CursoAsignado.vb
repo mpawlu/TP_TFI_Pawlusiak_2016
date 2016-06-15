@@ -286,7 +286,7 @@
             Dim resultado As Boolean
 
             hdatos.Add("@ID_Curso", _CursoAsignado.Curso.ID)
-            hdatos.Add("@ID_Usuario", _CursoAsignado.Empleado.ID)
+            hdatos.Add("@ID_Empleado", _CursoAsignado.Empleado.ID)
             hdatos.Add("@ID_Estado", _CursoAsignado.Estado.ID)
             hdatos.Add("@Fecha_Asignacion", _CursoAsignado.FechaAsignacion)
             hdatos.Add("@Fecha_Vencimiento", _CursoAsignado.FechaVencimiento)
@@ -295,16 +295,17 @@
             hdatos.Add("@Resultado", _CursoAsignado.ResultadoObtenido)
             hdatos.Add("@Aprobado", _CursoAsignado.Aprobado)
 
-            If Not _CursoAsignado.Respuestas Is Nothing Then
-                If _CursoAsignado.Respuestas.Count > 0 Then
-                    Dim oRespMPP As New MPP.RespuestaCurso
-                    If oRespMPP.Guardar(_CursoAsignado) = True Then
-                        resultado = oDatos.Escribir("s_Curso_Asignado_Modificar", hdatos)
-                    Else
-                        resultado = False
-                    End If
-                End If
-            End If
+            'If Not _CursoAsignado.Respuestas Is Nothing Then
+            '    If _CursoAsignado.Respuestas.Count > 0 Then
+            '        Dim oRespMPP As New MPP.RespuestaCurso
+            '        If oRespMPP.Guardar(_CursoAsignado) = True Then
+
+            resultado = oDatos.Escribir("s_Curso_Asignado_Modificar", hdatos)
+            '        Else
+            'resultado = False
+            '        End If
+            '    End If
+            'End If
 
             Return resultado
 

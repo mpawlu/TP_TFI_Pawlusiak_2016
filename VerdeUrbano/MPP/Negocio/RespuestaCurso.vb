@@ -19,9 +19,7 @@
             Dim oDatos As New DAL.Datos
             Dim DS As New DataSet
             Dim dt As New DataTable
-            Dim oResp As New EE.Respuesta_Curso
-            Dim oPreg As New EE.Pregunta
-            Dim oOpcion As New EE.Opcion_PregCurso
+            Dim oResp As EE.Respuesta_Curso
             Dim oCurMPP As New MPP.Curso
             Dim hdatos As New Hashtable
             Dim oListaResp As New List(Of EE.Respuesta_Curso)
@@ -33,6 +31,9 @@
 
             If DS.Tables(0).Rows.Count > 0 Then
                 For Each Item As DataRow In DS.Tables(0).Rows
+                    oResp = New EE.Respuesta_Curso
+                    Dim oPreg As New EE.Pregunta
+                    Dim oOpcion As New EE.Opcion_PregCurso
                     oPreg.ID = Item("ID_Pregunta")
                     oOpcion.ID = Item("ID_OpcionElegida")
                     Dim oOpMPP As New MPP.OpcionPregEval
