@@ -27,21 +27,51 @@
                         <br />
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
-                                <asp:GridView ID="gv_cursos" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
-
-                                    <Columns>
-                                        <asp:BoundField DataField="Curso.ID" HeaderText="Código" HtmlEncode="False" />
-                                        <asp:BoundField DataField="Curso.Nombre" HeaderText="Nombre" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />
-                                        <asp:BoundField DataField="Curso.Descripcion" HeaderText="Descripcion" HtmlEncode="False" ControlStyle-CssClass="col-md-4" />
-                                        <asp:BoundField DataField="Estado.Descripcion" HeaderText="Estado" HtmlEncode="False" ControlStyle-CssClass="col-md-1" />
-                                        <asp:TemplateField HeaderText="Seleccionar" HeaderStyle-Width="20px">
-                                            <ItemTemplate>
-                                                <asp:CheckBox ID="chk_sel" runat="server" />
-                                            </ItemTemplate>
-                                            <HeaderStyle Width="20px"></HeaderStyle>
-                                        </asp:TemplateField>
-                                    </Columns>
-                                </asp:GridView>
+   <div id="aprobado" runat="server" visible="false">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="well notaResumen">
+                                        <div class="col-md-2">
+                                            <figure>
+                                                <div class="circle-tile-heading"><i class="fa fa-thumbs-o-up fa-fw fa-3x"></i></div>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:Label ID="lbl_Atitulo" runat="server" Text="Aprobado" CssClass="notaResumen-titulo"></asp:Label>
+                                            <br />
+                                        </div>
+                                        <div class="col-md-2 text-center">
+                                            <p>
+                                                <asp:Label ID="lbl_Arating" runat="server" CssClass="notaResumen-rating"></asp:Label>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div id="desaprobado" runat="server" visible="false">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="well notaResumendes">
+                                        <div class="col-md-2">
+                                            <figure>
+                                                <div class="circle-tile-heading"><i class="fa fa-thumbs-o-down fa-fw fa-3x"></i></div>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <asp:Label ID="lbl_Dtitulo" runat="server" Text="Desaprobado" CssClass="notaResumen-titulo"></asp:Label>
+                                            <br />
+                                        </div>
+                                        <div class="col-md-2 text-center">
+                                            <p>
+                                                <asp:Label ID="lbl_Drating" runat="server" Text="2" CssClass="notaResumen-rating"></asp:Label>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                             </div>
                             <br />
                             <br />
@@ -50,6 +80,8 @@
                         <br />
                         <div class="row">
                             <div class="col-md-2 col-md-offset-5">
+                                <asp:Button ID="btnVolver" runat="server" Text="Volver" CssClass="btn btn-block btn-warning" />
+
                             </div>
                         </div>
                     </div>
