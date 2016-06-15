@@ -29,10 +29,10 @@
                                 <asp:GridView ID="gv_Clientes" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
 
                                     <Columns>
-                                        <asp:BoundField DataField="Curso.ID" HeaderText="Código" HtmlEncode="False" />
-                                        <asp:BoundField DataField="Curso.Nombre" HeaderText="Nombre" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />
-                                        <asp:BoundField DataField="Curso.Descripcion" HeaderText="Descripcion" HtmlEncode="False" ControlStyle-CssClass="col-md-4" />
-                                        <asp:BoundField DataField="Estado.Descripcion" HeaderText="Estado" HtmlEncode="False" ControlStyle-CssClass="col-md-1" />
+                                        <asp:BoundField DataField="CUIT" HeaderText="CUIT" HtmlEncode="False" />
+                                        <asp:BoundField DataField="Nombre" HeaderText="Nombre" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />
+                                        <asp:BoundField DataField="FechaAlta" HeaderText="Cliente Desde" HtmlEncode="False" ControlStyle-CssClass="col-md-4" />
+                                        <asp:BoundField DataField="Email" HeaderText="Email" HtmlEncode="False" ControlStyle-CssClass="col-md-1" />
                                         <asp:TemplateField HeaderText="Seleccionar" HeaderStyle-Width="20px">
                                             <ItemTemplate>
                                                 <asp:CheckBox ID="chk_sel" runat="server" />
