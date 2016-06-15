@@ -14,8 +14,11 @@
             Return oMPP.Listar
 
         End Function
-        Public Function CalcularSatisfaccion(ByVal QueEmpresa As EE.Empresa) As EE.SatisfaccionCliente
-
+        Public Function CalcularSatisfaccion(ByVal QueEmpresa As EE.Empresa) As Double
+            Dim oBLL As New BLL.SatisfaccionCliente
+            Return oBLL.CalcularSatisfaccion(QueEmpresa)
+        End Function
+        Public Function ConsultarEmpresa(ByVal QueEmpresa As EE.Empresa)
 
         End Function
     End Class

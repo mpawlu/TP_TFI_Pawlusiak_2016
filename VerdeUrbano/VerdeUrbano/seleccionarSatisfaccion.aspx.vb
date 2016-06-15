@@ -13,4 +13,13 @@
         Me.gv_Clientes.DataBind()
     End Sub
 
+    Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
+        Dim oCliente As New EE.Empresa
+        oCliente.ID = 1
+        Dim oClieBLL As New BLL.Empresa
+        oCliente = oClieBLL.
+
+    End Sub
+
+
 End Class
