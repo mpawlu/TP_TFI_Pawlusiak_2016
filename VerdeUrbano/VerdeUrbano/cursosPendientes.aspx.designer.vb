@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class cursosPendientes
-
+    
     '''<summary>
     '''Control correcto.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class cursosPendientes
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents correcto As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
+    
     '''<summary>
     '''Control lbl_AccionCorrecta.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class cursosPendientes
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_AccionCorrecta As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control error.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class cursosPendientes
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents [error] As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
+    
     '''<summary>
     '''Control lbl_TituloError.
     '''</summary>
@@ -48,7 +48,16 @@ Partial Public Class cursosPendientes
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
-
+    
+    '''<summary>
+    '''Control lbl_CursosPendientes.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_CursosPendientes As Global.System.Web.UI.WebControls.Label
+    
     '''<summary>
     '''Control gv_cursos.
     '''</summary>
@@ -57,7 +66,7 @@ Partial Public Class cursosPendientes
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents gv_cursos As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''Control btnSiguiente.
     '''</summary>
