@@ -8,6 +8,7 @@
         If Not IsPostBack Then
             CargarDDLIdioma()
             CargarDDLPerfil()
+            CargarDDLEmpresa()
         End If
         Me.correcto.Visible = False
     End Sub
@@ -19,31 +20,39 @@
                 If txtPass.Text.Length >= 6 Then
                     ''-----AGREGADO PARA PERSONA-----
                     Dim NuevaPersona As New EE.Persona
-                    'NuevaPersona.Nombres '= txtnombres
-                    'NuevaPersona.Apellido '= txtap
-                    'NuevaPersona.Telefono ' = txttel
-                    'NuevaPersona.Empresa '= comboEmpresa.value
+                    NuevaPersona.Nombres = txtNombre.Text
+                    NuevaPersona.Apellido = txt_apellido.Text
+                    NuevaPersona.Telefono = txt_Tel.Text
+                    Dim emp As New EE.Empresa
+                    If ddl_Empresa.SelectedValue = 0 Then
+                        emp = Nothing
+                    Else
+                        Dim oEmpBLL As New BLL.Empresa
+                        emp.ID = ddl_Empresa.SelectedValue
+                        emp = oEmpBLL.ConsultarEmpresa(emp)
+                    End If
                     NuevaPersona.DNI = txtDNI.Text
-                    'NuevaPersona.Email '= txtEmail
+                    NuevaPersona.Email = txt_email.Text
+                    'Dim oPersonaBLL As New BLL.Persona
+                    'If oPersonaBLL.Guardar(NuevaPersona) = True Then
                     Dim NuevoUsuario As New Servicios.Usuario
-                    NuevoUsuario.NombreUsuario = txtNombre.Text
+                    NuevoUsuario.NombreUsuario = txtNombreUsu.Text
                     NuevoUsuario.Password = txtPass.Text
                     NuevoUsuario.DNI = CInt(txtDNI.Text)
                     Dim p As New Servicios.PermisoCompuesto
                     Dim usuBLL As New BLL.clsUsuario
                     p.ID = Me.ddl_Perfil.SelectedValue
                     NuevoUsuario.Perfil = p
-                    'NuevoUsuario.Bloqueado = bloqueado.Checked
                     NuevoUsuario.FechaAlta = Today
                     NuevoUsuario.Editable = True
                     Dim I As New Servicios.clsIdioma
                     I.ID = ddl_idioma.SelectedValue
                     NuevoUsuario.Idioma = I
+                    NuevaPersona.Usuario = NuevoUsuario
                     If usuBLL.chequearUsuario(NuevoUsuario) = False Then
-                        NuevaPersona.Usuario = NuevoUsuario
                         Dim PerBLL As New BLL.Persona
                         If PerBLL.Guardar(NuevaPersona) = True Then
-                            usuBLL.CrearUsuario(NuevoUsuario)
+                            'usuBLL.CrearUsuario(NuevoUsuario)
                             Me.correcto.Visible = True
                         End If
                     Else
@@ -54,6 +63,7 @@
                 End If
             Else
                 Throw New Servicios.clsExcepcionPasswordDiferentes
+                'End If
             End If
         Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
@@ -81,6 +91,19 @@
         Me.ddl_idioma.DataTextField = "Descripcion"
         Me.ddl_idioma.DataValueField = "ID"
         Me.ddl_idioma.DataBind()
+    End Sub
+    Public Sub CargarDDLEmpresa()
+        Dim vu As New EE.Empresa
+        vu.ID = 0
+        vu.Nombre = "Empleado Verde Urbano"
+        Dim oEmpresa As New List(Of EE.Empresa)
+        Dim oEmpresaBLL As New BLL.Empresa
+        oEmpresa = oEmpresaBLL.ListarClientes
+        oEmpresa.Add(vu)
+        Me.ddl_Empresa.DataSource = oEmpresa
+        Me.ddl_Empresa.DataTextField = "Nombre"
+        Me.ddl_Empresa.DataValueField = "ID"
+        Me.ddl_Empresa.DataBind()
     End Sub
     Public Sub CargarDDLPerfil()
         Dim oPerfil As New List(Of Servicios.PermisoCompuesto)

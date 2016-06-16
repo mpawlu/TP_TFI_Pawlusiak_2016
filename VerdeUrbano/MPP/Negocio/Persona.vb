@@ -52,8 +52,11 @@
             hdatos.Add("@Apellido", quePersona.Apellido)
             hdatos.Add("@Tel", quePersona.Telefono)
             hdatos.Add("@Email", quePersona.Email)
-            hdatos.Add("@ID_Empresa", quePersona.Empresa.ID)
-
+            If quePersona.Empresa Is Nothing Then
+                hdatos.Add("@ID_Empresa", DBNull.Value)
+            Else
+                hdatos.Add("@ID_Empresa", quePersona.Empresa.ID)
+            End If
             resultado = oDatos.Escribir("s_Persona_Crear", hdatos)
 
             Return resultado
