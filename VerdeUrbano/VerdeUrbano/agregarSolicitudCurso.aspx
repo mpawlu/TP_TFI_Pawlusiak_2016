@@ -75,7 +75,7 @@
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
-                                <asp:Label ID="lbl_fechaCreacion" runat="server" Text="Fecha de Creacion" CssClass="label"></asp:Label>
+                                <asp:Label ID="lbl_fechaCreacion" runat="server" Text="Fecha de Vencimiento" CssClass="label"></asp:Label>
                             </div>
 
                             <div class="col-md-6 col-md-offset-1">
@@ -86,7 +86,7 @@
                         <br />
                         <div class="row">
                             <div class="col-md-2 col-md-offset-4 ">
-                                <asp:Label ID="Label1" runat="server" Text="Seleccione el Profesor" CssClass="label"></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Text="Seleccione el disenador" CssClass="label"></asp:Label>
                             </div>
                         </div>
                         <div class="row">
@@ -95,8 +95,8 @@
 
                                     <Columns>
                                         <asp:BoundField DataField="ID" HeaderText="ID" HtmlEncode="False" />
-                                        <asp:BoundField DataField="NombreUsuario" HeaderText="Apellido y Nombre" HtmlEncode="False" />
-                                        <asp:TemplateField HeaderText="Nuevo Texto" HeaderStyle-Width="400px">
+                                        <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre de usuario" HtmlEncode="False" />
+                                        <asp:TemplateField HeaderText="Seleccionar" HeaderStyle-Width="400px">
                                             <ItemTemplate>
                                                 <asp:CheckBox ID="cb_Profesores" runat="server" />
                                             </ItemTemplate>

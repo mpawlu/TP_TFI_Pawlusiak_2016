@@ -15,6 +15,7 @@
             Dim ie As New BLL.CalculadoraIE
             oRanking = ie.RankearDiseñadores(_listaUsuarios, oCat)
             mostrarTop5(oRanking)
+            setearDatos()
         End If
 
     End Sub
@@ -30,6 +31,15 @@
         Me.ddlCategoria.DataBind()
 
     End Sub
+    Public Sub setearDatos()
+        Dim oCurso As New EE.Curso
+        oCurso = Session("curso")
+        Me.ddlCategoria.SelectedIndex = CType(Session("indice"), Integer)
+        Me.txtDetalle.Text = oCurso.SolicitudCurso.Detalle
+        Me.txtTitulo.Text = oCurso.SolicitudCurso.Titulo
+        Me.txtFechaCreacion.Text = CStr(oCurso.SolicitudCurso.FechaLimiteDeCreacion)
+        Me.ddlCategoria.Enabled = False
+    End Sub
 
     Private Sub btn_Seleccionar1_Click(sender As Object, e As EventArgs) Handles btn_Seleccionar1.Click
         Try
@@ -40,28 +50,26 @@
             Dim oCurso As New EE.Curso
             Dim oEstadoCurso As New EE.EnCreacion
             Dim oUsuBLL As New BLL.clsUsuario
-            Dim oCategoria As New EE.Categoria
             Dim oSolicitudBLL As New BLL.SolicitudCurso
             Dim oCursoBLL As New BLL.Curso
-            oCategoria.ID = ddlCategoria.SelectedValue
-            oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
             oSolicitante = CType(Session("Usuario"), Servicios.Usuario)
             ''oDisenador.ID = aca tengo que poner el ID del disenador que selecciono
             oDisenador.ID = 11  ''Y comentar esta linea
             oDisenador = oUsuBLL.RecuperarUsuario(oDisenador)
-            oSolicitud.Disenador = oDisenador
-            oSolicitud.Solicitante = oSolicitante
+            oCurso = CType(Session("curso"), EE.Curso)
+            oCurso.SolicitudCurso.Disenador = oDisenador
+            oCurso.SolicitudCurso.Solicitante = oSolicitante
             oCurso.Estado = oEstadoCurso
-            oCurso.Categoria = oCategoria
-            oSolicitud.Titulo = Me.txtTitulo.Text
-            oSolicitud.Detalle = Me.txtDetalle.Text
-            oSolicitud.FechaLimiteDeCreacion = Today
-            oSolicitud.FechaSolicitud = Today
-            oSolicitud.Estado = oEstadoSolicitud
-            If oSolicitudBLL.Guardar(oSolicitud) = True Then
+            oCurso.SolicitudCurso.Titulo = Me.txtTitulo.Text
+            oCurso.SolicitudCurso.Detalle = Me.txtDetalle.Text
+            oCurso.SolicitudCurso.FechaLimiteDeCreacion = CDate(Me.txtFechaCreacion.Text)
+            oCurso.SolicitudCurso.FechaSolicitud = Today
+            oCurso.SolicitudCurso.Estado = oEstadoSolicitud
+            If oSolicitudBLL.Guardar(oCurso.SolicitudCurso) = True Then
                 oCurso.SolicitudCurso = oSolicitudBLL.ConsultarUltima
                 If oCursoBLL.Guardar(oCurso) = True Then
                     ''Operacion exitossa
+                    Me.correcto.Visible = True
                 Else
                     ''FALLO Operacion
                 End If

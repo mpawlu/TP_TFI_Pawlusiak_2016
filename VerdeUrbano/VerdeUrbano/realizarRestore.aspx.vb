@@ -13,7 +13,7 @@
             Dim Resultado As Boolean
             Dim MiBackupRestoreEntidad As New Servicios.clsBackupRestore
             Dim Path As String
-            'Path = "E:\bkVerdeUrbano\"
+            Path = "D:\bkVerdeUrbano\"
             'Path = Me.fuRestore.PostedFile.FileName
             'If fuRestore.PostedFile.FileName <> "" Then
             '    Dim MiDirPath As String = Server.MapPath("~/Backup")
@@ -21,7 +21,7 @@
             '    Dim MiPathAGuardar As String = String.Format("{0}\{1}", MiDirPath, _profesor.Nombre & "." & _profesor.Apellido & ".png")
             'Else
             'End If
-            MiBackupRestoreEntidad.Directorio = Path
+            MiBackupRestoreEntidad.Directorio = Path & fuRestore.PostedFile.FileName
             Dim oBRBLL As New BLL.BackupRestore
             Resultado = oBRBLL.RealizarRestore(MiBackupRestoreEntidad)
             If Resultado = True Then
