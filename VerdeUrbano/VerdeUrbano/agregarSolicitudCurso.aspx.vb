@@ -48,8 +48,7 @@
                 oCategoria.ID = ddlCategoria.SelectedValue
                 oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
                 oSolicitante = CType(Session("Usuario"), Servicios.Usuario)
-                ''oDisenador.ID = aca tengo que poner el ID del disenador que selecciono
-                oDisenador.ID = 11  ''Y comentar esta linea
+                oDisenador.ID = CInt(Me.DisenadorSeleccionado)
                 oDisenador = oUsuBLL.RecuperarUsuario(oDisenador)
                 oSolicitud.Disenador = oDisenador
                 oSolicitud.Solicitante = oSolicitante
@@ -63,17 +62,20 @@
                 If oSolicitudBLL.Guardar(oSolicitud) = True Then
                     oCurso.SolicitudCurso = oSolicitudBLL.ConsultarUltima
                     If oCursoBLL.Guardar(oCurso) = True Then
-                        ''Operacion exitossa
+                        Me.correcto.Visible = True
                     Else
-                        ''FALLO Operacion
+                        Throw New Servicios.clsExcepcionErrorBBDD
                     End If
                 Else
-                    ''Fallo operacion
+                    Throw New Servicios.clsExcepcionErrorBBDD
                 End If
             Else
                 Throw New Servicios.clsExcepcionCamposIncompletos
             End If
         Catch ex As servicios.clsExcepcionCamposIncompletos
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Titulo
+        Catch ex As Servicios.clsExcepcionErrorBBDD
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Titulo
         Catch ex As Exception
@@ -84,25 +86,29 @@
 
     End Sub
     Protected Sub btnCalculador_Click(sender As Object, e As EventArgs) Handles btnCalculador.Click
-        Dim _bllUsuario As New BLL.clsUsuario
-        Dim _listaUsuarios As New List(Of Servicios.Usuario)
-        _listaUsuarios = _bllUsuario.ObtenerDisenadores
-        Dim oCategoria As New EE.Categoria
-        oCategoria.ID = ddlCategoria.SelectedValue
-        oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
-        Dim oNuevaSolicitud As New EE.SolicitudCurso
-        Dim oNuevoCurso As New EE.Curso
-        oNuevaSolicitud.FechaLimiteDeCreacion = CDate(txtFechaCreacion.Text)
-        oNuevaSolicitud.Titulo = txtTitulo.Text
-        oNuevaSolicitud.Detalle = txtDetalle.Text
-        oNuevoCurso.SolicitudCurso = oNuevaSolicitud
-        oNuevoCurso.Categoria = oCategoria
-        Session("indice") = ddlCategoria.SelectedIndex
-        Session("curso") = oNuevoCurso
-        Dim ie As New BLL.CalculadoraIE
-        ie.RankearDiseñadores(_listaUsuarios, oCategoria)
-        Response.Redirect("calculadorDisenador.aspx")
+        If Not validarCheckBox() = False Then
 
+            Dim _bllUsuario As New BLL.clsUsuario
+            Dim _listaUsuarios As New List(Of Servicios.Usuario)
+            _listaUsuarios = _bllUsuario.ObtenerDisenadores
+            Dim oCategoria As New EE.Categoria
+            oCategoria.ID = ddlCategoria.SelectedValue
+            oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
+            Dim oNuevaSolicitud As New EE.SolicitudCurso
+            Dim oNuevoCurso As New EE.Curso
+            oNuevaSolicitud.FechaLimiteDeCreacion = CDate(txtFechaCreacion.Text)
+            oNuevaSolicitud.Titulo = txtTitulo.Text
+            oNuevaSolicitud.Detalle = txtDetalle.Text
+            oNuevoCurso.SolicitudCurso = oNuevaSolicitud
+            oNuevoCurso.Categoria = oCategoria
+            Session("indice") = ddlCategoria.SelectedIndex
+            Session("curso") = oNuevoCurso
+            Dim ie As New BLL.CalculadoraIE
+            ie.RankearDiseñadores(_listaUsuarios, oCategoria)
+            Response.Redirect("calculadorDisenador.aspx")
+        Else
+
+        End If
     End Sub
 
     Private Function validarCheckBox() As Boolean
@@ -114,5 +120,13 @@
             End If
         Next
         Return _flag
+    End Function
+    Public Function DisenadorSeleccionado() As Integer
+        For Each row As GridViewRow In Me.gv_Profesores.Rows
+            Dim checkbox As System.Web.UI.WebControls.CheckBox = DirectCast(row.FindControl("cb_Profesores"), System.Web.UI.WebControls.CheckBox)
+            If checkbox.Checked = True Then
+                Return gv_Profesores.Rows(row.DataItemIndex).Cells(0).Text
+            End If
+        Next
     End Function
 End Class

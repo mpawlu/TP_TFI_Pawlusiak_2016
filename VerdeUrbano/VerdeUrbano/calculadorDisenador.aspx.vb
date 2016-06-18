@@ -71,12 +71,15 @@
                     ''Operacion exitossa
                     Me.correcto.Visible = True
                 Else
-                    ''FALLO Operacion
+                    Throw New Servicios.clsExcepcionErrorBBDD
                 End If
             Else
-                ''Fallo operacion
+                Throw New Servicios.clsExcepcionErrorBBDD
             End If
         Catch ex As Servicios.clsExcepcionCamposIncompletos
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Titulo
+        Catch ex As Servicios.clsExcepcionErrorBBDD
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Titulo
         Catch ex As Exception
