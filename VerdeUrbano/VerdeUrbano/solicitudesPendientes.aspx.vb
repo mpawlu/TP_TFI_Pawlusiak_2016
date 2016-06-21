@@ -1,30 +1,28 @@
-﻿Public Class cursosPendientes
+﻿Public Class solicitudesPendientes
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             CargarGrilla()
         End If
-
     End Sub
-    Private Function ListarCursosPendientes() As List(Of EE.CursoAsignado)
-        Dim ListaCursosAsignados As New List(Of EE.CursoAsignado)
-        Dim oBLL As New BLL.CursoAsignado
+    Private Function ListarCursosPendientes() As List(Of EE.SolicitudCurso)
+        Dim ListaSolPen As New List(Of EE.SolicitudCurso)
+        Dim oBLL As New BLL.SolicitudCurso
         Dim _usuSesion As New Servicios.Usuario
         _usuSesion = DirectCast(Session("Usuario"), Servicios.Usuario)
-        ListaCursosAsignados = oBLL.ConsultarCursosPendientes(_usuSesion)
-        Return ListaCursosAsignados
+        ListaSolPen = oBLL.ListarSolicitudesPendientes(_usuSesion)
+        Return ListaSolPen
     End Function
     Public Sub CargarGrilla()
-        Me.gv_cursos.DataSource = ListarCursosPendientes()
-        Me.gv_cursos.DataBind()
+        Me.gv_solicitudes.DataSource = ListarCursosPendientes()
+        Me.gv_solicitudes.DataBind()
     End Sub
-
     Protected Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
         Try
             If validarCheckBox() = True Then
-                Session("CursoAsignado") = Me.Seleccionado
-                Response.Redirect("CrearCurso.aspx")
+                Session("Solicitud") = Me.Seleccionado
+                Response.Redirect("crearCurso.aspx")
             Else
                 Throw New Servicios.clsExcepcionCamposIncompletos
             End If
@@ -35,19 +33,16 @@
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message
         End Try
-
-
     End Sub
-
-    Public Function Seleccionado() As EE.CursoAsignado
+    Public Function Seleccionado() As EE.SolicitudCurso
         Dim _usuSesion As New Servicios.Usuario
         _usuSesion = DirectCast(Session("Usuario"), Servicios.Usuario)
-        Dim oBLL As New BLL.CursoAsignado
+        Dim oBLL As New BLL.SolicitudCurso
         Dim indice As Integer
         Dim cont As Integer
         indice = 0
         cont = 0
-        For Each row As GridViewRow In gv_cursos.Rows
+        For Each row As GridViewRow In gv_solicitudes.Rows
             Dim checkbox As System.Web.UI.WebControls.CheckBox = DirectCast(row.FindControl("chk_sel"), System.Web.UI.WebControls.CheckBox)
             cont += 1
             If checkbox.Checked = True Then
@@ -55,13 +50,13 @@
             End If
         Next
         Dim oca As New EE.CursoAsignado
-        Return oBLL.ConsultarCursosPendientes(_usuSesion)(indice)
+        Return oBLL.Consultar(indice)
     End Function
 
 
     Private Function validarCheckBox() As Boolean
         Dim _flag As Boolean = False
-        For Each row As GridViewRow In Me.gv_cursos.Rows
+        For Each row As GridViewRow In Me.gv_solicitudes.Rows
             Dim checkbox As System.Web.UI.WebControls.CheckBox = DirectCast(row.FindControl("chk_sel"), System.Web.UI.WebControls.CheckBox)
             If checkbox.Checked = True Then
                 Return True
@@ -69,6 +64,4 @@
         Next
         Return _flag
     End Function
-
-
 End Class

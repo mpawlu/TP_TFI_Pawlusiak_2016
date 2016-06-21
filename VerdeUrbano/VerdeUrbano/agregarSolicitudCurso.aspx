@@ -75,18 +75,18 @@
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
-                                <asp:Label ID="lbl_fechaCreacion" runat="server" Text="Fecha de Vencimiento" CssClass="label"></asp:Label>
+                                <asp:Label ID="lbl_fechaVencimiento" runat="server" Text="Fecha de Vencimiento" CssClass="label"></asp:Label>
                             </div>
 
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:TextBox ID="txtFechaCreacion" runat="server" CssClass="caja-texto" MaxLength="12"></asp:TextBox>
+                                <asp:TextBox ID="txtFechaVencimiento" runat="server" CssClass="caja-texto" MaxLength="12"></asp:TextBox>
 
                             </div>
                         </div>
                         <br />
                         <div class="row">
                             <div class="col-md-2 col-md-offset-4 ">
-                                <asp:Label ID="Label1" runat="server" Text="Seleccione el disenador" CssClass="label"></asp:Label>
+                                <asp:Label ID="lbl_SeleccioneDisenador" runat="server" Text="Seleccione el disenador" CssClass="label"></asp:Label>
                             </div>
                         </div>
                         <div class="row">
@@ -112,7 +112,7 @@
                         <br />
                         <div class="row">
                             <div class="col-md-2 col-md-offset-3">
-                                <asp:Button ID="btnCalculador" runat="server" Text="Calculo de Coeficiente" CssClass="btn btn-block btn-success" />
+                                <asp:Button ID="btnCalculador" runat="server" Text="Calcular Mejor Diseñador" CssClass="btn btn-block btn-success" />
                             </div>
                             <div class="col-md-2 col-md-offset-2">
                                 <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente >>" CssClass="btn btn-block btn-info" />

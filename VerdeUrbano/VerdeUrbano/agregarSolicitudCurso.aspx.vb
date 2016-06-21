@@ -56,7 +56,7 @@
                 oCurso.Categoria = oCategoria
                 oSolicitud.Titulo = Me.txtTitulo.Text
                 oSolicitud.Detalle = Me.txtDetalle.Text
-                oSolicitud.FechaLimiteDeCreacion = Today
+                oSolicitud.FechaLimiteDeCreacion = CDate(txtFechaVencimiento.Text)
                 oSolicitud.FechaSolicitud = Today
                 oSolicitud.Estado = oEstadoSolicitud
                 If oSolicitudBLL.Guardar(oSolicitud) = True Then
@@ -96,7 +96,7 @@
             oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
             Dim oNuevaSolicitud As New EE.SolicitudCurso
             Dim oNuevoCurso As New EE.Curso
-            oNuevaSolicitud.FechaLimiteDeCreacion = CDate(txtFechaCreacion.Text)
+            oNuevaSolicitud.FechaLimiteDeCreacion = CDate(txtFechaVencimiento.Text)
             oNuevaSolicitud.Titulo = txtTitulo.Text
             oNuevaSolicitud.Detalle = txtDetalle.Text
             oNuevoCurso.SolicitudCurso = oNuevaSolicitud

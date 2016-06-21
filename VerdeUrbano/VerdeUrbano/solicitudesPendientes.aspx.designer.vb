@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class cursosPendientes
+Partial Public Class solicitudesPendientes
 
     '''<summary>
     '''Control correcto.
@@ -50,22 +50,22 @@ Partial Public Class cursosPendientes
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lbl_cursosPendientes.
+    '''Control lbl_solicitudesPendientes.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_cursosPendientes As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_solicitudesPendientes As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control gv_cursos.
+    '''Control gv_solicitudes.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents gv_cursos As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents gv_solicitudes As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''Control btnSiguiente.

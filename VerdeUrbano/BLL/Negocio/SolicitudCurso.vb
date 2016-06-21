@@ -4,10 +4,15 @@
             Dim oMPP As New MPP.Solicitud
             Return oMPP.Gauardar(NuevaSolicitud)
         End Function
+        Public Function Modificar(ByVal _Solicitud As EE.SolicitudCurso) As Boolean
+            Dim oMPP As New MPP.Solicitud
+            Return oMPP.Modificar(_Solicitud)
+        End Function
         Public Function Consultar(ByVal ID As Integer) As EE.SolicitudCurso
 
         End Function
-        Public Function ListarSolicituddes() As List(Of EE.SolicitudCurso)
+        Public Function ListarSolicitudesPendientes(ByVal _dis As Servicios.Usuario) As List(Of EE.SolicitudCurso)
+            Dim oMPP As New MPP.Solicitud
 
         End Function
         Public Function ConsultarUltima() As EE.SolicitudCurso

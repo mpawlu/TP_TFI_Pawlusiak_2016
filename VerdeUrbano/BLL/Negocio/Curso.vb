@@ -33,6 +33,14 @@ Namespace BLL
         Public Function ConsultarSeccion(ByVal QueCurso As EE.Curso, ByVal QueSeccion As Integer) As EE.Slide
 
         End Function
+        Public Function Consultar(ByVal QueSolicitud As EE.SolicitudCurso) As EE.Curso
+            Dim oMPP As New MPP.Curso
+            Try
+                Return oMPP.Consultar(QueSolicitud)
+            Catch ex As Exception
+            End Try
+
+        End Function
         Public Function MostrarDetalle(ByVal QueCurso As EE.Curso) As EE.Curso
 
         End Function
@@ -97,6 +105,14 @@ Namespace BLL
                 Dim oBitacora As Servicios.clsBitacora
                 oBitacora = New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, ex.Message)
                 BLL.clsBitacora.RegistrarEvento(oBitacora)
+            End Try
+        End Function
+        Public Function Modificar(ByVal _curso As EE.Curso) As Boolean
+            Dim oMPP As New MPP.Curso
+            Try
+                Return oMPP.Modificar(_curso)
+            Catch ex As Exception
+
             End Try
         End Function
     End Class

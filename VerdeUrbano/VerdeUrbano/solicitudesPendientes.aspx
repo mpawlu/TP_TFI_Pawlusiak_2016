@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="cursosPendientes.aspx.vb" Inherits="VerdeUrbano.cursosPendientes" %>
-
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="solicitudesPendientes.aspx.vb" Inherits="VerdeUrbano.solicitudesPendientes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="JS/jquery-1.9.1.min.js"></script>
+        <script src="JS/jquery-1.9.1.min.js"></script>
     <script src="JS/jquery-ui.js"></script>
     <link href="CSS/DateTimePicker.css" rel="stylesheet" type="text/css" />
     <script>
@@ -28,20 +27,21 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lbl_cursosPendientes" runat="server" Text="Cursos Pendientes"></asp:Label>
+                        <asp:Label ID="lbl_solicitudesPendientes" runat="server" Text="Solicitudes Pendientes"></asp:Label>
                     </div>
                     <div class="panel-body">
                         <br />
                         <br />
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
-                                <asp:GridView ID="gv_cursos" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
+                                <asp:GridView ID="gv_solicitudes" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
 
                                     <Columns>
-                                        <asp:BoundField DataField="Curso.ID" HeaderText="Código" HtmlEncode="False" />
-                                        <asp:BoundField DataField="Curso.Nombre" HeaderText="Nombre" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />
-                                        <asp:BoundField DataField="Curso.Descripcion" HeaderText="Descripcion" HtmlEncode="False" ControlStyle-CssClass="col-md-4" />
+                                        <asp:BoundField DataField="ID" HeaderText="Código" HtmlEncode="False" />
+                                        <asp:BoundField DataField="Titulo" HeaderText="Titulo" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />
+                                        <asp:BoundField DataField="Detalle" HeaderText="Detalle" HtmlEncode="False" ControlStyle-CssClass="col-md-4" />
                                         <asp:BoundField DataField="Estado.Descripcion" HeaderText="Estado" HtmlEncode="False" ControlStyle-CssClass="col-md-1" />
+                                        <asp:BoundField DataField="FechaVencimiento" HeaderText="Fecha de vencimiento" HtmlEncode="False" ControlStyle-CssClass="col-md-1" />
                                         <asp:TemplateField HeaderText="Seleccionar" HeaderStyle-Width="20px">
                                             <ItemTemplate>
                                                 <asp:CheckBox ID="chk_sel" runat="server" />
