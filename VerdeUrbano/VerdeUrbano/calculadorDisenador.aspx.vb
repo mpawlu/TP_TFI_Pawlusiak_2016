@@ -46,7 +46,7 @@
             Dim oDisenador As New Servicios.Usuario
             Dim oSolicitante As New Servicios.Usuario
             Dim oSolicitud As New EE.SolicitudCurso
-            Dim oEstadoSolicitud As New EE.EnConstruccion
+            Dim oEstadoSolicitud As New EE.Solicitado
             Dim oCurso As New EE.Curso
             Dim oEstadoCurso As New EE.EnCreacion
             Dim oUsuBLL As New BLL.clsUsuario

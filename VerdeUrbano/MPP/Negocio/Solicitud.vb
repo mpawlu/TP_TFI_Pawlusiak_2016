@@ -54,6 +54,14 @@
                     oSolicitud.Detalle = Item("Detalle")
                     oSolicitud.FechaSolicitud = Item("Fecha_Solicitud")
                     oSolicitud.FechaLimiteDeCreacion = Item("Fecha_Limite_Creacion")
+                    Select Case Item("ID_Estado")
+                        Case Item("ID_Estado") = 1
+                            oSolicitud.Estado = New EE.EnConstruccion
+                        Case Item("ID_Estado") = 2
+                            oSolicitud.Estado = New EE.SolicitudFinalizada
+                        Case Item("ID_Estado") = 3
+                            oSolicitud.Estado = New EE.Solicitado
+                    End Select
                 Next
 
                 Return oSolicitud
@@ -138,11 +146,11 @@
                     oSol.Solicitante = oUsuMPP.ConsultarUsuario(oSolicitante)
 
                     Select Case Item("ID_Estado")
-                        Case Item("ID_Estado") = 1
+                        Case 1
                             oSol.Estado = New EE.EnConstruccion
-                        Case Item("ID_Estado") = 2
+                        Case 2
                             oSol.Estado = New EE.SolicitudFinalizada
-                        Case Item("ID_Estado") = 3
+                        Case 3
                             oSol.Estado = New EE.Solicitado
                     End Select
                     oResultado.Add(oSol)

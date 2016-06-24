@@ -60,9 +60,7 @@ Namespace BLL
         Public Function ListarPendientesDeAprobacion() As List(Of EE.Curso)
 
         End Function
-        Public Function Modificar(ByVal QueCurso As EE.Curso) As Boolean
 
-        End Function
         Public Function ConsultarFinalizados() As List(Of EE.Curso)
             Try
                 Dim resultado As New List(Of EE.Curso)

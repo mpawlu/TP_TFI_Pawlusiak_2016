@@ -39,7 +39,7 @@
                                         <asp:BoundField DataField="Titulo" HeaderText="Titulo" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />
                                         <asp:BoundField DataField="Detalle" HeaderText="Detalle" HtmlEncode="False" ControlStyle-CssClass="col-md-4" />
                                         <asp:BoundField DataField="Estado.Descripcion" HeaderText="Estado" HtmlEncode="False" ControlStyle-CssClass="col-md-1" />
-                                        <asp:BoundField DataField="FechaVencimiento" HeaderText="Fecha de vencimiento" HtmlEncode="False" ControlStyle-CssClass="col-md-1" />
+                                        <asp:BoundField DataField="FechaLimiteCreacion" HeaderText="Fecha de vencimiento" HtmlEncode="False" ControlStyle-CssClass="col-md-1" />
                                     </Columns>
                                 </asp:GridView>
                             </div>

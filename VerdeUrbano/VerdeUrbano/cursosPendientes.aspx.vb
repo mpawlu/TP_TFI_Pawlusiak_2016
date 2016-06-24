@@ -24,7 +24,7 @@
         Try
             If validarCheckBox() = True Then
                 Session("CursoAsignado") = Me.Seleccionado
-                Response.Redirect("CrearCurso.aspx")
+                Response.Redirect("evaluacion.aspx")
             Else
                 Throw New Servicios.clsExcepcionCamposIncompletos
             End If
@@ -55,7 +55,7 @@
             End If
         Next
         Dim oca As New EE.CursoAsignado
-        Return oBLL.ConsultarCursosPendientes(_usuSesion)(indice)
+        Return oBLL.ConsultarCursosPendientes(_usuSesion)(indice - 1)
     End Function
 
 
