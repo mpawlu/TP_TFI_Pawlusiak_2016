@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="crearCurso.aspx.vb" Inherits="VerdeUrbano.crearCurso" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="agregarSeccion.aspx.vb" Inherits="VerdeUrbano.agregarSeccion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <script src="JS/jquery-1.9.1.min.js"></script>
     <script src="JS/jquery-ui.js"></script>
@@ -27,35 +27,23 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lbl_CrearCurso" runat="server" Text="Crear Curso"></asp:Label>
+                        <asp:Label ID="lbl_CrearCurso" runat="server"></asp:Label>
                     </div>
                     <div class="panel-body">
-                        <asp:Label ID="lbl_SolicitudAsociaada" runat="server" Text="Solicitud Asociada"></asp:Label>
-                                                    <div class="col-md-10 col-md-offset-1">
-                                <asp:GridView ID="gv_solicitudes" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
-
-                                    <Columns>
-                                        <asp:BoundField DataField="ID" HeaderText="Código" HtmlEncode="False" />
-                                        <asp:BoundField DataField="Titulo" HeaderText="Titulo" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />
-                                        <asp:BoundField DataField="Detalle" HeaderText="Detalle" HtmlEncode="False" ControlStyle-CssClass="col-md-4" />
-                                        <asp:BoundField DataField="Estado.Descripcion" HeaderText="Estado" HtmlEncode="False" ControlStyle-CssClass="col-md-1" />
-                                        <asp:BoundField DataField="FechaLimiteDeCreacion" HeaderText="Fecha de vencimiento" HtmlEncode="False" ControlStyle-CssClass="col-md-1" />
-                                    </Columns>
-                                </asp:GridView>
-                            </div>
+                        <asp:Label ID="lbl_nombreCurso" runat="server" Text="Nombre del curso"></asp:Label>
                         <br />
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
-                                <asp:Label ID="lbl_nombre" runat="server" Text="Nombre" CssClass="label"></asp:Label>
+                                <asp:Label ID="lbl_tituloSeccion" runat="server" Text="Titulo de la seccion: " CssClass="label"></asp:Label>
                             </div>
 
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:TextBox ID="txtNombre" runat="server" CssClass="caja-texto"></asp:TextBox>
+                                <asp:TextBox ID="txtTitulo" runat="server" CssClass="caja-texto"></asp:TextBox>
                             </div>
                             <div class="col-md-1">
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-                                    ControlToValidate="txtNombre" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
+                                    ControlToValidate="txtTitulo" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <br />
@@ -71,19 +59,6 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
                                     ControlToValidate="txtDescripcion" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
-                        </div>
-          
-                        <br />
-                        <div class="row">
-                            <div class="col-md-3 col-md-offset-1">
-                                <asp:Label ID="lbl_Duracion" runat="server" Text="Duracion" CssClass="label"></asp:Label>
-                            </div>
-
-                            <div class="col-md-6 col-md-offset-1">
-                                <asp:TextBox ID="txtDuracion" runat="server" CssClass="caja-texto" MaxLength="12"></asp:TextBox>
-
-                            </div>
-                        </div>
                         <br />
                         <br />
                         <div class="row">

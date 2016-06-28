@@ -1,6 +1,9 @@
-﻿Public Class Informativa
-    Inherits Seccion
+﻿Namespace BLL
+    Public Class Informativa
+        Inherits Seccion
 
 
 
-End Class
+    End Class
+End Namespace
+

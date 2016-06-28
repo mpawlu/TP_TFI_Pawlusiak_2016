@@ -7,8 +7,8 @@
         End If
     End Sub
     Private Sub CargarGrilla()
-        Dim oSol As New EE.SolicitudCurso
-        oSol = Session("Solicitud")
+        Dim oSol As New List(Of EE.SolicitudCurso)
+        oSol.Add(DirectCast(Session("Solicitud"), EE.SolicitudCurso))
         Me.gv_solicitudes.DataSource = oSol
         Me.gv_solicitudes.DataBind()
     End Sub
@@ -19,7 +19,7 @@
         Dim oCursoBLL As New BLL.Curso
         Dim oSol As New EE.SolicitudCurso
         Dim oSolBLL As New BLL.SolicitudCurso
-        oSol = Session("Solicitud")
+        oSol = DirectCast(Session("Solicitud"), EE.SolicitudCurso)
         oCurso = oCursoBLL.Consultar(oSol)
         oCurso.Nombre = txtNombre.Text
         oCurso.Descripcion = txtDescripcion.Text
@@ -28,6 +28,8 @@
             oSol.Estado.PasarAEnConstruccion(oSol)
             If oSolBLL.Modificar(oSol) = True Then
                 correcto.Visible = True
+                Session("Curso") = oCursoBLL.Consultar(oSol)
+                Response.Redirect("agregarSeccion.aspx")
             Else
                 ''Fallo operacion
             End If

@@ -44,13 +44,15 @@
         cont = 0
         For Each row As GridViewRow In gv_solicitudes.Rows
             Dim checkbox As System.Web.UI.WebControls.CheckBox = DirectCast(row.FindControl("chk_sel"), System.Web.UI.WebControls.CheckBox)
-            cont += 1
+
             If checkbox.Checked = True Then
                 indice = cont
             End If
+            cont += 1
         Next
-        Dim oca As New EE.CursoAsignado
-        Return oBLL.Consultar(indice)
+        Dim oca As New EE.SolicitudCurso
+        oca = oBLL.ListarSolicitudesPendientes(_usuSesion)(indice)
+        Return oca
     End Function
 
 
