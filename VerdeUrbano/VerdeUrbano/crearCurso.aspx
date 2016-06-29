@@ -88,7 +88,12 @@
                         <br />
                         <div class="row">
                             <div class="col-md-2 col-md-offset-2">
-                                <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente >>" CssClass="btn btn-block btn-info" />
+                                <asp:Button ID="btnAgregarSeccion" runat="server" Text="Agregar Seccion >>" CssClass="btn btn-block btn-info" />
+                            </div>
+                        </div>
+                                                <div class="row">
+                            <div class="col-md-2 col-md-offset-4">
+                                <asp:Button ID="btnFinalizarCurso" runat="server" Text="Finalizar Curso" CssClass="btn btn-block btn-info" />
                             </div>
                         </div>
                     </div>

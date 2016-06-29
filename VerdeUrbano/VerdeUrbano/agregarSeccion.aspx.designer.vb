@@ -122,11 +122,20 @@ Partial Public Class agregarSeccion
     Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''Control btnSiguiente.
+    '''Control btnAgregarSlide.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnSiguiente As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnAgregarSlide As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnFinalizarSeccion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnFinalizarSeccion As Global.System.Web.UI.WebControls.Button
 End Class

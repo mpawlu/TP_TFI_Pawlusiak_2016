@@ -7,7 +7,7 @@
         Me.lbl_nombreCurso.Text = oCurso.Nombre
     End Sub
 
-    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
+    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnAgregarSlide.Click
         Dim oCurso As New EE.Curso
         oCurso = DirectCast(Session("Curso"), EE.Curso)
         Dim oSeccion As New EE.Informativa(Me.txtTitulo.Text, Me.txtDescripcion.Text)

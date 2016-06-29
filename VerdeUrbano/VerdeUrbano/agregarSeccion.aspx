@@ -63,7 +63,12 @@
                         <br />
                         <div class="row">
                             <div class="col-md-2 col-md-offset-2">
-                                <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente >>" CssClass="btn btn-block btn-info" />
+                                <asp:Button ID="btnAgregarSlide" runat="server" Text="Agregar Slide a esta seccion >>" CssClass="btn btn-block btn-info" />
+                            </div>
+                        </div>
+                                                <div class="row">
+                            <div class="col-md-2 col-md-offset-4">
+                                <asp:Button ID="btnFinalizarSeccion" runat="server" Text="Finalizar Seccion" CssClass="btn btn-block btn-info" />
                             </div>
                         </div>
                     </div>

@@ -149,11 +149,20 @@ Partial Public Class crearCurso
     Protected WithEvents txtDuracion As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control btnSiguiente.
+    '''Control btnAgregarSeccion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnSiguiente As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnAgregarSeccion As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnFinalizarCurso.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnFinalizarCurso As Global.System.Web.UI.WebControls.Button
 End Class

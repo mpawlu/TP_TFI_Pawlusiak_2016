@@ -14,7 +14,7 @@
     End Sub
 
 
-    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
+    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnAgregarSeccion.Click
         Dim oCurso As New EE.Curso
         Dim oCursoBLL As New BLL.Curso
         Dim oSol As New EE.SolicitudCurso

@@ -101,6 +101,7 @@
     <Content Include="agregarIdioma.aspx" />
     <Content Include="agregarPerfil.aspx" />
     <Content Include="agregarSeccion.aspx" />
+    <Content Include="AgregarSlide.aspx" />
     <Content Include="agregarSolicitudCurso.aspx" />
     <Content Include="agregarUsuario.aspx" />
     <Content Include="calculadorDisenador.aspx" />
@@ -222,6 +223,13 @@
     </Compile>
     <Compile Include="agregarSeccion.aspx.vb">
       <DependentUpon>agregarSeccion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AgregarSlide.aspx.designer.vb">
+      <DependentUpon>AgregarSlide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarSlide.aspx.vb">
+      <DependentUpon>AgregarSlide.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="agregarSolicitudCurso.aspx.designer.vb">
