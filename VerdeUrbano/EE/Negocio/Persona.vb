@@ -70,5 +70,15 @@
             End Set
         End Property
 
+        Private _imagen As String
+        Public Property Imagen() As String
+            Get
+                Return _imagen
+            End Get
+            Set(ByVal value As String)
+                _imagen = value
+            End Set
+        End Property
+
     End Class
 End Namespace

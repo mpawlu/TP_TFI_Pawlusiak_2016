@@ -38,7 +38,7 @@
                                     ControlToValidate="txtNombre" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
-                         <br />
+                        <br />
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
@@ -53,7 +53,7 @@
                                     ControlToValidate="txtNombre" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
-                         <br />
+                        <br />
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
@@ -68,7 +68,7 @@
                                     ControlToValidate="txtNombre" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
-                         <br />
+                        <br />
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
@@ -83,7 +83,7 @@
                                     ControlToValidate="txtNombre" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
-                                                <br />
+                        <br />
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
@@ -93,7 +93,7 @@
                                 <asp:DropDownList ID="ddl_Empresa" runat="server" CssClass="combo"></asp:DropDownList>
                             </div>
                         </div>
-                             <br />
+                        <br />
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
@@ -171,6 +171,20 @@
                             </div>
                         </div>
                         <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <asp:Label ID="lbl_imagen" runat="server" Text="Imagen" CssClass="label"></asp:Label>
+                            </div>
+                            <div class="col-md-6 col-md-offset-1">
+                                <asp:FileUpload ID="fu_imagenUsuario" runat="server" />
+                            </div>
+                            <div class="col-md-1">
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="*" ControlToValidate="fu_imagenUsuario" ValidationExpression="(.*).(.jpg|.JPG|.gif|.GIF|.jpeg|.JPEG|.bmp|.BMP|.png|.PNG)$" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RegularExpressionValidator>
+                                <asp:CustomValidator ID="validadorSize" runat="server" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador" ControlToValidate="fu_imagenUsuario" OnServerValidate="validadorSize_ServerValidate"></asp:CustomValidator>
+                            </div>
+                        </div>
+
                         <br />
                         <br />
                         <br />

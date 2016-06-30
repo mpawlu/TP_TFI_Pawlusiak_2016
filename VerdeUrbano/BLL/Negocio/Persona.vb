@@ -9,6 +9,10 @@
                 Return oUsuMPP.CrearUsuario(oNuevoUsu)
             End If
         End Function
+        Public Function Consultar(ByVal _DNI As Integer) As EE.Persona
+            Dim oMPP As New MPP.Persona
+            Return oMPP.Consultar(_DNI)
+        End Function
     End Class
 End Namespace
 
