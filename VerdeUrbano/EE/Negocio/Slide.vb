@@ -1,5 +1,15 @@
 ﻿Namespace EE
     Public Class Slide
+        Private _ID As Integer
+        Public Property ID() As Integer
+            Get
+                Return _ID
+            End Get
+            Set(ByVal value As Integer)
+                _ID = value
+            End Set
+        End Property
+
         Private _titulo As String
         Public Property Titulo() As String
             Get

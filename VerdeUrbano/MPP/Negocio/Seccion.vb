@@ -48,7 +48,9 @@
                     oInf.Titulo = Item("Titulo")
                     oInf.Descripcion = Item("Descripcion")
                     Dim oSlides As New List(Of EE.Slide)
-
+                    Dim oSlideMPP As New MPP.Slide
+                    oSlides = oSlideMPP.Consultar(oInf)
+                    oInf.Slides = oSlides
                 Next
                 Return oInf
             Else

@@ -10,7 +10,9 @@
         oSeccion = CType(Session("Seccion"), EE.Informativa)
         Dim oInfBLL As New BLL.Informativa
         If oInfBLL.AgregarSlide(oSeccion, DameSlide) = True Then
-            Response.Redirect("")
+            Dim oSecBLL As New BLL.Informativa
+            Session("Seccion") = oSecBLL.ConsultarSeccion(oSeccion)
+            Response.Redirect("resumenCreacionSeccion.aspx")
         Else
             Me.error.Visible = True
         End If

@@ -59,17 +59,56 @@
 
             If DS.Tables(0).Rows.Count > 0 Then
                 For Each Item As DataRow In DS.Tables(0).Rows
-                    Dim oSlide As New EE.Slide
+                    ''---------TIPO A---------------
                     If Item("Tipo") = "A" Then
+                        Dim oSlide As New EE.TipoA
+                        oSlide.Tipo = "A"
+                        oSlide.ID = Item("ID_Slide")
+                        oSlide.Titulo = Item("Titulo")
+                        If Not Item("Subtitulo") Is Nothing Then
+                            oSlide.Subtitulo = Item("Subtitulo")
+                        Else
+                            oSlide.Subtitulo = Nothing
+                        End If
+                        oSlide.Texto = Item("Texto")
+                        oSlides.Add(oSlide)
 
-                    ElseIf Item("Tipo") = "B" Then
+                        ''---------TIPO B-----------------
+                        ElseIf Item("Tipo") = "B" Then
+                        Dim oSlide As New EE.TipoB
+                        oSlide.Tipo = "B"
+                        oSlide.ID = Item("ID_Slide")
+                        oSlide.Titulo = Item("Titulo")
+                        If Not Item("Subtitulo") Is Nothing Then
+                            oSlide.Subtitulo = Item("Subtitulo")
+                        Else
+                            oSlide.Subtitulo = Nothing
+                        End If
+                        oSlide.Imagen = Item("URL_Imagen")
+                        If Not Item("TextoPie") Is Nothing Then
+                            oSlide.Pie = Item("TextoPie")
+                        Else
+                            oSlide.Pie = Nothing
+                        End If
+                        oSlides.Add(oSlide)
 
-                    ElseIf Item("Tipo") = "C" Then
-
-                    End If
+                        ''-----------TIPO C---------------
+                        ElseIf Item("Tipo") = "C" Then
+                        Dim oSlide As New EE.TipoC
+                        oSlide.Tipo = "C"
+                        oSlide.ID = Item("ID_Slide")
+                        oSlide.Titulo = Item("Titulo")
+                        If Not Item("Subtitulo") Is Nothing Then
+                            oSlide.Subtitulo = Item("Subtitulo")
+                        Else
+                            oSlide.Subtitulo = Nothing
+                        End If
+                        oSlide.Video = Item("URL_Video")
+                        oSlides.Add(oSlide)
+                        End If
                 Next
+                Return oSlides
             End If
-
         End Function
     End Class
 End Namespace
