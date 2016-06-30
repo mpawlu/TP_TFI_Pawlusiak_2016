@@ -11,6 +11,11 @@
             End Set
         End Property
         Sub New(ByVal Titulo As String, ByVal subtitulo As String, ByVal texto As String)
+            Me.Titulo = Titulo
+            Me.Subtitulo = subtitulo
+            Me.Texto = texto
+        End Sub
+        Sub New()
 
         End Sub
     End Class

@@ -12,9 +12,13 @@
             End Set
         End Property
         Sub New(ByVal Titulo As String, ByVal subtitulo As String, ByVal URL_Video As String)
+            Me.Titulo = Titulo
+            Me.Subtitulo = subtitulo
+            Me.Video = URL_Video
+        End Sub
+        Sub New()
 
         End Sub
-
     End Class
 
 End Namespace

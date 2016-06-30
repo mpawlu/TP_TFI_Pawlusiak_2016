@@ -1,5 +1,15 @@
 ﻿Namespace EE
     Public Class Informativa
+        Private _ID As Integer
+        Public Property ID() As Integer
+            Get
+                Return _ID
+            End Get
+            Set(ByVal value As Integer)
+                _ID = value
+            End Set
+        End Property
+
         Private _Titulo As String
         Public Property Titulo() As String
             Get
@@ -32,6 +42,9 @@
         Sub New(ByVal Titulo As String, ByVal Descripcion As String)
             Me.Titulo = Titulo
             Me.Descripcion = Descripcion
+
+        End Sub
+        Sub New()
 
         End Sub
     End Class

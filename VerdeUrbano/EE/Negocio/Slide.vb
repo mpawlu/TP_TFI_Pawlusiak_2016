@@ -19,18 +19,15 @@
                 _Subtitulo = value
             End Set
         End Property
-
-
-        Private _Tipo As EE.TipoSlide
-        Public Property Tipo() As EE.TipoSlide
+        Private _tipo As String
+        Public Property Tipo() As String
             Get
-                Return _Tipo
+                Return _tipo
             End Get
-            Set(ByVal value As EE.TipoSlide)
-                _Tipo = value
+            Set(ByVal value As String)
+                _tipo = value
             End Set
         End Property
-
     End Class
 
 End Namespace

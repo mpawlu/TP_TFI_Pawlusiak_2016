@@ -13,8 +13,11 @@
         Dim oSeccion As New EE.Informativa(Me.txtTitulo.Text, Me.txtDescripcion.Text)
         Dim oSecBLL As New BLL.Informativa
         If oSecBLL.GuardarSeccion(oSeccion, oCurso) = True Then
-            Me.correcto.Visible = True
-            'Response.Redirect("agregarSlide.aspx")
+            Dim oSec As New EE.Informativa
+            oSec = oSecBLL.ConsultarUltima
+            Session("Seccion") = oSec
+            'Me.correcto.Visible = True
+            Response.Redirect("agregarSlide.aspx")
         End If
     End Sub
 End Class

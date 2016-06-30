@@ -113,7 +113,6 @@
     <Compile Include="Negocio\RespuestaCurso.vb" />
     <Compile Include="Negocio\Resultado.vb" />
     <Compile Include="Negocio\SatisfaccionCliente.vb" />
-    <Compile Include="Negocio\Seccion.vb" />
     <Compile Include="Negocio\Slide.vb" />
     <Compile Include="Negocio\SolicitudCurso.vb" />
     <Compile Include="Negocio\TipoA.vb" />

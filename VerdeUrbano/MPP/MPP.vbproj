@@ -99,6 +99,7 @@
     <Compile Include="Negocio\RespuestaCurso.vb" />
     <Compile Include="Negocio\RespuestasEncuesta.vb" />
     <Compile Include="Negocio\Seccion.vb" />
+    <Compile Include="Negocio\Slide.vb" />
     <Compile Include="Negocio\Solicitud.vb" />
     <Compile Include="Negocio\OpcionPregEval.vb" />
     <Compile Include="Permiso.vb" />

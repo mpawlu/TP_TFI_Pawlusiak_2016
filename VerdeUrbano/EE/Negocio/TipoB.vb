@@ -23,6 +23,12 @@
 
         End Property
         Sub New(ByVal Titulo As String, ByVal subtitulo As String, ByVal pie As String, ByVal URL_Img As String)
+            Me.Titulo = Titulo
+            Me.Subtitulo = subtitulo
+            Me.Imagen = URL_Img
+            Me.Pie = pie
+        End Sub
+        Sub New()
 
         End Sub
     End Class

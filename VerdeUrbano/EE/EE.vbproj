@@ -135,7 +135,6 @@
     <Compile Include="Negocio\TipoC.vb" />
     <Compile Include="Negocio\TipoDeRespuesta.vb" />
     <Compile Include="Negocio\TipoP.vb" />
-    <Compile Include="Negocio\TipoSlide.vb" />
     <Compile Include="Negocio\Persona.vb" />
   </ItemGroup>
   <ItemGroup>

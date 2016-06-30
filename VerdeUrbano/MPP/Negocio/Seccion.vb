@@ -13,6 +13,25 @@
             Return Resultado
 
         End Function
+        Public Function ConsultarUltima() As EE.Informativa
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim dt As New DataTable
+            Dim oInf As New EE.Informativa
+
+            DS = oDatos.Leer("s_Seccion_ConsultarUltimo", Nothing)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oInf.ID = Item("ID_Seccion")
+                    oInf.Titulo = Item("Titulo")
+                    oInf.Descripcion = Item("Descripcion")
+                Next
+                Return oInf
+            Else
+                Return Nothing
+            End If
+        End Function
     End Class
 End Namespace
 
