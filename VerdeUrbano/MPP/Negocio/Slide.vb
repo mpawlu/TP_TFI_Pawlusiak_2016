@@ -47,7 +47,30 @@
 
                 Return resultado
         End Function
+        Public Function Consultar(ByVal _seccion As EE.Informativa) As List(Of EE.Slide)
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim dt As New DataTable
+            Dim oSlides As New List(Of EE.Slide)
+            Dim hdatos As New Hashtable
 
+            hdatos.Add("ID_Seccion", _seccion.ID)
+            DS = oDatos.Leer("s_Slide_ConsultarXSeccion", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    Dim oSlide As New EE.Slide
+                    If Item("Tipo") = "A" Then
+
+                    ElseIf Item("Tipo") = "B" Then
+
+                    ElseIf Item("Tipo") = "C" Then
+
+                    End If
+                Next
+            End If
+
+        End Function
     End Class
 End Namespace
 

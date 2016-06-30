@@ -32,6 +32,29 @@
                 Return Nothing
             End If
         End Function
+        Public Function Consultar(ByVal _seccion As EE.Informativa) As EE.Informativa
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim dt As New DataTable
+            Dim oInf As New EE.Informativa
+            Dim hdatos As New Hashtable
+
+            hdatos.Add("ID_Seccion", _seccion.ID)
+            DS = oDatos.Leer("s_Seccion_Consultar", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+                For Each Item As DataRow In DS.Tables(0).Rows
+                    oInf.ID = Item("ID_Seccion")
+                    oInf.Titulo = Item("Titulo")
+                    oInf.Descripcion = Item("Descripcion")
+                    Dim oSlides As New List(Of EE.Slide)
+
+                Next
+                Return oInf
+            Else
+                Return Nothing
+            End If
+        End Function
     End Class
 End Namespace
 

@@ -20,6 +20,10 @@
         End Function
         Public Function MostrarSlideAnterior() As EE.Slide
         End Function
+        Public Function ConsultarSeccion(ByVal QueSeccion As EE.Informativa) As EE.Informativa
+            Dim oMPP As New MPP.Seccion
+
+        End Function
 
 
 
