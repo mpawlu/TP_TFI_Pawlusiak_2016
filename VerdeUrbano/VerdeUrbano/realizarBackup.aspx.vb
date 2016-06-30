@@ -7,7 +7,8 @@ Public Class realizarBackup
             Response.Redirect("error.aspx")
         End If
         If Not IsPostBack Then
-           
+            Me.txtDirectorio.Text = "D:\VerdeUrbano"
+            Me.txtDirectorio.ReadOnly = True
         End If
         Me.correcto.Visible = False
     End Sub

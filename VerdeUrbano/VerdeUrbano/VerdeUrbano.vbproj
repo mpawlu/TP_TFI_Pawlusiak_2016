@@ -101,7 +101,7 @@
     <Content Include="agregarIdioma.aspx" />
     <Content Include="agregarPerfil.aspx" />
     <Content Include="agregarSeccion.aspx" />
-    <Content Include="AgregarSlide.aspx" />
+    <Content Include="agregarSlide.aspx" />
     <Content Include="agregarSolicitudCurso.aspx" />
     <Content Include="agregarUsuario.aspx" />
     <Content Include="calculadorDisenador.aspx" />
@@ -191,7 +191,6 @@
     <Content Include="quienesSomos.aspx" />
     <Content Include="realizarBackup.aspx" />
     <Content Include="realizarRestore.aspx" />
-    <Content Include="resumenCreacionCurso.aspx" />
     <Content Include="resumenCreacionSeccion.aspx" />
     <Content Include="seleccionarSatisfaccion.aspx" />
     <Content Include="solicitudesPendientes.aspx" />
@@ -227,11 +226,11 @@
       <DependentUpon>agregarSeccion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="AgregarSlide.aspx.designer.vb">
-      <DependentUpon>AgregarSlide.aspx</DependentUpon>
+    <Compile Include="agregarSlide.aspx.designer.vb">
+      <DependentUpon>agregarSlide.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AgregarSlide.aspx.vb">
-      <DependentUpon>AgregarSlide.aspx</DependentUpon>
+    <Compile Include="agregarSlide.aspx.vb">
+      <DependentUpon>agregarSlide.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="agregarSolicitudCurso.aspx.designer.vb">
@@ -428,13 +427,6 @@
     </Compile>
     <Compile Include="realizarRestore.aspx.vb">
       <DependentUpon>realizarRestore.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="resumenCreacionCurso.aspx.designer.vb">
-      <DependentUpon>resumenCreacionCurso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="resumenCreacionCurso.aspx.vb">
-      <DependentUpon>resumenCreacionCurso.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="resumenCreacionSeccion.aspx.designer.vb">

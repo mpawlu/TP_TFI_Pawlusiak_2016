@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="AgregarSlide.aspx.vb" Inherits="VerdeUrbano.AgregarSlide" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="agregarSlide.aspx.vb" Inherits="VerdeUrbano.agregarSlide" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
             <script src="JS/jquery-1.9.1.min.js"></script>
     <script src="JS/jquery-ui.js"></script>
