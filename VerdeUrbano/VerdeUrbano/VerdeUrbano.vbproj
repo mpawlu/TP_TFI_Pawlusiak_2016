@@ -58,7 +58,9 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ImagenesUsuario\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.vbproj">
       <Project>{1cea3f76-1691-4be5-8187-11c5dc76ebd0}</Project>
@@ -148,6 +150,7 @@
     <Content Include="Imagenes\Region-And-Language-32.png" />
     <Content Include="Imagenes\Unlock-32.png" />
     <Content Include="Imagenes\unlock2-32.png" />
+    <Content Include="Imagenes\userH.png" />
     <Content Include="Imagenes\vision.png" />
     <Content Include="Imagenes\natural.png" />
     <Content Include="Imagenes\Question-type-one-correct-32.png" />

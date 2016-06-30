@@ -1,4 +1,5 @@
-﻿Public Class agregarUsuario
+﻿Imports System.IO
+Public Class agregarUsuario
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -33,6 +34,18 @@
                     End If
                     NuevaPersona.DNI = txtDNI.Text
                     NuevaPersona.Email = txt_email.Text
+                    'CÓDIGO PARA LA IMAGEN
+                    Dim PostedFilesCollection As HttpFileCollection = Request.Files
+                    Dim PostedFile As HttpPostedFile = PostedFilesCollection(0)
+                    If PostedFile.FileName <> "" Then
+                        Dim MiDirPath As String = Server.MapPath("~/ImagenesUsuario")
+                        Me.CrearDirectorio(MiDirPath)
+                        Dim MiPathAGuardar As String = String.Format("{0}\{1}", MiDirPath, NuevaPersona.Nombres & "." & NuevaPersona.Apellido & ".png")
+                        PostedFile.SaveAs(MiPathAGuardar)
+                        NuevaPersona.Imagen = "~/ImagenesUsuario/" & NuevaPersona.Nombres & "." & NuevaPersona.Apellido & ".png"
+                    Else
+                        NuevaPersona.Imagen = "~/Imagenes/userH.png"
+                    End If
                     'Dim oPersonaBLL As New BLL.Persona
                     'If oPersonaBLL.Guardar(NuevaPersona) = True Then
                     Dim NuevoUsuario As New Servicios.Usuario
@@ -48,6 +61,7 @@
                     Dim I As New Servicios.clsIdioma
                     I.ID = ddl_idioma.SelectedValue
                     NuevoUsuario.Idioma = I
+
                     NuevaPersona.Usuario = NuevoUsuario
                     If usuBLL.chequearUsuario(NuevoUsuario) = False Then
                         Dim PerBLL As New BLL.Persona
@@ -81,6 +95,20 @@
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message
         End Try
+    End Sub
+
+
+    Public Sub CrearDirectorio(ByVal paramPath As String)
+        Try
+            Dim MiDirectorio As DirectoryInfo = New DirectoryInfo(paramPath)
+            If Not MiDirectorio.Exists Then
+                MiDirectorio.Create()
+            End If
+        Catch ex As Exception
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
+        End Try
+
     End Sub
 
     Public Sub CargarDDLIdioma()
@@ -123,4 +151,14 @@
         resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
         Return resultado
     End Function
+
+    Protected Sub validadorSize_ServerValidate(source As Object, args As ServerValidateEventArgs)
+        Dim filesize As Double = fu_imagenUsuario.FileContent.Length
+        If filesize > 3000000 Then
+            args.IsValid = False
+        Else
+            args.IsValid = True
+        End If
+    End Sub
+
 End Class

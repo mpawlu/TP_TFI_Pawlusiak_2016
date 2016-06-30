@@ -26,7 +26,7 @@
                                 <div class="row">
                                     <div class="profile-header-container">
                                         <div class="profile-header-img">
-                                            <img class="img-circle" src="http://imguol.com/c/entretenimento/2014/09/09/andres-parra-e-o-protagonista-da-serie-pablo-escobar-o-senhor-do-trafico-da-globosat-1410307194283_300x420.jpg?sz=64" />
+                                            <img class="img-circle" id="img_usuario" runat="server" />
                                             <!-- badge -->
                                             <div class="rank-label-container">
                                                 <span class="label label-default rank-label">

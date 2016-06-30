@@ -82,33 +82,39 @@
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message
         End Try
-
-
     End Sub
     Protected Sub btnCalculador_Click(sender As Object, e As EventArgs) Handles btnCalculador.Click
-        If Not validarCheckBox() = False Then
+        Try
+            If Not validarCheckBox() = False Then
+                Dim _bllUsuario As New BLL.clsUsuario
+                Dim _listaUsuarios As New List(Of Servicios.Usuario)
+                _listaUsuarios = _bllUsuario.ObtenerDisenadores
+                Dim oCategoria As New EE.Categoria
+                oCategoria.ID = ddlCategoria.SelectedValue
+                oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
+                Dim oNuevaSolicitud As New EE.SolicitudCurso
+                Dim oNuevoCurso As New EE.Curso
+                oNuevaSolicitud.FechaLimiteDeCreacion = CDate(txtFechaVencimiento.Text)
+                oNuevaSolicitud.Titulo = txtTitulo.Text
+                oNuevaSolicitud.Detalle = txtDetalle.Text
+                oNuevoCurso.SolicitudCurso = oNuevaSolicitud
+                oNuevoCurso.Categoria = oCategoria
+                Session("indice") = ddlCategoria.SelectedIndex
+                Session("curso") = oNuevoCurso
+                Dim ie As New BLL.CalculadoraIE
+                ie.RankearDiseñadores(_listaUsuarios, oCategoria)
+                Response.Redirect("calculadorDisenador.aspx")
+            Else
+                Throw New Servicios.clsExcepcionCamposIncompletos
+            End If
+        Catch ex As servicios.clsExcepcionCamposIncompletos
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Titulo
+        Catch ex As Exception
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
+        End Try
 
-            Dim _bllUsuario As New BLL.clsUsuario
-            Dim _listaUsuarios As New List(Of Servicios.Usuario)
-            _listaUsuarios = _bllUsuario.ObtenerDisenadores
-            Dim oCategoria As New EE.Categoria
-            oCategoria.ID = ddlCategoria.SelectedValue
-            oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
-            Dim oNuevaSolicitud As New EE.SolicitudCurso
-            Dim oNuevoCurso As New EE.Curso
-            oNuevaSolicitud.FechaLimiteDeCreacion = CDate(txtFechaVencimiento.Text)
-            oNuevaSolicitud.Titulo = txtTitulo.Text
-            oNuevaSolicitud.Detalle = txtDetalle.Text
-            oNuevoCurso.SolicitudCurso = oNuevaSolicitud
-            oNuevoCurso.Categoria = oCategoria
-            Session("indice") = ddlCategoria.SelectedIndex
-            Session("curso") = oNuevoCurso
-            Dim ie As New BLL.CalculadoraIE
-            ie.RankearDiseñadores(_listaUsuarios, oCategoria)
-            Response.Redirect("calculadorDisenador.aspx")
-        Else
-
-        End If
     End Sub
 
     Private Function validarCheckBox() As Boolean

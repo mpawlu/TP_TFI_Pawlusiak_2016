@@ -233,10 +233,13 @@ Public Class paginaMaestra
 #Region "Opciones de Usuario"
     Private Sub cargarMenuOpciones()
         Dim _usuarioLogueado As Servicios.Usuario = Me.RecuperarUsuario
+        Dim _bblPersona As New BLL.Persona
+        Dim _personaLogueada As EE.Persona = _bblPersona.Consultar(_usuarioLogueado.DNI)
+
         Me.opcionesUsuario.Visible = True
         Me.opcionesLogin.Visible = False
         Me.lbl_NombredeUsuarioLogueado.Text = _usuarioLogueado.NombreUsuario
-
+        Me.img_usuario.Src = _personaLogueada.Imagen
         ''Agregado para img
         'If DirectCast(Session("Usuario"), Entidades.Usuario).Persona.Imagen <> "" Then
         '    Me.img_Usuario.Src = DirectCast(Session("Usuario"), Entidades.Usuario).Persona.Imagen
