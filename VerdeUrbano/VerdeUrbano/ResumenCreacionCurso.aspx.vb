@@ -11,6 +11,7 @@
             Me.lblValorNombre.Text = oCurso.Nombre
             Me.lblValordescripcion.Text = oCurso.Descripcion
             CargarGrilla()
+            Session("Curso") = oCurso
         End If
     End Sub
 
@@ -31,7 +32,6 @@
         Else
             Me.error.Visible = True
         End If
-
     End Sub
     Public Sub CargarGrilla()
         Dim oCurso As New EE.Curso
@@ -41,5 +41,9 @@
         oCurso = oCursoBLL.Consultar(oSol)
         Me.gv_Secciones.DataSource = oCurso.Secciones
         Me.gv_Secciones.DataBind()
+    End Sub
+
+    Private Sub btnCrearEvaluacion_Click(sender As Object, e As EventArgs) Handles btnCrearEvaluacion.Click
+        Response.Redirect("crearEvaluacion.aspx")
     End Sub
 End Class
