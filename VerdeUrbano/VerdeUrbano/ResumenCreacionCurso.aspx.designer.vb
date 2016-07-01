@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class resumenCreacionSeccion
+Partial Public Class ResumenCreacionCurso
 
     '''<summary>
     '''Control correcto.
@@ -50,22 +50,22 @@ Partial Public Class resumenCreacionSeccion
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lbltituloSeccion.
+    '''Control lblNombreCurso.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbltituloSeccion As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblNombreCurso As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lblValortitulo.
+    '''Control lblValorNombre.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblValortitulo As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblValorNombre As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control lbldescripcion.
@@ -77,47 +77,56 @@ Partial Public Class resumenCreacionSeccion
     Protected WithEvents lbldescripcion As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lblValorDesc.
+    '''Control lblValordescripcion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblValorDesc As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblValordescripcion As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lblslides.
+    '''Control lblsecciones.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblslides As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblsecciones As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control gv_slides.
+    '''Control gv_Secciones.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents gv_slides As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents gv_Secciones As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''Control btnAgregarSlide.
+    '''Control btnAgregarSeccion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnAgregarSlide As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnAgregarSeccion As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control btnFinalizarSeccion.
+    '''Control btnCrearEvaluacion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnFinalizarSeccion As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnCrearEvaluacion As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnFinalizarCurso.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnFinalizarCurso As Global.System.Web.UI.WebControls.Button
 End Class

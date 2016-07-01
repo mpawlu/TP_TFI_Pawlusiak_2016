@@ -111,6 +111,7 @@
     <Content Include="cambiarIdioma.aspx" />
     <Content Include="cambiarPassword.aspx" />
     <Content Include="crearCurso.aspx" />
+    <Content Include="crearEvaluacion.aspx" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\DateTimePicker.css" />
     <Content Include="CSS\EstiloSlider.css" />
@@ -194,6 +195,7 @@
     <Content Include="quienesSomos.aspx" />
     <Content Include="realizarBackup.aspx" />
     <Content Include="realizarRestore.aspx" />
+    <Content Include="ResumenCreacionCurso.aspx" />
     <Content Include="resumenCreacionSeccion.aspx" />
     <Content Include="seleccionarSatisfaccion.aspx" />
     <Content Include="solicitudesPendientes.aspx" />
@@ -284,6 +286,13 @@
     </Compile>
     <Compile Include="crearCurso.aspx.vb">
       <DependentUpon>crearCurso.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="crearEvaluacion.aspx.designer.vb">
+      <DependentUpon>crearEvaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="crearEvaluacion.aspx.vb">
+      <DependentUpon>crearEvaluacion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="detalleSatisfaccion.aspx.designer.vb">
@@ -430,6 +439,13 @@
     </Compile>
     <Compile Include="realizarRestore.aspx.vb">
       <DependentUpon>realizarRestore.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ResumenCreacionCurso.aspx.designer.vb">
+      <DependentUpon>ResumenCreacionCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResumenCreacionCurso.aspx.vb">
+      <DependentUpon>ResumenCreacionCurso.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="resumenCreacionSeccion.aspx.designer.vb">

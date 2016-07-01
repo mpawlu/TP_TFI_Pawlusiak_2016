@@ -6,7 +6,8 @@
             Solicitud.Estado = EnCons
         End Sub
         Public Sub PasarASolicitudFinalizada(ByVal Solicitud As EE.SolicitudCurso)
-
+            Dim Final As New EE.SolicitudFinalizada
+            Solicitud.Estado = Final
         End Sub
     End Class
 End Namespace

@@ -155,7 +155,8 @@
                     Else
                         oCur.FechaCreacion = Item("Fecha_Creacion")
                     End If
-
+                    Dim oSecMPP As New MPP.Seccion
+                    oCur.Secciones = oSecMPP.Consultar(oCur)
                     Dim oEvalMPP As New MPP.Evaluacion
                     oCur.Evaluacion = oEvalMPP.Consultar(oCur)
 
@@ -283,7 +284,8 @@
 
                     Dim oEvalMPP As New MPP.Evaluacion
                     oCur.Evaluacion = oEvalMPP.Consultar(oCur)
-
+                    Dim oSecMPP As New MPP.Seccion
+                    oCur.Secciones = oSecMPP.Consultar(oCur)
                     Return oCur
 
                 Next

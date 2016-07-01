@@ -17,9 +17,10 @@ Namespace BLL
         Public Function MostrarSiguienteSeccion(ByVal QueCurso As EE.Curso) As EE.Informativa
 
         End Function
-        Public Sub AgregarSeccion(ByVal QueCurso As EE.Curso, ByVal QueSeccion As EE.Informativa)
-            QueCurso.Secciones.Add(QueSeccion)
-        End Sub
+        Public Function AgregarSeccion(ByVal QueCurso As EE.Curso, ByVal QueSeccion As EE.Informativa) As Boolean
+            Dim oMPP As New MPP.Seccion
+            Return oMPP.Guardar(QueSeccion, QueCurso)
+        End Function
 
         Public Sub CambiarEstadoAAprobado(ByVal QueCurso As EE.Curso)
 
@@ -41,6 +42,14 @@ Namespace BLL
             End Try
 
         End Function
+        Public Function Consultar(ByVal QueCurso As EE.Curso) As EE.Curso
+            Dim oMPP As New MPP.Curso
+            Try
+                Return oMPP.Consultar(QueCurso)
+            Catch ex As Exception
+            End Try
+
+        End Function
         Public Function MostrarDetalle(ByVal QueCurso As EE.Curso) As EE.Curso
 
         End Function
@@ -54,7 +63,7 @@ Namespace BLL
 
         End Function
         Public Sub FinalizarCreacion(ByVal QueCurso As EE.Curso)
-
+            QueCurso.Estado.PasarAPendienteDeAprobacion(QueCurso)
         End Sub
 
         Public Function ListarPendientesDeAprobacion() As List(Of EE.Curso)

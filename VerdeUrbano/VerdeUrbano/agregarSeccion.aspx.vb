@@ -9,10 +9,11 @@
 
     Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnAgregarSlide.Click
         Dim oCurso As New EE.Curso
+        Dim oCursoBLL As New BLL.Curso
         oCurso = DirectCast(Session("Curso"), EE.Curso)
         Dim oSeccion As New EE.Informativa(Me.txtTitulo.Text, Me.txtDescripcion.Text)
         Dim oSecBLL As New BLL.Informativa
-        If oSecBLL.GuardarSeccion(oSeccion, oCurso) = True Then
+        If oCursoBLL.AgregarSeccion(oCurso, oSeccion) = True Then
             Dim oSec As New EE.Informativa
             oSec = oSecBLL.ConsultarUltima
             Session("Seccion") = oSec

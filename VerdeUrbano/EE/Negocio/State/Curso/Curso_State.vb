@@ -5,7 +5,9 @@
 
         End Sub
         Public Sub PasarAPendienteDeAprobacion(ByVal QueCurso As EE.Curso)
-
+            Dim oEstado As New PendienteDeAprobacion
+            QueCurso.Estado = oEstado
+            QueCurso.SolicitudCurso.Estado.PasarASolicitudFinalizada(QueCurso.SolicitudCurso)
         End Sub
         Public Sub PasarARechazado(ByVal QueCurso As EE.Curso)
 
