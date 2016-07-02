@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class crearCurso
-
+    
     '''<summary>
     '''Control correcto.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents correcto As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
+    
     '''<summary>
     '''Control lbl_AccionCorrecta.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_AccionCorrecta As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control error.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents [error] As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
+    
     '''<summary>
     '''Control lbl_TituloError.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control lbl_CrearCurso.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_CrearCurso As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control lbl_SolicitudAsociaada.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_SolicitudAsociaada As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control gv_solicitudes.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents gv_solicitudes As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''Control lbl_nombre.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_nombre As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control txtNombre.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Control RequiredFieldValidator1.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
+    
     '''<summary>
     '''Control lbl_descripcion.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_descripcion As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control txtDescripcion.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtDescripcion As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Control RequiredFieldValidator2.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
+    
     '''<summary>
     '''Control lbl_Duracion.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_Duracion As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control txtDuracion.
     '''</summary>
@@ -147,7 +147,25 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtDuracion As Global.System.Web.UI.WebControls.TextBox
-
+    
+    '''<summary>
+    '''Control RequiredFieldValidator3.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator3 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''Control validarAltura.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents validarAltura As Global.System.Web.UI.WebControls.CompareValidator
+    
     '''<summary>
     '''Control btnAgregarSeccion.
     '''</summary>
@@ -156,7 +174,7 @@ Partial Public Class crearCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnAgregarSeccion As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Control btnFinalizarCurso.
     '''</summary>

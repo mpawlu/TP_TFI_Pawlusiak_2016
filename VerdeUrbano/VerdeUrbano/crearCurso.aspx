@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="crearCurso.aspx.vb" Inherits="VerdeUrbano.crearCurso" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <script src="JS/jquery-1.9.1.min.js"></script>
+    <script src="JS/jquery-1.9.1.min.js"></script>
     <script src="JS/jquery-ui.js"></script>
     <link href="CSS/DateTimePicker.css" rel="stylesheet" type="text/css" />
     <script>
@@ -10,7 +11,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
-     <br />
+    <br />
     <br />
     <div class="row">
         <div class="well well-lg col-md-12 msj-ok" runat="server" visible="false" id="correcto">
@@ -30,8 +31,15 @@
                         <asp:Label ID="lbl_CrearCurso" runat="server" Text="Crear Curso"></asp:Label>
                     </div>
                     <div class="panel-body">
-                        <asp:Label ID="lbl_SolicitudAsociaada" runat="server" Text="Solicitud Asociada"></asp:Label>
-                                                    <div class="col-md-10 col-md-offset-1">
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <asp:Label ID="lbl_SolicitudAsociaada" runat="server" Text="Solicitud Asociada" CssClass="label"></asp:Label>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
                                 <asp:GridView ID="gv_solicitudes" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
 
                                     <Columns>
@@ -43,6 +51,7 @@
                                     </Columns>
                                 </asp:GridView>
                             </div>
+                        </div>
                         <br />
                         <br />
                         <div class="row">
@@ -72,7 +81,7 @@
                                     ControlToValidate="txtDescripcion" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                             </div>
                         </div>
-          
+
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
@@ -81,21 +90,26 @@
 
                             <div class="col-md-6 col-md-offset-1">
                                 <asp:TextBox ID="txtDuracion" runat="server" CssClass="caja-texto" MaxLength="12"></asp:TextBox>
-
+                            </div>
+                            <div class="col-md-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+                                    ControlToValidate="txtDuracion" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="validarAltura" runat="server" ControlToValidate="txtDuracion" Type="Integer" Operator="DataTypeCheck" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador" />
                             </div>
                         </div>
+                        <br />
                         <br />
                         <br />
                         <div class="row">
-                            <div class="col-md-2 col-md-offset-2">
-                                <asp:Button ID="btnAgregarSeccion" runat="server" Text="Agregar Seccion >>" CssClass="btn btn-block btn-info" />
+                            <div class="col-md-3 col-md-offset-2">
+                                <asp:Button ID="btnAgregarSeccion" runat="server" Text="Agregar Seccion >>" CssClass="btn btn-block btn-success" />
+                            </div>
+                            <div class="col-md-3 col-md-offset-2">
+                                <asp:Button ID="btnFinalizarCurso" runat="server" Text="Finalizar Curso" CssClass="btn btn-block btn-danger" />
                             </div>
                         </div>
-                                                <div class="row">
-                            <div class="col-md-2 col-md-offset-4">
-                                <asp:Button ID="btnFinalizarCurso" runat="server" Text="Finalizar Curso" CssClass="btn btn-block btn-info" />
-                            </div>
-                        </div>
+
+                        <br />
                     </div>
                 </div>
             </div>

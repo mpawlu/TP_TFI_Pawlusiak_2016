@@ -50,6 +50,24 @@ Partial Public Class agregarSlide
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''Control lbl_CrearCurso.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_CrearCurso As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control tipoSlide.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tipoSlide As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Control slideA.
     '''</summary>
     '''<remarks>
@@ -75,6 +93,15 @@ Partial Public Class agregarSlide
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents slideC As Global.System.Web.UI.WebControls.RadioButton
+    
+    '''<summary>
+    '''Control titulo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents titulo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
     '''Control lbl_tituloSeccion.
@@ -104,6 +131,15 @@ Partial Public Class agregarSlide
     Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
+    '''Control subtitulo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents subtitulo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
     '''Control lbl_subtitulo.
     '''</summary>
     '''<remarks>
@@ -122,6 +158,15 @@ Partial Public Class agregarSlide
     Protected WithEvents txtSubtitulo As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''Control texto.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents texto As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
     '''Control lblTexto.
     '''</summary>
     '''<remarks>
@@ -131,13 +176,13 @@ Partial Public Class agregarSlide
     Protected WithEvents lblTexto As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control TxtTexto.
+    '''Control txtTexto.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TxtTexto As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtTexto As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control RequiredFieldValidator2.
@@ -147,6 +192,15 @@ Partial Public Class agregarSlide
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''Control imagen.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents imagen As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
     '''Control lbl_URLImagen.
@@ -167,6 +221,15 @@ Partial Public Class agregarSlide
     Protected WithEvents txtURLImagen As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''Control pieImagen.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents pieImagen As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
     '''Control lblPie.
     '''</summary>
     '''<remarks>
@@ -183,6 +246,15 @@ Partial Public Class agregarSlide
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtPie As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control video.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents video As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
     '''Control lblURLVideo.
