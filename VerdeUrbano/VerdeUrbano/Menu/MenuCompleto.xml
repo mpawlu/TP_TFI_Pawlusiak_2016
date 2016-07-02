@@ -21,13 +21,13 @@
     <item nombre="Solicitudes Pendientes" id="46">
     </item>
     
-    <item nombre="Nueva Solicitud" id="12">
+    <item nombre="Solicitudes en curso" id="12">
     </item>
 
     <item nombre="Solicitudes Finalizadas" id="13">
     </item>
 
-    <item nombre="Crear nueva solicitud" id="11">
+    <item nombre="Nueva solicitud" id="11">
     </item>
   </submenu>
 
@@ -35,10 +35,10 @@
     <item nombre="Mis empleados" id="43">
     </item>
 
-    <item nombre="Satisfaccion del cliente" id="44">
+    <item nombre="Metricas de Cursos" id="44">
     </item>
 
-    <item nombre="Satisfaccion de clientes" id="45">
+    <item nombre="Satisfaccion del Cliente" id="45">
     </item>
 
     <item nombre="Mis resultados" id="47">
