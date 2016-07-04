@@ -189,7 +189,7 @@
                     Dim oEncAsigMPP As New MPP.EncuestaAsignada
                     If Not oEncAsigMPP.Consultar(oCurAsig) Is Nothing Then
                         oCurAsig.EncuestaAsignada = oEncAsigMPP.Consultar(oCurAsig)
-                        resultado.Add(oCurAsig)
+
                     Else
                         oCurAsig.EncuestaAsignada = Nothing
                     End If

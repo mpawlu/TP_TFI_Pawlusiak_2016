@@ -2,9 +2,10 @@
 <menu>
 
   <submenu nombre="Administrar Curso" id="26">
-    <item nombre="Asignar a empleados" id="34">
-
+    
+    <item nombre="Asignar a empleado" id="34">
     </item>
+    
     <item nombre="Comprar" id="36">
     </item>
 

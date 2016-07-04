@@ -74,7 +74,7 @@
                         oSlides.Add(oSlide)
 
                         ''---------TIPO B-----------------
-                        ElseIf Item("Tipo") = "B" Then
+                    ElseIf Item("Tipo") = "B" Then
                         Dim oSlide As New EE.TipoB
                         oSlide.Tipo = "B"
                         oSlide.ID = Item("ID_Slide")
@@ -93,7 +93,7 @@
                         oSlides.Add(oSlide)
 
                         ''-----------TIPO C---------------
-                        ElseIf Item("Tipo") = "C" Then
+                    ElseIf Item("Tipo") = "C" Then
                         Dim oSlide As New EE.TipoC
                         oSlide.Tipo = "C"
                         oSlide.ID = Item("ID_Slide")

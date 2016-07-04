@@ -13,6 +13,10 @@
             Dim oMPP As New MPP.Persona
             Return oMPP.Consultar(_DNI)
         End Function
+        Public Function Listar(ByVal _Empresa As EE.Empresa) As List(Of EE.Persona)
+            Dim oMPP As New MPP.Persona
+            Return oMPP.Listar(_Empresa)
+        End Function
     End Class
 End Namespace
 

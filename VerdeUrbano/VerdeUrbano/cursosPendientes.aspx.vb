@@ -25,7 +25,7 @@
             If validarCheckBox() = True Then
                 ''ACA en vez de llamar a evaluacion.aspx tiene que primero hacer el curso. y despues si llama a evaluacion
                 Session("CursoAsignado") = Me.Seleccionado
-                Response.Redirect("evaluacion.aspx")
+                Response.Redirect("iniciarCurso.aspx")
             Else
                 Throw New Servicios.clsExcepcionCamposIncompletos
             End If

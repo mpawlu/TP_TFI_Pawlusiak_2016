@@ -7,7 +7,6 @@
             Dim oEmp As EE.Empresa
             Dim oListaEmpresas As New List(Of EE.Empresa)
 
-
             DS = oDatos.Leer("s_Empresa_Listar", Nothing)
 
             If DS.Tables(0).Rows.Count > 0 Then

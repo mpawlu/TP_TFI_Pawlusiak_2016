@@ -1,5 +1,6 @@
 ﻿Namespace MPP
     Public Class Persona
+
         Public Function Listar(ByVal _empresa As EE.Empresa) As List(Of EE.Persona)
 
             Dim oDatos As New DAL.Datos

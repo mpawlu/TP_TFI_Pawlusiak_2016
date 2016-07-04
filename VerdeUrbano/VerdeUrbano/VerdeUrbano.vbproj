@@ -106,6 +106,7 @@
     <Content Include="agregarSlide.aspx" />
     <Content Include="agregarSolicitudCurso.aspx" />
     <Content Include="agregarUsuario.aspx" />
+    <Content Include="AsignarCurso.aspx" />
     <Content Include="calculadorDisenador.aspx" />
     <Content Include="calcularPresupuesto.aspx" />
     <Content Include="cambiarIdioma.aspx" />
@@ -182,6 +183,7 @@
     <Content Include="Imagenes\user-32.png" />
     <Content Include="Imagenes\youtube.png" />
     <Content Include="index.aspx" />
+    <Content Include="iniciarCurso.aspx" />
     <Content Include="institucional.aspx" />
     <Content Include="JS\functionSlider.js" />
     <Content Include="JS\jquery-1.10.2.js" />
@@ -255,6 +257,13 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="App_Code\validaciones.vb" />
+    <Compile Include="AsignarCurso.aspx.designer.vb">
+      <DependentUpon>AsignarCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AsignarCurso.aspx.vb">
+      <DependentUpon>AsignarCurso.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="calculadorDisenador.aspx.designer.vb">
       <DependentUpon>calculadorDisenador.aspx</DependentUpon>
     </Compile>
@@ -372,6 +381,13 @@
     </Compile>
     <Compile Include="index.aspx.vb">
       <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="iniciarCurso.aspx.designer.vb">
+      <DependentUpon>iniciarCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iniciarCurso.aspx.vb">
+      <DependentUpon>iniciarCurso.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="institucional.aspx.designer.vb">
