@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class crearEvaluacion1
+Partial Public Class solicitudesFinalizadas
 
     '''<summary>
     '''Control correcto.
@@ -50,83 +50,29 @@ Partial Public Class crearEvaluacion1
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lbl_CrearCurso.
+    '''Control lbl_solicitudesFinalizadas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_CrearCurso As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_solicitudesFinalizadas As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lbl_titulo.
+    '''Control gv_solicitudes.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_titulo As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents gv_solicitudes As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''Control txtTitulo.
+    '''Control btnAprobar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtTitulo As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control RequiredFieldValidator1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control lbl_subTitulo.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lbl_subTitulo As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control txtSubtitulo.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtSubtitulo As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control gv_Preguntas.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents gv_Preguntas As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control btnAgregarPregunta.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnAgregarPregunta As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control btnFinalizarEdicion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnFinalizarEdicion As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnAprobar As Global.System.Web.UI.WebControls.Button
 End Class

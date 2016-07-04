@@ -193,6 +193,7 @@
                     Else
                         oCurAsig.EncuestaAsignada = Nothing
                     End If
+                    resultado.Add(oCurAsig)
                 Next
                 Return resultado
             Else

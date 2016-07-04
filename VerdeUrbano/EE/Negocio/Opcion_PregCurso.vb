@@ -30,7 +30,8 @@
             End Set
         End Property
         Sub New(ByVal texto As String, ByVal EsCorrecta As Boolean)
-
+            Me.Texto = texto
+            Me.Correcta = EsCorrecta
         End Sub
         Sub New()
 

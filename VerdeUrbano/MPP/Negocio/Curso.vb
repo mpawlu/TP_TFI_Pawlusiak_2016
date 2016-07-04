@@ -140,13 +140,13 @@
                     oCur.SolicitudCurso = oSolMPP.ConsultarSolicitud(oSolicitud)
 
                     Select Case Item("ID_Estado")
-                        Case Item("ID_Estado") = 1
+                        Case 1
                             oCur.Estado = New EE.Aprobado
-                        Case Item("ID_Estado") = 2
+                        Case 2
                             oCur.Estado = New EE.EnCreacion
-                        Case Item("ID_Estado") = 3
+                        Case 3
                             oCur.Estado = New EE.PendienteDeAprobacion
-                        Case Item("ID_Estado") = 4
+                        Case 4
                             oCur.Estado = New EE.Rechazado
                     End Select
 

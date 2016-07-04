@@ -15,6 +15,10 @@
             Dim oMPP As New MPP.Solicitud
             Return oMPP.ConsultarSolicitudesPendientes(_dis)
         End Function
+        Public Function ListarSolicitudesFinalizadas() As List(Of EE.SolicitudCurso)
+            Dim oMPP As New MPP.Solicitud
+            Return oMPP.ConsultarSolicitudesFinalizadas()
+        End Function
         Public Function ConsultarUltima() As EE.SolicitudCurso
             Dim oMPP As New MPP.Solicitud
             Return oMPP.ConsultarUltima

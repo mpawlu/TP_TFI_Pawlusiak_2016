@@ -2,10 +2,7 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim empresa As New EE.Empresa
-        empresa.ID = 1
-        Dim obll As New BLL.SatisfaccionCliente
-        obll.CalcularSatisfaccion(empresa)
+        
         'If BLL.DigitoVerificador.Integridad() = False Then
         '    Response.Redirect("errorIntegridad.aspx")
         'End If

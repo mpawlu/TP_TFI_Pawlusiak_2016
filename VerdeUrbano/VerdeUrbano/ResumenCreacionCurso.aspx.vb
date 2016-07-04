@@ -19,9 +19,12 @@
         Dim oCurso As New EE.Curso
         Dim oCursoBLL As New BLL.Curso
         Dim oSol As New EE.SolicitudCurso
+        Dim oEvalBLL As New BLL.Evaluacion
         oSol = DirectCast(Session("Solicitud"), EE.SolicitudCurso)
         oCurso = oCursoBLL.Consultar(oSol)
         oCursoBLL.FinalizarCreacion(oCurso)
+        oCurso.Evaluacion = oEvalBLL.ConsultarUltima()
+        oCurso.FechaCreacion = Now
         If oCursoBLL.Modificar(oCurso) = True Then
             Dim oSolBLL As New BLL.SolicitudCurso
             If oSolBLL.Modificar(oCurso.SolicitudCurso) = True Then
@@ -45,5 +48,9 @@
 
     Private Sub btnCrearEvaluacion_Click(sender As Object, e As EventArgs) Handles btnCrearEvaluacion.Click
         Response.Redirect("crearEvaluacion.aspx")
+    End Sub
+
+    Private Sub btnAgregarSeccion_Click(sender As Object, e As EventArgs) Handles btnAgregarSeccion.Click
+        Response.Redirect("agregarSeccion.aspx")
     End Sub
 End Class

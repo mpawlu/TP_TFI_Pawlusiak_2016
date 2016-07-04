@@ -111,6 +111,7 @@
     <Content Include="cambiarIdioma.aspx" />
     <Content Include="cambiarPassword.aspx" />
     <Content Include="crearCurso.aspx" />
+    <Content Include="agregarPreguntaEvaluacion.aspx" />
     <Content Include="crearEvaluacion.aspx" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\DateTimePicker.css" />
@@ -198,6 +199,7 @@
     <Content Include="ResumenCreacionCurso.aspx" />
     <Content Include="resumenCreacionSeccion.aspx" />
     <Content Include="seleccionarSatisfaccion.aspx" />
+    <Content Include="solicitudesFinalizadas.aspx" />
     <Content Include="solicitudesPendientes.aspx" />
     <Content Include="visualizarBitacora.aspx" />
     <Content Include="Web.config" />
@@ -286,6 +288,13 @@
     </Compile>
     <Compile Include="crearCurso.aspx.vb">
       <DependentUpon>crearCurso.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="agregarPreguntaEvaluacion.aspx.designer.vb">
+      <DependentUpon>agregarPreguntaEvaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="agregarPreguntaEvaluacion.aspx.vb">
+      <DependentUpon>agregarPreguntaEvaluacion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="crearEvaluacion.aspx.designer.vb">
@@ -460,6 +469,13 @@
     </Compile>
     <Compile Include="seleccionarSatisfaccion.aspx.vb">
       <DependentUpon>seleccionarSatisfaccion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="solicitudesFinalizadas.aspx.designer.vb">
+      <DependentUpon>solicitudesFinalizadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="solicitudesFinalizadas.aspx.vb">
+      <DependentUpon>solicitudesFinalizadas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="solicitudesPendientes.aspx.designer.vb">

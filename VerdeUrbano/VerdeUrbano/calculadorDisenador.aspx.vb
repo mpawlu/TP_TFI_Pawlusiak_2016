@@ -54,7 +54,7 @@
             Dim oCursoBLL As New BLL.Curso
             oSolicitante = CType(Session("Usuario"), Servicios.Usuario)
             ''oDisenador.ID = aca tengo que poner el ID del disenador que selecciono
-            oDisenador.ID = 11  ''Y comentar esta linea
+            oDisenador.ID = 20  ''Y comentar esta linea
             oDisenador = oUsuBLL.RecuperarUsuario(oDisenador)
             oCurso = CType(Session("curso"), EE.Curso)
             oCurso.SolicitudCurso.Disenador = oDisenador

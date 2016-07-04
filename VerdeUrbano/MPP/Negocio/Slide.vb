@@ -65,7 +65,7 @@
                         oSlide.Tipo = "A"
                         oSlide.ID = Item("ID_Slide")
                         oSlide.Titulo = Item("Titulo")
-                        If Not Item("Subtitulo") Is Nothing Then
+                        If Not Item("Subtitulo") Is DBNull.Value Then
                             oSlide.Subtitulo = Item("Subtitulo")
                         Else
                             oSlide.Subtitulo = Nothing
@@ -79,13 +79,13 @@
                         oSlide.Tipo = "B"
                         oSlide.ID = Item("ID_Slide")
                         oSlide.Titulo = Item("Titulo")
-                        If Not Item("Subtitulo") Is Nothing Then
+                        If Not Item("Subtitulo") Is DBNull.Value Then
                             oSlide.Subtitulo = Item("Subtitulo")
                         Else
                             oSlide.Subtitulo = Nothing
                         End If
                         oSlide.Imagen = Item("URL_Imagen")
-                        If Not Item("TextoPie") Is Nothing Then
+                        If Not Item("TextoPie") Is DBNull.Value Then
                             oSlide.Pie = Item("TextoPie")
                         Else
                             oSlide.Pie = Nothing
@@ -98,7 +98,7 @@
                         oSlide.Tipo = "C"
                         oSlide.ID = Item("ID_Slide")
                         oSlide.Titulo = Item("Titulo")
-                        If Not Item("Subtitulo") Is Nothing Then
+                        If Not Item("Subtitulo") Is DBNull.Value Then
                             oSlide.Subtitulo = Item("Subtitulo")
                         Else
                             oSlide.Subtitulo = Nothing

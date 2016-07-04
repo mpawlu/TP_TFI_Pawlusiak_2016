@@ -23,6 +23,7 @@
     Protected Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
         Try
             If validarCheckBox() = True Then
+                ''ACA en vez de llamar a evaluacion.aspx tiene que primero hacer el curso. y despues si llama a evaluacion
                 Session("CursoAsignado") = Me.Seleccionado
                 Response.Redirect("evaluacion.aspx")
             Else

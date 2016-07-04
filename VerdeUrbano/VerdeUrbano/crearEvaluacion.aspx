@@ -1,8 +1,16 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="crearEvaluacion.aspx.vb" Inherits="VerdeUrbano.crearEvaluacion" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="crearEvaluacion.aspx.vb" Inherits="VerdeUrbano.crearEvaluacion1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="JS/jquery-1.9.1.min.js"></script>
+    <script src="JS/jquery-ui.js"></script>
+    <link href="CSS/DateTimePicker.css" rel="stylesheet" type="text/css" />
+    <script>
+        $(function () {
+            $("#contenidoPagina_txtFechaCreacion").datepicker();
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
-    <div class="contenedor">
+    <br />
     <br />
     <div class="row">
         <div class="well well-lg col-md-12 msj-ok" runat="server" visible="false" id="correcto">
@@ -14,99 +22,63 @@
             <asp:Label ID="lbl_TituloError" runat="server" CssClass="labelError"></asp:Label>
         </div>
     </div>
-        <br />
-        <div class="fila">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-verde">
-                    <div class="panel-cabecera">
-                        <asp:Label ID="cab_agregarPregunta" runat="server">Agregar Pregunta de Examen</asp:Label>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-verdeClaro">
+                    <div class="panel-heading">
+                        <asp:Label ID="lbl_CrearCurso" runat="server" Text="Crear Curso"></asp:Label>
                     </div>
-                    <div class="panel-cuerpo">
-                        <br />
-                        <br />
+                    <div class="panel-body">
+                       <br />
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-1">
+                                    <asp:Label ID="lbl_titulo" runat="server" Text="Titulo: " CssClass="label"></asp:Label>
+                                </div>
 
-                        <div class="fila">
-                            <div class="col-md-4 col-md-offset-1">
-                                <div class="label">
-                                    <asp:Label ID="lbl_Enunciado" runat="server" CssClass="label">Enunciado</asp:Label>
+                                <div class="col-md-6 col-md-offset-1">
+                                    <asp:TextBox ID="txtTitulo" runat="server" CssClass="caja-texto"></asp:TextBox>
+                                </div>
+                                <div class="col-md-1">
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                        ControlToValidate="txtTitulo" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-md-offset-1">
-                                <asp:TextBox ID="txt_Enunciado" runat="server" CssClass="caja-texto sinEditar" Height="150px" TextMode="MultiLine" MaxLength="400"></asp:TextBox>
-                            </div>
-                        </div>
                         <br />
-                        <div id="OpcionesPregunta" runat="server" visible="false">
-                            <div class="fila">
-                                <div class="col-md-3 col-md-offset-2">
-                                    <asp:Label ID="lbl_Opcion1" runat="server" Text="Opcion Correcta" CssClass="label"></asp:Label>
-                                </div>
-                                <div class="col-md-4 col-md-offset-1">
-                                    <asp:TextBox ID="txt_Opcion1" runat="server" CssClass="caja-texto" MaxLength="100"></asp:TextBox>
-                                </div>
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <asp:Label ID="lbl_subTitulo" runat="server" Text="Subtitulo(Opcional): " CssClass="label"></asp:Label>
                             </div>
-                            <br />
-                            <div class="fila">
-                                <div class="col-md-3 col-md-offset-2">
-                                    <asp:Label ID="lbl_opcion2" runat="server" Text="Opcion 1" CssClass="label"></asp:Label>
-                                </div>
-                                <div class="col-md-4 col-md-offset-1">
-                                    <asp:TextBox ID="txt_Opcion2" runat="server" CssClass="caja-texto" MaxLength="100"></asp:TextBox>
-                                </div>
-                            </div>
-                            <br />
-                            <div class="fila">
-                                <div class="col-md-3 col-md-offset-2">
-                                    <asp:Label ID="lbl_Opcion3" runat="server" Text="Opcion 2" CssClass="label"></asp:Label>
-                                </div>
-                                <div class="col-md-4 col-md-offset-1">
-                                    <asp:TextBox ID="txt_Opcion3" runat="server" CssClass="caja-texto" MaxLength="100"></asp:TextBox>
-                                </div>
-                            </div>
-                            <br />
-                            <div class="fila">
-                                <div class="col-md-3 col-md-offset-2">
-                                    <asp:Label ID="lbl_Opcion4" runat="server" Text="Opcion 3" CssClass="label"></asp:Label>
-                                </div>
-                                <div class="col-md-4 col-md-offset-1">
-                                    <asp:TextBox ID="txt_Opcion4" runat="server" CssClass="caja-texto" MaxLength="100"></asp:TextBox>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
 
+                            <div class="col-md-6 col-md-offset-1">
+                                <asp:TextBox ID="txtSubtitulo" runat="server" CssClass="textarea" TextMode="MultiLine" Height="200px"></asp:TextBox>
+                            </div>
 
-                        <div class="fila">
-                            <div class="col-md-4 col-md-offset-1">
-                                <asp:Label ID="lbl_Valor" runat="server" Text="Valor" CssClass="label"></asp:Label>
+                        </div>
+                        <br />
+                                                    <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <asp:GridView ID="gv_Preguntas" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center" Visible ="false">
+                                    <Columns>
+                                        <%--<asp:BoundField DataField="." HeaderText="Numero" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />--%>
+                                        <asp:BoundField DataField="Pregunta" HeaderText="Titulo" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />
+                                    </Columns>
+                                </asp:GridView>
                             </div>
-                            <div class="col-md-4 col-md-offset-1">
-                                <asp:DropDownList ID="ddl_Valor" runat="server" CssClass="combo">
-                                    <asp:ListItem Value="01"></asp:ListItem>
-                                    <asp:ListItem Value="02"></asp:ListItem>
-                                    <asp:ListItem Value="03"></asp:ListItem>
-                                    <asp:ListItem>04</asp:ListItem>
-                                    <asp:ListItem Selected="True" Value="05"></asp:ListItem>
-                                    <asp:ListItem>06</asp:ListItem>
-                                    <asp:ListItem>07</asp:ListItem>
-                                    <asp:ListItem>08</asp:ListItem>
-                                    <asp:ListItem>09</asp:ListItem>
-                                    <asp:ListItem>10</asp:ListItem>
-                                </asp:DropDownList>
+                            <br />
+                            <br />
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-2">
+                                <asp:Button ID="btnAgregarPregunta" runat="server" Text="Agregar Pregunta >>" CssClass="btn btn-block btn-success" />
+                            </div>
+                            <div class="col-md-3 col-md-offset-2">
+                                <asp:Button ID="btnFinalizarEdicion" runat="server" Text="Finalizar Edicion" CssClass="btn btn-block btn-danger" />
                             </div>
                         </div>
                         <br />
-                        <br />
-                        <div class="fila">
-                            <div class="col-md-2 col-md-offset-3">
-                                <asp:Button ID="btn_agregar" runat="server" Text="Agregar" CssClass="btn btn-aceptar btn-block" />
-                            </div>
-                            <div class="col-md-2 col-md-offset-2">
-                                <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" CssClass="btn btn-cancelar btn-block" />
-                            </div>
-                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
