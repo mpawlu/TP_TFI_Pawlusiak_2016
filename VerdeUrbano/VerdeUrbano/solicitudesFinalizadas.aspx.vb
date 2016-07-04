@@ -9,7 +9,9 @@
     Private Function ListarCursosPendientes() As List(Of EE.SolicitudCurso)
         Dim ListaSolFin As New List(Of EE.SolicitudCurso)
         Dim oBLL As New BLL.SolicitudCurso
-        ListaSolFin = oBLL.ListarSolicitudesFinalizadas()
+        Dim oUsuario As New Servicios.Usuario
+        oUsuario = DirectCast(Session("Usuario"), Servicios.Usuario)
+        ListaSolFin = oBLL.ListarSolicitudesFinalizadas(oUsuario)
         Return ListaSolFin
     End Function
     Public Sub CargarGrilla()

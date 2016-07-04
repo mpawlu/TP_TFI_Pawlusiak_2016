@@ -115,15 +115,16 @@
                 Return Nothing
             End If
         End Function
-        Public Function ConsultarSolicitudesFinalizadas() As List(Of EE.SolicitudCurso)
+        Public Function ConsultarSolicitudesFinalizadas(ByVal _solicitante As Servicios.Usuario) As List(Of EE.SolicitudCurso)
             Dim oDatos As New DAL.Datos
             Dim DS As New DataSet
             Dim dt As New DataTable
             Dim oSol As EE.SolicitudCurso
             Dim hdatos As New Hashtable
             Dim oResultado As New List(Of EE.SolicitudCurso)
+            hdatos.Add("@ID_Solicitante", _solicitante.ID)
 
-            DS = oDatos.Leer("s_Solicitud_Listar_Finalizadas", Nothing)
+            DS = oDatos.Leer("s_Solicitud_Listar_FinalizadasXSolicitante", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 
