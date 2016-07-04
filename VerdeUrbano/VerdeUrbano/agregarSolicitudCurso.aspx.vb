@@ -85,9 +85,8 @@
     End Sub
     Protected Sub btnCalculador_Click(sender As Object, e As EventArgs) Handles btnCalculador.Click
         Try
-            If Not validarCheckBox() = False Then
-                Dim _bllUsuario As New BLL.clsUsuario
-                Dim _listaUsuarios As New List(Of Servicios.Usuario)
+            Dim _bllUsuario As New BLL.clsUsuario
+            Dim _listaUsuarios As New List(Of Servicios.Usuario)
                 _listaUsuarios = _bllUsuario.ObtenerDisenadores
                 Dim oCategoria As New EE.Categoria
                 oCategoria.ID = ddlCategoria.SelectedValue
@@ -104,9 +103,6 @@
                 Dim ie As New BLL.CalculadoraIE
                 ie.RankearDiseñadores(_listaUsuarios, oCategoria)
                 Response.Redirect("calculadorDisenador.aspx")
-            Else
-                Throw New Servicios.clsExcepcionCamposIncompletos
-            End If
         Catch ex As servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Titulo

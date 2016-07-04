@@ -7,7 +7,7 @@
         'End If
 
         If Not IsPostBack Then
-            '  CargarGrilla()
+            CargarGrilla()
         End If
     End Sub
     Private Sub CargarGrilla()
