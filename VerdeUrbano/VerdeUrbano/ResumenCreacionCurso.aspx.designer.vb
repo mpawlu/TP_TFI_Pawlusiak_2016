@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class ResumenCreacionCurso
-
+    
     '''<summary>
     '''Control correcto.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents correcto As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
+    
     '''<summary>
     '''Control lbl_AccionCorrecta.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_AccionCorrecta As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control error.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents [error] As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
+    
     '''<summary>
     '''Control lbl_TituloError.
     '''</summary>
@@ -48,7 +48,25 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
-
+    
+    '''<summary>
+    '''Control cursoNormal.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cursoNormal As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Control lbl_ResumenCurso.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_ResumenCurso As Global.System.Web.UI.WebControls.Label
+    
     '''<summary>
     '''Control lblNombreCurso.
     '''</summary>
@@ -57,7 +75,7 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblNombreCurso As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control lblValorNombre.
     '''</summary>
@@ -66,7 +84,7 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblValorNombre As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control lbldescripcion.
     '''</summary>
@@ -75,7 +93,7 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbldescripcion As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control lblValordescripcion.
     '''</summary>
@@ -84,7 +102,7 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblValordescripcion As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control lblsecciones.
     '''</summary>
@@ -93,7 +111,7 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblsecciones As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control gv_Secciones.
     '''</summary>
@@ -102,7 +120,7 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents gv_Secciones As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''Control btnAgregarSeccion.
     '''</summary>
@@ -111,7 +129,7 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnAgregarSeccion As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Control btnCrearEvaluacion.
     '''</summary>
@@ -120,7 +138,7 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnCrearEvaluacion As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Control btnFinalizarCurso.
     '''</summary>
@@ -129,4 +147,22 @@ Partial Public Class ResumenCreacionCurso
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnFinalizarCurso As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control Finalizado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Finalizado As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Control btnVolver.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnVolver As Global.System.Web.UI.WebControls.Button
 End Class

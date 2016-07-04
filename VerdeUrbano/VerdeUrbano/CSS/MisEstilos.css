@@ -494,3 +494,8 @@ body {
     .circle-tile-heading-des .fa {
         line-height: 80px;
     }
+
+
+.subrayado {
+    text-decoration: underline;
+}

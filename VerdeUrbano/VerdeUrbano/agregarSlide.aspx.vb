@@ -52,11 +52,10 @@ Public Class agregarSlide
             If PostedFile.FileName <> "" Then
                 Dim MiDirPath As String = Server.MapPath("~/Slides")
                 Me.CrearDirectorio(MiDirPath)
-                Dim MiPathAGuardar As String = String.Format("{0}\{1}", MiDirPath, fu_imagenUsuario.ToString & ".png")
+                Dim MiPathAGuardar As String = String.Format("{0}\{1}", MiDirPath, fu_imagenUsuario.FileName)
                 PostedFile.SaveAs(MiPathAGuardar)
-                tipoB.Imagen = "~/Slides/" & fu_imagenUsuario.ToString & ".png"
+                tipoB.Imagen = "~/Slides/" & fu_imagenUsuario.FileName
             End If
-            tipoB.Imagen = fu_imagenUsuario.ToString
             tipoB.Pie = txtPie.Text
             Return tipoB
         ElseIf slideC.Checked = True Then

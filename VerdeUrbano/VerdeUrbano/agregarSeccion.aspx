@@ -28,14 +28,14 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lbl_CrearCurso" runat="server" Text="Crear Curso"></asp:Label>
+                        <asp:Label ID="lbl_agregarSeccion" runat="server" Text="Agregar Seccion"></asp:Label>
                     </div>
                     <div class="panel-body">
                         <br />
 
                         <div class="row">
                             <div class="col-md-3 col-md-offset-5">
-                                <asp:Label ID="lbl_nombreCurso" runat="server" Text="Nombre del curso" CssClass="label"></asp:Label>
+                                <asp:Label ID="lbl_nombreCurso" runat="server" Text="Nombre del curso" CssClass="label subrayado"></asp:Label>
                             </div>
                         </div>
                         <br />
@@ -70,10 +70,12 @@
                         <br />
                         <br />
                         <div class="row">
-                            <div class="col-md-4 col-md-offset-4">
+                            <div class="col-md-4 col-md-offset-1">
                                 <asp:Button ID="btnAgregarSlide" runat="server" Text="Agregar Slide a Seccion >>" CssClass="btn btn-block btn-success" />
                             </div>
-
+                                                        <div class="col-md-4 col-md-offset-2">
+                                <asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn btn-block btn-warning" />
+                            </div>
                         </div>
                         <br />
                     </div>

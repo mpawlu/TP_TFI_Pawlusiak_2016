@@ -50,13 +50,13 @@ Partial Public Class agregarSeccion
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lbl_CrearCurso.
+    '''Control lbl_agregarSeccion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_CrearCurso As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_agregarSeccion As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control lbl_nombreCurso.
@@ -129,4 +129,13 @@ Partial Public Class agregarSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnAgregarSlide As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control Button1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
 End Class

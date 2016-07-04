@@ -154,19 +154,22 @@
 
                                 </div>
                             </div>
-                            <br />
-                            <br />
-                            <div class="row">
-                                <div class="col-md-3 col-md-offset-2">
-                                    <asp:Button ID="btnFinalizarEdicion" runat="server" Text="Finalizar Edicion" CssClass="btn btn-block btn-success" />
-                                </div>
-                                <div class="col-md-3 col-md-offset-2">
-                                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-block btn-danger" />
-                                </div>
-                            </div>
-                            <br />
                         </div>
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-2">
+                                <asp:Button ID="btnFinalizarEdicion" runat="server" Text="Finalizar Edicion" CssClass="btn btn-block btn-success" />
+                            </div>
+                            <div class="col-md-3 col-md-offset-2">
+                                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-block btn-warning" />
+                            </div>
+                        </div>
+                        <br />
+
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </asp:Content>

@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class resumenCreacionSeccion
-
+    
     '''<summary>
     '''Control correcto.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class resumenCreacionSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents correcto As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
+    
     '''<summary>
     '''Control lbl_AccionCorrecta.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class resumenCreacionSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_AccionCorrecta As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control error.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class resumenCreacionSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents [error] As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
+    
     '''<summary>
     '''Control lbl_TituloError.
     '''</summary>
@@ -48,7 +48,16 @@ Partial Public Class resumenCreacionSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
-
+    
+    '''<summary>
+    '''Control lbl_CrearCurso.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_CrearCurso As Global.System.Web.UI.WebControls.Label
+    
     '''<summary>
     '''Control lbltituloSeccion.
     '''</summary>
@@ -57,7 +66,7 @@ Partial Public Class resumenCreacionSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbltituloSeccion As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control lblValortitulo.
     '''</summary>
@@ -66,7 +75,7 @@ Partial Public Class resumenCreacionSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblValortitulo As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control lbldescripcion.
     '''</summary>
@@ -75,7 +84,7 @@ Partial Public Class resumenCreacionSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbldescripcion As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control lblValorDesc.
     '''</summary>
@@ -84,7 +93,7 @@ Partial Public Class resumenCreacionSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblValorDesc As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control lblslides.
     '''</summary>
@@ -93,7 +102,7 @@ Partial Public Class resumenCreacionSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblslides As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Control gv_slides.
     '''</summary>
@@ -102,7 +111,7 @@ Partial Public Class resumenCreacionSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents gv_slides As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''Control btnAgregarSlide.
     '''</summary>
@@ -111,7 +120,7 @@ Partial Public Class resumenCreacionSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnAgregarSlide As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Control btnFinalizarSeccion.
     '''</summary>

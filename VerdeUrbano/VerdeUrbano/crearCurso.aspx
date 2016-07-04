@@ -34,7 +34,7 @@
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
-                                <asp:Label ID="lbl_SolicitudAsociaada" runat="server" Text="Solicitud Asociada" CssClass="label"></asp:Label>
+                                <asp:Label ID="lbl_SolicitudAsociaada" runat="server" Text="Solicitud Asociada" CssClass="label subrayado"></asp:Label>
                             </div>
                         </div>
                         <br />

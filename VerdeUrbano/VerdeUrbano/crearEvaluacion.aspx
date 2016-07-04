@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="crearEvaluacion.aspx.vb" Inherits="VerdeUrbano.crearEvaluacion1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="JS/jquery-1.9.1.min.js"></script>
     <script src="JS/jquery-ui.js"></script>
@@ -27,23 +28,25 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lbl_CrearCurso" runat="server" Text="Crear Curso"></asp:Label>
+                        <asp:Label ID="lbl_CrearEvaluacion" runat="server" Text="Crear Evaluacion"></asp:Label>
                     </div>
                     <div class="panel-body">
-                       <br />
-                            <div class="row">
-                                <div class="col-md-3 col-md-offset-1">
-                                    <asp:Label ID="lbl_titulo" runat="server" Text="Titulo: " CssClass="label"></asp:Label>
-                                </div>
+                        <br />
+                        <br />
 
-                                <div class="col-md-6 col-md-offset-1">
-                                    <asp:TextBox ID="txtTitulo" runat="server" CssClass="caja-texto"></asp:TextBox>
-                                </div>
-                                <div class="col-md-1">
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-                                        ControlToValidate="txtTitulo" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
-                                </div>
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <asp:Label ID="lbl_titulo" runat="server" Text="Titulo: " CssClass="label"></asp:Label>
                             </div>
+
+                            <div class="col-md-6 col-md-offset-1">
+                                <asp:TextBox ID="txtTitulo" runat="server" CssClass="caja-texto"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                    ControlToValidate="txtTitulo" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
@@ -56,9 +59,9 @@
 
                         </div>
                         <br />
-                                                    <div class="row">
+                        <div class="row">
                             <div class="col-md-10 col-md-offset-1">
-                                <asp:GridView ID="gv_Preguntas" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center" Visible ="false">
+                                <asp:GridView ID="gv_Preguntas" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center" Visible="false">
                                     <Columns>
                                         <%--<asp:BoundField DataField="." HeaderText="Numero" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />--%>
                                         <asp:BoundField DataField="Pregunta" HeaderText="Titulo" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />
