@@ -32,25 +32,27 @@
                     </div>
                     <div class="panel-body">
                         <br />
+
                         <div class="row">
-                            <div class="col-md-3 col-md-offset-1">
+                            <div class="col-md-3 col-md-offset-5">
                                 <asp:Label ID="lbl_nombreCurso" runat="server" Text="Nombre del curso" CssClass="label"></asp:Label>
                             </div>
                         </div>
                         <br />
-                            <div class="row">
-                                <div class="col-md-3 col-md-offset-1">
-                                    <asp:Label ID="lbl_tituloSeccion" runat="server" Text="Titulo de la Seccion: " CssClass="label"></asp:Label>
-                                </div>
-
-                                <div class="col-md-6 col-md-offset-1">
-                                    <asp:TextBox ID="txtTitulo" runat="server" CssClass="caja-texto"></asp:TextBox>
-                                </div>
-                                <div class="col-md-1">
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-                                        ControlToValidate="txtTitulo" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
-                                </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-1">
+                                <asp:Label ID="lbl_tituloSeccion" runat="server" Text="Titulo de la Seccion: " CssClass="label"></asp:Label>
                             </div>
+
+                            <div class="col-md-6 col-md-offset-1">
+                                <asp:TextBox ID="txtTitulo" runat="server" CssClass="caja-texto"></asp:TextBox>
+                            </div>
+                            <div class="col-md-1">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                    ControlToValidate="txtTitulo" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
                         <br />
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1">
@@ -68,7 +70,7 @@
                         <br />
                         <br />
                         <div class="row">
-                            <div class="col-md-2 col-md-offset-5">
+                            <div class="col-md-4 col-md-offset-4">
                                 <asp:Button ID="btnAgregarSlide" runat="server" Text="Agregar Slide a Seccion >>" CssClass="btn btn-block btn-success" />
                             </div>
 

@@ -1,4 +1,6 @@
-﻿Public Class agregarSlide
+﻿Imports System.IO
+
+Public Class agregarSlide
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -45,7 +47,16 @@
             Dim tipoB As New EE.TipoB
             tipoB.Titulo = txtTitulo.Text
             tipoB.Subtitulo = txtSubtitulo.Text
-            tipoB.Imagen = txtURLImagen.Text
+            Dim PostedFilesCollection As HttpFileCollection = Request.Files
+            Dim PostedFile As HttpPostedFile = PostedFilesCollection(0)
+            If PostedFile.FileName <> "" Then
+                Dim MiDirPath As String = Server.MapPath("~/Slides")
+                Me.CrearDirectorio(MiDirPath)
+                Dim MiPathAGuardar As String = String.Format("{0}\{1}", MiDirPath, fu_imagenUsuario.ToString & ".png")
+                PostedFile.SaveAs(MiPathAGuardar)
+                tipoB.Imagen = "~/Slides/" & fu_imagenUsuario.ToString & ".png"
+            End If
+            tipoB.Imagen = fu_imagenUsuario.ToString
             tipoB.Pie = txtPie.Text
             Return tipoB
         ElseIf slideC.Checked = True Then
@@ -56,6 +67,20 @@
             Return tipoC
         End If
     End Function
+
+
+    Public Sub CrearDirectorio(ByVal paramPath As String)
+        Try
+            Dim MiDirectorio As DirectoryInfo = New DirectoryInfo(paramPath)
+            If Not MiDirectorio.Exists Then
+                MiDirectorio.Create()
+            End If
+        Catch ex As Exception
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
+        End Try
+
+    End Sub
 
     Protected Sub slideA_CheckedChanged(sender As Object, e As EventArgs)
         Me.titulo.Visible = True

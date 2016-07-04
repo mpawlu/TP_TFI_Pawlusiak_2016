@@ -50,13 +50,13 @@ Partial Public Class agregarSlide
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lbl_CrearCurso.
+    '''Control lbl_agregarSlide.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_CrearCurso As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_agregarSlide As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control tipoSlide.

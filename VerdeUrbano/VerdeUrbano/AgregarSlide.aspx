@@ -30,16 +30,18 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lbl_CrearCurso" runat="server" Text="Crear Curso"></asp:Label>
+                        <asp:Label ID="lbl_agregarSlide" runat="server" Text="Agregar Slide"></asp:Label>
                     </div>
                     <div class="panel-body">
                         <br />
                         <br />
                         <div class="row">
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:Label ID="tipoSlide" runat="server" Text="Tipo de Slide" CssClass="label"></asp:Label>
+                                <asp:Label ID="tipoSlide" runat="server" Text="Tipo de Slide:" CssClass="label"></asp:Label>
                             </div>
                         </div>
+
+                        <br />
                         <div class="row">
                             <div class="col-md-6 col-md-offset-1">
                                 <asp:RadioButton ID="slideA" runat="server" Text="Slide A (Texto)" GroupName="slide" CssClass="label" AutoPostBack="true" OnCheckedChanged="slideA_CheckedChanged" />
@@ -151,20 +153,20 @@
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtURLVideo" ValidationExpression="(?:https?:\/\/)?(?:www\.)?youtu(?:\.be|be\.com)\/(?:watch\?v=)?([\w-]{10,})" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RegularExpressionValidator>
 
                                 </div>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="row">
-                            <div class="col-md-3 col-md-offset-2">
-                                <asp:Button ID="btnFinalizarEdicion" runat="server" Text="Finalizar Edicion" CssClass="btn btn-block btn-success" />
                             </div>
-                            <div class="col-md-3 col-md-offset-2">
-                                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-block btn-danger" />
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-2">
+                                    <asp:Button ID="btnFinalizarEdicion" runat="server" Text="Finalizar Edicion" CssClass="btn btn-block btn-success" />
+                                </div>
+                                <div class="col-md-3 col-md-offset-2">
+                                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-block btn-danger" />
+                                </div>
                             </div>
+                            <br />
                         </div>
-                        <br />
                     </div>
                 </div>
             </div>
-        </div>
 </asp:Content>
