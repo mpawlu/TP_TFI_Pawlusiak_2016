@@ -11,95 +11,104 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class iniciarCurso
+Partial Public Class slideImagen
     
     '''<summary>
-    '''Control lbl_AgregarUsuario.
+    '''Control error.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_AgregarUsuario As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents [error] As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''Control lblNombreCurso.
+    '''Control lbl_TituloError.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblNombreCurso As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lblValorNombre.
+    '''Control lblVisualizarSlide.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblValorNombre As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblVisualizarSlide As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lbldescripcion.
+    '''Control lblTitulo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbldescripcion As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblTitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control descripcion.
+    '''Control subtitulo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents descripcion As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents subtitulo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''Control lblDuracion.
+    '''Control lblSubTitulo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblDuracion As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblSubTitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lblValorDuracion.
+    '''Control img_Slide.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblValorDuracion As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents img_Slide As Global.System.Web.UI.WebControls.Image
     
     '''<summary>
-    '''Control lblsecciones.
+    '''Control siguiente.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblsecciones As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents siguiente As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''Control gv_Secciones.
+    '''Control btnSiguiente.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents gv_Secciones As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents btnSiguiente As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''Control btnComenzar.
+    '''Control final.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnComenzar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents final As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Control btnEvaluacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnEvaluacion As Global.System.Web.UI.WebControls.Button
 End Class

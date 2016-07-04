@@ -23,12 +23,12 @@
             validaciones.validarSubmit(Me, Me.error, Me.lbl_TituloError)
             Dim oIdiomaBLL As New BLL.clsIdioma
             If oIdiomaBLL.ChequearNombre(txtNombre.Text) = False Then
-                Dim NuevoIdioma As New servicios.clsIdioma
+                Dim NuevoIdioma As New Servicios.clsIdioma
                 NuevoIdioma.Descripcion = txtNombre.Text
 
                 If oIdiomaBLL.CrearIdioma(NuevoIdioma) = True Then
-                    Dim oLeyenda As New servicios.clsLeyenda
-                    Dim oTrad As New servicios.ClsTraduccion
+                    Dim oLeyenda As New Servicios.clsLeyenda
+                    Dim oTrad As New Servicios.ClsTraduccion
                     Dim oTradBLL As New BLL.ClsTraduccion
                     For Each r As GridViewRow In gv_Palabras.Rows
                         Try
@@ -55,11 +55,11 @@
                             'Ocurrio un error al querer guardar una traduccion
                         End Try
                     Next
-                        Else
-                            'Ocurrio un error al querer dar de alta el nuevo idioma por favor contacte al administrador.
-                        End If
+                Else
+                    'Ocurrio un error al querer dar de alta el nuevo idioma por favor contacte al administrador.
+                End If
             Else
-                        'El nombre de idioma elegido ya se encuentra registrado en la base de datos.
+                'El nombre de idioma elegido ya se encuentra registrado en la base de datos.
             End If
             Me.correcto.Visible = True
         Catch ex As Servicios.clsExcepcionCamposIncompletos
