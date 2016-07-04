@@ -68,12 +68,10 @@
                         <br />
                         <br />
                         <div class="row">
-                            <div class="col-md-3 col-md-offset-2">
+                            <div class="col-md-2 col-md-offset-5">
                                 <asp:Button ID="btnAgregarSlide" runat="server" Text="Agregar Slide a Seccion >>" CssClass="btn btn-block btn-success" />
                             </div>
-                            <div class="col-md-3 col-md-offset-2">
-                                <asp:Button ID="btnFinalizarSeccion" runat="server" Text="Finalizar Seccion" CssClass="btn btn-block btn-danger" />
-                            </div>
+
                         </div>
                         <br />
                     </div>

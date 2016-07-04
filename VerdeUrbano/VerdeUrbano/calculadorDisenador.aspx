@@ -90,7 +90,7 @@
                                     <div class="well profile">
                                         <div class="col-md-2">
                                             <figure>
-                                                <img src="Imagenes/maceta.jpg" class="img-circle profile-img img-responsive" />
+                                                <img id="img_top1" runat="server" class="img-circle profile-img img-responsive" />
                                             </figure>
                                         </div>
                                         <div class="col-md-8">
@@ -118,7 +118,7 @@
                                     <div class="well profile">
                                         <div class="col-md-2">
                                             <figure>
-                                                <img src="Imagenes/maceta.jpg" class="img-circle profile-img img-responsive" />
+                                                <img  id="img_top2" runat="server" class="img-circle profile-img img-responsive" />
                                             </figure>
                                         </div>
                                         <div class="col-md-8">
@@ -146,7 +146,7 @@
                                     <div class="well profile">
                                         <div class="col-md-2">
                                             <figure>
-                                                <img src="Imagenes/maceta.jpg" class="img-circle profile-img img-responsive" />
+                                                <img id="img_top3" runat="server" class="img-circle profile-img img-responsive" />
                                             </figure>
                                         </div>
                                         <div class="col-md-8">
@@ -174,7 +174,7 @@
                                 <div class="well profile">
                                     <div class="col-md-2">
                                         <figure>
-                                            <img src="Imagenes/maceta.jpg" class="img-circle profile-img img-responsive" />
+                                            <img id="img_top4" runat="server" class="img-circle profile-img img-responsive" />
                                         </figure>
                                     </div>
                                     <div class="col-md-8">
@@ -202,7 +202,7 @@
                                 <div class="well profile">
                                     <div class="col-md-2">
                                         <figure>
-                                            <img src="Imagenes/maceta.jpg" class="img-circle profile-img img-responsive" />
+                                            <img id="img_top5" runat="server" class="img-circle profile-img img-responsive" />
                                         </figure>
                                     </div>
                                     <div class="col-md-8">

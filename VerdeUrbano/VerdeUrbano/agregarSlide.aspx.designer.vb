@@ -212,13 +212,31 @@ Partial Public Class agregarSlide
     Protected WithEvents lbl_URLImagen As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control txtURLImagen.
+    '''Control fu_imagenUsuario.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtURLImagen As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents fu_imagenUsuario As Global.System.Web.UI.WebControls.FileUpload
+    
+    '''<summary>
+    '''Control RegularExpressionValidator2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator2 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    
+    '''<summary>
+    '''Control validadorSize.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents validadorSize As Global.System.Web.UI.WebControls.CustomValidator
     
     '''<summary>
     '''Control pieImagen.
@@ -273,6 +291,15 @@ Partial Public Class agregarSlide
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtURLVideo As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control RegularExpressionValidator1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidator1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
     
     '''<summary>
     '''Control btnFinalizarEdicion.

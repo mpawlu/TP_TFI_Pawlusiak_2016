@@ -99,10 +99,10 @@
                         <br />
                         <div class="fila">
                             <div class="col-md-2 col-md-offset-3">
-                                <asp:Button ID="btn_agregar" runat="server" Text="Agregar" CssClass="btn btn-aceptar btn-block" />
+                                <asp:Button ID="btn_agregar" runat="server" Text="Agregar" CssClass="btn btn-success btn-block" />
                             </div>
                             <div class="col-md-2 col-md-offset-2">
-                                <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" CssClass="btn btn-cancelar btn-block" />
+                                <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" CssClass="btn btn-warning btn-block" />
                             </div>
                         </div>
                     </div>

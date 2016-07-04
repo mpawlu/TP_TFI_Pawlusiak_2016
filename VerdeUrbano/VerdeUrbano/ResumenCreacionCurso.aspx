@@ -70,15 +70,11 @@
                             <div class="col-md-2 col-md-offset-2">
                                 <asp:Button ID="btnAgregarSeccion" runat="server" Text="Agregar Seccion" CssClass="btn btn-block btn-info" />
                             </div>
-                        </div>
-                            <div class="row">
-                            <div class="col-md-2 col-md-offset-2">
-                                <asp:Button ID="btnCrearEvaluacion" runat="server" Text="Crear Evaluacion" CssClass="btn btn-block btn-info" />
+                            <div class="col-md-2 col-md-offset-1">
+                                <asp:Button ID="btnCrearEvaluacion" runat="server" Text="Crear Evaluacion" CssClass="btn btn-block btn-success" />
                             </div>
-                        </div>
-                                                <div class="row">
-                            <div class="col-md-2 col-md-offset-4">
-                                <asp:Button ID="btnFinalizarCurso" runat="server" Text="Finalizar Curso" CssClass="btn btn-block btn-info" />
+                            <div class="col-md-2 col-md-offset-1">
+                                <asp:Button ID="btnFinalizarCurso" runat="server" Text="Finalizar Curso" CssClass="btn btn-block btn-danger" />
                             </div>
                         </div>
 </asp:Content>

@@ -7,7 +7,7 @@
     <link href="CSS/DateTimePicker.css" rel="stylesheet" type="text/css" />
     <script>
         $(function () {
-            $("#contenidoPagina_txtFechaCreacion").datepicker();
+            $("#contenidoPagina_txtFechaVencimiento").datepicker();
         });
     </script>
 </asp:Content>
@@ -54,7 +54,7 @@
                             </div>
 
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:TextBox ID="txtDetalle" runat="server" CssClass="caja-texto"></asp:TextBox>
+                                <asp:TextBox ID="txtDetalle" runat="server" CssClass="textarea" TextMode="MultiLine" Height="100px"></asp:TextBox>
                             </div>
                             <div class="col-md-1">
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"

@@ -283,14 +283,20 @@
         Dim _contador As Integer = 1
         For Each _ranking As EE.CalculadoraIE In paramRanking
             If _contador <= 5 Then
+                Dim _persona As EE.Persona
+                Dim _bll As New BLL.Persona
+                _persona = _bll.Consultar(_ranking.Dieseñador.DNI)
                 Dim lbl_NombreDisenador As Label = calculadorEA.FindControl("lbl_NombreDisenador" & _contador)
                 Dim lbl_CantidadCursosRealizado As Label = calculadorEA.FindControl("lbl_CantidadCursosRealizado" & _contador)
                 Dim lbl_DetalleUltimoCurso As Label = calculadorEA.FindControl("lbl_DetalleUltimoCurso" & _contador)
                 Dim lbl_rating As Label = calculadorEA.FindControl("lbl_rating" & _contador)
+                Dim img_disenador As HtmlImage = calculadorEA.FindControl("img_top" & _contador)
                 lbl_NombreDisenador.Text = _ranking.Dieseñador.NombreUsuario
                 lbl_CantidadCursosRealizado.Text = _ranking.Cursos.Count.ToString
                 lbl_DetalleUltimoCurso.Text = _ranking.Reproducciones(_ranking.Reproducciones.Count - 1).Curso.Nombre
-                lbl_rating.Text = _ranking.IndiceDeSatisfaccion.ToString
+                lbl_rating.Text = FormatNumber(_ranking.IndiceDeSatisfaccion.ToString, 2)
+
+                img_disenador.Src = _persona.Imagen
                 Dim _divTop As HtmlControl = calculadorEA.FindControl("top" & _contador)
                 _divTop.Visible = True
                 _contador = _contador + 1
