@@ -87,4 +87,14 @@
     Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Response.Redirect("index.aspx")
     End Sub
+
+    Protected Sub validadorSize_ServerValidate(source As Object, args As ServerValidateEventArgs)
+        Dim filesize As Double = fu_imagenUsuario.FileContent.Length
+        If filesize > 3000000 Then
+            args.IsValid = False
+        Else
+            args.IsValid = True
+        End If
+    End Sub
+
 End Class

@@ -60,7 +60,7 @@
                         </div>
 
                         <div id="titulo" runat="server" visible="false">
-                                                    <br />
+                            <br />
                             <div class="row">
                                 <div class="col-md-3 col-md-offset-1">
                                     <asp:Label ID="lbl_tituloSeccion" runat="server" Text="Titulo de la Seccion: " CssClass="label"></asp:Label>
@@ -75,9 +75,9 @@
                                 </div>
                             </div>
 
-                        <div id="subtitulo" runat="server" visible="false">
-                                                    </div>
-                        <br />
+                            <div id="subtitulo" runat="server" visible="false">
+                            </div>
+                            <br />
                             <div class="row">
                                 <div class="col-md-3 col-md-offset-1">
                                     <asp:Label ID="lbl_subtitulo" runat="server" Text="Subtitulo (Opcional): " CssClass="label"></asp:Label>
@@ -91,7 +91,7 @@
                         <br />
 
                         <div id="texto" runat="server" visible="false">
-                                                    <br />
+                            <br />
                             <div class="row">
                                 <div class="col-md-3 col-md-offset-1">
                                     <asp:Label ID="lblTexto" runat="server" Text="Texto: " CssClass="label"></asp:Label>
@@ -108,20 +108,24 @@
                         </div>
 
                         <div id="imagen" runat="server" visible="false">
-                                                    <br />
+                            <br />
                             <div class="row">
                                 <div class="col-md-3 col-md-offset-1">
                                     <asp:Label ID="lbl_URLImagen" runat="server" Text="URL Imagen: " CssClass="label"></asp:Label>
                                 </div>
 
                                 <div class="col-md-6 col-md-offset-1">
-                                    <asp:TextBox ID="txtURLImagen" runat="server" CssClass="caja-texto"></asp:TextBox>
+                                    <asp:FileUpload ID="fu_imagenUsuario" runat="server" />
+                                </div>
+                                <div class="col-md-1">
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="*" ControlToValidate="fu_imagenUsuario" ValidationExpression="(.*).(.jpg|.JPG|.gif|.GIF|.jpeg|.JPEG|.bmp|.BMP|.png|.PNG)$" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RegularExpressionValidator>
+                                    <asp:CustomValidator ID="validadorSize" runat="server" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador" ControlToValidate="fu_imagenUsuario" OnServerValidate="validadorSize_ServerValidate"></asp:CustomValidator>
                                 </div>
                             </div>
                         </div>
 
                         <div id="pieImagen" runat="server" visible="false">
-                                                    <br />
+                            <br />
                             <div class="row">
                                 <div class="col-md-3 col-md-offset-1">
                                     <asp:Label ID="lblPie" runat="server" Text="Pie de imagen (opcional): " CssClass="label"></asp:Label>
@@ -134,7 +138,7 @@
                         </div>
 
                         <div id="video" runat="server" visible="false">
-                                                    <br />
+                            <br />
                             <div class="row">
                                 <div class="col-md-3 col-md-offset-1">
                                     <asp:Label ID="lblURLVideo" runat="server" Text="URL Video: " CssClass="label"></asp:Label>
@@ -143,7 +147,10 @@
                                 <div class="col-md-6 col-md-offset-1">
                                     <asp:TextBox ID="txtURLVideo" runat="server" CssClass="caja-texto"></asp:TextBox>
                                 </div>
-                            </div>
+                                <div class="col-md-1 col-md-offset-1">
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtURLVideo" ValidationExpression="(?:https?:\/\/)?(?:www\.)?youtu(?:\.be|be\.com)\/(?:watch\?v=)?([\w-]{10,})" EnableClientScript="false" Display="Dynamic" CssClass="validador"></asp:RegularExpressionValidator>
+
+                                </div>
                         </div>
                         <br />
                         <br />

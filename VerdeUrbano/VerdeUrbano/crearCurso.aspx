@@ -101,11 +101,8 @@
                         <br />
                         <br />
                         <div class="row">
-                            <div class="col-md-3 col-md-offset-2">
+                            <div class="col-md-2 col-md-offset-5">
                                 <asp:Button ID="btnAgregarSeccion" runat="server" Text="Agregar Seccion >>" CssClass="btn btn-block btn-success" />
-                            </div>
-                            <div class="col-md-3 col-md-offset-2">
-                                <asp:Button ID="btnFinalizarCurso" runat="server" Text="Finalizar Curso" CssClass="btn btn-block btn-danger" />
                             </div>
                         </div>
 

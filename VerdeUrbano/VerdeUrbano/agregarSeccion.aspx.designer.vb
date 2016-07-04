@@ -129,13 +129,4 @@ Partial Public Class agregarSeccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnAgregarSlide As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control btnFinalizarSeccion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnFinalizarSeccion As Global.System.Web.UI.WebControls.Button
 End Class

@@ -176,6 +176,15 @@ Partial Public Class calculadorDisenador
     Protected WithEvents top1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
+    '''Control img_top1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents img_top1 As Global.System.Web.UI.HtmlControls.HtmlImage
+    
+    '''<summary>
     '''Control lbl_NombreDisenador1.
     '''</summary>
     '''<remarks>
@@ -246,6 +255,15 @@ Partial Public Class calculadorDisenador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents top2 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Control img_top2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents img_top2 As Global.System.Web.UI.HtmlControls.HtmlImage
     
     '''<summary>
     '''Control lbl_NombreDisenador2.
@@ -320,6 +338,15 @@ Partial Public Class calculadorDisenador
     Protected WithEvents top3 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
+    '''Control img_top3.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents img_top3 As Global.System.Web.UI.HtmlControls.HtmlImage
+    
+    '''<summary>
     '''Control lbl_NombreDisenador3.
     '''</summary>
     '''<remarks>
@@ -392,6 +419,15 @@ Partial Public Class calculadorDisenador
     Protected WithEvents top4 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
+    '''Control img_top4.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents img_top4 As Global.System.Web.UI.HtmlControls.HtmlImage
+    
+    '''<summary>
     '''Control lbl_NombreDisenador4.
     '''</summary>
     '''<remarks>
@@ -462,6 +498,15 @@ Partial Public Class calculadorDisenador
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents top5 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''Control img_top5.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents img_top5 As Global.System.Web.UI.HtmlControls.HtmlImage
     
     '''<summary>
     '''Control lbl_NombreDisenador5.
