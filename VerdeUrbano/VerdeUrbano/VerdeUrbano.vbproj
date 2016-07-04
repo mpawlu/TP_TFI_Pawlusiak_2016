@@ -106,6 +106,7 @@
     <Content Include="agregarSlide.aspx" />
     <Content Include="agregarSolicitudCurso.aspx" />
     <Content Include="agregarUsuario.aspx" />
+    <Content Include="asignarAEmpleado.aspx" />
     <Content Include="AsignarCurso.aspx" />
     <Content Include="calculadorDisenador.aspx" />
     <Content Include="calcularPresupuesto.aspx" />
@@ -257,6 +258,13 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="App_Code\validaciones.vb" />
+    <Compile Include="asignarAEmpleado.aspx.designer.vb">
+      <DependentUpon>asignarAEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="asignarAEmpleado.aspx.vb">
+      <DependentUpon>asignarAEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="AsignarCurso.aspx.designer.vb">
       <DependentUpon>AsignarCurso.aspx</DependentUpon>
     </Compile>

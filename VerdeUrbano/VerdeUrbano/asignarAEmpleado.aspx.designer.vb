@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class AsignarCurso
+Partial Public Class asignarAEmpleado
 
     '''<summary>
     '''Control correcto.
@@ -50,38 +50,47 @@ Partial Public Class AsignarCurso
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lbl_CursoAAsignar.
+    '''Control gv_Curso.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_CursoAAsignar As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents gv_Curso As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''Control lbl_Curso.
+    '''Control lbl_AsignarCurso.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_Curso As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_AsignarCurso As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control ddlCurso.
+    '''Control lbl_Empleado.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlCurso As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents lbl_Empleado As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control btnSiguiente.
+    '''Control ddlEmpleado.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnSiguiente As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents ddlEmpleado As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control btnAsignar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnAsignar As Global.System.Web.UI.WebControls.Button
 End Class
