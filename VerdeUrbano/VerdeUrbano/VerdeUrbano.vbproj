@@ -129,6 +129,7 @@
     <Content Include="editarPerfil.aspx" />
     <Content Include="editarUsuario.aspx" />
     <Content Include="enconstruccion.aspx" />
+    <Content Include="encuestaSatisfaccion.aspx" />
     <Content Include="error.aspx" />
     <Content Include="errorIntegridad.aspx" />
     <Content Include="evaluacion.aspx" />
@@ -203,9 +204,6 @@
     <Content Include="ResumenCreacionCurso.aspx" />
     <Content Include="resumenCreacionSeccion.aspx" />
     <Content Include="seleccionarSatisfaccion.aspx" />
-    <Content Include="slideImagen.aspx" />
-    <Content Include="slideTexto.aspx" />
-    <Content Include="slideVideo.aspx" />
     <Content Include="solicitudesFinalizadas.aspx" />
     <Content Include="solicitudesPendientes.aspx" />
     <Content Include="visualizarBitacora.aspx" />
@@ -360,6 +358,13 @@
       <DependentUpon>enconstruccion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="encuestaSatisfaccion.aspx.designer.vb">
+      <DependentUpon>encuestaSatisfaccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="encuestaSatisfaccion.aspx.vb">
+      <DependentUpon>encuestaSatisfaccion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="error.aspx.designer.vb">
       <DependentUpon>error.aspx</DependentUpon>
     </Compile>
@@ -497,27 +502,6 @@
     </Compile>
     <Compile Include="seleccionarSatisfaccion.aspx.vb">
       <DependentUpon>seleccionarSatisfaccion.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="slideImagen.aspx.designer.vb">
-      <DependentUpon>slideImagen.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="slideImagen.aspx.vb">
-      <DependentUpon>slideImagen.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="slideTexto.aspx.designer.vb">
-      <DependentUpon>slideTexto.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="slideTexto.aspx.vb">
-      <DependentUpon>slideTexto.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="slideVideo.aspx.designer.vb">
-      <DependentUpon>slideVideo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="slideVideo.aspx.vb">
-      <DependentUpon>slideVideo.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="solicitudesFinalizadas.aspx.designer.vb">

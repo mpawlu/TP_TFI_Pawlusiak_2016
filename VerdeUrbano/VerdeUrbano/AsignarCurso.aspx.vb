@@ -17,6 +17,7 @@
         Dim oManager As New EE.Persona
         Dim oPersonaBLL As New BLL.Persona
         oManager = oPersonaBLL.Consultar(oUsSes.DNI)
+
         CursosDisponibles = oCompraBLL.ConsultarCompras(oManager.Empresa)
         Empleados = oPerBLL.Listar(oManager.Empresa)
         Me.cargarDDL(CursosDisponibles)

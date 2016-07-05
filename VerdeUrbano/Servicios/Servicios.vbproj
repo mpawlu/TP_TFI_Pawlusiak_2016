@@ -66,6 +66,7 @@
     <Compile Include="clsBackupRestore.vb" />
     <Compile Include="clsEncriptadora.vb" />
     <Compile Include="Excepciones\clsExcepcionErrorBBDD.vb" />
+    <Compile Include="Excepciones\clsExcepcionLicenciasInsuficientes.vb" />
     <Compile Include="Excepciones\clsExcepcionOperacionCorrecta.vb" />
     <Compile Include="Excepciones\clsExcepcionPermisoDuplicado.vb" />
     <Compile Include="Excepciones\clsExcepcionPersonalizada.vb" />

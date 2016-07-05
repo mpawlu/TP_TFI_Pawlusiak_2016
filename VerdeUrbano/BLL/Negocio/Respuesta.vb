@@ -1,3 +1,6 @@
-﻿Public Class Respuesta
+﻿Namespace BLL
+    Public Class Respuesta
 
-End Class
+    End Class
+End Namespace
+

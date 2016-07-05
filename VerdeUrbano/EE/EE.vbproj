@@ -94,7 +94,6 @@
     <Compile Include="Negocio\Empresa.vb" />
     <Compile Include="Negocio\Encuesta.vb" />
     <Compile Include="Negocio\EncuestaAsignada.vb" />
-    <Compile Include="Negocio\EncuestaRealizada.vb" />
     <Compile Include="Negocio\EstadoCupon.vb" />
     <Compile Include="Negocio\EstadoCurso.vb" />
     <Compile Include="Negocio\Evaluacion.vb" />

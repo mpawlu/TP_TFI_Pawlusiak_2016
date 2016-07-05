@@ -8,7 +8,7 @@
             Dim oResultado As New List(Of EE.Compra)
 
             hdatos.Add("@ID_Empresa", _Empresa.ID)
-            DS = oDatos.Leer("s_Compra_ListarXEmp", hdatos)
+            DS = oDatos.Leer("s_Compra_ConsultarXEmp", hdatos)
 
             If DS.Tables(0).Rows.Count > 0 Then
 

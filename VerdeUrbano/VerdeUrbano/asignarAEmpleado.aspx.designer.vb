@@ -50,15 +50,6 @@ Partial Public Class asignarAEmpleado
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control gv_Curso.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents gv_Curso As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
     '''Control lbl_AsignarCurso.
     '''</summary>
     '''<remarks>
@@ -66,6 +57,15 @@ Partial Public Class asignarAEmpleado
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_AsignarCurso As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control gv_Curso.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents gv_Curso As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''Control lbl_Empleado.
@@ -77,13 +77,22 @@ Partial Public Class asignarAEmpleado
     Protected WithEvents lbl_Empleado As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control ddlEmpleado.
+    '''Control gv_empleados.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlEmpleado As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents gv_empleados As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control lbl_nota.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_nota As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control btnAsignar.

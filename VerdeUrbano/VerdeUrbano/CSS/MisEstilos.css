@@ -494,20 +494,3 @@ body {
     .circle-tile-heading-des .fa {
         line-height: 80px;
     }
-
-
-.subrayado {
-    text-decoration: underline;
-}
-
-
-
-.textareaSinBorde {
-    resize: none;
-    color: #000;
-    background-color: #fff;
-    border: 2px solid white;
-    font-size: 18px;
-    width: 100%;
-    height: 28px;
-}

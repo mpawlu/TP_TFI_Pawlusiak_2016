@@ -1,5 +1,26 @@
 ﻿Namespace MPP
     Public Class CursoAsignado
+        Public Function Guardar(ByVal _CursoAsignado As EE.CursoAsignado) As Boolean
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim resultado As Boolean
+
+            hdatos.Add("@ID_Curso", _CursoAsignado.Curso.ID)
+            hdatos.Add("@ID_Empleado", _CursoAsignado.Empleado.ID)
+            hdatos.Add("@ID_Estado", _CursoAsignado.Estado.ID)
+            hdatos.Add("@Fecha_Asignacion", _CursoAsignado.FechaAsignacion)
+            hdatos.Add("@Fecha_Vencimiento", _CursoAsignado.FechaVencimiento)
+            hdatos.Add("@Progreso", DBNull.Value)
+            hdatos.Add("@Intento", _CursoAsignado.Intentos)
+            hdatos.Add("@Resultado", DBNull.Value)
+            hdatos.Add("@Aprobado", DBNull.Value)
+
+
+            resultado = oDatos.Escribir("s_Curso_Asignado_Crear", hdatos)
+
+            Return resultado
+
+        End Function
         Function ConsultarRepFinalizadas(ByVal _curso As EE.Curso) As List(Of EE.CursoAsignado)
             Dim oDatos As New DAL.Datos
             Dim DS As New DataSet
@@ -19,7 +40,7 @@
                     oCurAsig.Curso = _curso
 
                     Dim oUsuMPP As New MPP.clsUsuario
-                    Dim oEmp As New Servicios.Usuario
+                    Dim oEmp As New servicios.Usuario
                     oEmp.ID = Item("ID_Empleado")
                     oCurAsig.Empleado = oUsuMPP.ConsultarUsuario(oEmp)
 
@@ -85,7 +106,7 @@
                     oCurAsig.Curso = oCurMPP.Consultar(oCur)
 
                     Dim oUsuMPP As New MPP.clsUsuario
-                    Dim oEmp As New Servicios.Usuario
+                    Dim oEmp As New servicios.Usuario
                     oEmp.ID = Item("ID_Empleado")
                     oCurAsig.Empleado = oUsuMPP.ConsultarUsuario(oEmp)
 
@@ -129,7 +150,7 @@
                 Return Nothing
             End If
         End Function
-        Function ConsultarCursosPendientes(ByVal _empleado As Servicios.Usuario) As List(Of EE.CursoAsignado)
+        Function ConsultarCursosPendientes(ByVal _empleado As servicios.Usuario) As List(Of EE.CursoAsignado)
             Dim oDatos As New DAL.Datos
             Dim DS As New DataSet
             Dim dt As New DataTable
@@ -151,7 +172,7 @@
                     oCurAsig.Curso = oCurMPP.Consultar(oCur)
 
                     Dim oUsuMPP As New MPP.clsUsuario
-                    Dim oEmp As New Servicios.Usuario
+                    Dim oEmp As New servicios.Usuario
                     oEmp.ID = Item("ID_Empleado")
                     oCurAsig.Empleado = oUsuMPP.ConsultarUsuario(oEmp)
 
@@ -224,7 +245,7 @@
                     oCurAsig.Curso = oCurMPP.Consultar(oCur)
 
                     Dim oUsuMPP As New MPP.clsUsuario
-                    Dim oEmp As New Servicios.Usuario
+                    Dim oEmp As New servicios.Usuario
                     oEmp.ID = Item("ID_Empleado")
                     oCurAsig.Empleado = oUsuMPP.ConsultarUsuario(oEmp)
 
@@ -311,6 +332,24 @@
             Return resultado
 
         End Function
+        Public Function ComprobarAsignacion(ByVal _empleado As EE.Persona, ByVal _curso As EE.Curso) As Boolean
+            Dim oDatos As New DAL.Datos
+            Dim DS As New DataSet
+            Dim dt As New DataTable
+            Dim hdatos As New Hashtable
+
+            hdatos.Add("@ID_Curso", _curso.ID)
+            hdatos.Add("@ID_Empleado", _empleado.Usuario.ID)
+
+            DS = oDatos.Leer("s_Curso_Asignado_ComprobarAsignacion", hdatos)
+
+            If DS.Tables(0).Rows.Count > 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        End Function
+
     End Class
 End Namespace
 

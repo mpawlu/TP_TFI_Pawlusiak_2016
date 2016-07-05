@@ -31,7 +31,7 @@
         End Sub
         Public Function ConsultarCompras(ByVal queEmpresa As EE.Empresa) As List(Of EE.Compra)
             Dim oMPP As New MPP.Compra
-
+            Return oMPP.ConsultarCompras(queEmpresa)
         End Function
     End Class
 End Namespace

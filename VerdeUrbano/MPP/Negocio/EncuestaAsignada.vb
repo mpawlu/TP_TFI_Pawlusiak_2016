@@ -43,6 +43,40 @@
             End If
 
         End Function
+        Public Function Guardar(ByVal _EncuestaAs As EE.EncuestaAsignada) As Boolean
+            Dim oDatos As New DAL.Datos
+            Dim Resultado As Boolean
+            Dim hdatos As New Hashtable
+
+            hdatos.Add("@ID_Pregunta", 1)
+            hdatos.Add("@ID_Curso", _EncuestaAs.Encuesta.Curso.ID)
+            hdatos.Add("@ID_Usuario", _EncuestaAs.Empleado.ID)
+            hdatos.Add("@Respuesta", _EncuestaAs.Utilidad)
+            If oDatos.Escribir("s_Respuestas_Encuesta_Crear", hdatos) = False Then
+                Return False
+            End If
+            hdatos = New Hashtable
+            hdatos.Add("@ID_Pregunta", 2)
+            hdatos.Add("@ID_Curso", _EncuestaAs.Encuesta.Curso.ID)
+            hdatos.Add("@ID_Usuario", _EncuestaAs.Empleado.ID)
+            hdatos.Add("@Respuesta", _EncuestaAs.Dificultad)
+            If oDatos.Escribir("s_Respuestas_Encuesta_Crear", hdatos) = False Then
+                Return False
+            End If
+            For Each _respuesta As EE.Respuesta In _EncuestaAs.Respuestas
+                Dim hdatos2 As New Hashtable
+
+                hdatos2.Add("@ID_Pregunta", _respuesta.PreguntaEncuesta.ID_Pregunta)
+                hdatos2.Add("@ID_Curso", _EncuestaAs.Encuesta.Curso.ID)
+                hdatos2.Add("@ID_Usuario", _EncuestaAs.Empleado.ID)
+                hdatos2.Add("@Respuesta", _respuesta.OpcionElegida)
+
+                If oDatos.Escribir("s_Respuestas_Encuesta_Crear", hdatos2) = False Then
+                    Return False
+                End If
+            Next
+            Return True
+        End Function
     End Class
 End Namespace
 

@@ -2,11 +2,11 @@
     Public Class Respuesta
 
         Enum etipoRespuesta
-            Excelente = 0
-            Bueno = 1
+            Excelente = 4
+            Bueno = 3
             Regular = 2
-            Malo = 3
-            Pesimo = 4
+            Malo = 1
+            Pesimo = 0
         End Enum
 
         Private _PreguntaEncuesta As PreguntaEncuesta

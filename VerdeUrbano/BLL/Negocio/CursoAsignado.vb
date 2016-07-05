@@ -1,8 +1,12 @@
 ﻿Namespace BLL
     Public Class CursoAsignado
         Public Function Guardar(ByVal QueAsignacion As EE.CursoAsignado) As Boolean
-
-
+            QueAsignacion.Estado = New EE.Pendiente
+            QueAsignacion.FechaAsignacion = Today
+            QueAsignacion.FechaVencimiento = Today.AddDays(30)
+            QueAsignacion.Intentos = 0
+            Dim oMPP As New MPP.CursoAsignado
+            Return oMPP.Guardar(QueAsignacion)
         End Function
         Public Function Modificar(ByVal QueAsignacion As EE.CursoAsignado) As Boolean
             Dim oCurAsigMPP As New MPP.CursoAsignado
@@ -75,6 +79,8 @@
             End If
         End Sub
         Public Sub FinalizarCurso(ByVal _cursoAsignado As EE.CursoAsignado)
+            Dim oEncAsigBLL As New BLL.EncuestaAsignada
+            oEncAsigBLL.GuradarEncuestaRealizada(_cursoAsignado.EncuestaAsignada)
             Me.CalcularResultado(_cursoAsignado)
             _cursoAsignado.Estado.PasarAFinalizado(_cursoAsignado)
             Me.Modificar(_cursoAsignado)
@@ -82,6 +88,10 @@
         Public Function Consutar(ByVal _CursoAsignado As EE.CursoAsignado) As EE.CursoAsignado
             Dim oMPP As New MPP.CursoAsignado
             Return oMPP.Consultar(_CursoAsignado)
+        End Function
+        Public Function ComprobarAsignacion(ByVal _persona As EE.Persona, ByVal _curso As EE.curso) As Boolean
+            Dim oMPP As New MPP.CursoAsignado
+            Return oMPP.ComprobarAsignacion(_persona, _curso)
         End Function
     End Class
 

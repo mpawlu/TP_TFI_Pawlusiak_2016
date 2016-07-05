@@ -68,7 +68,7 @@
             oCuAs.Respuestas = oRespuestas
             If oBLL.GuardarRespuestas(oCuAs) = True Then
                 oCuAs = oBLL.Consutar(oCuAs)
-                oBLL.FinalizarCurso(oCuAs)
+                'oBLL.FinalizarCurso(oCuAs)
                 Session("CursoAsignado") = oCuAs
                 Response.Redirect("examenFinalizado.aspx")
             End If
