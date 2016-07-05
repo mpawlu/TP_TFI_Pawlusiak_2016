@@ -19,33 +19,39 @@
                         <asp:Label ID="lblVisualizarSlide" runat="server" Text="Visualizar Slide"></asp:Label>
                     </div>
                     <div class="panel-body">
-                        <br />
-                        <br />
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <asp:Label ID="lblTitulo" runat="server" Text="" CssClass="label"></asp:Label>
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="panel panel-marron">
+                                <div class="panel-heading">
+                                    <asp:Label ID="lblSeccion" runat="server" Text="Seccion" CssClass="label"></asp:Label>
+                                </div>
+                                <div class="panel-body">
+                                    <asp:Label ID="lblValorSeccion" runat="server" Text="Titulo del Curso" CssClass="labelChico"></asp:Label>
+                                </div>
                             </div>
-                        </div>
-                        <div id="subtitulo" runat="server">
-                            <br />
-                            <div class="row">
-                                <div class="col-md-10 col-md-offset-1">
-                                    <asp:Label ID="lblSubTitulo" runat="server" Text="" CssClass="label"></asp:Label>
+                            <div class="panel panel-marron">
+                                <div class="panel-heading">
+                                    <asp:Label ID="lblSlide" runat="server" Text="Titulo del Slide" CssClass="label"></asp:Label>
+                                </div>
+                                <div class="panel-body">
+                                    <asp:Label ID="lblTitulo" runat="server" Text="" CssClass="labelChico"></asp:Label>
+                                    <br />
+                                    <div id="subtitulo" runat="server" visible="false">
+                                        <asp:Label ID="lblSubTitulo" runat="server" Text="SubTitulo del Slide" CssClass="labelchico"></asp:Label>
+                                    </div>
+                                    <br />
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe id="videoMaterial" runat="server" frameborder="0" allowfullscreen=""/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <br />
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <iframe id="videoMaterial" width="100%" height="400" runat="server" allowfullscreen></iframe>
-                            </div>
-                        </div>
                         <br />
-                                                <div id="siguiente" runat="server" visible="false">
+                        <div id="siguiente" runat="server" visible="false">
                             <br />
                             <div class="row">
-                                <div class="col-md-10 col-md-offset-1">
-                                    <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente" CssClass="btn btn-block btn-info" />
+                                <div class="col-md-4 col-md-offset-4">
+                                    <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente" CssClass="btn btn-block btn-primary" />
 
                                 </div>
                             </div>
@@ -54,7 +60,7 @@
                         <div id="final" runat="server" visible="false">
                             <br />
                             <div class="row">
-                                <div class="col-md-10 col-md-offset-1">
+                                <div class="col-md-4 col-md-offset-4">
                                     <asp:Button ID="btnEvaluacion" runat="server" Text="Evaluar" CssClass="btn btn-block btn-danger" />
 
                                 </div>

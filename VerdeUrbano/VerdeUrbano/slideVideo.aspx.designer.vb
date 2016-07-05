@@ -41,6 +41,33 @@ Partial Public Class slideVideo
     Protected WithEvents lblVisualizarSlide As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''Control lblSeccion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblSeccion As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lblValorSeccion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblValorSeccion As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control lblSlide.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblSlide As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Control lblTitulo.
     '''</summary>
     '''<remarks>

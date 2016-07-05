@@ -32,34 +32,21 @@
                                 </div>
                                 <div class="panel panel-marron">
                                     <div class="panel-heading">
-                                        <asp:Label ID="lblSlide" runat="server" Text="Titulo del Slide" CssClass="label"></asp:Label>
+                                        <asp:Label ID="lblSlide" runat="server" Text="Slide" CssClass="label"></asp:Label>
                                     </div>
-                                    <div class="panel-body">
-                                        <asp:Label ID="lblTitulo" runat="server" Text="" CssClass="labelChico"></asp:Label>
-
-                                    </div>
-                                </div>
-                                <div id="subtitulo" runat="server">
-                                    <div class="panel panel-marron">
-                                        <div class="panel-heading">
-                                            <asp:Label ID="lblSubtituloSlide" runat="server" Text="SubTitulo del Slide" CssClass="label"></asp:Label>
+                                    <div class="panel-body text-center">
+                                        <asp:Label ID="lblTitulo" runat="server" Text="" CssClass="label"></asp:Label>
+                                        <br />
+                                        <div id="subtitulo" runat="server">
+                                            <asp:Label ID="lblSubTitulo" runat="server" Text="SubTitulo del Slide" CssClass="labelchico subrayado"></asp:Label>
                                         </div>
-                                        <div class="panel-body">
-                                            <asp:Label ID="lblSubTitulo" runat="server" Text="SubTitulo del Slide" CssClass="labelchico"></asp:Label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-marron">
-                                    <div class="panel-heading">
-                                        <asp:Label ID="lblContenido" runat="server" Text="Contenido" CssClass="label"></asp:Label>
-                                    </div>
-                                    <div class="panel-body">
+<br />
                                         <asp:TextBox ID="descripcion" runat="server" CssClass="textareaSinBorde" TextMode="MultiLine" Enabled="false" Height="200px"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                         </div>
-     <br />
+                        <br />
                         <div id="siguiente" runat="server" visible="false">
                             <br />
                             <div class="row">

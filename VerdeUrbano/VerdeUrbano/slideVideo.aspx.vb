@@ -12,12 +12,16 @@
 
     Private Sub cargarDatosSlide()
         Dim oSlide As EE.TipoC = DirectCast(Session("SlideSeleccion"), EE.TipoC)
+        Dim oSeccion As EE.Informativa = DirectCast(Session("SeccionSeleccion"), EE.Informativa)
+        Me.lblValorSeccion.Text = oSeccion.Titulo
         Me.lblTitulo.Text = oSlide.Titulo
         If oSlide.Subtitulo <> "" Then
-            Me.subtitulo.visible = True
+
+            Me.subtitulo.Visible = True
             Me.lblSubTitulo.Text = oSlide.Subtitulo
         End If
-        Me.videoMaterial.Src = "http://www.youtube.com/embed/" & oSlide.Video
+
+        Me.videoMaterial.Src = "https://www.youtube-nocookie.com/embed/" & oSlide.Video
         If esUltimoSlide() = True And esUltimaSeccion() = True Then
             Me.siguiente.Visible = False
             Me.final.Visible = True
