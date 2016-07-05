@@ -13,24 +13,6 @@
             Me.ddl_lic.Items.Add(i.ToString)
         Next
     End Sub
-    Public Function Seleccionado() As EE.CursoAsignado
-        Dim _usuSesion As New Servicios.Usuario
-        _usuSesion = DirectCast(Session("Usuario"), Servicios.Usuario)
-        Dim oBLL As New BLL.CursoAsignado
-        Dim indice As Integer
-        Dim cont As Integer
-        indice = 0
-        cont = 0
-        For Each row As GridViewRow In gv_cursos.Rows
-            Dim checkbox As System.Web.UI.WebControls.CheckBox = DirectCast(row.FindControl("chk_sel"), System.Web.UI.WebControls.CheckBox)
-            cont += 1
-            If checkbox.Checked = True Then
-                indice = cont
-            End If
-        Next
-        Dim oca As New EE.CursoAsignado
-        Return oBLL.ConsultarCursosPendientes(_usuSesion)(indice - 1)
-    End Function
     Private Function ListarCursos() As List(Of EE.Curso)
         Dim ListaCursos As New List(Of EE.Curso)
         Dim oBLL As New BLL.Curso
@@ -51,5 +33,55 @@
             End If
         Next
         Return _flag
+    End Function
+
+    Private Sub btnComprar_Click(sender As Object, e As EventArgs) Handles btnComprar.Click
+        Try
+            If Me.validarCheckBox = False Then
+                Throw New Servicios.clsExcepcionCamposIncompletos
+            Else
+                Dim _Curso As New EE.Curso
+                Dim _Empresa As New EE.Empresa
+                Dim _Presona As New EE.Persona
+                Dim oPersBLL As New BLL.Persona
+                _Presona = oPersBLL.Consultar(Me.RecuperarUsuario.DNI)
+                _Empresa = _Presona.Empresa
+                _Curso = Me.Seleccionado
+                Dim oCompra As New EE.Compra
+                oCompra.Curso = _Curso
+                oCompra.Empresa = _Empresa
+                oCompra.Licencias = CInt(Me.ddl_lic.SelectedItem.Text)
+                Dim oCompraBLL As New BLL.Compra
+
+            End If
+        Catch ex As Servicios.clsExcepcionCamposIncompletos
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Public Function Seleccionado() As EE.Curso
+        Dim _usuSesion As New Servicios.Usuario
+        _usuSesion = DirectCast(Session("Usuario"), Servicios.Usuario)
+        Dim oBLL As New BLL.Curso
+        Dim indice As Integer
+        Dim cont As Integer
+        indice = 0
+        cont = 0
+        For Each row As GridViewRow In gv_cursos.Rows
+            Dim checkbox As System.Web.UI.WebControls.CheckBox = DirectCast(row.FindControl("chk_sel"), System.Web.UI.WebControls.CheckBox)
+            cont += 1
+            If checkbox.Checked = True Then
+                indice = cont
+            End If
+        Next
+        Dim oca As New EE.CursoAsignado
+        Return oBLL.ListarCursos()(indice - 1)
+    End Function
+    Public Function RecuperarUsuario() As Servicios.Usuario
+        Dim resultado As New Servicios.Usuario
+        resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
+        Return resultado
     End Function
 End Class

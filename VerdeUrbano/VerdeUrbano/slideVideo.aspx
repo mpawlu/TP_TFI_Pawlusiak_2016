@@ -52,7 +52,6 @@
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-4">
                                     <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente" CssClass="btn btn-block btn-primary" />
-
                                 </div>
                             </div>
                         </div>

@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class slideTexto
-    
+
     '''<summary>
     '''Control error.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents [error] As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
+
     '''<summary>
     '''Control lbl_TituloError.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Control lblVisualizarSlide.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblVisualizarSlide As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Control lblSeccion.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblSeccion As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Control lblValorSeccion.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblValorSeccion As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Control lblSlide.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblSlide As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Control lblTitulo.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblTitulo As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Control subtitulo.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents subtitulo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
+
     '''<summary>
     '''Control lblSubTitulo.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblSubTitulo As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Control descripcion.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents descripcion As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''Control siguiente.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents siguiente As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
+
     '''<summary>
     '''Control btnSiguiente.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnSiguiente As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''Control final.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class slideTexto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents final As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-    
+
     '''<summary>
     '''Control btnEvaluacion.
     '''</summary>

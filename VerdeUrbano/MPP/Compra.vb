@@ -28,6 +28,26 @@
             End If
 
         End Function
+        Public Function GuardarCompra(ByVal QueCompra As EE.Compra) As Boolean
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim resultado As Boolean
+
+            'hdatos.Add("@DNI", quePersona.DNI)
+            'hdatos.Add("@Nombres", quePersona.Nombres)
+            'hdatos.Add("@Apellido", quePersona.Apellido)
+            'hdatos.Add("@Tel", quePersona.Telefono)
+            'hdatos.Add("@Email", quePersona.Email)
+            'hdatos.Add("@Imagen", quePersona.Imagen)
+            'If quePersona.Empresa Is Nothing Then
+            '    hdatos.Add("@ID_Empresa", DBNull.Value)
+            'Else
+            '    hdatos.Add("@ID_Empresa", quePersona.Empresa.ID)
+            'End If
+            resultado = oDatos.Escribir("s_Persona_Crear", hdatos)
+
+            Return resultado
+        End Function
     End Class
 End Namespace
 

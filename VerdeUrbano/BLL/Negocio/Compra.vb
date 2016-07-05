@@ -3,13 +3,13 @@
 
         Public Function ConfirmarCompra(ByVal QueCompra As EE.Compra) As EE.CuponPago
             If Me.GuardarCompra(QueCompra) = True Then
-                Dim CuponEE As New EE.CuponPago
-                Dim estCupon As New EE.Emitido
-                QueCompra.Total = CalcularTotal(QueCompra)
-                CuponEE.Compra = QueCompra
-                CuponEE.FechaEmision = Today
-                CuponEE.Estado = estCupon
-                Dim CuponBLL As New CuponPago
+                'Dim CuponEE As New EE.CuponPago
+                'Dim estCupon As New EE.Emitido
+                'QueCompra.Total = CalcularTotal(QueCompra)
+                'CuponEE.Compra = QueCompra
+                'CuponEE.FechaEmision = Today
+                'CuponEE.Estado = estCupon
+                'Dim CuponBLL As New CuponPago
 
             End If
         End Function
@@ -23,8 +23,9 @@
         Public Function ConsultarCupon(ByVal Compra As EE.Compra) As EE.CuponPago
 
         End Function
-        Private Function GuardarCompra(ByVal QueCompra As EE.Compra) As Boolean
-
+        Public Function GuardarCompra(ByVal QueCompra As EE.Compra) As Boolean
+            Dim oMPP As New MPP.Compra
+            Return oMPP.GuardarCompra(QueCompra)
         End Function
         Sub New()
 
