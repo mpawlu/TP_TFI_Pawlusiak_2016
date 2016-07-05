@@ -33,18 +33,11 @@
             Dim hdatos As New Hashtable
             Dim resultado As Boolean
 
-            'hdatos.Add("@DNI", quePersona.DNI)
-            'hdatos.Add("@Nombres", quePersona.Nombres)
-            'hdatos.Add("@Apellido", quePersona.Apellido)
-            'hdatos.Add("@Tel", quePersona.Telefono)
-            'hdatos.Add("@Email", quePersona.Email)
-            'hdatos.Add("@Imagen", quePersona.Imagen)
-            'If quePersona.Empresa Is Nothing Then
-            '    hdatos.Add("@ID_Empresa", DBNull.Value)
-            'Else
-            '    hdatos.Add("@ID_Empresa", quePersona.Empresa.ID)
-            'End If
-            resultado = oDatos.Escribir("s_Persona_Crear", hdatos)
+            hdatos.Add("@ID_Curso", QueCompra.Curso.ID)
+            hdatos.Add("@ID_Empresa", QueCompra.Empresa.ID)
+            hdatos.Add("@Licencias", QueCompra.Licencias)
+
+            resultado = oDatos.Escribir("s_Compra_Crear", hdatos)
 
             Return resultado
         End Function

@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         function confirmDel() {
-            var myValue = "<%=mensajeConfirmacion%>";
+            var myValue = "<%=mensajeConfirmacion2%>";
             var agree = confirm(myValue);
             if (agree) return true;
             else return false;
