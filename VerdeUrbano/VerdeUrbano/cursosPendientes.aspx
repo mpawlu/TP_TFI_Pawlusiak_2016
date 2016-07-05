@@ -25,7 +25,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
                         <asp:Label ID="lbl_cursosPendientes" runat="server" Text="Cursos Pendientes"></asp:Label>

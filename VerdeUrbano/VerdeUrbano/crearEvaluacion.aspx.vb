@@ -2,6 +2,9 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If validaciones.validarPagina(Me) = False Then
+            Response.Redirect("error.aspx")
+        End If
         If Not Session("EvaluacionCreada") Is Nothing Then
             Dim _eval As EE.Evaluacion = DirectCast(Session("EvaluacionCreada"), EE.Evaluacion)
             Me.txtTitulo.Text = _eval.Titulo
