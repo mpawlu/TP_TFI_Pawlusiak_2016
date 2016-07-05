@@ -1,10 +1,12 @@
 ﻿Public Class comprarCurso
     Inherits System.Web.UI.Page
+    Protected mensajeConfirmacion As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             CargarDDL()
             CargarGrilla()
+            mensajeConfirmacion = "¿Desea Adquirir el Producto?"
         End If
     End Sub
     Public Sub CargarDDL()
@@ -52,4 +54,13 @@
         Next
         Return _flag
     End Function
+
+    Protected Sub btnComprar_Click(sender As Object, e As EventArgs) Handles btnComprar.Click
+        Try
+            Me.correcto.Visible = True
+            Me.formulario.Visible = False
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
