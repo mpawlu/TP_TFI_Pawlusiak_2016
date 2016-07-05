@@ -1,4 +1,5 @@
-﻿Public Class evaluacion
+﻿
+Public Class evaluacion
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -26,7 +27,7 @@
                 Dim labelID As Label = Me.panelPreguntas.FindControl("id_" & _contador)
                 label.Text = _contador & ")" & MiPregunta.Pregunta
                 labelID.Text = MiPregunta.ID
-                For Each _opcion As EE.Opcion_PregCurso In MiPregunta.Opciones
+                For Each _opcion As EE.Opcion_PregCurso In Me.Desordenar(MiPregunta.Opciones)
                     Dim radio As RadioButtonList = Me.panelPreguntas.FindControl("rb_pregunta" & _contador)
                     Dim item As New ListItem
                     item.Text = _opcion.Texto
@@ -89,5 +90,23 @@
         Catch ex As Exception
 
         End Try
+
     End Sub
+
+    Public Function Desordenar(ByVal _ListOpciones As List(Of EE.Opcion_PregCurso)) As List(Of EE.Opcion_PregCurso)
+        Dim listaDesordenada As New List(Of EE.Opcion_PregCurso)
+        Dim rand As New Random()
+        Dim temp As EE.Opcion_PregCurso
+        Dim indexRand As Integer
+        Dim indexLast As Integer = _ListOpciones.Count - 1
+        For index As Integer = 0 To indexLast
+            temp = New EE.Opcion_PregCurso
+            indexRand = rand.Next(index, indexLast)
+            temp = _ListOpciones(indexRand)
+            _ListOpciones(indexRand) = _ListOpciones(index)
+            _ListOpciones(index) = temp
+        Next index
+        Return _ListOpciones
+    End Function
+
 End Class
