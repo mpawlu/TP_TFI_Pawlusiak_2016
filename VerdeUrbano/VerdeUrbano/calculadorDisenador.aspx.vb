@@ -3,7 +3,7 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If validaciones.validarPagina(Me) = False Then
-            Response.Redirect("error.aspx")
+            'Response.Redirect("error.aspx")
         End If
         If Not IsPostBack Then
             obtenerCategorias()
@@ -50,190 +50,30 @@
     End Sub
 
     Private Sub btn_Seleccionar2_Click(sender As Object, e As EventArgs) Handles btn_Seleccionar2.Click
-        Try
-            Dim oDisenador As New Servicios.Usuario
-            Dim oSolicitante As New Servicios.Usuario
-            Dim oSolicitud As New EE.SolicitudCurso
-            Dim oEstadoSolicitud As New EE.EnConstruccion
-            Dim oCurso As New EE.Curso
-            Dim oEstadoCurso As New EE.EnCreacion
-            Dim oUsuBLL As New BLL.clsUsuario
-            Dim oCategoria As New EE.Categoria
-            Dim oSolicitudBLL As New BLL.SolicitudCurso
-            Dim oCursoBLL As New BLL.Curso
-            oCategoria.ID = ddlCategoria.SelectedValue
-            oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
-            oSolicitante = CType(Session("Usuario"), Servicios.Usuario)
-            ''oDisenador.ID = aca tengo que poner el ID del disenador que selecciono
-            oDisenador.ID = 11  ''Y comentar esta linea
-            oDisenador = oUsuBLL.RecuperarUsuario(oDisenador)
-            oSolicitud.Disenador = oDisenador
-            oSolicitud.Solicitante = oSolicitante
-            oCurso.Estado = oEstadoCurso
-            oCurso.Categoria = oCategoria
-            oSolicitud.Titulo = Me.txtTitulo.Text
-            oSolicitud.Detalle = Me.txtDetalle.Text
-            oSolicitud.FechaLimiteDeCreacion = Today
-            oSolicitud.FechaSolicitud = Today
-            oSolicitud.Estado = oEstadoSolicitud
-            If oSolicitudBLL.Guardar(oSolicitud) = True Then
-                oCurso.SolicitudCurso = oSolicitudBLL.ConsultarUltima
-                If oCursoBLL.Guardar(oCurso) = True Then
-                    ''Operacion exitossa
-                Else
-                    ''FALLO Operacion
-                End If
-            Else
-                ''Fallo operacion
-            End If
-        Catch ex As Servicios.clsExcepcionCamposIncompletos
-            Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Titulo
-        Catch ex As Exception
-            Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Message
-        End Try
+        Dim ID_Disenador As Integer
+        ID_Disenador = CInt(lbl_IDDisenador2.Text)
+        Me.QueCurso(ID_Disenador)
 
     End Sub
 
     Private Sub btn_Seleccionar3_Click(sender As Object, e As EventArgs) Handles btn_Seleccionar3.Click
-        Try
-            Dim oDisenador As New Servicios.Usuario
-            Dim oSolicitante As New Servicios.Usuario
-            Dim oSolicitud As New EE.SolicitudCurso
-            Dim oEstadoSolicitud As New EE.EnConstruccion
-            Dim oCurso As New EE.Curso
-            Dim oEstadoCurso As New EE.EnCreacion
-            Dim oUsuBLL As New BLL.clsUsuario
-            Dim oCategoria As New EE.Categoria
-            Dim oSolicitudBLL As New BLL.SolicitudCurso
-            Dim oCursoBLL As New BLL.Curso
-            oCategoria.ID = ddlCategoria.SelectedValue
-            oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
-            oSolicitante = CType(Session("Usuario"), Servicios.Usuario)
-            ''oDisenador.ID = aca tengo que poner el ID del disenador que selecciono
-            oDisenador.ID = 11  ''Y comentar esta linea
-            oDisenador = oUsuBLL.RecuperarUsuario(oDisenador)
-            oSolicitud.Disenador = oDisenador
-            oSolicitud.Solicitante = oSolicitante
-            oCurso.Estado = oEstadoCurso
-            oCurso.Categoria = oCategoria
-            oSolicitud.Titulo = Me.txtTitulo.Text
-            oSolicitud.Detalle = Me.txtDetalle.Text
-            oSolicitud.FechaLimiteDeCreacion = Today
-            oSolicitud.FechaSolicitud = Today
-            oSolicitud.Estado = oEstadoSolicitud
-            If oSolicitudBLL.Guardar(oSolicitud) = True Then
-                oCurso.SolicitudCurso = oSolicitudBLL.ConsultarUltima
-                If oCursoBLL.Guardar(oCurso) = True Then
-                    ''Operacion exitossa
-                Else
-                    ''FALLO Operacion
-                End If
-            Else
-                ''Fallo operacion
-            End If
-        Catch ex As Servicios.clsExcepcionCamposIncompletos
-            Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Titulo
-        Catch ex As Exception
-            Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Message
-        End Try
+        Dim ID_Disenador As Integer
+        ID_Disenador = CInt(lbl_IDDisenador3.Text)
+        Me.QueCurso(ID_Disenador)
 
     End Sub
 
     Private Sub btn_Seleccionar4_Click(sender As Object, e As EventArgs) Handles btn_Seleccionar4.Click
-        Try
-            Dim oDisenador As New Servicios.Usuario
-            Dim oSolicitante As New Servicios.Usuario
-            Dim oSolicitud As New EE.SolicitudCurso
-            Dim oEstadoSolicitud As New EE.EnConstruccion
-            Dim oCurso As New EE.Curso
-            Dim oEstadoCurso As New EE.EnCreacion
-            Dim oUsuBLL As New BLL.clsUsuario
-            Dim oCategoria As New EE.Categoria
-            Dim oSolicitudBLL As New BLL.SolicitudCurso
-            Dim oCursoBLL As New BLL.Curso
-            oCategoria.ID = ddlCategoria.SelectedValue
-            oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
-            oSolicitante = CType(Session("Usuario"), Servicios.Usuario)
-            ''oDisenador.ID = aca tengo que poner el ID del disenador que selecciono
-            oDisenador.ID = 11  ''Y comentar esta linea
-            oDisenador = oUsuBLL.RecuperarUsuario(oDisenador)
-            oSolicitud.Disenador = oDisenador
-            oSolicitud.Solicitante = oSolicitante
-            oCurso.Estado = oEstadoCurso
-            oCurso.Categoria = oCategoria
-            oSolicitud.Titulo = Me.txtTitulo.Text
-            oSolicitud.Detalle = Me.txtDetalle.Text
-            oSolicitud.FechaLimiteDeCreacion = Today
-            oSolicitud.FechaSolicitud = Today
-            oSolicitud.Estado = oEstadoSolicitud
-            If oSolicitudBLL.Guardar(oSolicitud) = True Then
-                oCurso.SolicitudCurso = oSolicitudBLL.ConsultarUltima
-                If oCursoBLL.Guardar(oCurso) = True Then
-                    ''Operacion exitossa
-                Else
-                    ''FALLO Operacion
-                End If
-            Else
-                ''Fallo operacion
-            End If
-        Catch ex As Servicios.clsExcepcionCamposIncompletos
-            Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Titulo
-        Catch ex As Exception
-            Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Message
-        End Try
+        Dim ID_Disenador As Integer
+        ID_Disenador = CInt(lbl_IDDisenador4.Text)
+        Me.QueCurso(ID_Disenador)
 
     End Sub
 
     Private Sub btn_Seleccionar5_Click(sender As Object, e As EventArgs) Handles btn_Seleccionar5.Click
-        Try
-            Dim oDisenador As New Servicios.Usuario
-            Dim oSolicitante As New Servicios.Usuario
-            Dim oSolicitud As New EE.SolicitudCurso
-            Dim oEstadoSolicitud As New EE.EnConstruccion
-            Dim oCurso As New EE.Curso
-            Dim oEstadoCurso As New EE.EnCreacion
-            Dim oUsuBLL As New BLL.clsUsuario
-            Dim oCategoria As New EE.Categoria
-            Dim oSolicitudBLL As New BLL.SolicitudCurso
-            Dim oCursoBLL As New BLL.Curso
-            oCategoria.ID = ddlCategoria.SelectedValue
-            oCategoria.Descripcion = Me.ddlCategoria.SelectedItem.Text
-            oSolicitante = CType(Session("Usuario"), Servicios.Usuario)
-            ''oDisenador.ID = aca tengo que poner el ID del disenador que selecciono
-            oDisenador.ID = 11  ''Y comentar esta linea
-            oDisenador = oUsuBLL.RecuperarUsuario(oDisenador)
-            oSolicitud.Disenador = oDisenador
-            oSolicitud.Solicitante = oSolicitante
-            oCurso.Estado = oEstadoCurso
-            oCurso.Categoria = oCategoria
-            oSolicitud.Titulo = Me.txtTitulo.Text
-            oSolicitud.Detalle = Me.txtDetalle.Text
-            oSolicitud.FechaLimiteDeCreacion = Today
-            oSolicitud.FechaSolicitud = Today
-            oSolicitud.Estado = oEstadoSolicitud
-            If oSolicitudBLL.Guardar(oSolicitud) = True Then
-                oCurso.SolicitudCurso = oSolicitudBLL.ConsultarUltima
-                If oCursoBLL.Guardar(oCurso) = True Then
-                    ''Operacion exitossa
-                Else
-                    ''FALLO Operacion
-                End If
-            Else
-                ''Fallo operacion
-            End If
-        Catch ex As Servicios.clsExcepcionCamposIncompletos
-            Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Titulo
-        Catch ex As Exception
-            Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Message
-        End Try
+        Dim ID_Disenador As Integer
+        ID_Disenador = CInt(lbl_IDDisenador5.Text)
+        Me.QueCurso(ID_Disenador)
 
     End Sub
 
