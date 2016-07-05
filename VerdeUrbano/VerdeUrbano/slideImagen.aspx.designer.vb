@@ -86,15 +86,6 @@ Partial Public Class slideImagen
     Protected WithEvents subtitulo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
     
     '''<summary>
-    '''Control lblSubtituloSlide.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lblSubtituloSlide As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
     '''Control lblSubTitulo.
     '''</summary>
     '''<remarks>
@@ -102,15 +93,6 @@ Partial Public Class slideImagen
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblSubTitulo As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Control lblContenido.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lblContenido As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control img_Slide.

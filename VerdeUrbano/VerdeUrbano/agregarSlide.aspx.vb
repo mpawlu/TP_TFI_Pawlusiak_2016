@@ -64,7 +64,8 @@ Public Class agregarSlide
             Dim tipoC As New EE.TipoC
             tipoC.Titulo = txtTitulo.Text
             tipoC.Subtitulo = txtSubtitulo.Text
-            tipoC.Video = txtURLVideo.Text
+            Dim vector() As String = Split(Me.txtURLVideo.Text, "?v=")
+            tipoC.Video = vector(1)
             Return tipoC
         End If
     End Function

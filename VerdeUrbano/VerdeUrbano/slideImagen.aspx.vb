@@ -11,10 +11,12 @@
     End Sub
 
     Private Sub cargarDatosSlide()
+        Dim oSeccion As EE.Informativa = DirectCast(Session("SeccionSeleccion"), EE.Informativa)
+        Me.lblValorSeccion.Text = oSeccion.Titulo
         Dim oSlide As EE.TipoB = DirectCast(Session("SlideSeleccion"), EE.TipoB)
         Me.lblTitulo.Text = oSlide.Titulo
         If oSlide.Subtitulo <> "" Then
-            Me.subtitulo.visible = True
+            Me.subtitulo.Visible = True
             Me.lblSubTitulo.Text = oSlide.Subtitulo
         End If
         Me.img_Slide.ImageUrl = oSlide.Imagen

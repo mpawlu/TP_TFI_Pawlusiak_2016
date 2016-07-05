@@ -515,3 +515,7 @@ body {
     font-size: 14px;
     color: #000000;
 }
+
+.subrayado {
+text-decoration:underline;
+}
