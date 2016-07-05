@@ -5,8 +5,8 @@ Imports System.Text
 Namespace DAL
     Public Class Datos
 
-        '    Private Str As String = "Data Source=PROGRAMADORA-PC;Initial Catalog=VerdeUrbano;Integrated Security=True"
-        Private Str As String = "Data Source=.\SQLEXPRESS;Initial Catalog=VerdeUrbano;Integrated Security=True"
+        Private Str As String = "Data Source=PROGRAMADORA-PC;Initial Catalog=VerdeUrbano;Integrated Security=True"
+        '  Private Str As String = "Data Source=.\SQLEXPRESS;Initial Catalog=VerdeUrbano;Integrated Security=True"
         Private Shared ComandoRestore As SqlCommand
         Private Cnn As New SqlConnection(Str)
         Private Tranx As SqlTransaction

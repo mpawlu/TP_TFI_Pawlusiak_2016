@@ -1,10 +1,12 @@
 ﻿Public Class comprarCurso
     Inherits System.Web.UI.Page
+    Protected mensajeConfirmacion As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             CargarDDL()
             CargarGrilla()
+            mensajeConfirmacion = "¿Desea Adquirir el Producto?"
         End If
     End Sub
     Public Sub CargarDDL()
@@ -37,6 +39,8 @@
 
     Private Sub btnComprar_Click(sender As Object, e As EventArgs) Handles btnComprar.Click
         Try
+
+
             If Me.validarCheckBox = False Then
                 Throw New Servicios.clsExcepcionCamposIncompletos
             Else
@@ -52,7 +56,8 @@
                 oCompra.Empresa = _Empresa
                 oCompra.Licencias = CInt(Me.ddl_lic.SelectedItem.Text)
                 Dim oCompraBLL As New BLL.Compra
-
+                Me.correcto.Visible = True
+                Me.formulario.Visible = False
             End If
         Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
