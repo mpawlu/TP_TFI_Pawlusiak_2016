@@ -18,16 +18,16 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lbl_EncuestaSatisfaccion" runat="server" Text="Encuesta de satisfaccion"></asp:Label>
+                        <asp:Label ID="lbl_EncuestaSatisfaccion" runat="server" Text="Encuesta de Satisfaccion"></asp:Label>
                     </div>
                     <div class="panel-body">
                         <br />
                         <br />
                         <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
+                            <div class="col-md-10 col-md-offset-1">
                                 <asp:Panel ID="panelPreguntas" runat="server">
                                     <div id="pregunta1" runat="server">
                                         <asp:Label ID="lbl_pregunta1" runat="server" CssClass="label"></asp:Label>
@@ -97,26 +97,16 @@
                                         <br />
                                     </div>
 
-                                    <div id="pregunta8" runat="server">
-                                        <asp:Label ID="lbl_pregunta8" runat="server" CssClass="label"></asp:Label>
-                                        <asp:Label ID="id_8" runat="server" Visible="false"></asp:Label>
-                                        <br />
-                                        <br />
-                                        <asp:RadioButtonList ID="rb_pregunta8" runat="server"></asp:RadioButtonList>
-                                        <br />
-                                        <br />
-                                    </div>
-
+                          
                                 </asp:Panel>
                             </div>
                         </div>
-                        <br />
-                        <br />
                         <div class="row">
                             <div class="col-md-2 col-md-offset-5">
                                 <asp:Button ID="btnFinalizar" runat="server" Text="Finalizar" CssClass="btn btn-block btn-danger" />
                             </div>
                         </div>
+                        <br />
                     </div>
                 </div>
             </div>

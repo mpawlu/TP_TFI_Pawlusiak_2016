@@ -204,7 +204,7 @@ html {
 
     .Grid-gris th {
         color: #ffffff;
-        background: #333333;
+        background: #23B076;
         border-color: black;
         text-align: center;
         font-weight: normal;
@@ -233,6 +233,7 @@ html {
         text-align: center;
         font-weight: bold;
         height: 30px;
+        font-weight:bold;
     }
 
     .Grid-verde td {
@@ -494,3 +495,23 @@ body {
     .circle-tile-heading-des .fa {
         line-height: 80px;
     }
+
+
+.alert-maiz {
+    background-color:#DED1AA;
+}
+
+.textareaSinBorde {
+    resize: none;
+    color: #000;
+    background-color: #fff;
+    border:hidden;
+    font-size: 14px;
+    width: 100%;
+}
+
+
+.labelChico {
+    font-size: 14px;
+    color: #000000;
+}

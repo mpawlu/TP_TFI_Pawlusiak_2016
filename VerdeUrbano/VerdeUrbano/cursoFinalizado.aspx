@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="cursoFinalizado.aspx.vb" Inherits="VerdeUrbano.cursoFinalizado" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
@@ -16,7 +17,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
                         <asp:Label ID="lbl_CursoFinalizado" runat="server" Text="Curso Finalizado!!!"></asp:Label>
@@ -25,12 +26,15 @@
                         <br />
                         <br />
                         <div class="row">
-                            <div class="col-md-3 col-md-offset-1">
-                                <asp:Label ID="lbl_gracias" runat="server" Text="Gracias por realizar nuestros cursos." CssClass="label"></asp:Label>
+                            <div class="col-md-12">
+                                <div class="alert alert-success" role="alert">
+
+                                    <asp:Label ID="lbl_gracias" runat="server" Text="Gracias por realizar nuestros cursos." CssClass="labelOK"></asp:Label>
+                                </div>
                             </div>
 
                         </div>
-                    
+
                         <br />
                     </div>
                 </div>

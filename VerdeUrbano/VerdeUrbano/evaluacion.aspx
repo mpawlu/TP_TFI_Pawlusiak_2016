@@ -19,16 +19,16 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lbl_AgregarUsuario" runat="server" Text="Agregar Usuario"></asp:Label>
+                        <asp:Label ID="lblEvaluacion" runat="server" Text="Evaluación"></asp:Label>
                     </div>
                     <div class="panel-body">
                         <br />
                         <br />
                         <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
+                            <div class="col-md-10 col-md-offset-1">
                                 <asp:Panel ID="panelPreguntas" runat="server">
                                     <div id="pregunta1" runat="server">
                                         <asp:Label ID="lbl_pregunta1" runat="server" CssClass="label"></asp:Label>
