@@ -113,6 +113,7 @@
     <Content Include="calcularPresupuesto.aspx" />
     <Content Include="cambiarIdioma.aspx" />
     <Content Include="cambiarPassword.aspx" />
+    <Content Include="comprarCurso.aspx" />
     <Content Include="crearCurso.aspx" />
     <Content Include="agregarPreguntaEvaluacion.aspx" />
     <Content Include="crearEvaluacion.aspx" />
@@ -304,6 +305,13 @@
     </Compile>
     <Compile Include="cambiarPassword.aspx.vb">
       <DependentUpon>cambiarPassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="comprarCurso.aspx.designer.vb">
+      <DependentUpon>comprarCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="comprarCurso.aspx.vb">
+      <DependentUpon>comprarCurso.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="crearCurso.aspx.designer.vb">

@@ -54,7 +54,8 @@ Namespace BLL
 
         End Function
         Public Function ListarCursos() As List(Of EE.Curso)
-
+            Dim oMPP As New MPP.Curso
+            Return oMPP.listar()
         End Function
         Public Function ListarAprobados() As List(Of EE.Curso)
 

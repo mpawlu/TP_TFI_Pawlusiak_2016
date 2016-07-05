@@ -32,6 +32,7 @@ Public Class agregarUsuario
                         emp.ID = ddl_Empresa.SelectedValue
                         emp = oEmpBLL.ConsultarEmpresa(emp)
                     End If
+                    NuevaPersona.Empresa = emp
                     NuevaPersona.DNI = txtDNI.Text
                     NuevaPersona.Email = txt_email.Text
                     'CÓDIGO PARA LA IMAGEN
@@ -66,7 +67,6 @@ Public Class agregarUsuario
                     If usuBLL.chequearUsuario(NuevoUsuario) = False Then
                         Dim PerBLL As New BLL.Persona
                         If PerBLL.Guardar(NuevaPersona) = True Then
-                            'usuBLL.CrearUsuario(NuevoUsuario)
                             Me.correcto.Visible = True
                         End If
                     Else
