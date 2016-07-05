@@ -28,4 +28,8 @@
             Me.lbl_Drating.Text = Math.Round(_CursoAsignado.ResultadoObtenido, 2)
         End If
     End Sub
+
+    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
+        Response.Redirect("encuestaSatisfaccion.aspx")
+    End Sub
 End Class

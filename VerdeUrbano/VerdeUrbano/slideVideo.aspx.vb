@@ -94,4 +94,7 @@
     Protected Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
         obtenerProximoSlide()
     End Sub
+    Private Sub btnEvaluacion_Click(sender As Object, e As EventArgs) Handles btnEvaluacion.Click
+        Response.Redirect("evaluacion.aspx")
+    End Sub
 End Class

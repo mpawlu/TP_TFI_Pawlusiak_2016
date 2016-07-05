@@ -68,9 +68,16 @@
             oCuAs.Respuestas = oRespuestas
             If oBLL.GuardarRespuestas(oCuAs) = True Then
                 oCuAs = oBLL.Consutar(oCuAs)
-                'oBLL.FinalizarCurso(oCuAs)
-                Session("CursoAsignado") = oCuAs
-                Response.Redirect("examenFinalizado.aspx")
+                oCuAs = oBLL.Corregir(oCuAs)
+                If oBLL.Modificar(oCuAs) = True Then
+                    oCuAs = oBLL.Consutar(oCuAs)
+                    Session("CursoAsignado") = oCuAs
+                    Response.Redirect("examenFinalizado.aspx")
+                Else
+                    Throw New Servicios.clsExcepcionErrorBBDD
+                End If
+            Else
+                Throw New Servicios.clsExcepcionErrorBBDD
             End If
 
         Catch ex As Exception

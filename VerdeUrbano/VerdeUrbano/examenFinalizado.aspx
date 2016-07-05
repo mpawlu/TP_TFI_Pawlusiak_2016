@@ -167,7 +167,9 @@
                         </div>
                         <br />
                         <br />
-
+                                                    <div class="col-md-2 col-md-offset-5">
+                                <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente" CssClass="btn btn-block btn-danger" />
+                            </div>
                     </div>
                 </div>
             </div>

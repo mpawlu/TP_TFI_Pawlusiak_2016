@@ -93,8 +93,7 @@
             oCuAs.EncuestaAsignada = oEncAs
             Dim oCurAsBLL As New BLL.CursoAsignado
             oCurAsBLL.FinalizarCurso(oCuAs)
-            'Dim oEncAsBLL As New BLL.EncuestaAsignada
-            'oEncAsBLL.GuradarEncuestaRealizada(oEncAs)
+            Response.Redirect("cursoFinalizado.aspx")
         Catch ex As Exception
         End Try
 

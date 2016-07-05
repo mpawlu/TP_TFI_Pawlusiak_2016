@@ -10,7 +10,7 @@
         End Function
         Public Function Modificar(ByVal QueAsignacion As EE.CursoAsignado) As Boolean
             Dim oCurAsigMPP As New MPP.CursoAsignado
-            oCurAsigMPP.Modificar(QueAsignacion)
+            Return oCurAsigMPP.Modificar(QueAsignacion)
         End Function
         Public Sub InicializarDatos(ByVal Asignacion As EE.CursoAsignado, ByVal curso As EE.Curso, ByVal empleado As Servicios.Usuario)
             Asignacion.Curso = curso
@@ -50,14 +50,11 @@
         Public Function VerificarCorrelatividades(ByVal QueCursoAsignado As EE.CursoAsignado) As Boolean
 
         End Function
-        Public Function PasarAIniciado(ByVal QueCursoAsignado As EE.CursoAsignado) As EE.CursoAsignado
-
-
+        Public Function Corregir(ByVal QueCursoAsignado As EE.CursoAsignado) As EE.CursoAsignado
+            Me.CalcularResultado(QueCursoAsignado)
+            Return QueCursoAsignado
         End Function
-        Public Function PasarAFinalizado(ByVal QueCursoAsignado As EE.CursoAsignado) As EE.CursoAsignado
 
-
-        End Function
         Public Function ConsultarFinalizados(ByVal QueCurso As EE.Curso) As List(Of EE.CursoAsignado)
             Dim oMPP As New MPP.CursoAsignado
             Return oMPP.ConsultarRepFinalizadas(QueCurso)
@@ -78,13 +75,20 @@
                 _cursoAsgnado.Aprobado = False
             End If
         End Sub
-        Public Sub FinalizarCurso(ByVal _cursoAsignado As EE.CursoAsignado)
+        Public Function FinalizarCurso(ByVal _cursoAsignado As EE.CursoAsignado) As Boolean
             Dim oEncAsigBLL As New BLL.EncuestaAsignada
-            oEncAsigBLL.GuradarEncuestaRealizada(_cursoAsignado.EncuestaAsignada)
-            Me.CalcularResultado(_cursoAsignado)
-            _cursoAsignado.Estado.PasarAFinalizado(_cursoAsignado)
-            Me.Modificar(_cursoAsignado)
-        End Sub
+            If oEncAsigBLL.GuradarEncuestaRealizada(_cursoAsignado.EncuestaAsignada) = True Then
+                'Me.CalcularResultado(_cursoAsignado)
+                _cursoAsignado.Estado.PasarAFinalizado(_cursoAsignado)
+                If Me.Modificar(_cursoAsignado) = True Then
+                    Return True
+                Else
+                    Return False
+                End If
+            Else
+                Return False
+            End If
+        End Function
         Public Function Consutar(ByVal _CursoAsignado As EE.CursoAsignado) As EE.CursoAsignado
             Dim oMPP As New MPP.CursoAsignado
             Return oMPP.Consultar(_CursoAsignado)

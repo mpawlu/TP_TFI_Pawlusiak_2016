@@ -99,4 +99,7 @@
 
         End Try
     End Sub
+    Private Sub btnEvaluacion_Click(sender As Object, e As EventArgs) Handles btnEvaluacion.Click
+        Response.Redirect("evaluacion.aspx")
+    End Sub
 End Class

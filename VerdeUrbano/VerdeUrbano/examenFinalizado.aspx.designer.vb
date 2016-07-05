@@ -462,4 +462,13 @@ Partial Public Class examenFinalizado
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents rb_pregunta10 As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''Control btnSiguiente.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnSiguiente As Global.System.Web.UI.WebControls.Button
 End Class

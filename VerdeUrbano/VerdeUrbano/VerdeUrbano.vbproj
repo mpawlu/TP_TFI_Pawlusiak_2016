@@ -124,6 +124,7 @@
     <Content Include="CSS\Imagenes\Slider\b05.png" />
     <Content Include="CSS\jquery-ui.css" />
     <Content Include="CSS\MisEstilos.css" />
+    <Content Include="cursoFinalizado.aspx" />
     <Content Include="detalleSatisfaccion.aspx" />
     <Content Include="editarIdioma.aspx" />
     <Content Include="editarPerfil.aspx" />
@@ -324,6 +325,13 @@
     </Compile>
     <Compile Include="crearEvaluacion.aspx.vb">
       <DependentUpon>crearEvaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="cursoFinalizado.aspx.designer.vb">
+      <DependentUpon>cursoFinalizado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cursoFinalizado.aspx.vb">
+      <DependentUpon>cursoFinalizado.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="detalleSatisfaccion.aspx.designer.vb">
