@@ -14,22 +14,22 @@ Option Explicit On
 Partial Public Class iniciarCurso
     
     '''<summary>
-    '''Control lbl_AgregarUsuario.
+    '''Control lblInformacioncurso.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_AgregarUsuario As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblInformacioncurso As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lblNombreCurso.
+    '''Control lblCurso.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblNombreCurso As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblCurso As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control lblValorNombre.

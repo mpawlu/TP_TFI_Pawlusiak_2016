@@ -4,14 +4,14 @@
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPagina" runat="server">
-     <br />
+    <br />
     <br />
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-verdeClaro">
                     <div class="panel-heading">
-                        <asp:Label ID="lbl_AgregarUsuario" runat="server" Text="Agregar Usuario"></asp:Label>
+                        <asp:Label ID="lblresultadoExamen" runat="server" Text="Resultado del Examen"></asp:Label>
                     </div>
                     <div class="panel-body">
                         <br />
@@ -65,111 +65,12 @@
                                 </div>
                             </div>
                         </div>
-  
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
-                                <asp:Panel ID="panelPreguntas" runat="server">
-                                    <div id="pregunta1" runat="server">
-                                        <asp:Label ID="lbl_pregunta1" runat="server" CssClass="label"></asp:Label>
-                                        <asp:Label ID="id_1" runat="server" Visible="false"></asp:Label>
-                                        <br />
-                                        <br />
-                                        <asp:RadioButtonList ID="rb_pregunta1" runat="server"></asp:RadioButtonList>
-                                    </div>
-                                    <br />
-                                    <br />
-                                    <div id="pregunta2" runat="server">
-                                        <asp:Label ID="lbl_pregunta2" runat="server" CssClass="label"></asp:Label>
-                                        <asp:Label ID="id_2" runat="server" Visible="false"></asp:Label>
-                                        <br />
-                                        <br />
-                                        <asp:RadioButtonList ID="rb_pregunta2" runat="server"></asp:RadioButtonList>
-                                    </div>
-                                    <br />
-                                    <br />
-                                    <div id="pregunta3" runat="server">
-                                        <asp:Label ID="lbl_pregunta3" runat="server" CssClass="label"></asp:Label>
-                                        <asp:Label ID="id_3" runat="server" Visible="false"></asp:Label>
-                                        <br />
-                                        <br />
-                                        <asp:RadioButtonList ID="rb_pregunta3" runat="server"></asp:RadioButtonList>
-                                    </div>
-                                    <br />
-                                    <br />
-                                    <div id="pregunta4" runat="server">
-                                        <asp:Label ID="lbl_pregunta4" runat="server" CssClass="label"></asp:Label>
-                                        <asp:Label ID="id_4" runat="server" Visible="false"></asp:Label>
-                                        <br />
-                                        <br />
-                                        <asp:RadioButtonList ID="rb_pregunta4" runat="server"></asp:RadioButtonList>
-                                    </div>
-                                    <br />
-                                    <br />
-                                    <div id="pregunta5" runat="server">
-                                        <asp:Label ID="lbl_pregunta5" runat="server" CssClass="label"></asp:Label>
-                                        <asp:Label ID="id_5" runat="server" Visible="false"></asp:Label>
-                                        <br />
-                                        <br />
-                                        <asp:RadioButtonList ID="rb_pregunta5" runat="server"></asp:RadioButtonList>
-                                    </div>
 
-                                    <br />
-                                    <br />
-                                    <div id="pregunta6" runat="server">
-                                        <asp:Label ID="lbl_pregunta6" runat="server" CssClass="label"></asp:Label>
-                                        <asp:Label ID="id_6" runat="server" Visible="false"></asp:Label>
-                                        <br />
-                                        <br />
-                                        <asp:RadioButtonList ID="rb_pregunta6" runat="server"></asp:RadioButtonList>
-                                    </div>
-
-                                    <br />
-                                    <br />
-                                    <div id="pregunta7" runat="server">
-                                        <asp:Label ID="lbl_pregunta7" runat="server" CssClass="label"></asp:Label>
-                                        <asp:Label ID="id_7" runat="server" Visible="false"></asp:Label>
-                                        <br />
-                                        <br />
-                                        <asp:RadioButtonList ID="rb_pregunta7" runat="server"></asp:RadioButtonList>
-                                    </div>
-
-                                    <br />
-                                    <br />
-                                    <div id="pregunta8" runat="server">
-                                        <asp:Label ID="lbl_pregunta8" runat="server" CssClass="label"></asp:Label>
-                                        <asp:Label ID="id_8" runat="server" Visible="false"></asp:Label>
-                                        <br />
-                                        <br />
-                                        <asp:RadioButtonList ID="rb_pregunta8" runat="server"></asp:RadioButtonList>
-                                    </div>
-
-                                    <br />
-                                    <br />
-                                    <div id="pregunta9" runat="server">
-                                        <asp:Label ID="lbl_pregunta9" runat="server" CssClass="label"></asp:Label>
-                                        <asp:Label ID="id_9" runat="server" Visible="false"></asp:Label>
-                                        <br />
-                                        <br />
-                                        <asp:RadioButtonList ID="rb_pregunta9" runat="server"></asp:RadioButtonList>
-                                    </div>
-
-                                    <br />
-                                    <br />
-                                    <div id="pregunta10" runat="server">
-                                        <asp:Label ID="lbl_pregunta10" runat="server" CssClass="label"></asp:Label>
-                                        <asp:Label ID="id_10" runat="server" Visible="false"></asp:Label>
-                                        <br />
-                                        <br />
-                                        <asp:RadioButtonList ID="rb_pregunta10" runat="server"></asp:RadioButtonList>
-                                    </div>
-                                </asp:Panel>
-                            </div>
+                        <br />
+                        <br />
+                        <div class="col-md-2 col-md-offset-5">
+                            <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente" CssClass="btn btn-block btn-primary" />
                         </div>
-                        <br />
-                        <br />
-                                                    <div class="col-md-2 col-md-offset-5">
-                                <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente" CssClass="btn btn-block btn-danger" />
-                            </div>
                     </div>
                 </div>
             </div>

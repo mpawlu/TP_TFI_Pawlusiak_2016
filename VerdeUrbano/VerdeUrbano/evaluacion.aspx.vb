@@ -5,14 +5,17 @@
         'If validaciones.validarPagina(Me) = False Then
         '    Response.Redirect("error.aspx")
         'End If
-        Dim oCuAs As New EE.CursoAsignado
-        oCuAs = DirectCast(Session("CursoAsignado"), EE.CursoAsignado)
+        If Not IsPostBack Then
+            Dim oCuAs As New EE.CursoAsignado
+            oCuAs = DirectCast(Session("CursoAsignado"), EE.CursoAsignado)
 
-        Dim eva As New EE.Evaluacion
-        Dim oBLL As New BLL.Evaluacion
+            Dim eva As New EE.Evaluacion
+            Dim oBLL As New BLL.Evaluacion
 
-        eva = oBLL.Consultar(oCuAs.Curso)
-        Me.generarPreguntas(eva.Preguntas)
+            eva = oBLL.Consultar(oCuAs.Curso)
+            Me.generarPreguntas(eva.Preguntas)
+        End If
+
     End Sub
 
     Private Sub generarPreguntas(ByVal paramListadoPreguntas As List(Of EE.Pregunta))
