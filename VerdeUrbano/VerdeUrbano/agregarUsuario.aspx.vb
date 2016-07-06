@@ -39,11 +39,11 @@ Public Class agregarUsuario
                     Dim PostedFilesCollection As HttpFileCollection = Request.Files
                     Dim PostedFile As HttpPostedFile = PostedFilesCollection(0)
                     If PostedFile.FileName <> "" Then
-                        Dim MiDirPath As String = Server.MapPath("~/ImagenesUsuario")
+                        Dim MiDirPath As String = Server.MapPath("~/ImagenesUsuarios")
                         Me.CrearDirectorio(MiDirPath)
                         Dim MiPathAGuardar As String = String.Format("{0}\{1}", MiDirPath, NuevaPersona.Nombres & "." & NuevaPersona.Apellido & ".png")
                         PostedFile.SaveAs(MiPathAGuardar)
-                        NuevaPersona.Imagen = "~/ImagenesUsuario/" & NuevaPersona.Nombres & "." & NuevaPersona.Apellido & ".png"
+                        NuevaPersona.Imagen = "~/ImagenesUsuarios/" & NuevaPersona.Nombres & "." & NuevaPersona.Apellido & ".png"
                     Else
                         NuevaPersona.Imagen = "~/Imagenes/userH.png"
                     End If

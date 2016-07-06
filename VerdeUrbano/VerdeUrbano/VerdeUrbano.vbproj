@@ -59,7 +59,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ImagenesUsuario\" />
     <Folder Include="Slides\" />
   </ItemGroup>
   <ItemGroup>
