@@ -108,7 +108,7 @@
             Response.Redirect("calculadorDisenador.aspx")
         Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
-            Me.lbl_TituloError.Text = ex.Titulo
+            Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
         Catch ex As Exception
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message
@@ -133,5 +133,11 @@
                 Return gv_Profesores.Rows(row.DataItemIndex).Cells(0).Text
             End If
         Next
+    End Function
+
+    Public Function RecuperarUsuario() As Servicios.Usuario
+        Dim resultado As New Servicios.Usuario
+        resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
+        Return resultado
     End Function
 End Class
