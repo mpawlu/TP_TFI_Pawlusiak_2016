@@ -104,9 +104,19 @@
             Session("indice") = ddlCategoria.SelectedIndex
             Session("curso") = oNuevoCurso
             Dim ie As New BLL.CalculadoraIE
-            Session("Ranking") = ie.RankearDiseñadores(_listaUsuarios, oCategoria)
-            Response.Redirect("calculadorDisenador.aspx")
+            Dim oRank As New List(Of EE.CalculadoraIE)
+            oRank = ie.RankearDiseñadores(_listaUsuarios, oCategoria)
+            If oRank.Count < 1 Then
+                Throw New Servicios.clsExcepcionSinRanking
+            Else
+                Session("Ranking") = ie.RankearDiseñadores(_listaUsuarios, oCategoria)
+                Response.Redirect("calculadorDisenador.aspx")
+            End If
+
         Catch ex As Servicios.clsExcepcionCamposIncompletos
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
+        Catch ex As Servicios.clsExcepcionSinRanking
             Me.error.Visible = True
             Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
         Catch ex As Exception
