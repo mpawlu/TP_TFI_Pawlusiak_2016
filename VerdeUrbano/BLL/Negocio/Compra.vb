@@ -24,8 +24,20 @@
 
         End Function
         Public Function GuardarCompra(ByVal QueCompra As EE.Compra) As Boolean
-            Dim oMPP As New MPP.Compra
-            Return oMPP.GuardarCompra(QueCompra)
+            Try
+                Dim oMPP As New MPP.Compra
+                Dim Resultado As Boolean
+                Resultado = oMPP.GuardarCompra(QueCompra)
+                If Resultado = True Then
+                    Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Alta, "La empresa " & QueCompra.Empresa.Nombre & " compro el curso " & QueCompra.Curso.Nombre)
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
+                Else
+                    Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, "Ocurrio un error al intentar dar de alta una compra")
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
+                End If
+                Return Resultado
+            Catch ex As Exception
+            End Try
         End Function
         Sub New()
 

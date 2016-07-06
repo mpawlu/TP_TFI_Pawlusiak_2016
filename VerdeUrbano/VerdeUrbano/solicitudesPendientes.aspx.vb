@@ -61,7 +61,7 @@
 
     Private Function validarCheckBox() As Boolean
         Dim _flag As Boolean = False
-        Dim _cant As Integer = 1
+        Dim _cant As Integer = 0
         For Each row As GridViewRow In Me.gv_solicitudes.Rows
             Dim checkbox As System.Web.UI.WebControls.CheckBox = DirectCast(row.FindControl("chk_sel"), System.Web.UI.WebControls.CheckBox)
             If checkbox.Checked = True Then
