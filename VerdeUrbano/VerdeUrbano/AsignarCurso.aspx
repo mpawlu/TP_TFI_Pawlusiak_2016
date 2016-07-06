@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/paginaMaestra.Master" CodeBehind="AsignarCurso.aspx.vb" Inherits="VerdeUrbano.AsignarCurso" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="JS/jquery-1.9.1.min.js"></script>
     <script src="JS/jquery-ui.js"></script>
@@ -43,11 +44,11 @@
                             </div>
                         </div>
                         <br />
+                        <br />
+                        <div class="col-md-2 col-md-offset-5">
+                            <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente >>" CssClass="btn btn-block btn-info" />
+                        </div>
 
-                            <div class="col-md-3 col-md-offset-2">
-                                <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente >>" CssClass="btn btn-block btn-info" />
-                            </div>
-                      
                         <br />
                     </div>
                 </div>
