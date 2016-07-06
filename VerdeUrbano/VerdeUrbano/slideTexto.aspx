@@ -38,7 +38,7 @@
                                         <asp:Label ID="lblTitulo" runat="server" Text="" CssClass="label"></asp:Label>
                                         <br />
                                         <div id="subtitulo" runat="server">
-                                            <asp:Label ID="lblSubTitulo" runat="server" Text="SubTitulo del Slide" CssClass="labelchico subrayado"></asp:Label>
+                                            <asp:Label ID="lblSubTitulo" runat="server" Text="" CssClass="labelchico subrayado"></asp:Label>
                                         </div>
 <br />
                                         <asp:TextBox ID="descripcion" runat="server" CssClass="textareaSinBorde" TextMode="MultiLine" Enabled="false" Height="200px"></asp:TextBox>
