@@ -78,7 +78,7 @@
                 End If
             Next
             _cursoAsgnado.ResultadoObtenido = (PuntajeFinal * 100) / puntajeIdeal
-            If _cursoAsgnado.ResultadoObtenido >= 80 Then
+            If _cursoAsgnado.ResultadoObtenido >= 60 Then
                 _cursoAsgnado.Aprobado = True
             Else
                 _cursoAsgnado.Aprobado = False
