@@ -123,5 +123,9 @@ Namespace BLL
 
             End Try
         End Function
+        Public Function ListarDisponibles(ByVal QueEmpresa As EE.Empresa) As List(Of EE.Curso)
+            Dim oMPP As New MPP.Curso
+            Return oMPP.ListarDisponibles(QueEmpresa)
+        End Function
     End Class
 End Namespace

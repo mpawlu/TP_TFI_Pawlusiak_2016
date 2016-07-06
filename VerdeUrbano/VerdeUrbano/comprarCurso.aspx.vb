@@ -19,7 +19,10 @@
     Private Function ListarCursos() As List(Of EE.Curso)
         Dim ListaCursos As New List(Of EE.Curso)
         Dim oBLL As New BLL.Curso
-        ListaCursos = oBLL.ListarCursos
+        Dim oPer As New EE.Persona
+        Dim oPerBLL As New BLL.Persona
+        oPer = oPerBLL.Consultar(Me.RecuperarUsuario.DNI)
+        ListaCursos = oBLL.ListarDisponibles(oPer.Empresa)
         Return ListaCursos
     End Function
     Public Sub CargarGrilla()
@@ -78,6 +81,9 @@
     Public Function Seleccionado() As EE.Curso
         Dim _usuSesion As New Servicios.Usuario
         _usuSesion = DirectCast(Session("Usuario"), Servicios.Usuario)
+        Dim oPer As New EE.Persona
+        Dim oPerBLL As New BLL.Persona
+        oPerBLL.Consultar(_usuSesion.DNI)
         Dim oBLL As New BLL.Curso
         Dim indice As Integer
         Dim cont As Integer
@@ -91,7 +97,7 @@
             End If
         Next
         Dim oca As New EE.CursoAsignado
-        Return oBLL.ListarCursos()(indice - 1)
+        Return oBLL.ListarDisponibles(oPer.Empresa)(indice - 1)
     End Function
     Public Function RecuperarUsuario() As Servicios.Usuario
         Dim resultado As New Servicios.Usuario

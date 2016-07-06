@@ -67,7 +67,7 @@
     <Compile Include="Bitacora.vb" />
     <Compile Include="clsLocalidad.vb" />
     <Compile Include="clsUsuario.vb" />
-    <Compile Include="Compra.vb" />
+    <Compile Include="Negocio\Compra.vb" />
     <Compile Include="DigitoVerificador.vb" />
     <Compile Include="Multi-Idioma\clsIdioma.vb" />
     <Compile Include="Multi-Idioma\clsLeyenda.vb" />
