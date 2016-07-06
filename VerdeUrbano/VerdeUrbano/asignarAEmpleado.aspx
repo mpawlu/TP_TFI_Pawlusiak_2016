@@ -36,7 +36,7 @@
                     <div class="panel-body">
                         <br />
                                                             <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
+                            <div class="col-md-10 col-md-offset-1">
                                 <asp:GridView ID="gv_Curso" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
 
                                     <Columns>
@@ -50,11 +50,11 @@
                         </div>
                         <br />
                         <div class="row">
-                            <div class="col-md-3 col-md-offset-1">
+                            <div class="col-md-3">
                                 <asp:Label ID="lbl_Empleado" runat="server" Text="Empleado" CssClass="label"></asp:Label>
                             </div>
 
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
                                 <asp:GridView ID="gv_empleados" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
 
                                     <Columns>
@@ -71,17 +71,19 @@
                                     </Columns>
                                 </asp:GridView>
      <br />
-                                <div class="col-md-3 col-md-offset-1">
+
+
+                                <div class="col-md-12">
                                 <asp:Label ID="lbl_nota" runat="server" Text="Nota: Los empleados que no figuren en la lista, ya cuentan con el curso seleccionado." CssClass="label"></asp:Label>
                             </div>
                             </div>
                         </div>
                         <br />
-
-                            <div class="col-md-3 col-md-offset-2">
+                                          <br />
+                            <div class="col-md-2 col-md-offset-5">
                                 <asp:Button ID="btnAsignar" runat="server" Text="Asignar" CssClass="btn btn-block btn-info" />
                             </div>
-                      
+                                        <br />                  <br />
                         <br />
                     </div>
                 </div>

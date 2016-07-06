@@ -42,7 +42,7 @@
                                             <asp:Label ID="lblSubTitulo" runat="server" Text="SubTitulo del Slide" CssClass="labelchico"></asp:Label>
                                         </div>
                                         <div class="panel-body">
-                                            <asp:Image ID="img_Slide" runat="server" class="img-responsive img" />
+                                            <asp:Image ID="img_Slide" runat="server" class="img-responsive img" Width="100%" />
                                         </div>
                                     </div>
                                 </div>
