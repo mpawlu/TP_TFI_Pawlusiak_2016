@@ -101,7 +101,7 @@
                                         <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre de usuario" HtmlEncode="False" />
                                         <asp:TemplateField HeaderText="Seleccionar" HeaderStyle-Width="400px">
                                             <ItemTemplate>
-                                                <asp:CheckBox ID="cb_Profesores" runat="server" />
+                                                <asp:CheckBox ID="chk_sel" runat="server" />
                                             </ItemTemplate>
                                             <HeaderStyle Width="350px"></HeaderStyle>
                                         </asp:TemplateField>
