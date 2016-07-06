@@ -15,7 +15,8 @@
             Dim _listaUsuarios As New List(Of Servicios.Usuario)
             _listaUsuarios = _bllUsuario.ObtenerDisenadores
             Dim ie As New BLL.CalculadoraIE
-            oRanking = ie.RankearDiseñadores(_listaUsuarios, oCat)
+            'oRanking = ie.RankearDiseñadores(_listaUsuarios, oCat)
+            oRanking = DirectCast(Session("Ranking"), List(Of EE.CalculadoraIE))
             mostrarTop5(oRanking)
             setearDatos()
         End If
@@ -159,4 +160,7 @@
         Return resultado
     End Function
 
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        Response.Redirect("agregarSolicitudCurso.aspx")
+    End Sub
 End Class

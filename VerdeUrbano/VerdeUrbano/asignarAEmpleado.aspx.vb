@@ -34,7 +34,7 @@
         oCompra = DirectCast(Session("CursoAsignar"), EE.Compra)
         For Each emp As EE.Persona In Empleados
             Dim oCursoAsBLL As New BLL.CursoAsignado
-            If oCursoAsBLL.ComprobarAsignacion(emp, oCompra.Curso) = False Then
+            If oCursoAsBLL.ComprobarAsignacion(emp, oCompra.Curso) = False And emp.Usuario.Perfil.ID = 32 Then
                 EmpleadosDisp.Add(emp)
             End If
         Next
@@ -92,7 +92,7 @@
                     Me.correcto.Visible = True
                     Me.gv_empleados.DataSource = Nothing
                     Me.gv_empleados.DataBind()
-                    Me.CargarGrilla()
+                    Me.CargarEmpleados()
                 End If
             Else
                 Throw New servicios.clsExcepcionCamposIncompletos
