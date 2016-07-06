@@ -90,6 +90,9 @@
                         End If
                     Next
                     Me.correcto.Visible = True
+                    Me.gv_empleados.DataSource = Nothing
+                    Me.gv_empleados.DataBind()
+                    Me.CargarGrilla()
                 End If
             Else
                 Throw New servicios.clsExcepcionCamposIncompletos

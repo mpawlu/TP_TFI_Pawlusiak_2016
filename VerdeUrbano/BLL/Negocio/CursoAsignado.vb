@@ -6,7 +6,16 @@
             QueAsignacion.FechaVencimiento = Today.AddDays(30)
             QueAsignacion.Intentos = 0
             Dim oMPP As New MPP.CursoAsignado
-            Return oMPP.Guardar(QueAsignacion)
+            Dim resultado As Boolean
+            resultado = oMPP.Guardar(QueAsignacion)
+            If Resultado = True Then
+                Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Alta, "Se le asigno el curso " & QueAsignacion.Curso.ID & " al empleado " & QueAsignacion.Empleado.NombreUsuario)
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            Else
+                Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, "Ocurrio un error al intentar asignar el curso")
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
+            End If
+            Return Resultado
         End Function
         Public Function Modificar(ByVal QueAsignacion As EE.CursoAsignado) As Boolean
             Dim oCurAsigMPP As New MPP.CursoAsignado
@@ -77,17 +86,25 @@
         End Sub
         Public Function FinalizarCurso(ByVal _cursoAsignado As EE.CursoAsignado) As Boolean
             Dim oEncAsigBLL As New BLL.EncuestaAsignada
-            If oEncAsigBLL.GuradarEncuestaRealizada(_cursoAsignado.EncuestaAsignada) = True Then
-                'Me.CalcularResultado(_cursoAsignado)
+            Dim resultado As New Boolean
+            resultado = oEncAsigBLL.GuradarEncuestaRealizada(_cursoAsignado.EncuestaAsignada)
+            If resultado = True Then
                 _cursoAsignado.Estado.PasarAFinalizado(_cursoAsignado)
-                If Me.Modificar(_cursoAsignado) = True Then
-                    Return True
+                resultado = Me.Modificar(_cursoAsignado)
+                If resultado = True Then
+                    Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Modificacion, "El ususario " & _cursoAsignado.Empleado.NombreUsuario & " finalizo el curso " & _cursoAsignado.Curso.Nombre)
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
                 Else
-                    Return False
+                    resultado = False
+                    Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, "Ocurrio un error al intentar finalizar el curso")
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
                 End If
             Else
-                Return False
+                resultado = False
+                Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, "Ocurrio un error al intentar finalizar el curso")
+                BLL.clsBitacora.RegistrarEvento(oBitacora)
             End If
+            Return resultado
         End Function
         Public Function Consutar(ByVal _CursoAsignado As EE.CursoAsignado) As EE.CursoAsignado
             Dim oMPP As New MPP.CursoAsignado

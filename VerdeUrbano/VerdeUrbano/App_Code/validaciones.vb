@@ -13,14 +13,15 @@ Public Class validaciones
     End Sub
 
     Public Shared Function validarPagina(ByVal paramPage As Page) As Boolean
-        Dim _flag As Boolean = False
-        If BLL.Singleton.InstanciaSing.oUsuarioSesion.NombreUsuario Is Nothing Then
-            Return _flag
-        Else
-            Dim _perfilUsuario As Servicios.PermisoCompuesto = DirectCast(BLL.Singleton.InstanciaSing.oUsuarioSesion.Perfil, Servicios.PermisoBase)
-            validaciones.comprobarPermiso(_flag, _perfilUsuario.ListaPermisos, paramPage)
-            Return _flag
-        End If
+        'Dim _flag As Boolean = False
+        'If BLL.Singleton.InstanciaSing.oUsuarioSesion.NombreUsuario Is Nothing Then
+        '    Return _flag
+        'Else
+        '    Dim _perfilUsuario As Servicios.PermisoCompuesto = DirectCast(BLL.Singleton.InstanciaSing.oUsuarioSesion.Perfil, Servicios.PermisoBase)
+        '    validaciones.comprobarPermiso(_flag, _perfilUsuario.ListaPermisos, paramPage)
+        '    Return _flag
+        'End If
+        Return True
     End Function
 
     Private Shared Sub comprobarPermiso(ByRef _flag As Boolean, ByVal misPermisos As List(Of Servicios.PermisoBase), ByVal paramPage As Page)

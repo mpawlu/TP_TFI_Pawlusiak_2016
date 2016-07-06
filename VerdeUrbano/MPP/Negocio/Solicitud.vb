@@ -206,6 +206,17 @@
             End If
 
         End Function
+        Public Function AprobarCurso(ByVal _solicitud As EE.SolicitudCurso) As Boolean
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim resultado As Boolean
+
+            hdatos.Add("@ID_Solicitud", _solicitud.ID)
+
+            resultado = oDatos.Escribir("s_Curso_Aprobar", hdatos)
+
+            Return resultado
+        End Function
     End Class
 End Namespace
 

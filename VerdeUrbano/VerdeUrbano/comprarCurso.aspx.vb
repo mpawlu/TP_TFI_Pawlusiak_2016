@@ -79,12 +79,6 @@
         End Try
     End Sub
     Public Function Seleccionado() As EE.Curso
-        Dim _usuSesion As New Servicios.Usuario
-        _usuSesion = DirectCast(Session("Usuario"), Servicios.Usuario)
-        Dim oPer As New EE.Persona
-        Dim oPerBLL As New BLL.Persona
-        oPerBLL.Consultar(_usuSesion.DNI)
-        Dim oBLL As New BLL.Curso
         Dim indice As Integer
         Dim cont As Integer
         indice = 0
@@ -96,8 +90,7 @@
                 indice = cont
             End If
         Next
-        Dim oca As New EE.CursoAsignado
-        Return oBLL.ListarDisponibles(oPer.Empresa)(indice - 1)
+        Return Me.ListarCursos()(indice - 1)
     End Function
     Public Function RecuperarUsuario() As Servicios.Usuario
         Dim resultado As New Servicios.Usuario
