@@ -61,7 +61,7 @@
                             </div>
 
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="combo"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="combo" Enabled ="false"></asp:DropDownList>
 
                             </div>
                         </div>

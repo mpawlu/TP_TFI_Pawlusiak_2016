@@ -50,7 +50,7 @@ Namespace BLL
             If Not oCursosFinalizados Is Nothing Then
                 If oCursosFinalizados.Count >= 1 Then
                     For Each _curso As EE.Curso In oCursosFinalizados
-                        If Me.ReprodPorCurso(_curso).Count >= 5 Then
+                        If Me.ReprodPorCurso(_curso).Count >= 3 Then
                             Return True
                         Else
                             Return False

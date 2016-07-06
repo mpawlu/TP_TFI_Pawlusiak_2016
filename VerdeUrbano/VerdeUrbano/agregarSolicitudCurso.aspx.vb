@@ -104,7 +104,7 @@
             Session("indice") = ddlCategoria.SelectedIndex
             Session("curso") = oNuevoCurso
             Dim ie As New BLL.CalculadoraIE
-            ie.RankearDiseñadores(_listaUsuarios, oCategoria)
+            Session("Ranking") = ie.RankearDiseñadores(_listaUsuarios, oCategoria)
             Response.Redirect("calculadorDisenador.aspx")
         Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
