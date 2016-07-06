@@ -7,8 +7,16 @@ Namespace BLL
         Public Function Guardar(ByVal _Curso As EE.Curso) As Boolean
             Try
                 Dim oMPP As New MPP.Curso
-                Return oMPP.Guardar(_Curso)
-
+                Dim Resultado As Boolean
+                Resultado = oMPP.Guardar(_Curso)
+                If Resultado = True Then
+                    Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Alta, "Se creo el curso correspondiente a la solicitud " & _Curso.SolicitudCurso.ID)
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
+                Else
+                    Dim oBitacora As New Servicios.clsBitacora(BLL.Singleton.InstanciaSing.oUsuarioSesion, Servicios.clsBitacora.tipoOperacionBitacora.Errores, "Ocurrio un error al intentar dar de alta el curso")
+                    BLL.clsBitacora.RegistrarEvento(oBitacora)
+                End If
+                Return Resultado
             Catch ex As Exception
             End Try
 
@@ -127,5 +135,6 @@ Namespace BLL
             Dim oMPP As New MPP.Curso
             Return oMPP.ListarDisponibles(QueEmpresa)
         End Function
+
     End Class
 End Namespace

@@ -61,6 +61,7 @@
                                         <asp:BoundField DataField="DNI" HeaderText="DNI" HtmlEncode="False" />
                                         <asp:BoundField DataField="Nombres" HeaderText="Nombre" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />
                                         <asp:BoundField DataField="Apellido" HeaderText="Apellido" HtmlEncode="False" ControlStyle-CssClass="col-md-4" />
+                                        <asp:BoundField DataField="Usuario.NombreUsuario" HeaderText="Usuario" HtmlEncode="False" ControlStyle-CssClass="col-md-4" />
                                                                                 <asp:TemplateField HeaderText="Seleccionar" HeaderStyle-Width="400px">
                                             <ItemTemplate>
                                                 <asp:CheckBox ID="cb_Empleados" runat="server" />
