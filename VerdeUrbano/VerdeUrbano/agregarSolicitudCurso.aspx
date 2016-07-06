@@ -82,6 +82,9 @@
                                 <asp:TextBox ID="txtFechaVencimiento" runat="server" CssClass="caja-texto" MaxLength="12"></asp:TextBox>
 
                             </div>
+                            <div class="col-md-1 col-md-offset-1">
+                                <asp:CompareValidator ID="CompareValidator3" runat="server" ControlToValidate="txtFechaVencimiento" Type="Date" Operator="DataTypeCheck" ErrorMessage="*" EnableClientScript="false" Display="Dynamic" CssClass="validador" />
+                            </div>
                         </div>
                         <br />
                         <div class="row">
