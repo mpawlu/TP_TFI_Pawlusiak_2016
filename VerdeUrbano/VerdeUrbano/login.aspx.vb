@@ -49,4 +49,5 @@
         resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
         Return resultado
     End Function
+
 End Class

@@ -5,6 +5,8 @@
         If validaciones.validarPagina(Me) = False Then
             'Response.Redirect("error.aspx")
         End If
+        ocultarDivs()
+
     End Sub
 
     Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
@@ -41,4 +43,8 @@
         resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
         Return resultado
     End Function
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 End Class

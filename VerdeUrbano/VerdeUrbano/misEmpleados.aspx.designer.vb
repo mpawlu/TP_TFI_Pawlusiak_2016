@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class solicitudesFinalizadas
+Partial Public Class misEmpleados
 
     '''<summary>
     '''Control correcto.
@@ -50,56 +50,38 @@ Partial Public Class solicitudesFinalizadas
     Protected WithEvents lbl_TituloError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lbl_solicitudesFinalizadas.
+    '''Control lbl_ResultadosEmpleados.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbl_solicitudesFinalizadas As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_ResultadosEmpleados As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control gv_solicitudes.
+    '''Control lbl_Empleado.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents gv_solicitudes As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents lbl_Empleado As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Label1.
+    '''Control gv_empleados.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents gv_empleados As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''Control gv_solicitudes_dis.
+    '''Control btnConsultar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents gv_solicitudes_dis As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control btnAprobar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnAprobar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control btnVolver.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnVolver As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnConsultar As Global.System.Web.UI.WebControls.Button
 End Class

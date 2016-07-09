@@ -12,6 +12,8 @@
         End If
         Me.error.Visible = False
         Me.lbl_TituloError.Text = ""
+        ocultarDivs()
+
     End Sub
 
     Private Sub obtenerUsuarios()
@@ -121,4 +123,8 @@
         resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
         Return resultado
     End Function
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 End Class

@@ -8,6 +8,8 @@
         If Not IsPostBack Then
             inicializar()
         End If
+        ocultarDivs()
+
     End Sub
     Public Sub inicializar()
         Try
@@ -53,5 +55,9 @@
             End If
         Next
         Response.Redirect("asignarAEmpleado.aspx")
+    End Sub
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
     End Sub
 End Class

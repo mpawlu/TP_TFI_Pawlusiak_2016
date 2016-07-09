@@ -109,10 +109,6 @@
     <Compile Include="Negocio\SatisfaccionCliente.vb" />
     <Compile Include="Negocio\Slide.vb" />
     <Compile Include="Negocio\SolicitudCurso.vb" />
-    <Compile Include="Negocio\State\Cupon\Cupon_State.vb" />
-    <Compile Include="Negocio\State\Cupon\Emitido.vb" />
-    <Compile Include="Negocio\State\Cupon\Pagado.vb" />
-    <Compile Include="Negocio\State\Cupon\Vencido.vb" />
     <Compile Include="Negocio\State\CursoAsignado\CursoAsignado_State.vb" />
     <Compile Include="Negocio\State\CursoAsignado\EnCurso.vb" />
     <Compile Include="Negocio\State\CursoAsignado\EnCursoVencido.vb" />

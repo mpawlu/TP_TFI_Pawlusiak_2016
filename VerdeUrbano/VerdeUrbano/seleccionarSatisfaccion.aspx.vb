@@ -2,6 +2,7 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        ocultarDivs()
         If validaciones.validarPagina(Me) = False Then
             'Response.Redirect("error.aspx")
         End If
@@ -20,7 +21,7 @@
     Protected Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
         Try
             Dim oEmpresa As New EE.Empresa
-            oEmpresa.ID = 1
+            oEmpresa.ID = Seleccionado.ID
             Dim oEmpBLL As New BLL.Empresa
             oEmpresa = oEmpBLL.ConsultarEmpresa(oEmpresa)
             Dim oSatClie As New EE.SatisfaccionCliente
@@ -58,5 +59,26 @@
         Next
         Return _flag
     End Function
+    Public Function Seleccionado() As EE.Empresa
+        Dim oBLL As New BLL.Empresa
+        Dim indice As Integer
+        Dim cont As Integer
+        indice = 0
+        cont = 0
+        For Each row As GridViewRow In gv_Clientes.Rows
+            Dim checkbox As System.Web.UI.WebControls.CheckBox = DirectCast(row.FindControl("chk_sel"), System.Web.UI.WebControls.CheckBox)
 
+            If checkbox.Checked = True Then
+                indice = cont
+            End If
+            cont += 1
+        Next
+        Dim oca As New EE.Empresa
+        oca = oBLL.ListarClientes()(indice)
+        Return oca
+    End Function
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 End Class

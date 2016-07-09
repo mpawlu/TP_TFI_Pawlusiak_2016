@@ -14,6 +14,8 @@
             CargarDDL()
         End If
         Me.correcto.Visible = False
+        ocultarDivs()
+
     End Sub
 
     Private Sub CargarDDL()
@@ -60,5 +62,9 @@
             Me.lbl_TituloError.Text = ex.Message
         End Try
 
+    End Sub
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
     End Sub
 End Class

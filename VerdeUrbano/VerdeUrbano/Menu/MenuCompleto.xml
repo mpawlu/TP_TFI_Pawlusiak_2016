@@ -14,7 +14,7 @@
     <item nombre="Cursos Pendientes" id="38">
 
     </item>
-    <item nombre="Cursos Finalizados" id="39">
+    <item nombre="Cursos Finalizadosx" id="39">
     </item>
 
   </submenu>
@@ -22,7 +22,7 @@
     <item nombre="Solicitudes Pendientes" id="46">
     </item>
     
-    <item nombre="Solicitudes en curso" id="12">
+    <item nombre="Solicitudes en cursox" id="12">
     </item>
 
     <item nombre="Solicitudes Finalizadas" id="13">
@@ -36,7 +36,7 @@
     <item nombre="Mis empleados" id="43">
     </item>
 
-    <item nombre="Metricas de Cursos" id="44">
+    <item nombre="Metricas de Cursosx" id="44">
     </item>
 
     <item nombre="Satisfaccion del Cliente" id="45">

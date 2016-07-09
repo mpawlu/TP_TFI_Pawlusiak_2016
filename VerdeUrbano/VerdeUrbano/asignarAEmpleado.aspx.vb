@@ -9,6 +9,7 @@
             CargarGrilla()
             CargarEmpleados()
         End If
+        ocultarDivs()
 
     End Sub
     Public Sub CargarGrilla()
@@ -117,5 +118,8 @@
         Return resultado
     End Function
 
-
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 End Class

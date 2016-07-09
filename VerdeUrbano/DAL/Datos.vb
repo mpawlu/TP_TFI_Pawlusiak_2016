@@ -4,9 +4,11 @@ Imports System.Data
 Imports System.Text
 Namespace DAL
     Public Class Datos
-
-        ' Private Str As String = "Data Source=PROGRAMADORA-PC;Initial Catalog=VerdeUrbano;Integrated Security=True"
+        'SANTA
+        'Private Str As String = "Data Source=PROGRAMADORA-PC;Initial Catalog=VerdeUrbano;Integrated Security=True"
         Private Str As String = "Data Source=.\SQLEXPRESS;Initial Catalog=VerdeUrbano;Integrated Security=True"
+        'Para la UAI
+        'Private Str As String = "Data Source=342-14-60573\SQL_UAI;Initial Catalog=VerdeUrbano; User Id=mariano; Password=1234;"
         Private Shared ComandoRestore As SqlCommand
         Private Cnn As New SqlConnection(Str)
         Private Tranx As SqlTransaction
@@ -15,6 +17,8 @@ Namespace DAL
         Shared Function retornaConexionMaestra() As SqlConnection
             Dim _objConexionMaster As New SqlConnection
             _objConexionMaster.ConnectionString = "Data Source=.\SQLEXPRESS;Initial Catalog=master;Integrated Security=True"
+            'Para la UAI
+            '_objConexionMaster.ConnectionString = "Data Source=342-14-60573\SQL_UAI;Initial Catalog=master; User Id=mariano; Password=1234;"
             Return _objConexionMaster
         End Function
 

@@ -93,6 +93,7 @@
                 Dim lbl_DetalleUltimoCurso As Label = calculadorEA.FindControl("lbl_DetalleUltimoCurso" & _contador)
                 Dim lbl_rating As Label = calculadorEA.FindControl("lbl_rating" & _contador)
                 Dim img_disenador As HtmlImage = calculadorEA.FindControl("img_top" & _contador)
+                lbl_IDDisenador.Text = _ranking.Dieseñador.ID
                 lbl_NombreDisenador.Text = _ranking.Dieseñador.NombreUsuario
                 lbl_CantidadCursosRealizado.Text = _ranking.Cursos.Count.ToString
                 lbl_DetalleUltimoCurso.Text = _ranking.Reproducciones(_ranking.Reproducciones.Count - 1).Curso.Nombre
@@ -162,5 +163,9 @@
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         Response.Redirect("agregarSolicitudCurso.aspx")
+    End Sub
+    Public Sub OcultarDivs()
+        Me.error.Visible = False
+        Me.correcto.Visible = False
     End Sub
 End Class

@@ -114,7 +114,8 @@
             Dim oMPP As New MPP.CursoAsignado
             Return oMPP.ComprobarAsignacion(_persona, _curso)
         End Function
-    End Class
 
+
+    End Class
 End Namespace
 

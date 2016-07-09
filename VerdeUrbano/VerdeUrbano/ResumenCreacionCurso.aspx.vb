@@ -2,6 +2,7 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        ocultarDivs()
         If validaciones.validarPagina(Me) = False Then
             'Response.Redirect("error.aspx")
         End If
@@ -97,5 +98,9 @@
 
     Protected Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         Response.Redirect("index.aspx")
+    End Sub
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
     End Sub
 End Class

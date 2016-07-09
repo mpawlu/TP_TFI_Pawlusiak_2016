@@ -49,7 +49,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:RadioButton ID="slideB" runat="server" Text="Slide B (Texto)" GroupName="slide" CssClass="label" AutoPostBack="true" OnCheckedChanged="slideB_CheckedChanged" />
+                                <asp:RadioButton ID="slideB" runat="server" Text="Slide B (Imagen)" GroupName="slide" CssClass="label" AutoPostBack="true" OnCheckedChanged="slideB_CheckedChanged" />
                             </div>
                         </div>
 
@@ -57,7 +57,7 @@
 
                         <div class="row">
                             <div class="col-md-6 col-md-offset-1">
-                                <asp:RadioButton ID="slideC" runat="server" Text="Slide C (Texto)" GroupName="slide" CssClass="label" AutoPostBack="true" OnCheckedChanged="slideC_CheckedChanged" />
+                                <asp:RadioButton ID="slideC" runat="server" Text="Slide C (Video)" GroupName="slide" CssClass="label" AutoPostBack="true" OnCheckedChanged="slideC_CheckedChanged" />
                             </div>
                         </div>
 

@@ -12,6 +12,8 @@ Public Class agregarUsuario
             CargarDDLEmpresa()
         End If
         Me.correcto.Visible = False
+        ocultarDivs()
+
     End Sub
 
     Protected Sub btn_Guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
@@ -160,5 +162,8 @@ Public Class agregarUsuario
             args.IsValid = True
         End If
     End Sub
-
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 End Class

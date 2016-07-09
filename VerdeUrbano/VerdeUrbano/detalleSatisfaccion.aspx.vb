@@ -8,6 +8,8 @@
         If Not IsPostBack Then
             cargarDatos()
         End If
+        ocultarDivs()
+
     End Sub
 
     Private Sub cargarDatos()
@@ -49,6 +51,9 @@
         Response.Redirect("index.aspx")
     End Sub
 
-
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 
 End Class

@@ -9,6 +9,7 @@
             obtenerUsuarios()
             obtenerCategorias()
         End If
+        Me.OcultarDivs()
     End Sub
 
     Private Sub obtenerUsuarios()
@@ -36,6 +37,7 @@
     End Sub
 
     Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
+
         Try
             If validarCheckBox() = True Then
                 Dim oDisenador As New Servicios.Usuario
@@ -75,7 +77,7 @@
             Else
                 Throw New Servicios.clsExcepcionCamposIncompletos
             End If
-        Catch ex As servicios.clsExcepcionCamposIncompletos
+        Catch ex As Servicios.clsExcepcionCamposIncompletos
             Me.error.Visible = True
             Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
         Catch ex As Servicios.clsExcepcionErrorBBDD
@@ -87,6 +89,7 @@
         End Try
     End Sub
     Protected Sub btnCalculador_Click(sender As Object, e As EventArgs) Handles btnCalculador.Click
+
         Try
             Dim _bllUsuario As New BLL.clsUsuario
             Dim _listaUsuarios As New List(Of Servicios.Usuario)
@@ -143,7 +146,7 @@
     End Function
     Public Function DisenadorSeleccionado() As Integer
         For Each row As GridViewRow In Me.gv_Profesores.Rows
-            Dim checkbox As System.Web.UI.WebControls.CheckBox = DirectCast(row.FindControl("cb_Profesores"), System.Web.UI.WebControls.CheckBox)
+            Dim checkbox As System.Web.UI.WebControls.CheckBox = DirectCast(row.FindControl("chk_sel"), System.Web.UI.WebControls.CheckBox)
             If checkbox.Checked = True Then
                 Return gv_Profesores.Rows(row.DataItemIndex).Cells(0).Text
             End If
@@ -155,4 +158,9 @@
         resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
         Return resultado
     End Function
+    Public Sub OcultarDivs()
+        Me.error.Visible = False
+        Me.correcto.Visible = False
+    End Sub
+
 End Class

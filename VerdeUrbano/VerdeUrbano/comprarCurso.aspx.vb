@@ -9,6 +9,8 @@
             CargarGrilla()
             mensajeConfirmacion2 = "¿Desea Adquirir el Producto?"
         End If
+        ocultarDivs()
+
     End Sub
     Public Sub CargarDDL()
 
@@ -102,4 +104,8 @@
         resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
         Return resultado
     End Function
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 End Class

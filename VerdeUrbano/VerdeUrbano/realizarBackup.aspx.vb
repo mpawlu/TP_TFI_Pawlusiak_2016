@@ -3,6 +3,7 @@ Public Class realizarBackup
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        ocultarDivs()
         If validaciones.validarPagina(Me) = False Then
             Response.Redirect("error.aspx")
         End If
@@ -39,7 +40,10 @@ Public Class realizarBackup
             Me.lbl_TituloError.Text = ex.Message
         End Try
     End Sub
-
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
     Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Response.Redirect("index.aspx")
     End Sub

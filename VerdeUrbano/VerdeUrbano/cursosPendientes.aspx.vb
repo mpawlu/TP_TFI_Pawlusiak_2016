@@ -8,6 +8,7 @@
         If Not IsPostBack Then
             CargarGrilla()
         End If
+        ocultarDivs()
 
     End Sub
     Private Function ListarCursosPendientes() As List(Of EE.CursoAsignado)
@@ -84,4 +85,8 @@
         resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
         Return resultado
     End Function
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 End Class

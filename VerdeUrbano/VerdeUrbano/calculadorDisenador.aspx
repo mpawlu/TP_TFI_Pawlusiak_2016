@@ -96,7 +96,7 @@
                                         <div class="col-md-8">
                                             <br />
                                             <br />
-                                            <asp:Label ID="lbl_IDDisenador1" runat="server" Text="11" CssClass="profile-nombre" Visible =" false"></asp:Label>
+                                            <asp:Label ID="lbl_IDDisenador1" runat="server" CssClass="profile-nombre" Visible =" false"></asp:Label>
                                             <asp:Label ID="lbl_NombreDisenador1" runat="server" Text="Pantenne" CssClass="profile-nombre"></asp:Label>
                                             <br />
                                             <asp:Label ID="lbl_CursosRealizados1" runat="server" Text="Cursos Realizados:" CssClass="profile-titulo"></asp:Label>
@@ -125,7 +125,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <br />
-                                            <asp:Label ID="lbl_IDDisenador2" runat="server" Text="11" CssClass="profile-nombre" Visible =" false"></asp:Label>
+                                            <asp:Label ID="lbl_IDDisenador2" runat="server" Text="" CssClass="profile-nombre" Visible =" false"></asp:Label>
                                             <asp:Label ID="lbl_NombreDisenador2" runat="server" Text="Pantenne" CssClass="profile-nombre"></asp:Label>
                                             <br />
                                             <asp:Label ID="lbl_CursosRealizados2" runat="server" Text="Cursos Realizados:" CssClass="profile-titulo"></asp:Label>
@@ -154,7 +154,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <br />
-                                            <asp:Label ID="lbl_IDDisenador3" runat="server" Text="11" CssClass="profile-nombre" Visible =" false"></asp:Label>
+                                            <asp:Label ID="lbl_IDDisenador3" runat="server" Text="" CssClass="profile-nombre" Visible =" false"></asp:Label>
                                             <asp:Label ID="lbl_NombreDisenador3" runat="server" Text="Pantenne" CssClass="profile-nombre"></asp:Label>
                                             <br />
                                             <asp:Label ID="lbl_CursosRealizados3" runat="server" Text="Cursos Realizados:" CssClass="profile-titulo"></asp:Label>
@@ -183,7 +183,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <br />
-                                        <asp:Label ID="lbl_IDDisenador4" runat="server" Text="11" CssClass="profile-nombre" Visible =" false"></asp:Label>
+                                        <asp:Label ID="lbl_IDDisenador4" runat="server" Text="" CssClass="profile-nombre" Visible =" false"></asp:Label>
                                         <asp:Label ID="lbl_NombreDisenador4" runat="server" Text="Pantenne" CssClass="profile-nombre"></asp:Label>
                                         <br />
                                         <asp:Label ID="lbl_CursosRealizados4" runat="server" Text="Cursos Realizados:" CssClass="profile-titulo"></asp:Label>
@@ -212,7 +212,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <br />
-                                        <asp:Label ID="lbl_IDDisenador5" runat="server" Text="11" CssClass="profile-nombre" Visible =" false"></asp:Label>
+                                        <asp:Label ID="lbl_IDDisenador5" runat="server" Text="" CssClass="profile-nombre" Visible =" false"></asp:Label>
                                         <asp:Label ID="lbl_NombreDisenador5" runat="server" Text="Pantenne" CssClass="profile-nombre"></asp:Label>
                                         <br />
                                         <asp:Label ID="lbl_CursosRealizados5" runat="server" Text="Cursos Realizados:" CssClass="profile-titulo"></asp:Label>

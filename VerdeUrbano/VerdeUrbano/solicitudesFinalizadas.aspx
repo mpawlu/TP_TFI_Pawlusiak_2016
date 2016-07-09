@@ -51,6 +51,23 @@
                                         </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
+                                <asp:Label ID="Label1" runat="server" Text="Solicitudes Finalizadas"></asp:Label>
+                    </div>
+                    <div class="panel-body">
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <asp:GridView ID="gv_solicitudes_dis" runat="server" CssClass="Grid-verde" AutoGenerateColumns="False" HorizontalAlign="Center">
+
+                                    <Columns>
+                                        <asp:BoundField DataField="ID" HeaderText="Código" HtmlEncode="False" />
+                                        <asp:BoundField DataField="Titulo" HeaderText="Titulo" HtmlEncode="False" ControlStyle-CssClass="col-md-3" />
+                                        <asp:BoundField DataField="Detalle" HeaderText="Detalle" HtmlEncode="False" ControlStyle-CssClass="col-md-4" />
+                                        <asp:BoundField DataField="Disenador.NombreUsuario" HeaderText="Diseñandor" HtmlEncode="False" ControlStyle-CssClass="col-md-4" />
+                                        <asp:BoundField DataField="Estado.Descripcion" HeaderText="Estado" HtmlEncode="False" ControlStyle-CssClass="col-md-1" />
+                                    </Columns>
+                                </asp:GridView>
                             </div>
                             <br />
                             <br />
@@ -60,6 +77,9 @@
                         <div class="row">
                             <div class="col-md-2 col-md-offset-5">
                                 <asp:Button ID="btnAprobar" runat="server" Text="Aprobar" CssClass="btn btn-block btn-info" />
+                            </div>
+                                                        <div class="col-md-2 col-md-offset-5">
+                                <asp:Button ID="btnVolver" runat="server" Text="Volver" CssClass="btn btn-block btn-info" />
                             </div>
                         </div>
                         <br />

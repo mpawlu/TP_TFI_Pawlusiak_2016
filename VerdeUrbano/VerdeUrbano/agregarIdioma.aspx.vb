@@ -16,6 +16,8 @@
             CargarGrilla()
         End If
         Me.correcto.Visible = False
+        ocultarDivs()
+
     End Sub
 
     Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_Agregar.Click
@@ -85,4 +87,8 @@
         resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
         Return resultado
     End Function
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 End Class

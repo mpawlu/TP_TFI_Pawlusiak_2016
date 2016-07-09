@@ -2,6 +2,7 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        ocultarDivs()
         If validaciones.validarPagina(Me) = False Then
             '    Response.Redirect("error.aspx")
         End If
@@ -22,6 +23,8 @@
             Me.generarPreguntas(enc.Preguntas)
             Me.CargarDDL()
         End If
+
+
     End Sub
     Private Sub generarPreguntas(ByVal paramListadoPreguntas As List(Of EE.PreguntaEncuesta))
         Try
@@ -100,5 +103,9 @@
         Catch ex As Exception
         End Try
 
+    End Sub
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
     End Sub
 End Class

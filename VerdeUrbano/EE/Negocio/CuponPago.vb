@@ -53,16 +53,6 @@
             End Set
         End Property
 
-
-        Private _Estado As Cupon_State
-        Public Property Estado() As Cupon_State
-            Get
-                Return _Estado
-            End Get
-            Set(ByVal value As Cupon_State)
-                _Estado = value
-            End Set
-        End Property
     End Class
 End Namespace
 

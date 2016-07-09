@@ -5,7 +5,7 @@
         If BLL.Singleton.InstanciaSing.oUsuarioSesion Is Nothing Then
             Response.Redirect("error.aspx")
         End If
-        Me.correcto.Visible = False
+        ocultarDivs()
     End Sub
 
     Protected Sub btn_Guardar_Click(sender As Object, e As EventArgs) Handles btn_Guardar.Click
@@ -54,5 +54,9 @@
 
     Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Response.Redirect("index.aspx")
+    End Sub
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
     End Sub
 End Class

@@ -12,6 +12,7 @@
             Me.gv_Preguntas.Visible = True
             Me.CargarGrilla()
         End If
+        ocultarDivs()
     End Sub
 
     Private Sub btnAgregarPregunta_Click(sender As Object, e As EventArgs) Handles btnAgregarPregunta.Click
@@ -68,5 +69,8 @@
             Me.lbl_TituloError.Text = ex.Message
         End Try
     End Sub
-
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 End Class

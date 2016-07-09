@@ -9,6 +9,7 @@
         If Not IsPostBack Then
             CargarGrilla()
         End If
+        ocultarDivs()
     End Sub
     Private Sub CargarGrilla()
         Dim oSol As New List(Of EE.SolicitudCurso)
@@ -48,9 +49,7 @@
         Catch ex As Exception
             Me.error.Visible = True
             Me.lbl_TituloError.Text = ex.Message
-
         End Try
-
 
     End Sub
 
@@ -60,5 +59,8 @@
         resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
         Return resultado
     End Function
-
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 End Class

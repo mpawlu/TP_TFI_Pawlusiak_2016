@@ -28,6 +28,10 @@
             Dim oMPP As New MPP.Solicitud
             Return oMPP.ConsultarSolicitudesFinalizadas(_solicitante)
         End Function
+        Public Function ListarMisFinalizadas(ByVal _disenador As Servicios.Usuario) As List(Of EE.SolicitudCurso)
+            Dim oMPP As New MPP.Solicitud
+            Return oMPP.ListarMisFinalizadas(_disenador)
+        End Function
         Public Function ConsultarUltima() As EE.SolicitudCurso
             Dim oMPP As New MPP.Solicitud
             Return oMPP.ConsultarUltima

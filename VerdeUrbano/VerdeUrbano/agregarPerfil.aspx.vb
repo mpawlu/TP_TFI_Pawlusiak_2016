@@ -9,6 +9,7 @@
             Me.CargarTreeViewFamilias()
             Me.cargarPermisosSimples()
         End If
+        ocultarDivs()
 
     End Sub
 
@@ -198,5 +199,9 @@
                 End If
             End If
         Next
+    End Sub
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
     End Sub
 End Class

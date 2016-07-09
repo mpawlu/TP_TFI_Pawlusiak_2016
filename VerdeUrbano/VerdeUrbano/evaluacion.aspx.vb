@@ -6,6 +6,7 @@ Public Class evaluacion
         'If validaciones.validarPagina(Me) = False Then
         '    Response.Redirect("error.aspx")
         'End If
+        ocultarDivs()
         If Not IsPostBack Then
             Dim oCuAs As New EE.CursoAsignado
             oCuAs = DirectCast(Session("CursoAsignado"), EE.CursoAsignado)
@@ -108,5 +109,9 @@ Public Class evaluacion
         Next index
         Return _ListOpciones
     End Function
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 
 End Class

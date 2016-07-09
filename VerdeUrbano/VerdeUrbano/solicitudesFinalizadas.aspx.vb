@@ -2,14 +2,22 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Me.ocultarDivs()
         If validaciones.validarPagina(Me) = False Then
             Response.Redirect("error.aspx")
         End If
         If Not IsPostBack Then
-            CargarGrilla()
+            Dim oUsu As New Servicios.Usuario
+            oUsu = RecuperarUsuario()
+            If oUsu.Perfil.ID = 30 Then
+                CargarGrillaDirector()
+            Else
+                Me.btnAprobar.Visible = False
+                Me.CargarGrillaDisenador()
+            End If
         End If
     End Sub
-    Private Function ListarCursosPendientes() As List(Of EE.SolicitudCurso)
+    Private Function ListarCursosPendientesDeAprobacion() As List(Of EE.SolicitudCurso)
         Dim ListaSolFin As New List(Of EE.SolicitudCurso)
         Dim oBLL As New BLL.SolicitudCurso
         Dim oUsuario As New Servicios.Usuario
@@ -17,9 +25,21 @@
         ListaSolFin = oBLL.ListarSolicitudesFinalizadas(oUsuario)
         Return ListaSolFin
     End Function
-    Public Sub CargarGrilla()
-        Me.gv_solicitudes.DataSource = ListarCursosPendientes()
+    Private Function ListarSolicitudesFinalizadas() As List(Of EE.SolicitudCurso)
+        Dim ListaSolFin As New List(Of EE.SolicitudCurso)
+        Dim oBLL As New BLL.SolicitudCurso
+        Dim oUsuario As New Servicios.Usuario
+        oUsuario = DirectCast(Session("Usuario"), Servicios.Usuario)
+        ListaSolFin = oBLL.ListarMisFinalizadas(oUsuario)
+        Return ListaSolFin
+    End Function
+    Public Sub CargarGrillaDirector()
+        Me.gv_solicitudes.DataSource = ListarCursosPendientesDeAprobacion()
         Me.gv_solicitudes.DataBind()
+    End Sub
+    Public Sub CargarGrillaDisenador()
+        Me.gv_solicitudes_dis.DataSource = ListarSolicitudesFinalizadas()
+        Me.gv_solicitudes_dis.DataBind()
     End Sub
 
     Private Sub btnAprobar_Click(sender As Object, e As EventArgs) Handles btnAprobar.Click
@@ -31,7 +51,7 @@
                 If oSolBLL.AprobarCurso(oSolicitud) = True Then
                     Me.correcto.Visible = True
                     Me.limpiarGrilla()
-                    Me.CargarGrilla()
+                    Me.CargarGrillaDirector()
                 Else
                     Throw New Servicios.clsExcepcionErrorBBDD
                 End If
@@ -72,15 +92,23 @@
             End If
         Next
         Dim oca As New EE.CursoAsignado
-        Return Me.ListarCursosPendientes()(indice - 1)
+        Return Me.ListarCursosPendientesDeAprobacion()(indice - 1)
     End Function
+    Public Sub limpiarGrilla()
+        Me.gv_solicitudes.DataSource = Nothing
+        Me.gv_solicitudes.DataBind()
+    End Sub
     Public Function RecuperarUsuario() As Servicios.Usuario
         Dim resultado As New Servicios.Usuario
         resultado = DirectCast(Session("Usuario"), Servicios.Usuario)
         Return resultado
     End Function
-    Public Sub limpiarGrilla()
-        Me.gv_solicitudes.DataSource = Nothing
-        Me.gv_solicitudes.DataBind()
+
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        Response.Redirect("Index.aspx")
+    End Sub
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
     End Sub
 End Class

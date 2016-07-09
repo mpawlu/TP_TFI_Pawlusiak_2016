@@ -2,6 +2,7 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        ocultarDivs()
         If BLL.Singleton.InstanciaSing.oUsuarioSesion Is Nothing Then
             Response.Redirect("error.aspx")
         End If
@@ -102,5 +103,8 @@
 
     Private Sub btnEvaluacion_Click(sender As Object, e As EventArgs) Handles btnEvaluacion.Click
         Response.Redirect("evaluacion.aspx")
+    End Sub
+    Public Sub ocultarDivs()
+        Me.error.Visible = False
     End Sub
 End Class

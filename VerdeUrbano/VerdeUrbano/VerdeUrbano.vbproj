@@ -198,6 +198,8 @@
     <Content Include="login.aspx" />
     <Content Include="Menu\MenuCompleto.xml" />
     <Content Include="cursosPendientes.aspx" />
+    <Content Include="misEmpleados.aspx" />
+    <Content Include="MisResultados.aspx" />
     <Content Include="nuestrosProductos.aspx" />
     <Content Include="quienesSomos.aspx" />
     <Content Include="realizarBackup.aspx" />
@@ -437,6 +439,20 @@
     </Compile>
     <Compile Include="login.aspx.vb">
       <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="misEmpleados.aspx.designer.vb">
+      <DependentUpon>misEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="misEmpleados.aspx.vb">
+      <DependentUpon>misEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MisResultados.aspx.designer.vb">
+      <DependentUpon>MisResultados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisResultados.aspx.vb">
+      <DependentUpon>MisResultados.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />

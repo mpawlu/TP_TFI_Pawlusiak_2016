@@ -7,6 +7,8 @@ Public Class agregarSlide
         If validaciones.validarPagina(Me) = False Then
             'Response.Redirect("error.aspx")
         End If
+        ocultarDivs()
+
     End Sub
 
     Private Sub btnFinalizarEdicion_Click(sender As Object, e As EventArgs) Handles btnFinalizarEdicion.Click
@@ -123,5 +125,8 @@ Public Class agregarSlide
             args.IsValid = True
         End If
     End Sub
-
+    Public Sub ocultarDivs()
+        Me.correcto.Visible = False
+        Me.error.Visible = False
+    End Sub
 End Class

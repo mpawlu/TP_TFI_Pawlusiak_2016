@@ -8,6 +8,7 @@
         If Not IsPostBack Then
             cargarDatosSlide()
         End If
+        ocultarDivs()
     End Sub
 
     Private Sub cargarDatosSlide()
@@ -103,5 +104,8 @@
     End Sub
     Private Sub btnEvaluacion_Click(sender As Object, e As EventArgs) Handles btnEvaluacion.Click
         Response.Redirect("evaluacion.aspx")
+    End Sub
+    Public Sub ocultarDivs()
+        Me.error.Visible = False
     End Sub
 End Class
