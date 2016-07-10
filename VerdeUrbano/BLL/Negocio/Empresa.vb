@@ -26,6 +26,11 @@
             End Try
 
         End Function
+        Public Function Guardar(ByVal queEmpresa As EE.Empresa) As Boolean
+            Dim oMPP As New MPP.Empresa
+            queEmpresa.FechaAlta = Now
+            Return oMPP.Guardar(queEmpresa)
+        End Function
     End Class
 End Namespace
 

@@ -2,6 +2,7 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        ocultarDivs()
         If validaciones.validarPagina(Me) = False Then
             Response.Redirect("error.aspx")
         End If
@@ -9,8 +10,6 @@
             Me.CargarTreeViewFamilias()
             Me.cargarPermisosSimples()
         End If
-        ocultarDivs()
-
     End Sub
 
 

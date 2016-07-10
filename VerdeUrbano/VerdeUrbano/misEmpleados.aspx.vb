@@ -29,13 +29,13 @@
         Dim oCompra As New EE.Compra
         oCompra = DirectCast(Session("CursoAsignar"), EE.Compra)
         For Each emp As EE.Persona In Empleados
-            Dim oCursoAsBLL As New BLL.CursoAsignado
-            If oCursoAsBLL.ComprobarAsignacion(emp, oCompra.Curso) = False And emp.Usuario.Perfil.ID = 32 Then
+            If emp.Usuario.Perfil.ID = 32 Then
                 EmpleadosDisp.Add(emp)
             End If
         Next
         Me.gv_empleados.DataSource = EmpleadosDisp
         Me.gv_empleados.DataBind()
+        Me.gv_empleados.Visible = True
     End Sub
     Private Function validarCheckBox() As Boolean
         Dim _flag As Boolean = False
@@ -47,7 +47,7 @@
         Next
         Return _flag
     End Function
-    Public Function EmpleadosSeleccionados() As EE.Persona
+    Public Function EmpleadosSeleccionado() As EE.Persona
         Dim Seleccionado As New EE.Persona
         Dim TodosEmpleados As New List(Of EE.Persona)
         TodosEmpleados = DirectCast(Session("Empleados"), List(Of EE.Persona))
@@ -64,46 +64,25 @@
         Return Seleccionado
     End Function
 
-    Private Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles btnAsignar.Click
-        '    Try
-        '        If validarCheckBox() = True Then
-        '            Dim oCompra As New EE.Compra
-        '            oCompra = DirectCast(Session("CursoAsignar"), EE.Compra)
-        '            If Me.EmpleadosSeleccionados.Count > oCompra.Licencias Then
-        '                Throw New servicios.clsExcepcionLicenciasInsuficientes
-        '            Else
-        '                ''Guardar las asignaciones
-        '                For Each per As EE.Persona In EmpleadosSeleccionados()
-        '                    Dim oCursoAsignado As New EE.CursoAsignado
-        '                    oCursoAsignado.Empleado = per.Usuario
-        '                    oCursoAsignado.Curso = oCompra.Curso
-        '                    Dim oCABLL As New BLL.CursoAsignado
-        '                    If oCABLL.Guardar(oCursoAsignado) = True Then
-        '                        Me.correcto.Visible = True
-        '                    Else
-        '                        Throw New servicios.clsExcepcionErrorBBDD
-        '                    End If
-        '                Next
-        '                Me.correcto.Visible = True
-        '                Me.gv_empleados.DataSource = Nothing
-        '                Me.gv_empleados.DataBind()
-        '                Me.CargarEmpleados()
-        '            End If
-        '        Else
-        '            Throw New servicios.clsExcepcionCamposIncompletos
-        '        End If
-        '    Catch ex As servicios.clsExcepcionCamposIncompletos
-        '        Me.error.Visible = True
-        '        Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
-        '    Catch ex As servicios.clsExcepcionLicenciasInsuficientes
-        '        Me.error.Visible = True
-        '        Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
-        '    Catch ex As servicios.clsExcepcionErrorBBDD
-        '        Me.error.Visible = True
-        '        Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
-        '    Catch ex As Exception
-        '        Me.error.Visible = True
-        '        Me.lbl_TituloError.Text = ex.Message
-        '    End Try
-        'End Sub
+
+    Private Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click
+        Try
+            'If validarCheckBox() = True Then
+            Dim oPersona As New EE.Persona
+            Session("Seleccionado") = Me.EmpleadosSeleccionado.Usuario
+            Response.Redirect("resultadosEmpleado.aspx")
+            'Else
+            'Throw New Servicios.clsExcepcionCamposIncompletos
+            'End If
+        Catch ex As Servicios.clsExcepcionCamposIncompletos
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
+        Catch ex As Servicios.clsExcepcionErrorBBDD
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = BLL.ClsTraduccion.Traducir(RecuperarUsuario, ex.ObtenerID)
+        Catch ex As Exception
+            Me.error.Visible = True
+            Me.lbl_TituloError.Text = ex.Message
+        End Try
+    End Sub
 End Class

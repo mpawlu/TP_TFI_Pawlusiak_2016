@@ -1,5 +1,22 @@
 ﻿Namespace MPP
     Public Class Empresa
+        Public Function Guardar(ByVal queEmpresa As EE.Empresa) As Boolean
+
+            Dim oDatos As New DAL.Datos
+            Dim hdatos As New Hashtable
+            Dim resultado As Boolean
+
+            hdatos.Add("@CUIT", queEmpresa.CUIT)
+            hdatos.Add("@Nombre", queEmpresa.Nombre)
+            hdatos.Add("@FechaAlta", queEmpresa.FechaAlta)
+            hdatos.Add("@Tel", queEmpresa.Telefono)
+            hdatos.Add("@Email", queEmpresa.Email)
+            hdatos.Add("@Direccion", queEmpresa.Direccion)
+
+            resultado = oDatos.Escribir("s_Empresa_Crear", hdatos)
+            Return resultado
+        End Function
+
         Public Function Listar() As List(Of EE.Empresa)
             Dim oDatos As New DAL.Datos
             Dim hdatos As New Hashtable
